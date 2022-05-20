@@ -1,0 +1,43 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden !important;
+
+  span {
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-hover {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    overflow: hidden;
+    background: var(--primary-font-color);
+  }
+}
+
+.options-btns{
+  .sec-btn {
+    border: 1px solid var(--contact-button-border) !important;
+  }
+}
+
+.sec-btn {
+  overflow: hidden !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+  // border: 1px solid var(--contact-button-border) !important;
+
+  // &.primary {
+  //   border: 1px solid var(--lighter-font-color) !important;
+  // }
+}

@@ -1,0 +1,72 @@
+import React, {useEffect, useContext, useReducer} from 'react';
+import {menuReducer} from './reducers.js';
+
+const initState ={
+  isMenuOpen: false,
+  pageTitle: 'home',
+  footerItems: {},
+  ScrollYValue:0,
+  needed:[],
+  isMobile: true,
+  refresh: false,
+  contact:"other",
+  pointer: {
+    isHover: false, 
+    color: "",
+    text: "",
+  }
+}
+
+const AppContext = React.createContext();
+
+export const AppProvider=({children})=>{
+
+  const [state, dispatch] = useReducer(menuReducer, initState);
+
+  const openMenu =()=>{
+    dispatch({type:'OPEN_MENU'})
+  }
+
+  const closeMenu =()=>{
+    dispatch({type:'CLOSE_MENU'})
+  }
+
+  const setMobileTrue =()=>{
+    dispatch({type:'SET_MOBILE_TRUE'})
+  }
+  // const changeRefresh= ()=>{
+  //   dispatch({type:'SCROLLED' , payload:sy})
+  // }
+  const setMobileFalse =()=>{
+    dispatch({type:'SET_MOBILE_FALSE'})
+  }
+
+  const scrollY =(sy)=>{
+      dispatch({type:'SCROLLED' , payload:sy})
+  }
+  const updateNeeded =(pay)=>{
+ 
+      dispatch({type:'LOCONEEDED' , payload:pay})
+  }
+  const changePT = (pay)=>{
+    dispatch({type: 'CHANGETITLE', payload: pay})
+  }
+  const changePointer = (pay)=>{
+    dispatch({type: 'CHANGEHOVER', payload: pay})
+  }
+  const changePp = (pay)=>{
+    dispatch({type: 'CHANGECONBTN', payload: pay})
+  }
+
+  return(
+    <AppContext.Provider value={{ ...state, openMenu, closeMenu, setMobileTrue,
+      setMobileFalse, scrollY, updateNeeded, changePT, changePointer, changePp }}
+    >
+      {children}
+    </AppContext.Provider>
+  )
+}
+
+export const useAppContext = ()=>{
+  return useContext(AppContext)
+}

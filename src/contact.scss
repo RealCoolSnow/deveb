@@ -1,0 +1,44 @@
+.contact-page {
+  padding-top: 25vh;
+  width: 100%;
+  overflow: hidden;
+
+  section.sec-form {
+
+    form { 
+
+      >.btn-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .btn-mouse-area {
+          
+          button.btn-more {
+            background-color: var(--primary-font-color);
+
+            .btn-more-title {
+
+              span {
+                color: var(--bg-color);
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+  }
+}
+
+// @media ( max-width: 450px ) {
+//   .contact-page {
+
+//     section.sec-form {
+
+//       .m-footer {
+//         margin-top: 30px !important;
+//       }
+//     }
+//   }
+// }
