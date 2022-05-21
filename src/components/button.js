@@ -7,6 +7,7 @@ const Button = ({
   did,
   text,
   url,
+  br,
   movable = true,
   act = undefined,
   style,
@@ -100,14 +101,14 @@ const Button = ({
     } else {
 
       if (btnhover === true) {
-        gsap.set(ripple, { backgroundColor: '#fff' })
+        gsap.set(ripple, { backgroundColor: '#1a1a1a' })
         gsap.to(ripple, 0, { yPercent: ()=> act? 0: -100, borderRadius: 50, autoAlpha: 1 });
         gsap.to(ripple, 0.5, {
           yPercent: 0,
           borderRadius: 0,
         });
         gsap.to(teXt, 0.4, {
-          color: "#000",
+          color: "#fff",
         });
         gsap.to(teXt, 0.5, {
           transformOrigin: "left top",
@@ -120,7 +121,7 @@ const Button = ({
           borderRadius: ()=> act? 0 :50,
         });
         gsap.to(teXt, 0.4, {
-          color: ()=> act? "#000": "#fff",
+          color: ()=> act? "#fff": "#000",
         });
         gsap.to(teXt, 0.5, {
           transformOrigin: "left top",
@@ -153,7 +154,7 @@ const Button = ({
         onBlur={() => setbtnHover(false)}
       >
         {url ? (
-          <Link className="btn-more" to={url}>
+          <Link className="btn-more" to={url} style={br? {borderColor: br}:{}}>
             <span className="btn-more-title">
               <span data-text={text}>{text}</span>
             </span>

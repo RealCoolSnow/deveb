@@ -76,7 +76,7 @@ const Button = ({
             </span>
           </Link>
         ) : (
-          <button className="btn-more" disabled={!active} >
+          <button className={`btn-more ${!active ? 'invalid' : ''}`} >
             <span className="btn-more-title">
               <span data-text={text}>{text}</span>
             </span>

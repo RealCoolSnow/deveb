@@ -3,6 +3,7 @@ import Button from '../MobileButton/MButton';
 import { useAppContext } from "../../contexts/appcontext.js";
 import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import{Link} from "react-router-dom"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,27 +20,27 @@ export default function ShowCaseM({ showcasedata }) {
 
     const q = gsap.utils.selector(el);
 
-    const Boxes = q(".mobile-showcase-box");
+    // const Boxes = q(".mobile-showcase-box");
     
-    Boxes.forEach( (box,idx) => {
+    // Boxes.forEach( (box,idx) => {
     
-      const bgImage = q(`.mobile-showcase-box.box-${idx} .showcase-full-img`);
+    //   const bgImage = q(`.mobile-showcase-box.box-${idx} .showcase-full-img`);
 
-      gsap.set(bgImage, { scale: 1.08, y: "-2vh" });
+    //   gsap.set(bgImage, { scale: 1.08, y: "-2vh" });
 
-      gsap.to(bgImage, {
-        scrollTrigger: {
-          trigger: bgImage,
-          start:()=> "top bottom+=20%",
-          end: ()=>"bottom+=20% top-=30%",
-          // markers:true,
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-        y: "2vh",
-      });
+    //   gsap.to(bgImage, {
+    //     scrollTrigger: {
+    //       trigger: bgImage,
+    //       start:()=> "top bottom+=20%",
+    //       end: ()=>"bottom+=20% top-=30%",
+    //       // markers:true,
+    //       scrub: true,
+    //       invalidateOnRefresh: true,
+    //     },
+    //     y: "2vh",
+    //   });
 
-    })
+    // })
 
     return () => {
       window.removeEventListener('scroll', keepShowcaseSquare)
@@ -69,23 +70,26 @@ export default function ShowCaseM({ showcasedata }) {
     {
       showcasedata.map( (item,idx) => {
 
-        const{ h4, img, id, p } = item;
-        const { klass } = img
+        const{ h4, img, id, p, a} = item;
+        const { klass, cover} = img
   
         return (
           <div className={`mobile-showcase-box box-${idx} ${ p === '' ? 'h-showcase' : 'w-des' }`} key={id} >
             
             <div className={`showcase-container ${klass} `} >
-              <div className={`showcase-full-img ${klass}`} >
-
+              <Link to={a.url}>
+              <div className={`showcase-full-img ${klass}`}  
+              style={{backgroundImage:" url(" +cover+")"}}
+              >
               </div>
+              </Link>
             </div>
   
             <h4>{h4}</h4>
 
             { p===""? null:  <p >{p}</p> }
   
-            <Button url="/prj" text="View more" />
+            <Button url={a.url} text="View more" />
   
           </div>
         )

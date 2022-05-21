@@ -1,8 +1,20 @@
-import inter from '../assets/covers/InteriorDesign.jpg'
-import ext from '../assets/covers/ExteriorDesign.jpg'
-import t3d from '../assets/covers/3DRendering.jpg'
-import ani from '../assets/covers/Animation.jpg'
-import vr2 from '../assets/covers/VirtualTour2.jpg'
+import inter from '../assets/covers/int.jpg'
+import ext from '../assets/covers/ext.jpg'
+import t3d from '../assets/covers/ren.jpg'
+import ani from '../assets/covers/ani.jpg'
+import vr from '../assets/covers/vr.jpg'
+import dopegood from '../assets/covers/dopegood.jpg'
+import amarc from '../assets/covers/am-arc.jpg'
+import vim from '../assets/covers/vim.jpg'
+import dopop from '../assets/covers/dopop.jpg'
+import comfeey from '../assets/covers/comfeey.jpg'
+
+
+
+
+
+
+
 
 export const links = [
   {
@@ -18,12 +30,6 @@ export const links = [
     ariaLabel: "projects page",
   },
   {
-    id: "na1Li3",
-    text: "FAQ",
-    url: "/faq",
-    ariaLabel: "FAQ page",
-  },
-  {
     id: "na1Li4",
     text: "About",
     url: "/about",
@@ -31,7 +37,7 @@ export const links = [
   },
   {
     id: "na1Li5",
-    text: "Estimate project",
+    text: "Get a quote",
     url: "/contact",
     ariaLabel: "contact page",
   },
@@ -198,28 +204,64 @@ export const images = [
   },
 ];
 
-export const homeInt = [
+export const home = [
   {
-    num: "01",
-    id: "h01in1",
-    h4: "Interior design",
+    num: "Dope Good",
+    id: "hp101",
+    h4: "Online store, Furniture brand",
     p: "",
-    a: { text: "Learn more", url: "/projects" },
+    a: { text: "Learn more",  url:"/projects#In" },
     img: {
-      cover: "",
-      colors: { right: "#82674C", left: "#E8DCD3", bg:"#ffe4c8", txt:"#ffffff"},
+      cover: dopegood,
+      colors: { curs: "#82674C", pointer: "#E8DCD3", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
+      klass: "threeD first",
+    },
+  },
+  {
+    num: "AM-ARC",
+    id: "hp102",
+    h4: "Architectural design Studio",
+    p: "",
+    a: { text: "Learn more",  url:"/projects#In" },
+    img: {
+      cover: amarc,
+      colors: { cur: "#82674C", pointer: "#E8DCD3", bg:"#F2F2F2", tx:"#86868C", br:"#D7D7D9"},
       klass: "threeD",
     },
   },
   {
-    num: "02",
-    id: "h02in2",
-    h4: "Exterior design",
+    num: "Vimcosmo",
+    id: "hp103",
+    h4: "Online store, Cosmetic brand",
     p: "",
-    a: { text: "Learn more", url: "/projects" },
+    a: { text: "Learn more",  url:"/projects#In" },
     img: {
-      cover: "",
-      colors: { right: "#5A81A2", left: "#1F3D61" },
+      cover: vim,
+      colors: { cur: "#82674C", pointer: "#E8DCD3", bg:"#FEE0E2", tx:"#E68A90", br:"#FEA5AB"},
+      klass: "threeD",
+    },
+  },
+  {
+    num: "Dopop",
+    id: "hp104",
+    h4: "NFT digital marketplace",
+    p: "",
+    a: { text: "Learn more",  url:"/projects#In" },
+    img: {
+      cover: dopop,
+      colors: { cur: "#82674C", pointer: "#E8DCD3", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
+      klass: "threeD",
+    },
+  },
+  {
+    num: "Comfeey",
+    id: "hp105",
+    h4: "Online store, Furniture brand",
+    p: "",
+    a: { text: "Learn more", url:"/projects#Ex" },
+    img: {
+      cover: comfeey,
+      colors: { cur: "#5A81A2", pointer: "#1F3D61", bg:"#E0F0FF" , tx:"#78A9D9", br:"#A6D4FF"},
       klass: "int end",
     },
   },
@@ -231,10 +273,10 @@ export const homeExt = [
     id: "h21ex1",
     h4: "3D Rendering",
     p: "",
-    a: { text: "Learn more", url: "/projects" },
+    a: { text: "Learn more", url:"/projects#3dr"},
     img: {
-      cover: "",
-      colors: {right: "#736059", left: "#D9D4D1" },
+      cover: t3d,
+      colors: {right: "#736059", left: "#D9D4D1" , bg:"#59493ec2" },
       klass: "cgi",
     },
   },
@@ -243,10 +285,10 @@ export const homeExt = [
     id: "h21ex2",
     h4: "Animation",
     p: "",
-    a: { text: "Learn more", url: "/projects" },
+    a: { text: "Learn more", url:"/projects#Ani" },
     img: {
-      cover: "",
-      colors: { right: "#73695C", left: "#E6E1DA"},
+      cover: ani,
+      colors: { right: "#73695C", left: "#E6E1DA", bg:"#b2a498cc"},
       klass: "ex",
     },
   },
@@ -255,10 +297,10 @@ export const homeExt = [
     id: "h21ex3",
     h4: "Virtual tour",
     p: "",
-    a: { text: "Learn more", url: "/projects" },
+    a: { text: "Learn more", url: "/projects#VR" },
     img: {
-      cover: "",
-      colors: { right: "#25261E", left: "#646659" },
+      cover: vr,
+      colors: { right: "#25261E", left: "#646659", bg:"#ec9a9eb3" },
       klass: "vr end",
     },
   },
@@ -270,7 +312,7 @@ export const servData = [
     id: "h21ex1",
     h4: "Interior design",
     p: "People want to feel good in a space. We can make it happen by creating environments that are pleasing, aesthetic, and functional.",
-    a: { text: "View more", url: "/projects#interior" },
+    a: { text: "View more", url: "/projects#In" },
     img: {
       cover: inter,
       colors: { right: "1", left: "1" },
@@ -282,7 +324,7 @@ export const servData = [
     id: "h21ex2",
     h4: "Exterior design",
     p: "Our responsibility to a project extends beyond the walls of the building. We always seize the opportunity to maximize the relationship between the structure and its external context.",
-    a: { text: "Learn more", url: "/projects#exterior" },
+    a: { text: "Learn more", url: "/projects#Ex" },
     img: {
       cover: ext,
       colors: { right: "1", left: "1" },
@@ -294,7 +336,7 @@ export const servData = [
     id: "h21ex3",
     h4: "3D Rendering",
     p: "Photorealistic 3D rendering is a process performed by CGI artists with the help of professional software. The results of this process are photo-like 2D visuals. In the context of architecture, those visuals depict interiors and exteriors of buildings that are yet to be constructed.",
-    a: { text: "Learn more", url: "/projects#3d-rendering" },
+    a: { text: "Learn more", url: "/projects#3dr" },
     img: {
       cover: t3d,
       colors: { right: "1", left: "1" },
@@ -306,7 +348,7 @@ export const servData = [
     id: "h21ex4",
     h4: "CG Animation",
     p: "The architectural movie provides a highly immersive experience for presentation and property marketing. It shows surroundings, interior and exterior design, and walks the viewer through the property as if it were already built.",
-    a: { text: "Learn more", url: "/projects#animation" },
+    a: { text: "Learn more", url: "/projects#Ani" },
     img: {
       cover: ani,
       colors: { right: "1", left: "1" },
@@ -318,9 +360,9 @@ export const servData = [
     id: "h21ex5",
     h4: "Virtual tour",
     p: "A CGI platform that allows real estate professionals to give prospects and clients self-guided tours of properties and designs. The tours can also be VR-compatible and include information about the interior design products used.",
-    a: { text: "Learn more", url: "/projects#virtual-tour" },
+    a: { text: "Learn more", url: "/projects#VR" },
     img: {
-      cover: vr2,
+      cover: t3d,
       colors: { right: "1", left: "1" },
       klass: "end",
     },

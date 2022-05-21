@@ -1,4 +1,4 @@
-section.footer-sec {
+section.footer-sec, div.con-foot {
   .backtrig {
     position: absolute;
     width: 100%;
@@ -27,14 +27,18 @@ section.footer-sec {
   bottom: 0%;
   width: 100%;
   z-index: 1;
-  margin-top: -100vh;
+  &.fot{
+    margin-top: -105vh;
+    height: 200vh;
+    min-height: 594px;
+    padding: 100vh 0 3.1rem 0;
+    // pointer-events: none;
+
+  }
   max-width: 100%;
-  height: 200vh;
   //   display: flex;
   //   flex-direction: column;
   //   justify-content: space-between;
-  min-height: 594px;
-  padding: 100vh 0 3.1rem 0;
   .trig {
     width: 100%;
     display: flex;
@@ -59,13 +63,30 @@ section.footer-sec {
     display: inline-flex;
     .cobtn-contain {
       display: inline-block;
-      width: 154px;
-      padding: 2.6rem 15px;
+      // width: 154px;
+      // padding: 2.6rem 15px;
       cursor: pointer;
+      .bt-mera{
+        padding: 2.6rem 15px;
+        a{
+          pointer-events: bounding-box;
+          span{pointer-events: none;}
+          &::before{
+            content: "";
+    display: block;
+    position: absolute;
+    top: -2.6rem;
+    left: -15px;
+    right: -15px;
+    bottom: -2.6rem;
+          }
+        }
+      }
       .co-btn.co-white {
         background: white;
         color: #3d7299;
-        pointer-events: none;
+        // pointer-events: none;
+        width: 124px;
         padding: 15px 0;
         border-radius: 40px;
         font-size: 13.88px;
@@ -83,11 +104,29 @@ section.footer-sec {
     z-index: 2;
     width: 34%;
     margin: 0 auto;
+    &.con-fot{
+      width: 100%;
+    }
     .footer-secs {
       display: inline-grid;
       margin: 0 5px;
       &.l {
         text-align: left;
+        position: relative;
+        // &:before{
+        //   content: "Click to copy";
+        //   width: max-content;
+        //   padding: 8px 13px 10px 13px;
+        //   border-radius: 30px;
+        //   position: absolute;
+        //   top: -7px;
+        //   color: #88c5ff;
+        //   font-size: 12px;
+        //   right: 104%;
+        // }
+        // &.active{
+          
+        // }
       }
       &.r {
         text-align: right;
@@ -113,7 +152,7 @@ section.footer-sec {
           }
         }
         a{
-          cursor: auto;
+          cursor: pointer;
         }
         p{
           cursor: pointer;
@@ -123,6 +162,7 @@ section.footer-sec {
         font-size: 13.88px;
         font-weight: 400;
         position: relative;
+        cursor: none;
         &:after {
           content: "";
           width: 90%;
@@ -142,4 +182,84 @@ section.footer-sec {
       }
     }
   }
+}
+@media (max-width: 768px) {
+section.footer-sec.fot{
+  margin-top: 0;
+  height: 95vh;
+  padding: 0!important;
+  .trig{
+    justify-content: center;
+    .backgr{
+      position: fixed;
+      bottom:0;
+      height:100vh;
+    }
+    .footer-main{
+      height:43%;
+      flex-direction: column;
+      justify-content: center;
+      h6 span p{color:#B3DFFF;}
+    }
+    .footer-foot{
+      justify-content: space-between;
+      flex-direction: column;
+      height: 40%;
+      width: 100%;
+      padding: 0 4.6%;
+      .footer-secs.r, .footer-secs.l{
+        text-align: center;
+      }
+      h5{
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: .5px;
+
+        &::after{
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -1px;
+          position: absolute;
+          width: 173px;
+          height: 1px;
+        }
+      }
+      p{
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: .5px;
+        
+      }
+      a p{
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .co-btn{
+        background: #0084FF;
+        color: white;
+        border-radius: 30px;
+        letter-spacing: .9px;
+        padding: 15px;
+        margin: 33px 0;
+        width: 100%;
+        font-weight: 500;
+        letter-spacing: .5px;
+      }
+      .footer-secs.r div .be{    height: 19px; opacity: .4;}
+      .footer-secs.r div .up{    height: 20px;opacity: .4;}
+      .footer-secs.r div .insta{    height: 20px;opacity: .4;}
+      .footer-secs.r div .tele{    height: 21px;opacity: .4;}
+      .footer-secs.r div .whats{    height: 22px;opacity: .4;}
+      .footer-secs.r div{
+        width: 100%;
+        justify-content: space-around;
+      }
+
+    }
+
+
+  }
+
+}
+
 }

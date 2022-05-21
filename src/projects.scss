@@ -178,11 +178,29 @@ div.pro-cont {
     // margin: 0px auto 45px;
     width: 50%;
     margin: 0px 0 45px;
+    z-index: 10;
+    &.anivi{
+      height: 120vw;
+    }
 
     &.vr-project {
       width: 95%;
       height: 34vw;
-      margin: 0 auto;
+      margin: 0 auto 50px;
+      &.Animation, &.Concept{
+        width: 45%;
+        position: relative;
+      }
+      .ani-names{
+        color: white;
+    text-align: center;
+    padding: 20px;
+    h5{
+      font-size: 1.2rem;
+    letter-spacing: 0.04rem;
+    line-height: 1.8rem;
+    }
+      }
     }
 
     .vr-item {
@@ -191,6 +209,7 @@ div.pro-cont {
       display: block;
       z-index: 50;
       height: 100%;
+      border: 0px;
       position: relative;
 
 
@@ -227,7 +246,11 @@ main.single-pj {
   width: 100vw;
   position: relative;
   .single-pr-co {
-    height: 100vh;
+    height: 98vh;
+    margin-top: -105px;
+    &:first-child{
+      margin-top: 0;
+    }
   }
   img {
     height: 80vh;
@@ -235,9 +258,11 @@ main.single-pj {
     display: block;
     position: relative;
     top: 50%;
+    border-radius: 50px;
     // left: 50%;
     transform: translate(0%, -50%);
   }
+
   // div.pj-footer {
   //   position: fixed;
   //   bottom: 0;
@@ -254,4 +279,16 @@ main.single-pj {
 }
 // .mt2{
 //   margin-top: -8%!important;
-// }
+// 
+.ani-cover{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url("https://img.youtube.com/vi/34hD4u8WFuI/maxresdefault.jpg");
+  z-index: 55;
+  background-size: cover;
+  border-radius: 50px;
+  top:0;
+  pointer-events: none;
+  background-position: center;
+}

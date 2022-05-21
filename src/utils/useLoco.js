@@ -7,25 +7,21 @@ import { useAppContext } from "../contexts/appcontext.js";
 
 gsap.registerPlugin(ScrollTrigger);
 const useLoco = (start) => {
-  var { scrollY, ScrollYValue, updateNeeded } = useAppContext();
-  const [callonce, setCallonce] = useState(false);
-  var btnobj = "";
-  const oncallfunc=(myobj)=>{
-    return  btnobj =myobj;
-  }
- 
+  var { scrollY, resetLoco  } = useAppContext();
+  
   useEffect(() => {
     if (!start) return;
+    console.log("run loco reset")
     const scEl = document.querySelector("#viewport");
     let locoScroll = null;
      locoScroll = new LocomotiveScroll({
       el: scEl,
       smooth: true,
       multiplier: 0.55,
+      smartphone: {smooth: true},
       class: "revealed",
       lerp:0.07,
     });
-    // locoScroll.on("scroll", );
 
     ScrollTrigger.scrollerProxy(scEl, {
       scrollTop(value) {
@@ -37,7 +33,6 @@ const useLoco = (start) => {
         return null;
       },
       getBoundingClientRect() {
-        console.log("working")
         return {
           top: 0,
           left: 0,
@@ -88,26 +83,23 @@ const useLoco = (start) => {
     //   setCallonce(true);
     //   console.log(obj, status)}
     // })
-    setTimeout(function(){
+    const timer = setTimeout(function(){
       locoScroll.update()
-      // ScrollTrigger.refresh();
-      // ScrollTrigger.update();
+      console.log("updating")
       }, 100);
    
 
     return () => {
       if (locoScroll) {
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
+        ScrollTrigger.scrollerProxy(scEl, null);
         locoScroll.destroy();
         locoScroll = null;
         console.log("Kill", locoScroll);
-      // ScrollTrigger.refresh();
-      // ScrollTrigger.update();
-
-
+        clearTimeout(timer);
       }
     };
-  },[start]);
+  },[start, resetLoco]);
 
 };
 

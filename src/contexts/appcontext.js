@@ -10,11 +10,14 @@ const initState ={
   isMobile: true,
   refresh: false,
   contact:"other",
+  aniClick: false,
   pointer: {
     isHover: false, 
     color: "",
     text: "",
-  }
+  },
+  resetLoco:false,
+  faqp:{},
 }
 
 const AppContext = React.createContext();
@@ -57,10 +60,19 @@ export const AppProvider=({children})=>{
   const changePp = (pay)=>{
     dispatch({type: 'CHANGECONBTN', payload: pay})
   }
+  const setfaqp = (pay)=>{
+    dispatch({type: 'CHANGEFAQ', payload: pay})
+  }
+  const setReset =()=>{
+    dispatch({type:'RESET_LOCO', })
+  }
+  const setaniClick =()=>{
+    dispatch({type:'SET_ANI', })
+  }
 
   return(
     <AppContext.Provider value={{ ...state, openMenu, closeMenu, setMobileTrue,
-      setMobileFalse, scrollY, updateNeeded, changePT, changePointer, changePp }}
+      setMobileFalse, scrollY, updateNeeded, changePT, changePointer, changePp, setReset, setaniClick, setfaqp}}
     >
       {children}
     </AppContext.Provider>

@@ -28,8 +28,17 @@ export const menuReducer = (state, action)=>{
     return {...state, ScrollYValue: action.payload}
   }
   if(action.type === "CHANGECONBTN"){
-    console.log(action.payload)
     return {...state, contact: action.payload}
+  }
+  if(action.type === "RESET_LOCO"){
+    console.log(state.resetLoco, "loco")
+    return {...state, resetLoco: !state.resetLoco}
+  }
+  if(action.type === "SET_ANI"){
+    return {...state, aniClick: !state.aniClick}
+  }
+  if(action.type === "CHANGEFAQ"){
+    return {...state, faqp: action.payload}
   }
   return state;
 }

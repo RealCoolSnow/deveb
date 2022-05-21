@@ -16,7 +16,9 @@ const Footer = () => {
   const el = useRef(null);
   const q = gsap.utils.selector(el);
   const myTl = useRef();
-  const {changePp} = useAppContext();
+  const copycl = useRef();
+  const {changePp, changePointer} = useAppContext();
+  const [emailHover, setEmHover] = useState(false);
 
   const btnmove = (e) => {
     const q = gsap.utils.selector(el);
@@ -29,10 +31,10 @@ const Footer = () => {
       // console.log(o, e.target.getBoundingClientRect().height)
       console.log(e.target)
     gsap.to(e.target, {
-      x: ((s - target.offsetWidth / 2) / target.offsetWidth) * 40,
-      y:( o - .5) * 20,
+      x: ((s - target.offsetWidth / 2) / target.offsetWidth) * 20,
+      y:( o - .5) * 10,
       ease: "Power3.inOut",
-      duration: .3,
+      duration: .5,
     });
 
   };
@@ -43,88 +45,53 @@ const Footer = () => {
       x: 0,
       y:0,
       ease: "Power3.inOut",
-      duration: .3,
+      duration: .5,
     });
   }
+  // useEffect(()=>{
+  //   if(emailHover){
+  //     gsap.to(q(".footer-secs.l"),{
+  //       autoAlpha:1,
+  //       duration:.3,
+  //     })
+  //   }
+  // },[emailHover])
+  function copyToClipboard() {
+    var from = copycl.current;
+    var range = document.createRange();
+    window.getSelection().removeAllRanges();
+    range.selectNode(from);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    changePointer({isHover: true, color:{bg:"#ffffff", txt: "#3d7299"}, text: "copied ✓"})
+}
   useEffect(() => {
-    ScrollTrigger.refresh();
-    // ScrollTrigger.update();
-    const bc = q(".backgr");
-    const footer = q(".footer-foot h5");
-    // gsap.set(q(".footer-main"), {
-      //     yPercent: 59,
-      // });
+    // ScrollTrigger.refresh();
+
       gsap.set(q(".backgr"), {
         autoAlpha:0,
       });
-      const changeBg = (direction)=>{
-        console.log(direction)
-        gsap.to(q(".backgr"), { 
-          autoAlpha: ()=> (direction === 1? 1: 0),
-          duration:1
-        })
-        direction === 1? changePp("Contact"): changePp("other")
-      }
-      const prt1 =q(".footer-main h6");
-      const prt2 = q(".tabs-holder");
-      const prt3 = q(".footer-foot");
-      gsap.set([prt1,prt2,prt3], {
+      // const changeBg = (direction)=>{
+      //   console.log(direction)
+      //   gsap.to(q(".backgr"), { 
+      //     autoAlpha: ()=> (direction === 1? 1: 0),
+      //     duration:1
+      //   })
+      //   direction === 1? changePp("Contact"): changePp("other")
+      // }
+      // const prt1 =q(".footer-main h6");
+      // const prt2 = q(".tabs-holder");
+      // const prt3 = q(".footer-foot");
+      gsap.set(q(".trig"), {
         autoAlpha:0,
-        yPercent:60,
+        // yPercent:60,
       })
-    myTl.current = gsap
-      .timeline({
-          // duration:10,
-          
-        scrollTrigger: {
-          scroller: "[data-scroll-container]",
-          trigger: el.current,
-          start: "center-=8% center-=8%",
-          end: "bottom bottom",
-          // markers: true,
-          id:"foot",
-          // scrub:true,
-          onLeaveBack: ({direction})=> changeBg(direction),
-        onEnter: ({direction})=> changeBg(direction),
-        },
-      })
-      .to([prt1,prt2,prt3], { 
-          yPercent:0,
-          stagger: {
-            amount: 0.28,
-            ease: "power2.Out",
-          },
-          duration:.6,
-         }, "0")
-         .to([prt1,prt2,prt3],{
-           autoAlpha:1,
-           stagger: {
-            amount: 0.3,
-            ease: "power2.Out",
-          },
-           duration:1,
-         }, "<")
-        
-      //    .fromTo(q(".footer-foot"),{
-      //     yPercent: 158,
-      // }, {
-      //       yPercent: 0,
-      //       duration:50,
-      //   }, "<1")
-      console.log("footer")
-    return () => {
-      if(myTl.current.ScrollTrigger){
-        myTl.current.ScrollTrigger.kill();
-      }
-      myTl.current.kill();
-      // // ScrollTrigger.kill()
-      ScrollTrigger.refresh();
-      // ScrollTrigger.update();
 
-    };
+  
   }, []);
   return (
-    <section ref={el}  id="bab"   className="sec-form footer-sec" >
+    <section ref={el}  id="bab"   className="sec-form footer-sec fot" >
       <div className="trig">
         <div className="backgr" data-scroll data-scroll-sticky data-scroll-target="#bab"></div>
         <div className="footer-main">
@@ -136,30 +103,43 @@ const Footer = () => {
           </h6>
 
           <div className="tabs-holder" data-scroll data-scroll-speed=".8">
-            <div className="cobtn-contain" onMouseMove={btnmove} onMouseLeave={btnL}>
-              <Link className="co-btn co-white" to="/contact"  >
-                 Send brief
-              </Link>
+            <div className="cobtn-contain" >
+                <div className="bt-mera" onMouseMove={btnmove} onMouseLeave={btnL}>
+                 <Link className="co-btn co-white" to="/contact"  >
+                    <span>Send brief</span>
+                  </Link>
+                </div>
+             
             </div>
             <div className="cobtn-contain" onMouseMove={btnmove} onMouseLeave={btnL}>
-              <Link className="co-btn co-white" to="/contact">
-                Contact us
-              </Link>
+            <div className="bt-mera" onMouseMove={btnmove} onMouseLeave={btnL}>
+                 <Link className="co-btn co-white" to={{pathname: "/contact",state: { contact: true },}}  >
+                    <span>Contact us</span>
+                  </Link>
+                </div>
             </div>
           </div>
         </div>
         <div className="footer-foot">
           <div className="footer-secs l">
-            <h5>am@amarcs.com</h5>
+            <h5 
+            onClick={()=>copyToClipboard()}
+            onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#3d7299"}, text: "Click to copy"})} 
+            onMouseLeave={()=>changePointer(false)}
+            className={emailHover? "active" : ""}
+            ref={copycl}
+            >
+              am@am-arc.com
+            </h5>
             <p>Mechnykova St, 2, Kyiv, 02000</p>
           </div>
           <div className="footer-secs r">
             <div>
-              <img className="be" src={be} />
-              <img className="up" src={up} />
-              <img className="insta" src={insta} />
-              <img className="tele" src={tele} />
-              <img className="whats" src={whats} />
+              <a href="https://www.behance.net/amirmohseni" target="_blank"><img className="be" src={be} /></a>
+              <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="up" src={up} /></a>
+              <a href="https://www.instagram.com/am__arc/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
+              <a href="https://t.me/am_arc_com" target="_blank"><img className="tele" src={tele} /></a>
+              <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
             </div>
             <Link to="/privacyandpolicy">
             <p>Privacy Policy</p>

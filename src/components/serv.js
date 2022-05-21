@@ -1,13 +1,15 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 // import { Link } from "react-router-dom";
-// import { useAppContext } from "../contexts/appcontext.js";
+import { useAppContext } from "../contexts/appcontext.js";
 
 import { gsap } from "gsap";
 // import {images} from '../utils/constans.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const services = ['Interior','Exterior','Rendering','Animation','Virtual Tour']
+
 const Serv = () => {
-  // const { isMobile } = useAppContext();
+  const { isMobile } = useAppContext();
 
   const MainWrapper = useRef(null);
   const mobileLinksScroller = useRef(null);
@@ -37,29 +39,52 @@ const Serv = () => {
       stagger: .08,
       duration:1.5,
       delay:.2,
-      onComplete:()=>ScrollTrigger.refresh(true),
+      // onComplete:()=>ScrollTrigger.refresh(true),
     })
     gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3]],{
       yPercent:0,
       stagger: .08,
       duration:.6,
       delay:.2,
-      onComplete:()=>ScrollTrigger.refresh(true),
+      // onComplete:()=>ScrollTrigger.refresh(true),
     })
     gsap.to(q(".links-wrapper button"), {
       autoAlpha:1,
       duration:.6,
       delay:.6,
-      onComplete:()=>ScrollTrigger.refresh(true),
+      // onComplete:()=>ScrollTrigger.refresh(true),
     })
     gsap.to(q(".links-wrapper button"), {
       yPercent:0,
       duration:.4,
       delay:.6,
-      onComplete:()=>ScrollTrigger.refresh(true),
+      // onComplete:()=>ScrollTrigger.refresh(true),
     })
 
   },[])
+
+  const scrollToService = (idx) => {
+
+    if( isMobile ) {
+      const findServ = document.querySelector(`.mobile-showcase-box.box-${idx}`)
+      const top = findServ.offsetTop
+
+      window.scrollTo({
+        top: top - 120,
+        left: 0,
+        behavior: 'smooth'
+      })
+    } else {
+
+      // Services ScrollTo In Web
+      // const findServ = document.querySelector(`.serv-showcase-box.box-${idx}`)
+      // const top = findServ.offsetTop
+
+      // scrollY(top)
+    }
+    
+  }
+
   return (
     <main ref={MainWrapper}>
       <section className="head full-h services">
@@ -67,21 +92,25 @@ const Serv = () => {
           <h6>Services</h6>
 
           <h3>
-            <div>From concept design to design</div> <div>developments and CGI visualization,</div>
-            <div>we've got everything covered.</div>
+            <div>From concept design to design developments <br/> and CGI visualization, <br/>
+            we've got everything covered.</div>
           </h3>
 
           <div className="links-wrapper">
             <div className="links" ref={mobileLinksScroller}>
               <div className="mobile-little-fade left-little-fade"></div>
 
-              <button className="">Interior</button>
-              <button className="">Exterior</button>
+              {
+                services.map( (serv,idx) =>
+                  <button onClick={ () => scrollToService(idx) } >
+                    {serv}
+                  </button>
+                )
+              }
+              {/* <button className="">Exterior</button>
               <button className="">Rendering</button>
               <button className="">Animation</button>
-              <button className="">Concept</button>
-              <button className="">Virtual Tour</button>
-              <button className="">3D Model</button>
+              <button className="">Virtual Tour</button> */}
 
               {/* <div className="mobile-fade fade-right"></div> */}
               <div className="mobile-little-fade right-little-fade"></div>

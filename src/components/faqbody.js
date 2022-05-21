@@ -4,87 +4,94 @@ import { gsap } from "gsap";
 import { useAppContext } from "../contexts/appcontext.js";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-const QuesBody = ({ fdata, isFade, fadeFirst, foot }) => {
+const QuesBody = ({ fdata, isFade, fadeFirst, foot,  }) => {
 
   gsap.registerPlugin(ScrollTrigger);
   const el = useRef();
+
   
   const [activeFaq,setActiveFaq] = useState('')
   
-  const { isMobile } = useAppContext();
+  const { isMobile, setReset,setfaqp } = useAppContext();
   const q = gsap.utils.selector(el);
-  useLayoutEffect(() => {
-    if ( fadeFirst ) {
+  // useLayoutEffect(() => {
+  //   if ( fadeFirst ) {
 
-      const wrapper = q('.faq-grid')
+  //     const wrapper = q('.faq-grid')
 
-      gsap.set( wrapper, {
-        autoAlpha: 0,
-        yPercent:40,
-      })
-    }
+  //     gsap.set( wrapper, {
+  //       autoAlpha: 0,
+  //       yPercent:40,
+  //     })
+  //   }
   
-    return () => {
-    };
-  }, [])
+  //   return () => {
+  //   };
+  // }, [])
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    if( isFade ) {
+    // if( isFade ) {
 
-      const fade = q('div.m-faq-fade')
+    //   const fade = q('div.m-faq-fade')
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: el.current,
-          start: 'top center+=15%',
-          end: 'top top'
-        }
-      })
+    //   const tl = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: el.current,
+    //       start: 'top center+=15%',
+    //       id: "s2",
+    //       end: 'top top'
+    //     }
+    //   })
 
-      tl.to(fade, {
-        alpha: 0,
-        duration: 0.3
-      })
+    //   tl.to(fade, {
+    //     alpha: 0,
+    //     duration: 0.3
+    //   })
 
-    } else if ( fadeFirst ) {
+    // } 
+    //  if ( fadeFirst ) {
 
-      const wrapper = q('.faq-grid')
+      // const wrapper = q('.faq-grid')
 
-      gsap.set( wrapper, {
-        autoAlpha: 0,
-        yPercent:40,
-      })
-      gsap.to(wrapper, {
-        yPercent: 0,
-        autoAlpha: .5,
-        delay: 0.55,
-        duration: 1,
-        stagger: 0.04,
-        ease: "power2.out",
-      })
-      const myTl = gsap.timeline({
-        scrollTrigger: {
-          scroller: "#viewport",
-          id:"faqbody",
-        },
-      });
+      // gsap.set( wrapper, {
+      //   autoAlpha: 0,
+      //   yPercent:40,
+      // })
+      // gsap.to(wrapper, {
+      //   yPercent: 0,
+      //   autoAlpha: 1,
+      //   delay: 0.55,
+      //   duration: 1,
+      //   stagger: 0.04,
+      //   ease: "power2.out",
+      // })
+      // const myTl = gsap.timeline({
+      //   scrollTrigger: {
+      //     scroller: "#viewport",
+      //     id:"faqbody",
+      //   },
+      // });
 
-      myTl.to(wrapper, {
-        autoAlpha: 1,
+      // myTl.to(wrapper, {
+      //   autoAlpha: 1,
         
-      })
-    }
-    return () => {
-      if(ScrollTrigger.getById("faqbody")){
-        ScrollTrigger.getById("faqbody").kill()
-    }
-    }
-  }, [isFade])
+      // })
+  //   }
+  //   return () => {
+  //     if(ScrollTrigger.getById("s2")){
+  //       ScrollTrigger.getById("s2").kill()
+  //   }
+  //   }
+  // }, [isFade])
 
   const changeActiveFaq = (newFaq) => {
-    if( activeFaq !== newFaq ) setActiveFaq(newFaq)
+    if( activeFaq !== newFaq ) {
+      setActiveFaq(newFaq)
+    // setReset()
+    }
     else setActiveFaq('')
+    setfaqp({act: true, pd:0,})
   }
 
   const status = (id) => {
@@ -128,6 +135,7 @@ const QuesBody = ({ fdata, isFade, fadeFirst, foot }) => {
             isActive={ status(id) }
             toggleActive={changeActiveFaq}
             isMobile={isMobile}
+            
             />
             );
         })}
@@ -141,6 +149,7 @@ const QuesBody = ({ fdata, isFade, fadeFirst, foot }) => {
             isActive={ status(id) }
             toggleActive={changeActiveFaq}
             isMobile={isMobile}
+           
             />
             );
           })}

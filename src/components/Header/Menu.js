@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useAppContext } from "../../contexts/appcontext";
 import MenuLink from "./MenuLink";
 import ThemeSwitch from "./../ThemeSwitch/ThemeSwitch";
 
 export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLinks, linksOut}) {
+  const {changePointer, isMobile} = useAppContext()
+  const leavem = (e)=>{
+
+    linksOut(e);
+    changePointer({isHover: false,})
+
+  }
   return (
     <div className="menu-box" 
       // style={{ backgroundImage: 'url(./Sc.png)', backgroundPosition: 'top center',
@@ -24,22 +31,25 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
                 <MenuLink
                   to="mailto:am@am-arc.com"
                   name="email"
-                  txt="am@amarcs.com"
-                  moveLinks={moveLinks}
-                  linksOut={linksOut}
+                  txt="am@am-arc.com"
+                  moveLinks={!isMobile?moveLinks : null}
+                  linksOut={!isMobile?linksOut : null}
                 />
               </div>
 
               <div className="mid">
                 <span className="head">Social</span>
                 <MenuLink to="https://www.instagram.com/am__arc/?hl=en" name="insta" txt="Instagram" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://api.whatsapp.com/send?phone=380970006043" name="Whatsapp" txt="Whatsapp" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://t.me/am_arc_com"  name="Telegram" txt="Telegram" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://www.behance.net/amirmohseni" name="behance" txt="Behance" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://www.upwork.com/fl/am1amirmohseni" name="upwork" txt="Upwork" moveLinks={moveLinks} linksOut={linksOut}/>
+              
               </div>
 
               <div className="bott">
-                <span className="head">Theme</span>
-                <ThemeSwitch />
+                {/* <span className="head">Theme</span> */}
+                {/* <ThemeSwitch /> */}
               </div>
             </div>
           :
@@ -52,7 +62,9 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             className={activeRoute === "services" ? "active" : ""}
             onClick={() => linkClicked("services")}
             onMouseMove={moveLinks}
-            onMouseLeave={linksOut}
+            onMouseLeave={!isMobile? (e)=>leavem(e) : null}
+      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+
           >
             Services
           </Link>
@@ -63,7 +75,9 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             }`}
             onClick={() => linkClicked("projects")}
             onMouseMove={moveLinks}
-            onMouseLeave={linksOut}
+            onMouseLeave={!isMobile? (e)=>leavem(e) : null}
+      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+
           >
             Projects
           </Link>
@@ -72,7 +86,9 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             className={`about-link ${activeRoute === "about" ? "active" : ""}`}
             onClick={() => linkClicked("about")}
             onMouseMove={moveLinks}
-            onMouseLeave={linksOut}
+            onMouseLeave={!isMobile? (e)=>leavem(e) : null}
+      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+
           >
             About
           </Link>
@@ -81,7 +97,9 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             className={activeRoute === "contact" ? "active" : ""}
             onClick={() => linkClicked("contact")}
             onMouseMove={moveLinks}
-            onMouseLeave={linksOut}
+            onMouseLeave={!isMobile? (e)=>leavem(e) : null}
+      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+
           >
             Contacts
           </Link>
@@ -90,7 +108,9 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             className={activeRoute === "faq" ? "active" : ""}
             onClick={() => linkClicked("faq")}
             onMouseMove={moveLinks}
-            onMouseLeave={linksOut}
+            onMouseLeave={!isMobile? (e)=>leavem(e) : null}
+            onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+          
           >
             FAQ
           </Link>

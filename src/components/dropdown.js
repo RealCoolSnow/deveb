@@ -1,15 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useAppContext } from "../contexts/appcontext";
 
-const Dropdown = ({ ques, ans, isActive, idx, toggleActive, isMobile }) => {
+const Dropdown = ({ ques, ans, isActive, idx, toggleActive, isMobile,  }) => {
 
   const ell = useRef();
   const dropDownWrapper = useRef();
   const title = useRef();
 
+  const {setfaqp} = useAppContext()
   const setFaqH = () => {
     const q = gsap.utils.selector(ell);
-
     const pMask = q(".pi-mask");
     const pi = q(".pi-mask p");
     const plus = q(".faq-pv");
@@ -17,33 +18,43 @@ const Dropdown = ({ ques, ans, isActive, idx, toggleActive, isMobile }) => {
 
     if (isActive) {
 
-      gsap.to(pMask, isMobile ? 0 : 0.3, {
+      gsap.to(pMask, {
         autoAlpha: 1,
+        duration:()=> isMobile ? 0 : 0.3, 
       });
 
-      gsap.to(ell.current, isMobile ? 0 : 0.3, {
+      gsap.to(ell.current,  {
         paddingBottom: () => getHeightp(pi) + "px",
+        duration: ()=>isMobile ? 0 : 0.3,
       });
 
-      gsap.to(plus, 0.3, {
+      gsap.to(plus, {
         rotate: 180,
+        duration: 0.3,
         ease: "power1.Out",
       });
+      setfaqp({act: true, pd: getHeightp(pi) });
 
     } else if ( !isActive ) {
 
-      gsap.to(ell.current, isMobile ? 0 : 0.3, {
+      gsap.to(ell.current, {
         paddingBottom: "0px",
+        duration:()=> isMobile ? 0 : 0.3, 
       });
 
-      gsap.to(pMask, isMobile ? 0 : 0.3, {
+      gsap.to(pMask, {
         autoAlpha: 0,
         ease: "power1.Out",
+        duration: ()=>isMobile ? 0 : 0.3,
       });
-      gsap.to(plus, 0.3, {
+      gsap.to(plus,  {
         rotate: 90,
+        duration: 0.3,
         ease: "power1.Out",
       });
+      // setfaqp({act: true, pd:0,});
+      // setfpadding({act: false})
+      console.log("ending")
     }
   }
 
@@ -56,10 +67,11 @@ const Dropdown = ({ ques, ans, isActive, idx, toggleActive, isMobile }) => {
 
       const currentP = Number(getComputedStyle(pi[0]).paddingBottom.replace('px','')) 
       const newP = getHeightp(pi)
+      setfaqp({act: true, pd: newP + "px"});
 
       if( currentP !== newP ){
         gsap.to(ell.current, 0.3, {
-          paddingBottom: () => getHeightp(pi) + "px",
+          paddingBottom: () => getHeightp(pi) ,
           ease: "power1.Out",
         });
       }
@@ -110,7 +122,7 @@ const Dropdown = ({ ques, ans, isActive, idx, toggleActive, isMobile }) => {
     >
       <div
         className="faq-dropdown"
-        onClick={() => toggleActive(idx)}
+        onClick={() => toggleActive(idx) }
         ref={dropDownWrapper}
       >
         {

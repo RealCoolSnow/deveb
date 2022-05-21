@@ -1,0 +1,1 @@
+git init && git checkout -b LocoBranch && git add ./ && git commit -m 'New Live Website' && git remote add origin https://github.com/nazanin3s/AMarcs.git && git push origin LocoBranch --force

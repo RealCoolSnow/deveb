@@ -1,44 +1,122 @@
+// div#viewport {
+//   background: url('./assets/img/contact.jpg') no-repeat;
+// }
+
+// div.backLayer {
+//   display: none;
+// }
+
 .contact-page {
-  padding-top: 25vh;
+  // padding-top: 25vh;
   width: 100%;
   overflow: hidden;
 
   section.sec-form {
+    h6{
+      padding-top: 19vh;
+      padding-top: 9rem;
+    }
 
     form { 
 
       >.btn-container {
         margin-top: 50px;
         margin-bottom: 50px;
+      }
 
-        .btn-mouse-area {
-          
-          button.btn-more {
-            background-color: var(--primary-font-color);
+      .btn-container button.btn-more {
+        background-color: var(--primary-font-color);
 
-            .btn-more-title {
+        .btn-more-title {
 
-              span {
-                color: var(--bg-color);
-              }
-            }
-
+          span {
+            color: #3D7299 !important;
+            font-weight: 500;
           }
         }
+      }
 
+
+    }
+  }
+
+}
+
+
+
+.grecaptcha-badge { 
+  visibility: hidden;
+  opacity: 0;
+}
+
+#g-recaptcha-response {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.google-captcha {
+  display: block !important;
+  width: 100%;
+  text-align: left;
+  color: #5a7d9e;
+  font-size: 0.8rem;
+  margin-left: 5px;
+  margin-bottom: 6rem;
+
+  span {
+    line-height: 0.5rem;
+  }
+
+  a {
+    color: hsl(209, 27%, 70%);
+    font-size: 0.8rem;
+    margin-left: 20px;
+    display: inline-block;
+
+  }
+}
+
+@media ( min-width: 768px ) {
+  button.btn-more:not(.active, .invalid) .btn-more-title span:after {
+    color: #fff !important;
+  }
+
+  .contact-page {
+
+    .sec-form.sending-form-effect {
+    
+      form { 
+      
+        .btn-container button.btn-more {
+          width: 139px !important;
+          justify-content: center !important;
+
+          .btn-more-title {
+
+            span::after {
+              color: #3D7299 !important;
+            }
+          }
+
+        }
+  
       }
     }
   }
 }
 
-// @media ( max-width: 450px ) {
-//   .contact-page {
+@media ( max-width: 769px ) {
+  .contact-page {
 
-//     section.sec-form {
+    section.sec-form.mb {
+      form{
 
-//       .m-footer {
-//         margin-top: 30px !important;
-//       }
-//     }
-//   }
-// }
+        margin-bottom: 0;
+      }
+      h6{
+        padding-top: 0;
+      }
+      
+    }
+  }
+}

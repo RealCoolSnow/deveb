@@ -22,23 +22,26 @@ const PortPage = () => {
   const [cat, setCat] = useState('Projects');
   const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
   const [projects, setProjects] = useState(init);
-  useLoco(true);
+  const { isMobile, pageTitle, changePT, setReset } = useAppContext();
+  useLoco(!isMobile);
   
   // const history = useHistory();
   const { tag } = useParams();
-  const { isMobile, pageTitle, changePT } = useAppContext();
   useEffect(()=>{
     catFunction(cat)
-  },[])
+    setTimeout(() => {
+      setReset()
+    }, 300);
+  },[cat])
 
   useEffect(() => {
     console.log( window.location.hash.split("#")[1])
     if(window.location.hash){
       var hashcat= window.location.hash.split("#")[1];
-      if(hashcat === "3d-rendering"){catFunction("3DRendering")}
-      if(hashcat === "vr"){catFunction("Virtual tour")}
-      if(hashcat === "3d-modeling"){catFunction("3D Model")}
-      else if(hashcat !== "3d-rendering" && hashcat !== "vr" && hashcat !== "3d-modeling") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
+      if(hashcat === "3dr"){catFunction("3DRendering")}
+      if(hashcat === "VR"){catFunction("Virtual tour")}
+      if(hashcat === "3dm"){catFunction("3D Model")}
+      else if(hashcat !== "3dr" && hashcat !== "VR" && hashcat !== "3dm") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
     }
     
     changePT("AM-Projects");
@@ -48,12 +51,11 @@ const PortPage = () => {
 
       setCat(newTag)
     }
-return()=>{
-  ScrollTrigger.getAll().forEach((instance) => {
-    instance.kill();
-  });
-}
-    
+// return()=>{
+//   ScrollTrigger.getAll().forEach((instance) => {
+//     instance.kill();
+//   });
+// }
   }, [])
 
   const catFunction = (input)=>{
@@ -64,12 +66,15 @@ return()=>{
 
   return( 
     <main id="viewport" data-scroll-container className="projects-page" >
+      <div className="fade">
 
       <ProHead Cat={cat} catFunction={catFunction}/>
+      </div>
+
 
       <Suspense fallback={  <Loading/> } >
 
-        <PrjContain projects={projects} Cat={cat}/>
+        <PrjContain projects={projects} Cat={cat} />
 
         <Footer />
 

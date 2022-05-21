@@ -25,6 +25,7 @@ import Circle from "./components/circle/circle.js"
 import ScrollToTop from "./utils/ScrollToTop";
 
 import "./utils/loco.css";
+import Test from "./pages/test.jsx"
 
 // import SmoothScrollbar from 'smooth-scrollbar';
 // import ScrollTriggerPlugin from './utils/ScrollTriggerPlugin';
@@ -68,7 +69,10 @@ function App() {
     <Router>
       <Frame />
       <ScrollToTop />
-      <Circle size="sm" delay="0"/>
+      {
+        !isMobile?<Circle size="sm" delay="0"/> : null
+        
+        }
      
       <Switch>
         <Route path="/" exact>
@@ -78,7 +82,7 @@ function App() {
         <Route path="/projects/:id" children={<ProjectPage />} />
 
         <Route path="/projects/:tag?" exact >
-          <Portfolio />
+          <Test />
         </Route>
 
         <Route path="/faq" exact>
@@ -98,6 +102,10 @@ function App() {
         <Route path="/privacyandpolicy" exact>
           <Privacy />
         </Route>
+        
+        {/* <Route path="/test" exact>
+          <Test />
+        </Route>  */}
         
         <Route path="*">
           <ErrorPage />

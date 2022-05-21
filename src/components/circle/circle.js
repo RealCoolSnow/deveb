@@ -1,7 +1,6 @@
-import React,{ useRef} from "react"
+import React,{ useEffect, useRef } from "react"
 import gsap from "gsap";
 import "./circle.scss"
-import { useEffect } from "react/cjs/react.development";
 import { useAppContext } from "../../contexts/appcontext.js";
 //  const  Circle = forwardRef(({ size, delay }, ref) => {
   //     const el = useRef();
@@ -13,15 +12,15 @@ import { useAppContext } from "../../contexts/appcontext.js";
       //         moveTo(x, y) {
         //           gsap.to(el.current, { x, y, delay });
         //         }
-        //       };
+        //       }; 
         //     }, [delay]);
         
         //     return <div className={`circle ${size}`} ref={el}></div>;
         //   });
         
-        const Circle = ({ size})=>{
+        const Circle = ({size})=>{
   const { isMobile, pointer } = useAppContext();
-  const {isHover, color, text} = pointer;
+  const {isHover, color, text, blend, fsize} = pointer;
  
   const el = useRef();
   const q = gsap.utils.selector(el);
@@ -47,6 +46,16 @@ import { useAppContext } from "../../contexts/appcontext.js";
         duration: .4,
         ease: "Power3.InOut",
       });
+      if(blend){
+        gsap.to(el.current,{
+          background: color.bg,
+          duration: .2,
+        ease: "Power3.InOut",
+        });
+        el.current.style.mixBlendMode="difference";
+        // console.log(el.current.childNodes[0]);
+        if(fsize) {el.current.childNodes[0].style.fontSize= fsize;}
+      } else 
       if(color){
         gsap.to(q("p"),{
           color: color.txt,
@@ -66,7 +75,8 @@ import { useAppContext } from "../../contexts/appcontext.js";
         duration: .4,
         ease: "Power3.InOut",
         // background:"#ffffff"
-      })
+      });
+      el.current.style.mixBlendMode="normal";
     }
   }, [isHover,color])
   useEffect(()=>{
@@ -74,7 +84,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
       gsap.to(el.current,{
         duration: .2,
         ease: "Power3.InOut",
-        background:"#ffffff"
+        background:"#000000"
       })
     }
   }, [isHover])

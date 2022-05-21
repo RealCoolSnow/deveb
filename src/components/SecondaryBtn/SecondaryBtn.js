@@ -60,22 +60,25 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
     const ripple = q(".bg-hover");
     const teXt = q("span");
 
-    gsap.to(ripple, 0, { yPercent: -100, borderRadius: 50, autoAlpha: 1 });
+    gsap.to(ripple, { yPercent: -100, borderRadius: 50, autoAlpha: 1, duration:0, });
 
-    gsap.to(ripple, 0.5, {
+    gsap.to(ripple, {
       yPercent: 0,
       borderRadius: 0,
+      duration: 0.5,
     });
 
-    gsap.to(teXt, 0.3, {
+    gsap.to(teXt,{
       color: "#000",
-      fill: "#000"
+      fill: "#000",
+      duration:0.4,
     });
 
-    gsap.to(teXt, 0.5, {
+    gsap.to(teXt, {
       transformOrigin: "left top",
       yPercent: -130,
       skewY: -3,
+      duration:0.5,
     });
 
   }
@@ -87,18 +90,21 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
     const ripple = q(".bg-hover");
     const teXt = q("span");
     
-    gsap.to(ripple, 0.5, {
+    gsap.to(ripple, {
       yPercent: 101,
+      duration:0.5,
       borderRadius: 50,
     });
-    gsap.to(teXt, 0.4, {
+    gsap.to(teXt, {
       color: "#fff",
-      fill: "#fff"
+      fill: "#fff",
+      duration:0.4,
     });
-    gsap.to(teXt, 0.5, {
+    gsap.to(teXt,  {
       transformOrigin: "left top",
       yPercent: 0,
       skewY: 0,
+      duration:0.5,
     });
   }
 
@@ -130,9 +136,10 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
       !isStatic ? 
         (
           <a className={`btn btn-2 sec-btn ${ isActive ? 'active' : ''} ${ primary ? 'primary' : '' }`} 
-            ref={btn} type="button" onClick={callTrigger} 
+            ref={btn} onClick={callTrigger} 
             onMouseEnter={ () => setIsHover(true) }
             onMouseLeave={ () => setIsHover(false) }
+            
           >
 
             <span >{ txt }</span>

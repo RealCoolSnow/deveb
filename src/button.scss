@@ -19,12 +19,13 @@
   button.btn-more {
     pointer-events: bounding-box;
     border: 1px solid #b9b9bf;
-    padding: 15px 22px 13px;
+    padding: 15px 27px 13px;
     border-radius: 47px;
     position: relative;
     display: inline-flex;
     -webkit-box-align: center;
     align-items: center;
+  
     .btn-more-title, .btn-more-ripple{pointer-events: none;}
     &:before {
       content: "";
@@ -37,7 +38,7 @@
     }
 
     .btn-more-title {
-      pointer-events: all;
+      pointer-events: none;
       position: relative;
       top: -1px;
       display: block;
@@ -49,7 +50,7 @@
         letter-spacing: 0.018rem;
         font-weight: 400;
         text-align: center;
-        color: white;
+        color: var(--black-font-main);
 
         &:after {
           content: attr(data-text);

@@ -114,19 +114,20 @@
           padding: 0 12px;
         }
 
-        a {
+        a, p {
           position: relative;
           width: min-content;
           height: max-content;
           overflow: hidden;
           display: flex;
+          &.email{width: 100%; cursor: none;}
 
           span {
             color: var(--light-font-color);
             transition: color 0.4s linear;
             font-size: 0.9vw;
             line-height: 1.8vw;
-            padding: 0.2vw 12px;
+            padding: 0.3vw 12px;
             font-weight: 600;
           }
 
@@ -168,6 +169,7 @@
           }
         }
       }
+      div.mid{ padding-top:55px}
     }
 
     .menu-right-part {

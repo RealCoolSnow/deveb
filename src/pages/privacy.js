@@ -1,12 +1,90 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import useLoco from "../utils/useLoco.js";
 import { useAppContext } from "../contexts/appcontext.js";
 import {Link} from "react-router-dom"
+import Footer from'../components/footer.js'
+import gsap from "gsap";
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import FooterMB from'../components/footermb.jsx'
+
 import "./privacy.scss";
 const Privacy = () => {
-   useLoco(true);
+  const {isMobile, changePp, setReset, resetLoco} = useAppContext();
+  
+   useLoco(!isMobile);
+   const el = useRef();
+   const q = gsap.utils.selector(el);
+  const fooT= useRef();
+
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    setTimeout(() => {
+      setReset()
+    }, 500);
+  },[isMobile])
+   useEffect(()=>{
+    const changeBg = (direction)=>{
+      gsap.to(q(".backgr"), { 
+        autoAlpha: ()=> (direction === 1? 1: 0),
+        duration:1
+      })
+      direction === 1? changePp("Contact"): changePp("other")
+    }
+if (!isMobile){
+  fooT.current = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: q(".footer-sec.fot"),
+      scroller: "#viewport",
+      start:()=> "center-=8% center-=8%",
+      end: ()=> "bottom bottom",
+      // markers: true,
+      id:"foot",
+      onLeaveBack: ({direction})=> changeBg(direction),
+    onEnter: ({direction})=> changeBg(direction),
+    },
+  })
+     .to(q(".trig"),{
+       autoAlpha:1,
+       duration:1,
+     }, "<")
+    
+     return()=>{
+      fooT.current.kill()
+      if( fooT.current.ScrollTrigger){
+        fooT.current.ScrollTrigger.kill();
+      }
+     }
+     
+} else {
+  fooT.current = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: q(".footer-sec.fot"),
+      start:()=> "top-=8% center-=8%",
+      end: ()=> "bottom bottom",
+      // markers: true,
+      id:"foot",
+      onLeaveBack: ({direction})=> changeBg(direction),
+    onEnter: ({direction})=> changeBg(direction),
+    },
+  })
+     .to(q(".trig"),{
+       autoAlpha:1,
+       duration:1,
+     }, "<")
+    
+     return()=>{
+      fooT.current.kill()
+      if( fooT.current.ScrollTrigger){
+        fooT.current.ScrollTrigger.kill();
+      }
+    }
+  }
+   },[resetLoco])
   return (
-    <div id="viewport" data-scroll-container>
+    <>
+    <main id="viewport" data-scroll-container ref={el}>
        <div  className="pr-container">
       <h1 data-scroll data-scroll-speed=".4">Privacy policy</h1>
       <p>Last updated: February 17, 2022</p>
@@ -433,7 +511,11 @@ const Privacy = () => {
         by email: am@am-arc.com
       </p>
       </div>
-    </div>
+      {
+      !isMobile ? <Footer /> : <FooterMB/>
+      }
+    </main>
+      </>
   );
 };
 export default Privacy;
