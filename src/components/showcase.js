@@ -257,8 +257,8 @@ const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
                   colors: { right, left, bg },
                 } = img;
                 return (
-                  <Link to={item.a.url}>
-                  <div key={idx} 
+                  <Link to={item.a.url} key={idx}>
+                  <div
                   className={klass + " show-image fixed"}
                   style={{backgroundImage:" url(" +cover+")"}}
                   onMouseOver={()=> changePointer({isHover: true, color:{bg: bg, txt: "#ffffff"}, text: "Click"})}

@@ -17,10 +17,7 @@ const Con = lazy( () => import('../components/contact.js'))
 const Footer = lazy( () => import('../components/footer.js'))
 const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
-
 // const Loading = lazy( () => import('./Loading.js'))
-
-
 
 const ServicesPage = () => {
   const imageTimeline = useRef()
@@ -38,8 +35,8 @@ const ServicesPage = () => {
     }, 500);
 
     
-    changePT("AM-Services");
-    document.title = "AM-Services";
+    changePT("Deveb-Services");
+    document.title = "Deveb-Services";
     // if(isMobile){
     //       sl.current.style.transform="none";
     //       gsap.set(sl.current,{

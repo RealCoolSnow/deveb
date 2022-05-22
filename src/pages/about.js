@@ -12,9 +12,6 @@ import About from '../components/about.js'
 const Footer = lazy( () => import('../components/footer.js'))
 const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
-
-
-
 // const Loading = lazy( () => import('./Loading.js'))
 const AboutPage = () => {
   gsap.registerPlugin(ScrollTrigger);
