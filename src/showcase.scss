@@ -19,6 +19,10 @@ section.showcase-pin {
         span {
           font-weight: 400;
           pointer-events: none;
+          &.span-back{
+            font-size: 15.4px;
+            margin-bottom: 8px;
+          }
         }
         margin-top: 13px;
         position: static;
@@ -39,7 +43,7 @@ section.showcase-pin {
         }
       }
       h4 {
-        font-size: 46.2px;
+        font-size: 38.5px;
         font-weight: 500;
         letter-spacing: 0.4px;
         color: var(--black-font-main);

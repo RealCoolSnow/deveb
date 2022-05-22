@@ -3,7 +3,7 @@ import gsap from "gsap"
 import {Link} from "react-router-dom"
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useAppContext } from "../contexts/appcontext";
-
+import hand from "../assets/hand.jpg"
 const Process = () => {
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -12,8 +12,8 @@ const Process = () => {
     const {changePointer}=useAppContext();
    
   return (
-    <section className="process " ref={el}>
-      
+    <section data-scroll className="process " ref={el} id="pro" style={{height: "190vh"}}>
+      <div className="prtrig" data-scroll data-scroll-sticky data-scroll-target="#pro" data-scroll-offset="0,72%">
       <div className="process-head">
         <h3>
         How it works
@@ -25,9 +25,9 @@ const Process = () => {
           <Link to="/contact"
           onMouseOver={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
           onMouseLeave={()=> changePointer({isHover: false})}
-          > <h5>Send brief</h5></Link>
+          > <h5>Send brief<img src={hand}/></h5></Link>
           <p>
-          Send us a complete brief along with documents & requirements to estimate the project & get started.
+          Send us a complete brief along with documents & requirements to estimate the project & <span>get started.</span>
           </p>
         </div>
 
@@ -49,6 +49,7 @@ const Process = () => {
           Receive the perfect quality of your services on-time & leave us a review if you like.
           </p>
         </div>
+      </div>
       </div>
     </section>
   );
