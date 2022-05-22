@@ -16,8 +16,8 @@ import PrjCon from'../components/projectscontainer.js'
 const PrjContain = lazy( () => import('../components/projectscontainer.js'))
 const Test = () => {
   const [cat, setCat] = useState('Projects');
-  const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
-  const [projects, setProjects] = useState(init);
+  // const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
+  const [projects, setProjects] = useState(prjData);
   const my = useRef()
   const mymb = useRef()
   const el = useRef();
@@ -41,41 +41,33 @@ const Test = () => {
 
   useEffect(() => {
     changePointer({isHover: false})
-    if(window.location.hash){
-      var hashcat= window.location.hash.split("#")[1];
-      if(hashcat === "3dr"){catFunction("3DRendering")}
-      if(hashcat === "VR"){catFunction("Virtual tour")}
-      if(hashcat === "3dm"){catFunction("3D Model")}
-      if(hashcat === "In"){catFunction("Interior")}
-      if(hashcat === "Ex"){catFunction("Exterior")}
-      if(hashcat === "Ani"){catFunction("Animation")}
-      if(hashcat === "Con"){catFunction("Concept")}
+    // if(window.location.hash){
+    //   var hashcat= window.location.hash.split("#")[1];
+    //   if(hashcat === "3dr"){catFunction("3DRendering")}
+    //   if(hashcat === "VR"){catFunction("Virtual tour")}
+    //   if(hashcat === "3dm"){catFunction("3D Model")}
+    //   if(hashcat === "In"){catFunction("Interior")}
+    //   if(hashcat === "Ex"){catFunction("Exterior")}
+    //   if(hashcat === "Ani"){catFunction("Animation")}
+    //   if(hashcat === "Con"){catFunction("Concept")}
 
 
-      // else if(hashcat !== "3dr" && hashcat !== "VR" && hashcat !== "3dm") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
-    }
+    //   // else if(hashcat !== "3dr" && hashcat !== "VR" && hashcat !== "3dm") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
+    // }
     setTimeout(() => {
       setReset()
     }, 550);
 
     changePT("AM-Projects");
     document.title = "AM-Projects";
-    if( tag ) {
-      const newTag = tag[0].toUpperCase() + tag.substr(1)
+    // if( tag ) {
+    //   const newTag = tag[0].toUpperCase() + tag.substr(1)
 
-      setCat(newTag)
-    }
+    //   setCat(newTag)
+    // }
 
   }, [isMobile])
-  // useLayoutEffect(()=>{
-  //   const scaledProjectsRef = q(".project").slice(0, 2);
-  //   gsap.set(scaledProjectsRef, {
-  //     // yPercent: 10,
-  //     scale: 0.85,
-  //     autoAlpha: 0,
-  //     transformOrigin: "bottom center",
-  //   });
-  // },[])
+ 
   useEffect(()=>{
    
     if(!isMobile){

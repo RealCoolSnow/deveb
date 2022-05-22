@@ -224,11 +224,11 @@ button {
             // transition: all 0.3s ease;
 
             &:hover {
-              color: var(--primary-font-color);
+              color: var(--black-font-main);
             }
 
             &.active {
-              color: var(--primary-font-color);
+              color: var(--black-font-main);
             }
           }
 
@@ -1452,11 +1452,22 @@ section {
     }
   }
 
-  &.services {
+  &.services.head {
+    height: 100vh;
+    position: relative;
+    img{
+      width: 60px;
+      bottom: 14%;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
     .h2 {
+      padding-bottom: 2%;
+      padding-top: 0;
       h6 {
         font-size: 15.4px;
-        color: var(--secondary-font-color);
+        color: var(--gray-dark);
         font-weight: 600;
         letter-spacing: 0;
       }
@@ -1464,6 +1475,7 @@ section {
       h3 {
         width: 57%;
         margin-top: 53px;
+        color: var(--black-font-main);
       }
 
       div.links {
@@ -1489,6 +1501,7 @@ section {
         }
       }
     }
+
   }
 }
 

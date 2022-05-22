@@ -172,9 +172,9 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
                   <div key={idx} className={`serv-showcase-box box-${idx}`}>
                     <div className="grid-text-contain text">
                       <span
-                        className="span-back"
-                        data-cr={img.colors.right}
-                        data-cl={img.colors.left}
+                        data-bg={img.colors.bg}
+                        data-br={img.colors.br}
+                        className={`span-back ${img.klass}`}
                       >
                         {num}
                       </span>
@@ -187,6 +187,7 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
                         active={true}
                         url={a.url}
                         text="View more"
+                        br={img.colors.br}
                       />
                     </div>
                   </div>

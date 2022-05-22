@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useLayoutEffect } from "react";
 // import { Link } from "react-router-dom";
 import { useAppContext } from "../contexts/appcontext.js";
-
+import hand from "../assets/hand2.png"
 import { gsap } from "gsap";
 // import {images} from '../utils/constans.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -87,36 +87,16 @@ const Serv = () => {
 
   return (
     <main ref={MainWrapper}>
-      <section className="head full-h services">
+      <section className="head services">
         <div className="h2 center">
           <h6>Services</h6>
-
           <h3>
-            <div>From concept design to design developments <br/> and CGI visualization, <br/>
-            we've got everything covered.</div>
+            <div>Branding, concept design &  </div>
+            <div>web developments, we've got</div>
+            <div>everything covered.</div>
           </h3>
-
-          <div className="links-wrapper">
-            <div className="links" ref={mobileLinksScroller}>
-              <div className="mobile-little-fade left-little-fade"></div>
-
-              {
-                services.map( (serv,idx) =>
-                  <button onClick={ () => scrollToService(idx) } >
-                    {serv}
-                  </button>
-                )
-              }
-              {/* <button className="">Exterior</button>
-              <button className="">Rendering</button>
-              <button className="">Animation</button>
-              <button className="">Virtual Tour</button> */}
-
-              {/* <div className="mobile-fade fade-right"></div> */}
-              <div className="mobile-little-fade right-little-fade"></div>
-            </div>
-          </div>
         </div>
+        <img src={hand}/>
 
       </section>
     </main>
