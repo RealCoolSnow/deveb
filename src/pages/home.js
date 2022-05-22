@@ -181,9 +181,7 @@ const HomePage = () => {
     opacity: .5,
   }
   useEffect(() => {
-    
-    changePT("AM-Arc");
-    document.title = "AM-Arc";
+
     setTimeout(() => {
       setReset()
     }, 500);

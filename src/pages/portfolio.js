@@ -44,8 +44,8 @@ const PortPage = () => {
       else if(hashcat !== "3dr" && hashcat !== "VR" && hashcat !== "3dm") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
     }
     
-    changePT("AM-Projects");
-    document.title = "AM-Projects";
+    changePT("Deveb-Projects");
+    document.title = "Deveb-Projects";
     if( tag ) {
       const newTag = tag[0].toUpperCase() + tag.substr(1)
 
