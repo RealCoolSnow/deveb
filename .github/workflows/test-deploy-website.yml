@@ -1,0 +1,44 @@
+name: test-deploy-site
+
+on: 
+  push:
+    branches:
+      - main
+
+env:
+  CI: false
+  APP_NAME: Deveb
+
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v3
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test if build was successful
+        run: test -f build/index.html
+      - run: grep "$APP_NAME" build/index.html
+      - run: npm i -g serve
+      - run: serve build &
+
+      - name: Push the build folder to main branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
