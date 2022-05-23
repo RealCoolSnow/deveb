@@ -27,10 +27,10 @@ const ProHead = ({ Cat, catFunction }) => {
     opacity:0,
   }
   useLayoutEffect(() => {
-    const heading = q("#stickbb h1");
-    const lines = q(".fil-contain .lines");
+    const heading = q("#stickbb h1 div");
+    // const lines = q(".fil-contain .lines");
 
-    gsap.set([heading, lines], {
+    gsap.set([heading], {
       yPercent: 60,
       autoAlpha: 0,
     });
@@ -38,10 +38,10 @@ const ProHead = ({ Cat, catFunction }) => {
     };
   }, [isMobile])
   useEffect(()=>{
-    const heading = q("h1");
+    const heading = q("h1 div");
     const lines = q(".fil-contain .lines");
     prjTl.current = gsap.timeline();
-    prjTl.current.to([heading, lines[0], lines[1]], {
+    prjTl.current.to([heading], {
       yPercent: 0,
       duration: 0.6,
       stagger: {
@@ -50,7 +50,7 @@ const ProHead = ({ Cat, catFunction }) => {
       },
     }, .4)
 
-    .to([heading, lines[0], lines[1]], {
+    .to([heading], {
       autoAlpha: 1,
       duration: 1.2,
       stagger: {
@@ -61,68 +61,13 @@ const ProHead = ({ Cat, catFunction }) => {
   },[isMobile])
 
 useEffect(()=>{
-  const myHash = document.location.hash.slice(1);
+  // const myHash = document.location.hash.slice(1);
   if(isMobile ){
-    setTimeout(() => {
-      if(myHash === "3dr"){
-      setActiveTag("Rendering")
-    }
-    else
-    if(myHash === "3dm"){
-      setActiveTag("3D Model")
-    } else
-    if(myHash === "VR"){
-      setActiveTag("Virtual tour")
-    } else
-    if(myHash === "In"){
-      setActiveTag("Interior")
-    } else
-    if(myHash === "Ex"){
-      setActiveTag("Exterior")
-    } else
-    if(myHash === "Ani"){
-      setActiveTag("Animation")
-    } else
-    if(myHash === "Con"){
-      setActiveTag("Concept")
-    }
-    
-    else if(!myHash){  setActiveTag("Projects")}
-    else
-    setActiveTag(document.location.hash.slice(1))
-  }, 300);
+  
    
   }
   else {
-  setTimeout(() => {
-    if(myHash === "3dr"){
-      setActiveTag("3D Rendering") 
-    
-    } else
-    if(myHash === "3dm"){
-      setActiveTag("3D Model")
-    } else
-    if(myHash === "VR"){
-      setActiveTag("Virtual tour")
-    } else
-    if(myHash === "In"){
-      setActiveTag("Interior")
-    } else
-    if(myHash === "Ex"){
-      setActiveTag("Exterior")
-    } else
-    if(myHash === "Ani"){
-      setActiveTag("Animation")
-    } else
-    if(myHash === "Con"){
-      setActiveTag("Concept")
-    }
-    
-    else if(!myHash){  setActiveTag("Projects")}
-    else
-    setActiveTag(document.location.hash.slice(1))
-
-  }, 300);
+  
   }
  
 },[isMobile])
@@ -136,60 +81,12 @@ useEffect(()=>{
       key={txt}
       txt={txt}
       isActive={ activeTag === txt }
-      trigger={ () => changeActiveTag(txt) }
+      // trigger={ () => changeActiveTag(txt) }
     />  
   )
 
-  const changeActiveTag = (name) => {
-    if( activeTag !== name ) {
-      setActiveTag(name)
-      if(name === "Rendering" || name === "3D Rendering"){
-        catFunction("3D Rendering");
-     
-        window.history.replaceState(null, '', `/projects#3dr`)
-      } else 
-      if(name === "Virtual tour"){
-        window.history.replaceState(null, '', `/projects#VR`)
-        catFunction(name)
-      } else
-      if(name === "3D Model"){
-      window.history.replaceState(null, '', `/projects#3dm`)
-      catFunction(name)
-    } else
-    // if(name === "3D Rendering"){
-    //   window.history.replaceState(null, '', `/projects#3dr`)
-      
-    // }
-    // else
-    if(name === "Interior"){
-      window.history.replaceState(null, '', `/projects#In`)
-      catFunction(name)
-    }
-    else
-    if(name === "Exterior"){
-      window.history.replaceState(null, '', `/projects#Ex`)
-      catFunction(name)
-    }
-    else
-    if(name === "Concept"){
-      window.history.replaceState(null, '', `/projects#Con`)
-      catFunction(name)
-    }
-    else
-    if(name === "Animation"){
-      window.history.replaceState(null, '', `/projects#Ani`)
-      catFunction(name)
-    }
-    else
-    if(name === "Projects"){
-      window.history.replaceState(null, '', `/projects`)
-      catFunction(name)
-    }
-    // else  
-    // window.history.replaceState(null, '', `/projects#${name}`)
-    // name !=="Rendering" && catFunction(name)
-    }
-  }
+   
+    
 
   return (
     <section className="pro-sec"   id="stickbb" ref={el}>
@@ -197,20 +94,14 @@ useEffect(()=>{
       <main data-scroll data-scroll-sticky data-scroll-target="#stickbb">
         {/* <div className="darklay2" style={darklay2}></div> */}
       <div className="darklayer"></div>
-        <h1>Take a look at some of our</h1>
+        <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
 
         <div className="fil-contain">
 
           <div className="little-fade left-fade"></div>
 
-          <div className="lines">
-
-            {
-              !isMobile ? 
-                tags.slice(0,3).map( mapButtons )
-              :
-                mTags.slice(0,4).map( mapButtons )
-            }
+          {/* <div className="lines">
+            line1
 
             <div className="extra-space"></div>
 
@@ -218,16 +109,11 @@ useEffect(()=>{
 
           <div className="lines">
 
-            {
-              !isMobile ? 
-                tags.slice(3).map( mapButtons )
-              :
-                mTags.slice(4).map( mapButtons )
-            }
+           line2
 
             <div className="extra-space"></div>
 
-          </div>
+          </div> */}
 
           <div className="little-fade right-fade"></div>
 

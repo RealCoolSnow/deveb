@@ -71,7 +71,7 @@
   }
 
   section {
-    &.head {
+    &.head:not(.services) {
     //   .h1 h1 {
     //     // display: block !important;
     //     font-size: 4.2vw;

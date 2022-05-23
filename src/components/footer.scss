@@ -3,6 +3,7 @@ section.footer-sec, div.con-foot {
     position: absolute;
     width: 100%;
     height: 100vh;
+  
     top: -50vh;
   }
   .backgr {
@@ -15,23 +16,25 @@ section.footer-sec, div.con-foot {
     width: 100vw;
     z-index: -1;
     height: 100vh;
-    background-image: linear-gradient(
-      180deg,
-      rgb(90, 129, 162) 0%,
-      rgb(31, 61, 97) 100%
-    );
+    // background-image: linear-gradient(
+    //   180deg,
+    //   rgb(90, 129, 162) 0%,
+    //   rgb(31, 61, 97) 100%
+    // );
   }
-  // position: absolute;
+  position: relative;
   // opacity: 0;
   // margin-top:200vh;
   bottom: 0%;
   width: 100%;
   z-index: 1;
+  // background: url(../assets/foot.jpg);
+  background-size: contain;
   &.fot{
-    margin-top: -105vh;
-    height: 200vh;
+    // margin-top: -105vh;
+    height: 100vh;
     min-height: 594px;
-    padding: 100vh 0 3.1rem 0;
+    padding: 0vh 0 3.1rem 0;
     // pointer-events: none;
 
   }
@@ -43,6 +46,7 @@ section.footer-sec, div.con-foot {
     width: 100%;
     display: flex;
     height: 100%;
+    
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -54,9 +58,42 @@ section.footer-sec, div.con-foot {
     flex-direction: column;
     justify-content: flex-end;
     z-index: 2;
+
+    .f-filler{
+      background: #f5f5f7;
+      // background: red;
+      z-index: 999;
+      position: absolute;
+      top:0;
+      transform: translate(-50%,-50%);
+      left:0;
+      mix-blend-mode: difference;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      pointer-events: none;
+    }
+    svg{
+      width: 535px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     h6 {
+      color: black;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    pointer-events: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
       // padding-bottom: 2.6rem;
       letter-spacing: 0.1px;
+      span{
+        font-size: 12.34px;
+        display: block;
+      }
     }
   }
   .tabs-holder {
@@ -131,24 +168,37 @@ section.footer-sec, div.con-foot {
       &.r {
         text-align: right;
         div {
-          width: 162px;
+          width: 174px;
           display: inline-flex;
           justify-content: space-between;
           align-items: center;
           .be {
             height: 10px;
+            right: 3px;
+            top: 1px;
+            position: relative;
           }
-          .up {
-            height: 11px;
+          .git {
+            position: relative;
+            top: 3px;
+            height: 12px;
+            right: 3px;
           }
           .insta {
-            height: 12px;
-          }
-          .tele {
             height: 11px;
+            position: relative;
+            top: 2px;
+          }
+          .drib {
+            position: relative;
+            height: 11px;
+            top: 2px;
           }
           .whats {
-            height: 14px;
+            height: 12px;
+            top: 3px;
+            position: relative;
+            right: 5px;
           }
         }
         a{
@@ -163,11 +213,12 @@ section.footer-sec, div.con-foot {
         font-weight: 400;
         position: relative;
         cursor: none;
+        color: var(--black-font-main);
         &:after {
           content: "";
-          width: 90%;
+          width: 75%;
           height: 0.7px;
-          background-color: white;
+          background-color: var(--black-font-main);
           left: 0;
           bottom: -1px;
           position: absolute;
@@ -178,7 +229,7 @@ section.footer-sec, div.con-foot {
         font-size: 9.1px;
         padding-top: 12px;
         display: inline-block;
-        color: #5a7d9e;
+        color: var(--black-font);
       }
     }
   }

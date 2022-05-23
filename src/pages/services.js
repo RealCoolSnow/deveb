@@ -74,6 +74,43 @@ if(!isMobile){
       zIndex: (i, target, targets) => targets.length - i,
     });
     changePp("other")
+    const texts = q(".grid-text-contain .span-back");
+
+    texts.forEach((txt) => {
+     // const creategrad = (rcolor, lcolor) => {
+     //   const gra =
+     //     "linear-gradient(90deg," + rcolor + " 0%," + lcolor + " 100%)";
+     //   return gra;
+     // };
+
+     function updateBodyColor(color) {
+       var bg = txt.dataset.bg;
+       var cur = txt.dataset.cur;
+       // changePointer({isHover: true, bg: })
+       gsap.to(sl.current, {
+         backgroundColor: () => txt.dataset.bg,
+         ease: "none",
+         autoAlpha: 1,
+         // background: "transparent",
+       });
+     }
+
+     ScrollTrigger.create({
+       trigger: txt,
+       scroller: "#viewport",
+       start: () => "top bottom-=10%",
+       end: () => "bottom top",
+       // scrub: true,
+       // markers:true,
+       id: "showcaseGradient",
+       invalidateOnRefresh: true,
+       onEnter: () => updateBodyColor(),
+       onEnterBack: () => updateBodyColor(),
+       onLeave: ()=> txt.classList.contains("end")? gsap.to( sl.current, {background: "#F5F5F7", ease: 'none', duration: .7,}) : null,
+       onLeaveBack: ()=> txt.classList.contains("first")? gsap.to( sl.current, {background: "#F5F5F7", ease: 'none', duration: .7,}) : null,
+     
+     });
+   });
 
     const images = q(".show-image:not(.end)");
 

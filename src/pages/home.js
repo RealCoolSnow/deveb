@@ -164,6 +164,7 @@ const HomePage = () => {
   const pintl = useRef();
   const el = useRef();
   const tl = useRef();
+  const proTL = useRef();
   const { isMobile, pageTitle, changePT,resetLoco, setReset, changePp } = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
@@ -353,6 +354,24 @@ const HomePage = () => {
             
             });
           });
+          proTL.current = gsap
+        .timeline({
+          scrollTrigger:{
+            trigger: q(".process"),
+            scroller: "#viewport",
+            start: () => "center bottom-=10%",
+            end: () => "bottom bottom-=20%",
+            scrub: true,
+            // markers:true,
+            id: "proce",
+            // invalidateOnRefresh: true,
+          },
+          })
+          .to(q(".process-grid"),{
+            xPercent: -75,
+          })
+
+          
            const imgTrigger = q(".show-images");
            const imageArrayfull = q(".show-image");
            const imagewrap = q(".show-img-contain");
