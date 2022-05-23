@@ -11,7 +11,7 @@ $white: #f5f5f7;
   --gray-dark:#86868C;
   --bg-l:#F5F5F7;
   --gray-border:#D7D7D9;
-  --blue-cta:#3398FF;
+  --blue-cta:#339CFF;
 
 
 
@@ -30,7 +30,7 @@ $white: #f5f5f7;
   --button-border-color: #6e6e73;
   --contact-lightblue: #B3DFFF;
   --contact-button-back:#F5F5F7;
-  --contact-button-border:#5a80a2 ;
+  --contact-button-border:#D7D7D9 ;
 }
 
 @import "./button.scss";
@@ -891,7 +891,7 @@ section {
 
       div > p {
         margin-bottom: 13.6px;
-        color: var(--primary-font-color);
+        color: var(--gray-dark);
         font-size: 16.9px;
         margin-left: 5px;
         margin-top: 15px;
@@ -917,7 +917,7 @@ section {
             background: none;
             border: none;
             width: 100%;
-            padding-bottom: 2.2px;
+            padding-bottom: 0px;
             font-size: 13.9px;
             // border-bottom: .8px solid #707070;
             font-weight: 400;
@@ -927,7 +927,7 @@ section {
             outline: 0px none transparent;
             resize: none;
             transition: all 0.3s ease;
-            color: var(--primary-font-color);
+            color: var(--black-font-main);
             
             // &:-webkit-autofill,
             // &:-webkit-autofill:hover,
@@ -938,20 +938,24 @@ section {
             // }
           }
           input::placeholder, textarea::placeholder {
-            color: var(--primary-font-color);
+            color: var(--black-font);
+            font-weight: 500;
+            font-size: 0.9rem;
           }
           textarea {
+            padding-bottom: 4px;
             height: 23px;
             overflow: hidden;
             &::placeholder {
-              color: var(--primary-font-color);
+              color: var(--black-font);
+              font-weight: 500;
             }
-            &::-webkit-input-placeholder{color:  var(--primary-font-color);}
-            &::-webkit-input-placeholder{color:  var(--primary-font-color);}
+            &::-webkit-input-placeholder{color:  var(--black-font);}
+            &::-webkit-input-placeholder{color:  var(--black-font);}
 
-            &::-moz-placeholder{color:  var(--primary-font-color);}
-            &:-ms-input-placeholder {color:  var(--primary-font-color);}
-            &:-moz-placeholder{color:  var(--primary-font-color);}
+            &::-moz-placeholder{color:  var(--black-font);}
+            &:-ms-input-placeholder {color:  var(--black-font);}
+            &:-moz-placeholder{color:  var(--black-font);}
           }
 
           .input-moving-line {
@@ -1019,6 +1023,12 @@ section {
 
         a.sec-btn {
           margin-right: 12.5px;
+
+          span {
+            font-weight: 400;
+            color: var(--black-font-main);
+            font-size: 0.85rem;
+          }
         }
 
         a.sec-btn:last-child {
@@ -1032,6 +1042,7 @@ section {
         letter-spacing: 0.15px;
         font-size: 12.3px;
         font-weight: 400;
+        
         &.btn {
           padding: 14.5px 20.5px 13.7px;
           border-radius: 32px;
@@ -1042,7 +1053,7 @@ section {
       button.btn {
         border: 1px solid var(--secondary-font-color);
         background: none;
-        color: var(--primary-font-color);
+        color: var(--black-font-main);
         position: relative;
         padding: 9px 17px 9px 30px;
       }
@@ -1052,7 +1063,7 @@ section {
         justify-content: left;
         margin-top: -10px;
         justify-content: space-between;
-        margin-bottom: 45px !important;
+        margin-bottom: 2.1rem !important;
 
         label {
           display: none;
@@ -1105,7 +1116,7 @@ section {
           .attach {
             display: flex;
             align-items: center;
-            color: var(--primary-font-color);
+            color: var(--black-font-main);
             cursor: pointer;
             margin-right: 30px;
             margin-bottom: 15px;
@@ -1113,7 +1124,7 @@ section {
             svg {
               width: 24px;
               height: 24px;
-              color: #fff;
+              color: var(--black-font-main);
             }
 
             span {
@@ -1125,10 +1136,6 @@ section {
             }
           }
         }
-      }
-
-      div.options-btns.docs {
-        margin-bottom: 50px;
       }
 
       div.options-btns.budgets {

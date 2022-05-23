@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.4",
     "react": "^17.0.2",
@@ -12,6 +13,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "sass": "",
+    "three": "^0.140.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

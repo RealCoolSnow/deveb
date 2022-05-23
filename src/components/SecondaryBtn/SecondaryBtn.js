@@ -69,8 +69,8 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
     });
 
     gsap.to(teXt,{
-      color: "#000",
-      fill: "#000",
+      color: "#f5f5f7",
+      fill: "#f5f5f7",
       duration:0.4,
     });
 
@@ -96,8 +96,8 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
       borderRadius: 50,
     });
     gsap.to(teXt, {
-      color: "#fff",
-      fill: "#fff",
+      color: "#1A1A1A",
+      fill: "#1A1A1A",
       duration:0.4,
     });
     gsap.to(teXt,  {
@@ -124,9 +124,7 @@ export default function SecondaryBtn({ txt, isStatic = false, isActive, primary 
           onClick={ () => refrence.current.click() }
         >
 
-          {
-            children
-          }
+          {children}
 
           <div className="bg-hover"></div>
           
