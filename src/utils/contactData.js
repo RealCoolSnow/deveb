@@ -14,11 +14,11 @@ export const lgScreens = {
     'Other',
   ],
   budgets: [
-    'Under 2K',
-    '2-5K',
-    '5-10K',
-    '+10K',
-    'Help me estimate'
+    'Under 10K',
+    '10-20K',
+    '20-50K',
+    '50-100K',
+    '+100K'
   ]
 }
 
@@ -27,19 +27,19 @@ export const smScreens = {
     'Branding',
     'Web design',
     'UI/UX',
-    'Application design',
     'Web animation',
-    'HTML/CSS coding',
+    'Application design',
+    'HTML/CSS',
     'Site from scratch',
     'Back-end',
     'Maintenance',
     'Other',
   ],
   budgets: [
-    'Under 2K',
-    '2-5K',
-    '5-10K',
-    '+10K',
-    'Help me estimate'
+    'Under 10K',
+    '10-20K',
+    '20-50K',
+    '50-100K',
+    '+100K'
   ]
 }

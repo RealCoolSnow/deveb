@@ -1,3 +1,9 @@
+@media ( max-width: 1630px ) {
+  section.sec-form {
+    max-width: 40%;
+  }
+}
+
 @media (max-width: 1480px) {
   .frame-wrapper {
     .f-left div {
@@ -25,26 +31,6 @@
       //     margin-right: 8px !important;
       //   }
       // }
-    }
-  }
-}
-
-@media (max-width: 1220px) {
-  section {
-    &.head{
-      .h1 h1 {
-        font-size: 4.2vw;
-         }
-    }
-    &.process {
-      .process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        row-gap: 8.5%;
-      }
-    }
-
-    &.sec-form {
-      max-width: 50%;
     }
   }
 }
@@ -93,6 +79,48 @@
         width: 50%;
       }
     }
+  }
+
+  section.sec-form {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 1220px) {
+  section {
+    &.head{
+      .h1 h1 {
+        font-size: 4.2vw;
+         }
+    }
+    &.process {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 8.5%;
+      }
+    }
+
+    &.sec-form {
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: 1100px){
+  #stick {
+    .texts-wrap{
+      width: 53vw;
+      h5{ font-size:34.5px;}
+      h2{font-size: 52px;}
+   }
+   .text-wrap2:not(.pi){
+      width:54%;
+      h5{font-size: 34.5px;}
+   }
+  }
+
+  section.sec-form {
+    max-width: 55%;
   }
 }
 
@@ -183,6 +211,10 @@
     }
   }
 
+  section.sec-form {
+    max-width: 60%;
+  }
+
   // main.projects-page {
   // }
 }
@@ -199,19 +231,6 @@
   }
 }
 
-@media (max-width: 1100px){
-  #stick {
-    .texts-wrap{
-      width: 53vw;
-      h5{ font-size:34.5px;}
-      h2{font-size: 52px;}
-   }
-   .text-wrap2:not(.pi){
-      width:54%;
-      h5{font-size: 34.5px;}
-   }
-  }
-}
 @media (max-width: 930px) {
   #stick {
     .texts-wrap{
@@ -244,6 +263,10 @@
       }
     }
   }
+
+  section.sec-form {
+    max-width: 70%;
+  }
 }
 @media (max-width: 850px) {
   #stick .texts-wrap h2 {
@@ -258,6 +281,10 @@
 #stick .members-wrap .mem-row .members {
   width: 180px;
   height: 180px;
+}
+
+section.sec-form {
+  max-width: 75%;
 }
 
 }
@@ -456,7 +483,8 @@
         }
 
         .att-btn {
-          margin-bottom: 0 !important;
+          margin-top: 2.5rem;
+          margin-bottom: 3rem !important;
 
           > a.sec-btn {
             text-align: center;
@@ -507,6 +535,7 @@
       //   margin-bottom:  0;
       // }
     }
+
     &.footer-sec.fot{
       padding: 160vh 0 3.1rem 0!important;
     }
@@ -581,9 +610,10 @@
       }
     }
   }
+
   div.pro-cont {margin-top: -160%!important;}
   div.contact-page {
-    padding-top: 31vh;
+    // padding-top: 31vh;
     
     section.sec-form {
 
@@ -790,6 +820,29 @@
           }
         }
       }
+    }
+
+    &.sec-form {
+      form {
+        div.options-btns {
+          a.sec-btn {
+            margin-right: 0.5rem;
+          }
+        }
+
+        >.btn-container {
+  
+          .btn-mouse-area {
+            width: 100%;
+  
+            button {
+              width: 100%;
+              justify-content: center;
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -1231,17 +1284,23 @@
       max-width: 100%;
       padding: 0 4.9%;
 
-      h6 {
-        font-size: 20px !important;
-        line-height: 42px;
-        margin-top: -5px;
-        letter-spacing: 0.025rem;
+      header {
+        padding-bottom: 7rem;
 
-        span {
-          font-size: 44px;
+        h6 {
+          font-size: 1.1rem;
+  
+          span {
+            font-size: 44px;
+          }
+  
         }
 
+        h1 {
+          font-size: 3.5rem;
+        }
       }
+      
 
       .tabs-holder {
         margin: 73px 0 64px;
@@ -1269,13 +1328,7 @@
           }
         }
       }
-
-      &.only-contact {
-        // .tabs-holder {
-          // margin: 86px 0 85px;
-        // }
-      }
-
+      
       form {
         div.options-btns {
           // padding: 0 1%;
@@ -1287,24 +1340,23 @@
           }
 
           a.sec-btn {
-            margin-right: 14px ;
-            padding: 18.1px 24px 18.1px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            margin-right: 12px;
+            // padding: 18.1px 24px 18.1px;
+            // font-weight: 500;
             margin-bottom: 1rem;
             white-space: nowrap;
             
             span {
+              font-size: 0.8rem;
               letter-spacing: 0.035rem;
+              font-weight: 500;
             }
 
             &:nth-child(4) {
               margin-right: 0 ;
             }
-            &:nth-child(7) {
-              margin-right: 0 ;
-            }
-            &:nth-child(12) {
+
+            &:nth-child(6 ) {
               margin-right: 0 ;
             }
           }
@@ -1328,16 +1380,6 @@
         div.form-inputs .am-input input,
         div.form-inputs .am-input textarea {
           font-size: 1.22rem;
-
-          &::placeholder {
-            color: #9abbd7;
-          }
-          &::-webkit-input-placeholder{color: #9abbd7;}
-          &::-webkit-input-placeholder{color: #9abbd7;}
-
-          &::-moz-placeholder{color: #9abbd7;}
-          &:-ms-input-placeholder {color: #9abbd7;}
-          &:-moz-placeholder{color: #9abbd7;}
         }
 
         div.form-inputs .am-input textarea {
@@ -1385,29 +1427,8 @@
           }
         }
 
-        div.options-btns.docs {
-          padding-top: 48px;
-
-          p {
-            font-size: 1.25rem;
-            letter-spacing: 0.018rem;
-            margin-bottom: 1.2rem;
-          }
-
-          a.sec-btn {
-            margin-right: 10px;
-
-            &:nth-child(4) {
-              margin-right: 0;
-            }
-            &:nth-child(7) {
-              margin-right: 0;
-            }
-          }
-        }
-
         .options-btns.budgets {
-          padding-top: 55px;
+          // padding-top: 55px;
 
           p {
             margin-bottom: 1.1rem;
@@ -1670,7 +1691,7 @@
   }
 
   div.contact-page {
-    padding-top: 23.5vh;
+    // padding-top: 23.5vh;
 
     section.sec-form {
       .m-footer {
@@ -1757,8 +1778,6 @@
     .frame {
       &.f-top {
         height: 45px;
-
-     
       }
     }
   }
@@ -1849,6 +1868,7 @@
       }
 
       form {
+
         div.options-btns {
           padding: 0 1%;
 
@@ -1856,19 +1876,20 @@
             padding-top: 0 !important;
             margin-left: 0 !important;
             font-size: 1.1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
           }
 
           a.sec-btn {
-            margin-right: 15px;
-            padding: 17.1px 22px 17.1px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-bottom: 0.9rem;
-            white-space: nowrap;
+            // margin-right: 15px;
+            // padding: 17.1px 22px 17.1px;
+            // font-size: 0.75rem;
+            // font-weight: 500;
+            // margin-bottom: 0.9rem;
+            // white-space: nowrap;
 
             span {
               letter-spacing: 0.035rem;
+              font-size: 0.75rem;
             }
           }
         }
@@ -1881,16 +1902,6 @@
           .am-input input,
           .am-input textarea {
             font-size: 1.1rem;
-
-            &::placeholder {
-              color: #9abbd7;
-            }
-            &::-webkit-input-placeholder{color: #9abbd7;}
-            &::-webkit-input-placeholder{color: #9abbd7;}
-
-            &::-moz-placeholder{color: #9abbd7;}
-            &:-ms-input-placeholder {color: #9abbd7;}
-            &:-moz-placeholder{color: #9abbd7;}
 
           }
 
@@ -1948,21 +1959,7 @@
           }
         }
 
-        .options-btns.docs {
-          padding-top: 27px;
-
-          p {
-            font-size: 1.07rem;
-            letter-spacing: 0.018rem;
-          }
-
-          a.sec-btn {
-            // margin-right: 13px !important;
-          }
-        }
-
         .options-btns.budgets {
-          padding-top: 50px;
 
           p {
             margin-bottom: 1.15rem;
@@ -2173,7 +2170,7 @@
   }
 
   div.contact-page {
-    padding-top: 26vh;
+    // padding-top: 26vh;
   }
 
   div.pro-cont {
@@ -2209,7 +2206,7 @@
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 376px) {
   .frame-wrapper {
     .frame {
       &.f-top {
@@ -2302,12 +2299,18 @@
     &.sec-form {
       padding: 0 4.8%;
 
-      h6 {
-        font-size: 1.1rem !important;
-        line-height: 38px;
+      header {
+        // padding-bottom: 7rem;
 
-        span {
-          font-size: 2.45rem;
+        h6 {
+          // font-size: 1.1rem;
+  
+        }
+
+        h1 {
+          margin-top: 0.5rem;
+          font-size: 3rem;
+          line-height: 3.5rem;
         }
       }
 
@@ -2410,21 +2413,7 @@
           }
         }
 
-        .options-btns.docs {
-          padding-top: 37px;
-
-          p {
-            font-size: 1.07rem;
-            letter-spacing: 0.018rem;
-          }
-
-          a.sec-btn {
-            margin-right: 9px !important;
-          }
-        }
-
         .options-btns.budgets {
-          padding-top: 47px;
 
           a.sec-btn {
             margin-right: 9px !important;
@@ -2616,10 +2605,6 @@
         line-height: 3.2rem;
       }
     }
-  }
-
-  div.contact-page {
-    padding-top: 25vh;
   }
 
   div.pro-cont {

@@ -171,16 +171,16 @@ const Con = () => {
       });
     }
 
-    await fetch(`https://am-arc-api.herokuapp.com/`); // Awake if server is sleep
+    await fetch(`https://deveb-api.herokuapp.com/`); // Awake if server is sleep
 
-    let sendForm = await fetch(`https://am-arc-api.herokuapp.com/api/send`, {
+    let sendForm = await fetch(`https://deveb-api.herokuapp.com/api/send`, {
       method: "post",
       body: attachs || {},
       headers: ContactForm,
     });
     sendForm = await sendForm.json();
 
-    setTimeout(() => {
+    // setTimeout(() => {
       if (sendForm.success) {
         setSendingForm(false);
         cursorLoading(false);
@@ -202,7 +202,7 @@ const Con = () => {
         setSendingForm(false);
         cursorLoading(false);
       }
-    }, 100000);
+    // }, 100000);
   };
 
   const requestSendingLoading = () => {
