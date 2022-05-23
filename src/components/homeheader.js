@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
-
+import Scene from "./three/scene.js";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
@@ -86,6 +86,7 @@ const Head = () => {
             </h1>
           </div>
         )}
+        {/* <Scene/> */}
 
         <div className="h2-wrapper" >
           <div className="h2-con">
