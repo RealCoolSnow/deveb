@@ -8,14 +8,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
+  background-color: var(--bg-l);
   z-index: 100;
   padding-bottom: 1rem;
 
   h2 {
     font-size: 5rem;
     font-weight: 500;
-    color: var(--primary-font-color);
+    color: var(--black-font-main);
   }
 
   p {
@@ -24,7 +24,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     padding: 0 20%;
-    color: #ffffff;
+    color: var(--black-font-main);
   }
 }
 

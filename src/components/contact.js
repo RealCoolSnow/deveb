@@ -152,7 +152,7 @@ const Con = () => {
 
     if (form.message) ContactForm.message = form.message;
 
-    const { needs, docs, budgets } = contactData;
+    const { needs, budgets } = contactData;
 
     if (activeNeeds) {
       const needsArr = needs.filter((val, idx) => activeNeeds.includes(idx));
@@ -180,29 +180,27 @@ const Con = () => {
     });
     sendForm = await sendForm.json();
 
-    // setTimeout(() => {
-      if (sendForm.success) {
-        setSendingForm(false);
-        cursorLoading(false);
-        setShowThanks(true);
-        changePointer({
-          isHover: true,
-          color: { bg: "#ffffff", txt: "#000000" },
-          text: "✕",
-          blend: true,
-          fsize: "20px",
-        });
+    if (sendForm.success) {
+      setSendingForm(false);
+      cursorLoading(false);
+      setShowThanks(true);
+      changePointer({
+        isHover: true,
+        color: { bg: "#ffffff", txt: "#000000" },
+        text: "✕",
+        blend: true,
+        fsize: "20px",
+      });
 
-        setForm({ name: "", email: "", message: "" });
-        setActiveNeeds([]);
-        setActiveBudg(-1);
-        setAttachments([]);
-        // setReset();
-      } else {
-        setSendingForm(false);
-        cursorLoading(false);
-      }
-    // }, 100000);
+      setForm({ name: "", email: "", message: "" });
+      setActiveNeeds([]);
+      setActiveBudg(-1);
+      setAttachments([]);
+      // setReset();
+    } else {
+      setSendingForm(false);
+      cursorLoading(false);
+    }
   };
 
   const requestSendingLoading = () => {

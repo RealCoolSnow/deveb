@@ -49,7 +49,9 @@ section.sec-form {
 
       button.btn-more {
         background-color: var(--blue-cta);
-        padding: 1.25rem 1.8rem 1.25rem;
+        padding: 1.25rem 0 1.25rem;
+        width: 11.25rem;
+        justify-content: center;
 
         .btn-more-title {
 
@@ -101,30 +103,7 @@ section.sec-form {
 
 @media ( min-width: 768px ) {
   button.btn-more:not(.active, .invalid) .btn-more-title span:after {
-    color: #fff !important;
-  }
-
-  .contact-page {
-
-    .sec-form.sending-form-effect {
-    
-      form { 
-      
-        .btn-container button.btn-more {
-          width: 139px !important;
-          justify-content: center !important;
-
-          .btn-more-title {
-
-            span::after {
-              color: #3D7299 !important;
-            }
-          }
-
-        }
-  
-      }
-    }
+    // color: #fff !important;
   }
 }
 
