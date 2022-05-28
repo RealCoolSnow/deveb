@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./footer.scss";
 import whats from "../assets/whs.svg";
 import be from "../assets/be.svg";
-import up from "../assets/up.svg";
+import drib from "../assets/dribbble.svg";
 import insta from "../assets/insta.svg";
-import tele from "../assets/telegram.svg";
+import git from "../assets/git.svg";
 import { useAppContext } from "../contexts/appcontext.js";
 
 import { gsap } from "gsap";
@@ -75,7 +75,7 @@ const FooterMB = () => {
         <div className="backgr" data-scroll data-scroll-sticky data-scroll-target="#bab"></div>
         <div className="footer-main">
           <h6>
-            We are always <br />
+            Always <br />
             <span>
               happy to <p>help</p>
             </span>
@@ -84,7 +84,7 @@ const FooterMB = () => {
         </div>
         <div className="footer-foot">
           <div className="footer-secs l">
-            <h5>am@am-arc.com</h5>
+            <h5>info@deveb.co</h5>
             <p>Mechnykova St, 2, Kyiv, 02000</p>
             <Link to="/privacyandpolicy">
             <p>Privacy Policy</p>
@@ -96,9 +96,9 @@ const FooterMB = () => {
               </Link>
             <div>
             <div>
-              <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="up" src={up} /></a>
+              <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="git" src={git} /></a>
+              <a href="https://t.me/am_arc_com" target="_blank"><img className="drib" src={drib} /></a>
               <a href="https://www.behance.net/amirmohseni" target="_blank"><img className="be" src={be} /></a>
-              <a href="https://t.me/am_arc_com" target="_blank"><img className="tele" src={tele} /></a>
               <a href="https://www.instagram.com/am__arc/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
               <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
             </div>

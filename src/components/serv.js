@@ -28,12 +28,13 @@ const Serv = () => {
     })
     gsap.set(q("h3 div"),
     {yPercent:60})
+    gsap.set(q(".head img"), {scale: .7, autoAlpha:0})
     return () => {
 
     };
   }, [])
   useEffect(()=>{
-    const fadeElems=q("h6, h3 div, .links button");
+    const fadeElems=q("h6, h3 div, .links button, .head img");
     gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3]],{
       autoAlpha:1,
       stagger: .08,
@@ -41,25 +42,22 @@ const Serv = () => {
       delay:.2,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
-    gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3]],{
+    gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3], fadeElems[4]],{
       yPercent:0,
       stagger: .08,
       duration:.6,
       delay:.2,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
-    gsap.to(q(".links-wrapper button"), {
+    gsap.to(q(".head img"), {
       autoAlpha:1,
-      duration:.6,
-      delay:.6,
-      // onComplete:()=>ScrollTrigger.refresh(true),
-    })
-    gsap.to(q(".links-wrapper button"), {
-      yPercent:0,
+      scale:1,
       duration:.4,
+      ease:"power2.inOut",
       delay:.6,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
+   
 
   },[])
 
@@ -90,13 +88,20 @@ const Serv = () => {
       <section className="head services">
         <div className="h2 center">
           <h6>Services</h6>
-          <h3>
+          {!isMobile? (
+            <h3>
             <div>Branding, concept design &  </div>
             <div>web developments, we've got</div>
             <div>everything covered.</div>
-          </h3>
+            </h3>
+          ): (
+            <h3>
+               <div>Branding, concept design & web developments, we've got everything covered.</div>
+            </h3>
+          )}
         </div>
-        <img src={hand}/>
+        {!isMobile &&   <img src={hand}/>}
+      
 
       </section>
     </main>

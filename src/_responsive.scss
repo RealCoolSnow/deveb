@@ -105,12 +105,12 @@
     text-align: center;
     position: relative;
 
-    &.head {
+    &.head:not(.services) {
      
       .h2 {
         h3 {
-          font-size: 1.65rem;
-          width: 64%;
+          font-size: 2rem;
+          // width: 64%;
         }
 
         h6 {
@@ -171,7 +171,7 @@
         padding: 0 5%;
 
         h1 {
-          font-size: 3rem !important;
+          font-size: 3rem ;
         }
 
         div.fil-contain {
@@ -318,10 +318,21 @@
           font-size: 3rem;
         }
       }
-
+      &:not(.services){
+        .h2 {
+          h3 {
+            font-size: 2rem;
+            width: 65%;
+            margin: 60px auto 60px;
+          }
+          h6 {
+            font-size: 1.1rem;
+          }
+        }
+      }
       .h2 {
         h3 {
-          font-size: 1.7rem;
+          font-size: 2.2rem;
           width: 75%;
         }
         h6 {
@@ -337,10 +348,10 @@
       // .darkLay{
       //   // display: none;
       // }
-      .h2-wrapper{
+      div.h2-wrapper{
         position: static!important;
         margin-top: 0!important;
-        height: 71vh!important;
+        height: 71vh;
         align-items: flex-end!important;
         width: 100vw;
         .h2-con{
@@ -362,12 +373,17 @@
     &.process {
       padding-top: 0;
       // padding-bottom: 140px;
+      margin: auto;
       margin-bottom: 20vh;
+    height: 190vh;
+    width: 500px;
+    margin-top: -12px;
 
       h3 {
         width: 100%;
-        font-size: 2.5rem;
+        font-size: 2.9rem;
         text-align: left;
+        margin: 35px auto 190px;
       }
 
       .process-grid {
@@ -378,9 +394,11 @@
         margin: auto;
         grid-column-gap: 0;
         row-gap: 0;
+        left: 0;
 
         .process-col {
-          margin-top: 59.5px;
+          margin-top: 50.5px;
+          padding-bottom: 57px;
 
           &:first-child {
             margin-top: 0;
@@ -512,23 +530,25 @@
     }
 
     &.services {
-      margin: 3.646vw 0 !important;
+      margin: 3.646vw 0;
       height: auto;
       // position: fixed!important;
       width:100vw;
-
-      .h2 {
-        text-align: center;
-        top: 0 !important;
-        left: 0;
-        transform: none;
-
-        h3 {
+      .head{
+        .h2 {
           text-align: center;
-          width: 76%;
-          color: white;
-          font-size: 34px;
-        }
+          // top: 0 !important;
+          // left: 0;
+          // transform: none;
+  
+          h3 {
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-size: 34px;
+          }
+      }
+     
       }
     }
     // &.showcase-pin{
@@ -554,19 +574,23 @@
     }
 
     // Project head section
-    &.pro-sec {
+    &.pro-sec#stickbb {
       // height: 50vh !important;
-      height: 60vh !important;
-      align-items: flex-end!important;
+      height: 50vh !important;
+      align-items: flex-end;
       // position: fixed;
       width: 100%;
       z-index: 1;
+      margin-bottom: 0;
+      // margin-top: 55px;
       // background: black;
       // z-index: 100;
 
       main {
+        margin-bottom: 0;
         h1 {
-          font-size: 2.6rem !important;
+          font-size: 2.6rem ;
+          margin-bottom: 0;
         }
 
         div.fil-contain {
@@ -580,8 +604,11 @@
         }
       }
     }
+    &.showcase-pin .showcase-mobile-container .mobile-showcase-box.h-showcase {
+      margin-bottom: 99.5px;
+    }
   }
-  div.pro-cont {margin-top: -160%!important;}
+  .projects-page div.pro-cont {margin-top: -160%;}
   div.contact-page {
     padding-top: 31vh;
     
@@ -617,13 +644,13 @@
         .pro-item {
           // height: 50vh;
           margin-bottom: 20px;
-          border-radius: 30px;
+          // border-radius: 30px;
         }
 
         h6 {
           font-size: 1.8rem;
           font-weight: 500;
-          color: var(--primary-font-color);
+          color: var(--black-font-main);
           letter-spacing: 0.018rem;
           line-height: 2.5rem;
         }
@@ -631,17 +658,18 @@
         span {
           font-size: 1.1rem;
           font-weight: 400;
-          color: var(--secondary-font-color);
+          color: var(--black-font);
           letter-spacing: 0.018rem;
           line-height: 2.5rem;
           margin-bottom: 5px;
         }
 
         a.view {
-          color: var(--primary-font-color);
+          color: var(--black-font-main);
           font-size: 1rem;
+          font-weight: 400;
           letter-spacing: 0.018rem;
-          border-bottom: 2px solid var(--primary-font-color);
+          border-bottom: 2px solid var(--black-font-main);
           line-height: 1.5rem;
         }
       }
@@ -722,36 +750,36 @@
   }
 }
 
-// tablest
-@media (max-aspect-ratio: 3/4 ) and (min-width: 500px){
-  .frame-wrapper {
-    .frame.f-top {
-      .logo {
-        svg.sm-logo{
-          margin-top: 37px;
-          margin-left: 21px;
-          width: 28px;
-        }
-      }
-    }
-  }
-  main {
+// ****tablest
+// @media (max-aspect-ratio: 3/4 ) and (min-width: 500px){
+//   .frame-wrapper {
+//     .frame.f-top {
+//       .logo {
+//         svg.sm-logo{
+//           margin-top: 37px;
+//           margin-left: 21px;
+//           width: 28px;
+//         }
+//       }
+//     }
+//   }
+//   main {
   
-    // background-image:url("iPad1.jpg") ;
-    section{
-      &.head{
-        .h1 h1{
-          margin-top: 141px;
-          font-size: 66px;
-          line-height: 1.42;
-          font-weight: 500;
-          letter-spacing: 1.9px;
-        }
-      }
-    }
+//     // background-image:url("iPad1.jpg") ;
+//     section{
+//       &.head{
+//         .h1 h1{
+//           margin-top: 141px;
+//           font-size: 66px;
+//           line-height: 1.42;
+//           font-weight: 500;
+//           letter-spacing: 1.9px;
+//         }
+//       }
+//     }
     
-  }
-}
+//   }
+// }
 
 @media (max-width: 650px) {
   section {
@@ -770,7 +798,7 @@
       // height: 50vh !important;
       main {
         h1 {
-          font-size: 3rem !important;
+          font-size: 3rem ;
           text-align: left;
         }
 
@@ -871,17 +899,20 @@
       }
     }
 
-    &.services {
-      margin: 3.646vw 0 0 !important;
+    &.services.head {
+      margin: 45px 0 -3.6vw ;
       height: auto;
+      height: 50vh;
+      display: flex;
+      align-items: center;
 
       .h2 {
         top: 0 !important;
         left: 0;
         transform: none;
         text-align: left;
-        padding-top: 170px;
-        padding-bottom: 8px;
+        // padding-top: 170px;
+        padding-bottom: 0px;
 
         h6 {
           font-size: 0.9rem;
@@ -899,7 +930,7 @@
           text-align: left;
           width: 100%;
           margin-top: 35px;
-          margin-bottom: 40px;
+          margin-bottom: 0px;
           line-height: 2.45rem;
         }
 
@@ -971,8 +1002,10 @@
     }
 
     &.process {
-      margin-left: 4.8%;
-      margin-right: 4.8%;
+      // margin-left: 4.8%;
+      // margin-right: 4.8%;
+      width: calc(100vw - 7.6vw);
+      margin: auto;
 
       h3 {
         font-weight: 500;
@@ -1022,7 +1055,7 @@
         padding-left: 0 !important;
 
         h1 {
-          font-size: 2.5rem !important;
+          font-size: 2.5rem;
           padding-right: 4.8%;
           padding-left: 4.8%;
         }
@@ -1135,15 +1168,27 @@
 }
 
 @media (max-width: 450px) {
+  #viewport{
+    background: url("./assets/serv.jpg");
+    background-size: contain;
+    background-position: 0px -98px;
+  }
   .frame-wrapper {
     .frame {
       &.f-top {
         height: 50px;
         padding: 0 4.6%;
         padding-left: 3.2%;
+        a.logo.light {
+          transform: translate(0.1vw, 0.5vw);
+          svg.sm-logo{
+         height: 6.7vw;
+         width: 40px;
+        }}
 
         .navlinks-contain {
           .menu {
+            transform: translate(-0.9vw, 0.4vw);
             .menuLines {
               // transform: translateX(-5px);
               width: 1.4rem;
@@ -1169,7 +1214,7 @@
     &.head {
       .h1.mobile-home-head {
         align-items: flex-end;
-        padding-bottom: 41%;
+        padding-bottom: 59%;
 
         h1 {
           font-size: 2.5rem;
@@ -1193,10 +1238,11 @@
         }
       }
 
-      .h2-wrapper {
+      div.h2-wrapper {
         text-align: left;
         padding: 0 5%;
         margin-top: 9%;
+        height: 38.3vh;
 
         .h2 {
           h3 {
@@ -1473,9 +1519,10 @@
       }
     }
 
-    &.services {
+    &.services.head {
+      margin-top: 60px;
       .h2 {
-        padding-top: 10.3rem;
+        // padding-top: 10.3rem;
         padding-bottom: 12px;
 
         h3 {
@@ -1484,7 +1531,7 @@
           margin-bottom: 47px;
           padding-left: 4.6%;
           padding-right: 4.6%;
-          margin-top: 32px;
+          // margin-top: 32px;
         }
 
         h6 {
@@ -1508,11 +1555,12 @@
         }
       }
     }
+  
 
     &.process {
-      margin-left: 5%;
-      margin-right: 5%;
-      // margin-bottom: 25.5vh;
+      // margin-left: 5%;
+      // margin-right: 5%;
+      margin-bottom: 108px;
 
       h3 {
         font-size: 2.7rem;
@@ -1540,16 +1588,19 @@
       }
     }
 
-    &.pro-sec {
+    &.pro-sec#stickbb {
       // height: 50.6vh !important;
+      margin-top: 34px;
+      align-items: center;
 
       main {
         padding: 0 4.8%;
+        
 
         h1 {
-          font-size: 2.8rem !important;
-          margin-bottom: 44px !important;
-          letter-spacing: 0 !important;
+          font-size: 2.8rem ;
+          margin-bottom: 0px ;
+          letter-spacing: 0 ;
           line-height: 3.4rem;
         }
 
@@ -1650,6 +1701,7 @@
       }
 
     }
+    
 
     &.q-seperator {
       margin: 0;
@@ -1679,11 +1731,12 @@
     }
   }
 
-  div.pro-cont {
+  .projects-page div.pro-cont {
     z-index: 100;
     position: relative;
     padding-top: 23px !important;
     margin-bottom: 25px !important;
+    margin-top: -165%;
 
     .outerPro { 
       width: 100% !important;
@@ -1713,7 +1766,7 @@
         h6 {
           font-size: 1.32rem;
           font-weight: 500;
-          color: var(--primary-font-color);
+          // color: var(--primary-font-color);
           letter-spacing: 0.05rem;
           line-height: 2.1rem;
         }
@@ -1721,17 +1774,17 @@
         span {
           font-size: 0.95rem;
           font-weight: 400;
-          color: var(--secondary-font-color);
+          // color: var(--secondary-font-color);
           letter-spacing: 0.018rem;
           line-height: 2rem;
           margin-bottom: 4px;
         }
 
         a.view {
-          color: var(--primary-font-color);
+          // color: var(--primary-font-color);
           font-size: 0.9rem;
           letter-spacing: 0.018rem;
-          border-bottom: 2px solid var(--primary-font-color);
+          // border-bottom: 2px solid var(--primary-font-color);
           line-height: 1.5rem;
         }
       }
@@ -1757,8 +1810,6 @@
     .frame {
       &.f-top {
         height: 45px;
-
-     
       }
     }
   }
@@ -1766,42 +1817,46 @@
   section {
     &.head {
       .h1.mobile-home-head {
-        padding-bottom: 32%;
+        padding-bottom: 60%;
 
         h1 {
-          font-size: 2.17rem;
+          font-size: 2.3rem;
 
           span {
-            line-height: 3.1rem;
+            line-height: 1.4;
             letter-spacing: 0.06rem;
           }
 
           .call-action {
-            margin-top: 1.6rem;
+            margin-top: 1.9rem;
 
             a.estimate-btn {
-              padding: 14.5px 21px;
+              padding: 15.5px 25px;
             }
 
             a.view-projects-btn {
-              margin: 18px auto 0;
+              margin: 23px auto 0;
               font-size: 0.73rem;
             }
           }
         }
       }
 
-      .h2-wrapper {
+      div.h2-wrapper {
+        height: 39.3vh;
+        .h2-con{
+          padding-bottom: 14px;
+        }
         margin-top: 9.7rem;
         padding-left: 5%;
         padding-right: 5%;
 
         .h2 {
           h3 {
-            margin: 30px auto 42px;
-            line-height: 2.5rem;
-            font-size: 1.75rem;
-            letter-spacing: 0;
+            margin: 33px auto 42px;
+            line-height: 1.55;
+            font-size: 1.79rem;
+            letter-spacing: 0.4px;
           }
 
           h6 {
@@ -2062,22 +2117,26 @@
     }
 
     &.process {
-      margin-left: 4.6%;
-      margin-right: 4.6%;
-      margin-bottom: 2vh;
+      // margin-left: 4.6%;
+      // margin-right: 4.6%;
+      // margin-bottom: 2vh;
+      width: 90vw;
 
       h3 {
         font-weight: 500;
-        line-height: 3rem;
-        font-size: 2.45rem;
-        margin-bottom: 7rem;
+       line-height: 3rem;
+       font-size: 2.45rem;
+       margin-bottom: 10.9rem;
+       margin-top: 43px;
+       letter-spacing: 1.4px;
       }
 
       .process-grid {
         row-gap: 0rem;
 
         .process-col {
-          margin-top: 50px;
+          margin-top: 48px;
+          padding: 48px 34px 48px;
         }
 
         h5 {
@@ -2091,17 +2150,18 @@
       }
     }
 
-    &.pro-sec {
+    &.pro-sec#stickbb {
       // height: 60vh !important;
+      margin-top: 31px;
 
       main {
         padding: 0 4.8%;
 
         h1 {
-          font-size: 2.5rem !important;
-          margin-bottom: 37px !important;
-          letter-spacing: 0 !important;
-          line-height: 3rem;
+          font-size: 2.6rem;
+          /* margin-bottom: 37px !important; */
+          letter-spacing: 0;
+          line-height: 3.2rem;
         }
 
         div.fil-contain {
@@ -2176,13 +2236,16 @@
     padding-top: 26vh;
   }
 
-  div.pro-cont {
+  .projects-page div.pro-cont {
     padding-top: 17px !important;
 
     .outerPro { 
 
       div.project {
-        margin-bottom: 4.1rem;
+        margin-bottom: 3.6rem;
+        .pro-item{
+          margin-bottom: 25px;
+        }
 
         h6 {
           font-size: 1.2rem;
@@ -2209,12 +2272,12 @@
   }
 }
 
-@media (max-width: 374px) {
+@media (max-width: 375px) {
   .frame-wrapper {
     .frame {
       &.f-top {
-        padding-left: 5.5%;
-        padding-right: 5.5%;
+        // padding-left: 5.5%;
+        // padding-right: 5.5%;
 
         // .logo {
         //   width: 3.5rem !important;
@@ -2247,7 +2310,7 @@
   section {
     &.head {
       .h1.mobile-home-head {
-        padding-bottom: 27%;
+        padding-bottom: 23%;
 
         h1 {
           font-size: 2.17rem;
@@ -2272,20 +2335,22 @@
         }
       }
 
-      .h2-wrapper {
+      div.h2-wrapper {
         margin-top: 5rem;
         padding-left: 5%;
         padding-right: 5%;
+        height: 71.5vh;
+
 
         .h2 {
           h3 {
             margin: 30px auto 42px;
-            line-height: 2.4rem;
-            font-size: 1.6rem;
+            line-height: 1.6;
+            font-size: 1.7rem;
           }
 
           h6 {
-            font-size: 0.7rem;
+            font-size: 0.95rem;
           }
         }
 
@@ -2517,8 +2582,8 @@
     }
 
     &.process {
-      margin-left: 4.8%;
-      margin-right: 4.8%;
+      // margin-left: 4.8%;
+      // margin-right: 4.8%;
 
       h3 {
         font-weight: 500;
@@ -2542,16 +2607,16 @@
       }
     }
 
-    &.pro-sec {
+    &.pro-sec#stickbb {
       // height: 55.5vh !important;
-
+      margin-top:81px;
       main {
         padding: 0 4.8%;
 
         h1 {
-          font-size: 2.35rem !important;
-          margin-bottom: 30px !important;
-          letter-spacing: 0.018rem !important;
+          font-size: 2.5rem;
+          margin-bottom: 30px;
+          letter-spacing: 0.01rem;
         }
 
         div.fil-contain {
@@ -2622,8 +2687,8 @@
     padding-top: 25vh;
   }
 
-  div.pro-cont {
-    padding-top: 3px !important;
+  .projects-page div.pro-cont {
+    padding-top: 40px !important;
 
     .outerPro { 
 

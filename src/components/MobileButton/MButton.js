@@ -25,13 +25,14 @@ const Button = ({
     const teXt = q(".btn-more-title span");
 
     if (btnhover === true) {
+      gsap.set(ripple, { backgroundColor: '#1a1a1a' })
       gsap.to(ripple, 0, { yPercent: -100, borderRadius: 50, autoAlpha: 1 });
       gsap.to(ripple, 0.5, {
         yPercent: 0,
         borderRadius: 0,
       });
       gsap.to(teXt, 0.3, {
-        color: "#000",
+        color: "#fff",
       });
       gsap.to(teXt, 0.5, {
         transformOrigin: "left top",
@@ -44,7 +45,7 @@ const Button = ({
         borderRadius: 50,
       });
       gsap.to(teXt, 0.4, {
-        color: "#fff",
+        color: "#000",
       });
       gsap.to(teXt, 0.5, {
         transformOrigin: "left top",

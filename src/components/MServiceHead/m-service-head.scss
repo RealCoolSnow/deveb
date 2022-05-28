@@ -11,28 +11,40 @@ div.m-service-head {
   h4 {
     font-size: 2.75rem;
     font-weight: 500;
-    color: var(--primary-font-color);
+    color: var(--black-font-main);
+  }
+}
+
+@media (max-width: 768px ){
+  div.m-service-head {
+    margin: 207px 0 167px;
+  }
+}
+@media(max-width: 450px){
+  div.m-service-head {
+    margin: 171px 0 128px;
   }
 }
 
 @media ( max-width: 395px ) {
   div.m-service-head {
-    margin: 9rem 0 5.9rem;
+    margin: 9.3rem 0 5.9rem;
+    letter-spacing: .7px;
 
     h6 { 
       font-size: 0.95rem;
     }
 
     h4 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       // margin-top: -0.4rem;
     }
   }
 }
 
-@media ( max-width: 374px ) {
+@media ( max-width: 375px ) {
   div.m-service-head {
-    margin: 8.9rem 0 5.9rem;
+    margin: 8.3rem 0 5.9rem;
 
     h6 { 
       font-size: 0.73rem;
@@ -40,7 +52,7 @@ div.m-service-head {
 
     h4 {
       font-size: 2.4rem;
-      margin-top: -0.4rem;
+      // margin-top: -0.4rem;
     }
   }
 } 

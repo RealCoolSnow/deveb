@@ -46,10 +46,10 @@ const Head = () => {
                 <span>Design.</span>
               </span>
               <span className="headSpan">
-                <span>Architecture.</span>
+                <span>Development.</span>
               </span>
               <span className="headSpan">
-                <span>Visualization.</span>
+                <span>Branding.</span>
               </span>
 
               <div className="call-action">
@@ -92,10 +92,15 @@ const Head = () => {
           <div className="h2-con">
           <div className="h2 home">
             <h6>Who we are</h6>
-            <h3>
+            
               {/* {isMobile ? "AMarc " : "am-arc "} */}
-              A digital agency with solid web design and development expertise.
-            </h3>
+              { isMobile? (
+                <h3>A digital agency with solid web design and development expertise.</h3>
+              ) : (
+                <h3> <div>A digital agency with solid web</div> <span>design and development expertise.</span></h3>
+              )}
+              
+            
           </div>
 
           {isMobile ? (

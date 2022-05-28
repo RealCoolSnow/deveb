@@ -186,6 +186,17 @@ if(!isMobile){
     invalidateOnRefresh: true,
       // markers:true,
     });
+    gsap.fromTo(q(".head.services img"),
+      {y:0,},
+      {y:-20,
+        
+        duration:1,
+        ease:"power2.inOut",
+        yoyo: true,
+        repeat:-1,
+        // delay:1,
+      }
+    )
 
     
     fooT.current = gsap

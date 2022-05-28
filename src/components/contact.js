@@ -23,7 +23,7 @@ const MLine = `url(${movingLine})`;
 
 let TL;
 
-const Con = ({ conn }) => {
+const Con = () => {
   const { setReset } = useAppContext();
   const { isMobile, changePointer } = useAppContext();
   const location = useLocation();
@@ -34,11 +34,8 @@ const Con = ({ conn }) => {
 
   const recap = useRef(null);
 
-  const [con, setCon] = useState(conn);
-
   const [contactData, setContactData] = useState({
     needs: [],
-    docs: [],
     budgets: [],
   });
 
@@ -60,7 +57,6 @@ const Con = ({ conn }) => {
 
   // Inputs
   const [activeNeeds, setActiveNeeds] = useState([]);
-  const [activeDocs, setActiveDocs] = useState([]);
   const [activeBudg, setActiveBudg] = useState(-1);
 
   const [form, setForm] = useState({
@@ -114,25 +110,13 @@ const Con = ({ conn }) => {
     setAttachments(newAttachments);
   };
 
-  useEffect(() => {
-    if (fromcontact) {
-      setCon(true);
-    }
-  }, []);
-
-  const toggleNeedDoc = (target, idx) => {
+  const toggleNeedBudg = (target, idx) => {
     if (target === "need") {
       const isNeedActive = activeNeeds.includes(idx);
 
       if (isNeedActive)
         setActiveNeeds(activeNeeds.filter((activeIdx) => activeIdx !== idx));
       else setActiveNeeds([...activeNeeds, idx]);
-    } else if (target === "doc") {
-      const isDocActive = activeDocs.includes(idx);
-
-      if (isDocActive)
-        setActiveDocs(activeDocs.filter((activeIdx) => activeIdx !== idx));
-      else setActiveDocs([...activeDocs, idx]);
     } else if (target === "budg") {
       if (activeBudg === idx) setActiveBudg(-1);
       else setActiveBudg(idx);
@@ -168,22 +152,15 @@ const Con = ({ conn }) => {
 
     if (form.message) ContactForm.message = form.message;
 
-    if (con === false) {
-      const { needs, docs, budgets } = contactData;
+    const { needs, docs, budgets } = contactData;
 
-      if (activeNeeds) {
-        const needsArr = needs.filter((val, idx) => activeNeeds.includes(idx));
-        ContactForm.needs = needsArr.join(" - ");
-      }
+    if (activeNeeds) {
+      const needsArr = needs.filter((val, idx) => activeNeeds.includes(idx));
+      ContactForm.needs = needsArr.join(" - ");
+    }
 
-      if (activeDocs) {
-        const docsArr = docs.filter((val, idx) => activeDocs.includes(idx));
-        ContactForm.docs = docsArr.join(" - ");
-      }
-
-      if (activeBudg) {
-        ContactForm.budg = budgets[activeBudg];
-      }
+    if (activeBudg) {
+      ContactForm.budg = budgets[activeBudg];
     }
 
     const attachs = new FormData();
@@ -203,25 +180,29 @@ const Con = ({ conn }) => {
     });
     sendForm = await sendForm.json();
 
-    // setTimeout(() => {
+    setTimeout(() => {
+      if (sendForm.success) {
+        setSendingForm(false);
+        cursorLoading(false);
+        setShowThanks(true);
+        changePointer({
+          isHover: true,
+          color: { bg: "#ffffff", txt: "#000000" },
+          text: "✕",
+          blend: true,
+          fsize: "20px",
+        });
 
-    if (sendForm.success) {
-      setSendingForm(false);
-      cursorLoading(false);
-      setShowThanks(true);
-      changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "✕", blend:true, fsize:"20px"});
-
-      setForm({ name: "", email: "", message: "" });
-      setActiveNeeds([]);
-      setActiveDocs([]);
-      setActiveBudg(-1);
-      setAttachments([]);
-      // setReset();
-    } else {
-      setSendingForm(false);
-      cursorLoading(false);
-    }
-    // }, 100000);
+        setForm({ name: "", email: "", message: "" });
+        setActiveNeeds([]);
+        setActiveBudg(-1);
+        setAttachments([]);
+        // setReset();
+      } else {
+        setSendingForm(false);
+        cursorLoading(false);
+      }
+    }, 100000);
   };
 
   const requestSendingLoading = () => {
@@ -394,8 +375,6 @@ const Con = ({ conn }) => {
     else if (!isFormValid && formValid) setFormValid(false);
   }, [form]);
 
-  const removeSending = () => sendText.split(" ")[1];
-
   return (
     <>
       {showThanks ? (
@@ -403,67 +382,37 @@ const Con = ({ conn }) => {
       ) : (
         <section
           data-scroll-container
-          className={`sec-form mb ${sendingForm ? "sending-form-effect" : ""} ${
-            con ? "only-contact" : "brief"
-          }`}
+          className={`sec-form mb ${
+            sendingForm ? "sending-form-effect" : ""
+          } only-contact`}
         >
-          <h6>
-            We are always <br />
-            <span>
-              happy to <p>help</p>
-            </span>
-          </h6>
+          <header>
+            <h6>
+              We are always happy to help{" "}
+              <img src="/assets/emojie/angel.png" alt="angel-emojie" />
+            </h6>
 
-          <div className="tabs-holder">
-            <button
-              className={`co-btn ${con === false ? "active" : ""}`}
-              onClick={() => {
-                setCon(false);
-                setReset();
-              }}
-            >
-              Send brief
-            </button>
-
-            <button
-              className={`co-btn ${con === false ? "" : "active"}`}
-              onClick={() => {
-                setCon(true);
-                setReset();
-              }}
-            >
-              Contact us
-            </button>
-            <div className="backHolder"></div>
-          </div>
+            <h1>Get in touch</h1>
+          </header>
 
           <form onSubmit={(e) => e.preventDefault()}>
-            {con === false && (
-              <div className="options-btns needs">
-                <p>I need</p>
-                {contactData.needs.map((val, idx) => (
-                  <SecondaryBtn
-                    txt={val}
-                    isActive={activeNeeds.includes(idx)}
-                    trigger={() => toggleNeedDoc("need", idx)}
-                    key={idx}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="options-btns needs">
+              <p>I need</p>
+              {contactData.needs.map((val, idx) => (
+                <SecondaryBtn
+                  txt={val}
+                  isActive={activeNeeds.includes(idx)}
+                  trigger={() => toggleNeedBudg("need", idx)}
+                  key={idx}
+                />
+              ))}
+            </div>
 
-            <div
-              className="form-inputs"
-              style={
-                con === true
-                  ? { marginTop: 15 + "px", marginBottom: 3 + "rem" }
-                  : null
-              }
-            >
+            <div className="form-inputs">
               <div className="am-input">
                 <input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Your name"
                   name="name"
                   value={form.name}
                   onChange={inputHandler}
@@ -483,7 +432,7 @@ const Con = ({ conn }) => {
                   >
                     <path
                       fill="none"
-                      stroke={formErr["name"].length ? "#FF6666" : "#fff"}
+                      stroke={formErr["name"].length ? "#FF6666" : "#6E6E73"}
                       d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
                     />
                   </svg>
@@ -497,7 +446,7 @@ const Con = ({ conn }) => {
               <div className="am-input">
                 <input
                   type="text"
-                  placeholder="Your Email"
+                  placeholder="Your email"
                   name="email"
                   value={form.email}
                   onChange={inputHandler}
@@ -518,7 +467,7 @@ const Con = ({ conn }) => {
                   >
                     <path
                       fill="none"
-                      stroke={formErr["email"].length ? "#FF6666" : "#fff"}
+                      stroke={formErr["email"].length ? "#FF6666" : "#6E6E73"}
                       d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
                     />
                   </svg>
@@ -541,120 +490,60 @@ const Con = ({ conn }) => {
                 <div
                   className="input-moving-line"
                   style={{ backgroundImage: MLine }}
-                ></div>
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 1200 60"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#6E6E73"
+                      d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 
             <div className="att-btn">
               <label htmlFor="filename" ref={labelRef}></label>
 
-              {con === true ? (
-                <>
-                  <div className="google-captcha">
-                    <span>
-                      This site is protected by reCAPTCHA and the Google{" "}
-                      <a href="https://policies.google.com/privacy">
-                        {" "}
-                        Privacy Policy{" "}
-                      </a>{" "}
-                      and{" "}
-                      <a href="https://policies.google.com/terms">
-                        {" "}
-                        Terms of Service{" "}
-                      </a>{" "}
-                      apply.
-                    </span>
-                  </div>
-
-                  <div className="contact-action">
-                    <SecondaryBtn
-                      isActive={false}
-                      trigger={() => {}}
-                      refrence={labelRef}
-                      primary={true}
-                    >
-                      {" "}
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 17.009 17"
-                        >
-                          <g
-                            id="attach-interface-clip-symbol"
-                            transform="translate(12.524 -0.146)"
-                          >
-                            <g
-                              id="Group_335"
-                              data-name="Group 335"
-                              transform="translate(-12.524 0.146)"
-                            >
-                              <path
-                                id="Path_273"
-                                data-name="Path 273"
-                                d="M11.08,7.579a1.076,1.076,0,0,0,.047-1.6,1.149,1.149,0,0,0-1.647,0L8.056,7.4a3.476,3.476,0,0,0-.177,5.024,3.532,3.532,0,0,0,5.074-.127l2.4-2.4a5.664,5.664,0,0,0,0-8l-.1-.1a5.663,5.663,0,0,0-8,0l-5.6,5.6a5.664,5.664,0,0,0,0,8l.1.1a5.621,5.621,0,0,0,6.48,1.06c.585-.286,1.221-.829.8-1.59A1.175,1.175,0,0,0,7.4,14.529,3.952,3.952,0,0,1,3.351,13.9l-.1-.1a3.4,3.4,0,0,1,0-4.8l5.6-5.6a3.4,3.4,0,0,1,4.8,0l.1.1a3.4,3.4,0,0,1,0,4.8l-2.4,2.4a1.274,1.274,0,0,1-1.873.127A1.223,1.223,0,0,1,9.657,9Z"
-                                transform="translate(0 -0.146)"
-                              />
-                            </g>
-                          </g>
-                        </svg>
-                        Add attachment
-                      </span>
-                    </SecondaryBtn>
-
-                    {/* <Button style={btnStyle} text="Send" trigger={sendContactForm} /> */}
-
-                    {isMobile ? (
-                      <MButton
-                        text={sendSm}
-                        trigger={sendContactForm}
-                        active={formValid}
-                        exClass={sendingForm ? "send-loading" : ""}
-                      />
-                    ) : (
-                      <Button
-                        text={sendText === "Send request" ? "Send" : sendText}
-                        trigger={sendContactForm}
-                        active={formValid}
-                        movable={false}
-                      />
-                    )}
-                  </div>
-                </>
-              ) : (
-                <SecondaryBtn
-                  isActive={false}
-                  trigger={() => {}}
-                  refrence={labelRef}
-                  primary={true}
-                >
-                  {" "}
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 17.009 17"
+              <SecondaryBtn
+                isActive={false}
+                trigger={() => {}}
+                refrence={labelRef}
+                primary={true}
+              >
+                {" "}
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 17.009 17"
+                  >
+                    <g
+                      id="attach-interface-clip-symbol"
+                      transform="translate(12.524 -0.146)"
                     >
                       <g
-                        id="attach-interface-clip-symbol"
-                        transform="translate(12.524 -0.146)"
+                        id="Group_335"
+                        data-name="Group 335"
+                        transform="translate(-12.524 0.146)"
                       >
-                        <g
-                          id="Group_335"
-                          data-name="Group 335"
-                          transform="translate(-12.524 0.146)"
-                        >
-                          <path
-                            id="Path_273"
-                            data-name="Path 273"
-                            d="M11.08,7.579a1.076,1.076,0,0,0,.047-1.6,1.149,1.149,0,0,0-1.647,0L8.056,7.4a3.476,3.476,0,0,0-.177,5.024,3.532,3.532,0,0,0,5.074-.127l2.4-2.4a5.664,5.664,0,0,0,0-8l-.1-.1a5.663,5.663,0,0,0-8,0l-5.6,5.6a5.664,5.664,0,0,0,0,8l.1.1a5.621,5.621,0,0,0,6.48,1.06c.585-.286,1.221-.829.8-1.59A1.175,1.175,0,0,0,7.4,14.529,3.952,3.952,0,0,1,3.351,13.9l-.1-.1a3.4,3.4,0,0,1,0-4.8l5.6-5.6a3.4,3.4,0,0,1,4.8,0l.1.1a3.4,3.4,0,0,1,0,4.8l-2.4,2.4a1.274,1.274,0,0,1-1.873.127A1.223,1.223,0,0,1,9.657,9Z"
-                            transform="translate(0 -0.146)"
-                          />
-                        </g>
+                        <path
+                          id="Path_273"
+                          data-name="Path 273"
+                          d="M11.08,7.579a1.076,1.076,0,0,0,.047-1.6,1.149,1.149,0,0,0-1.647,0L8.056,7.4a3.476,3.476,0,0,0-.177,5.024,3.532,3.532,0,0,0,5.074-.127l2.4-2.4a5.664,5.664,0,0,0,0-8l-.1-.1a5.663,5.663,0,0,0-8,0l-5.6,5.6a5.664,5.664,0,0,0,0,8l.1.1a5.621,5.621,0,0,0,6.48,1.06c.585-.286,1.221-.829.8-1.59A1.175,1.175,0,0,0,7.4,14.529,3.952,3.952,0,0,1,3.351,13.9l-.1-.1a3.4,3.4,0,0,1,0-4.8l5.6-5.6a3.4,3.4,0,0,1,4.8,0l.1.1a3.4,3.4,0,0,1,0,4.8l-2.4,2.4a1.274,1.274,0,0,1-1.873.127A1.223,1.223,0,0,1,9.657,9Z"
+                          transform="translate(0 -0.146)"
+                        />
                       </g>
-                    </svg>
-                    Add attachment
-                  </span>
-                </SecondaryBtn>
-              )}
+                    </g>
+                  </svg>
+                  Add attachment
+                </span>
+              </SecondaryBtn>
 
               <input
                 className="hd"
@@ -700,75 +589,62 @@ const Con = ({ conn }) => {
                 size="invisible"
                 ref={recap}
               />
-
-              {/* {con === true ? (
-                <Button style={btnStyle} text="Send" trigger={sendContactForm} />
-              ) : null} */}
             </div>
 
-            {con === false && (
-              <div className="options-btns docs">
-                <p>Documents I have</p>
+            <>
+              <div className="options-btns budgets">
+                <p>Budget (USD)</p>
 
-                {contactData.docs.map((val, idx) => (
+                {contactData.budgets.map((val, idx) => (
                   <SecondaryBtn
                     txt={val}
-                    isActive={activeDocs.includes(idx)}
-                    trigger={() => toggleNeedDoc("doc", idx)}
+                    isActive={activeBudg === idx}
+                    trigger={() => toggleNeedBudg("budg", idx)}
                     key={idx}
                   />
                 ))}
               </div>
-            )}
 
-            {con === false && (
-              <>
-                <div className="options-btns budgets">
-                  <p>Budget (USD)</p>
+              <div className="google-captcha">
+                <span>
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {" "}
+                    Privacy Policy{" "}
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {" "}
+                    Terms of Service{" "}
+                  </a>{" "}
+                  apply.
+                </span>
+              </div>
 
-                  {contactData.budgets.map((val, idx) => (
-                    <SecondaryBtn
-                      txt={val}
-                      isActive={activeBudg === idx}
-                      trigger={() => toggleNeedDoc("budg", idx)}
-                      key={idx}
-                    />
-                  ))}
-                </div>
-
-                <div className="google-captcha">
-                  <span>
-                    This site is protected by reCAPTCHA and the Google{" "}
-                    <a href="https://policies.google.com/privacy">
-                      {" "}
-                      Privacy Policy{" "}
-                    </a>{" "}
-                    and{" "}
-                    <a href="https://policies.google.com/terms">
-                      {" "}
-                      Terms of Service{" "}
-                    </a>{" "}
-                    apply.
-                  </span>
-                </div>
-
-                {isMobile ? (
-                  <MButton
-                    text={sendText}
-                    trigger={sendContactForm}
-                    exClass="con-lg-send"
-                    active={formValid}
-                  />
-                ) : (
-                  <Button
-                    text={sendText}
-                    trigger={sendContactForm}
-                    active={formValid}
-                    movable={false}
-                  />
-                )}
-              </>
-            )}
+              {isMobile ? (
+                <MButton
+                  text={sendText}
+                  trigger={sendContactForm}
+                  exClass="con-lg-send"
+                  active={formValid}
+                />
+              ) : (
+                <Button
+                  text={sendText}
+                  trigger={sendContactForm}
+                  active={formValid}
+                  movable={false}
+                />
+              )}
+            </>
           </form>
 
           {isMobile ? null : (
@@ -835,11 +711,7 @@ const Con = ({ conn }) => {
 
       {isMobile ? (
         <div style={{ height: "50vh" }}>
-          <section
-            id="bab"
-            className="sec-form footer-sec fot"
-            style={con === true ? { marginTop: "-46px" } : null}
-          >
+          <section id="bab" className="sec-form footer-sec fot">
             <div className="trig">
               <div className="footer-foot">
                 <div className="footer-secs l">
@@ -854,12 +726,34 @@ const Con = ({ conn }) => {
                 </div>
                 <div className="footer-secs r">
                   <div>
-                  <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="up" src={up} /></a>
-              <a href="https://www.behance.net/amirmohseni" target="_blank"><img className="be" src={be} /></a>
-              <a href="https://t.me/am_arc_com" target="_blank"><img className="tele" src={tele} /></a>
-              <a href="https://www.instagram.com/am__arc/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
-              <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
-           
+                    <a
+                      href="https://www.upwork.com/fl/am1amirmohseni"
+                      target="_blank"
+                    >
+                      <img className="up" src={up} />
+                    </a>
+                    <a
+                      href="https://www.behance.net/amirmohseni"
+                      target="_blank"
+                    >
+                      <img className="be" src={be} />
+                    </a>
+                    <a href="https://t.me/am_arc_com" target="_blank">
+                      <img className="tele" src={tele} />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/am__arc/?hl=en"
+                      target="_blank"
+                    >
+                      <img className="insta" src={insta} />
+                    </a>
+                    <a
+                      href="https://api.whatsapp.com/send?phone=380970006043"
+                      target="_blank"
+                    >
+                      {" "}
+                      <img className="whats" src={whats} />
+                    </a>
                   </div>
                 </div>
               </div>

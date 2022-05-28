@@ -296,11 +296,12 @@ section.footer-sec.fot{
         font-weight: 500;
         letter-spacing: .5px;
       }
-      .footer-secs.r div .be{    height: 19px; opacity: .4;}
-      .footer-secs.r div .up{    height: 20px;opacity: .4;}
-      .footer-secs.r div .insta{    height: 20px;opacity: .4;}
-      .footer-secs.r div .tele{    height: 21px;opacity: .4;}
-      .footer-secs.r div .whats{    height: 22px;opacity: .4;}
+      .footer-secs.r div img{opacity: .4}
+      .footer-secs.r div .be{    height: 19px;}
+      .footer-secs.r div .up{    height: 20px;}
+      .footer-secs.r div .insta{    height: 20px;}
+      .footer-secs.r div .tele{    height: 21px;}
+      .footer-secs.r div .whats{    height: 22px;}
       .footer-secs.r div{
         width: 100%;
         justify-content: space-around;
@@ -313,4 +314,64 @@ section.footer-sec.fot{
 
 }
 
+}
+
+@media (max-width: 500px){
+  section.footer-sec.fot{
+    height: 100vh;
+  
+  
+  .trig{
+    
+    .footer-main{
+      height: 35%;
+      flex-direction: column;
+      justify-content: flex-end;
+      h6{
+        position: initial;
+        top: 0;
+        pointer-events: none;
+        left: 0;
+        transform: none;
+        letter-spacing: 0.1px;
+        padding-bottom: 2px;
+        width: 100%;
+        span{
+          font-size: 40.34px;
+          p{
+            color:#339CFF;
+          }
+        }
+      }
+    }
+    .footer-foot{
+      justify-content: space-between;
+      flex-direction: column;
+      height: 66%;
+      width: 100%;
+      padding: 0 4.6%;
+      .footer-secs.l{
+        padding-top: 119px;
+        h5{
+          letter-spacing: .2px;
+        }
+      }
+      .footer-secs.r{
+        padding-bottom: 33px;
+        div a img{opacity: 1;}
+        .git{
+          height: 21px;
+          left: 3px;
+        }
+        .drib{
+          height: 21px;
+          top: 2px;
+        }
+        .insta{
+          right:2px
+        }
+      }
+    }
+  }
+} 
 }

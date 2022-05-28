@@ -98,7 +98,6 @@ useEffect(()=>{
 
         <div className="fil-contain">
 
-          <div className="little-fade left-fade"></div>
 
           {/* <div className="lines">
             line1
@@ -115,7 +114,6 @@ useEffect(()=>{
 
           </div> */}
 
-          <div className="little-fade right-fade"></div>
 
         </div>
       </main>

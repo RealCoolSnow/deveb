@@ -546,18 +546,12 @@ const HomePage = () => {
       {/* <Suspense fallback={ <Loading/> }> */}
         {
           isMobile ?
-            <MServHead txt="Design" />
+            <MServHead txt="Top projects" />
           :
           null
         }
         <Showcase showcasedata={home} dataHeight="200vh" sci="i1"/>
-        {
-          isMobile ?
-            <MServHead txt="Visualization" />
-          :
-            // <ServHead num="02" text="Visualization" ref={ref} array={rArray}/>
-            null
-        }
+      
 
         {/* <Showcase  showcasedata={homeExt} dataHeight="300vh" sci="i2"/> */}
 

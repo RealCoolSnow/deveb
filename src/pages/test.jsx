@@ -230,7 +230,7 @@ const Test = () => {
 
   return( 
     <main id="viewport" ref={el} data-scroll-container className="projects-page" >
-      <div className="fade" style={isMobile ?{paddingBottom: "180%"}: null}>
+      <div className="fade" >
         {/* <div className="fade-layer1" style={darklay1}></div> */}
 
        <ProHead Cat={cat} catFunction={catFunction}/>

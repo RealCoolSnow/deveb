@@ -151,6 +151,7 @@ section.showcase-pin {
         font-weight: 500;
         margin-top: 27px;
         margin-bottom: 21px;
+        color: var(--black-font-main)
       }
       
       p {
@@ -159,7 +160,7 @@ section.showcase-pin {
         text-align: center;
         font-size: 1rem;
         font-weight: 400;
-        color: var(--lighter-menu-link-color);
+        color: var(--black-font);
       }
 
       .btn-container {
@@ -290,16 +291,25 @@ section.showcase-pin {
 
 @media ( max-width: 450px ) {
   section.showcase-pin {
+    margin-right: 0;
+    margin-left: 0;
 
     .showcase-mobile-container {
+      
 
       .mobile-showcase-box {
+        &.h-showcase{
+          margin-bottom: 83px;
+        }
 
         h4 {
           font-size: 1.96rem;
+          margin: auto;
           margin-top: 24px;
           margin-bottom: 24px;
           letter-spacing: 0.018rem;
+          line-height: 1.2;
+          width: 78%;
         }
         
         p {
@@ -324,14 +334,22 @@ section.showcase-pin {
   section.showcase-pin {
 
     .showcase-mobile-container {
+       &:first-of-type{
+        margin-top: 73px;
+       }
 
       .mobile-showcase-box {
         margin-bottom: 116px;
 
         h4 {
-          font-size: 28.5px;
-          margin-top: 24px;
+          font-size: 28.9px;
+          margin: auto;
+          margin-top: 27px;
+          width: 75%;
+          line-height: 1.2;
+          letter-spacing: 0px;
           margin-bottom: 23px;
+          font-weight: 500;
         }
         
         p {
@@ -339,16 +357,16 @@ section.showcase-pin {
           font-size: 0.962rem;
           font-weight: 400;
           line-height: 1.347rem;
-          color: var(--lighter-menu-link-color);
+          // color: var(--lighter-menu-link-color);
         }
   
         .btn-container {
-          margin-top: 21px;
+          margin-top: 29px;
 
           a.btn-more {
-            padding: 13px 22px 11px;
+            padding: 14px 22px 11px;
             span {
-              font-size: 0.75rem;
+              font-size: 0.9rem;
 
             }
           }
@@ -357,7 +375,7 @@ section.showcase-pin {
       }
   
       .mobile-showcase-box.h-showcase {
-        margin-bottom: 92px;
+        margin-bottom: 70px;
 
         // &:last-child {
         //   margin-bottom: 0px;

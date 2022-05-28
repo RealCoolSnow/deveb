@@ -294,3 +294,15 @@ main.single-pj {
   pointer-events: none;
   background-position: center;
 }
+@media (max-width: 768px){
+  main.projects-page{
+    .fade{
+      padding-bottom: 165%;
+    }
+  }
+}
+@media (max-width: 450px) {
+  main.projects-page .fade{
+    padding-bottom: 155%;
+  }
+}
