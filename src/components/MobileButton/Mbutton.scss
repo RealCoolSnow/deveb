@@ -12,6 +12,10 @@
       }
     }
 
+    .btn-more-ripple span {
+      background: var(--black-font-main) !important;
+    }
+
     .btn-more.invalid {
 
       &:focus-within {
@@ -24,6 +28,7 @@
       // background-color: transparent !important;
 
     }
+
   }
 
 }

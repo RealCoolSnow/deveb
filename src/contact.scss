@@ -10,64 +10,64 @@
   // padding-top: 25vh;
   width: 100%;
   overflow: hidden;
+}
 
-  section.sec-form {
+section.sec-form {
 
-    header {
-      color: var(--black-font-main);
-      padding-bottom: 4.3rem;
+  header {
+    color: var(--black-font-main);
+    padding-bottom: 4.5rem;
+    padding-top: 10rem;
 
-      h6 {
-        display: flex;
-        align-items: center;
-        text-align: left;
-        padding-top: 9rem;
-        font-size: 1rem;
-        font-weight: 500;
-        letter-spacing: -0.8px;
-        word-spacing: 2px;
+    h6 {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: -0.8px;
+      word-spacing: 2px;
 
-        img {
-          height: 1.875;
-          margin-left: 0.5rem;
-        }
-      }
-  
-      h1 {
-        font-size: 3.8rem;
-        text-align: left;
-        font-weight: 500;
+      img {
+        height: 1.875;
+        margin-left: 0.5rem;
       }
     }
 
-    form { 
-
-      >.btn-container {
-        margin-top: 50px;
-        margin-bottom: 50px;
-
-        button.btn-more {
-          background-color: var(--blue-cta);
-          padding: 1.2rem 1.8rem 1.2rem;
-  
-          .btn-more-title {
-  
-            span {
-              color: var(--primary-font-color) !important;
-              font-weight: 500;
-              font-size: 1.1rem;
-            }
-          }
-        }
-
-      }
-
+    h1 {
+      font-size: 3.9rem;
+      text-align: left;
+      font-weight: 500;
     }
   }
 
+  form { 
+
+    >.btn-container {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      button.btn-more {
+        background-color: var(--blue-cta);
+        padding: 1.25rem 0 1.25rem;
+        width: 11.25rem;
+        justify-content: center;
+
+        .btn-more-title {
+
+          span {
+            color: var(--primary-font-color) !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0;
+          }
+        }
+      }
+
+    }
+
+  }
 }
-
-
 
 .grecaptcha-badge { 
   visibility: hidden;
@@ -103,30 +103,7 @@
 
 @media ( min-width: 768px ) {
   button.btn-more:not(.active, .invalid) .btn-more-title span:after {
-    color: #fff !important;
-  }
-
-  .contact-page {
-
-    .sec-form.sending-form-effect {
-    
-      form { 
-      
-        .btn-container button.btn-more {
-          width: 139px !important;
-          justify-content: center !important;
-
-          .btn-more-title {
-
-            span::after {
-              color: #3D7299 !important;
-            }
-          }
-
-        }
-  
-      }
-    }
+    // color: #fff !important;
   }
 }
 
