@@ -12,7 +12,7 @@ export default function MenuLink({ name, to, txt, linksOut, moveLinks }) {
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "copied ✓"})
+    changePointer({isHover: true, color:{bg:"#000", txt: "#fff"}, text: "copied ✓"})
 }
 const leavem = (e)=>{
   linksOut(e);
@@ -26,7 +26,7 @@ const leavem = (e)=>{
       (
       <p className={name}
       onClick={()=>copyToClipboard()}
-      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "Click to copy"})} 
+      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#000", txt: "#fff"}, text: "Click to copy"})} 
       onMouseLeave={()=>changePointer(false)}
       >
         <span ref={copycl} onMouseMove={moveLinks} onMouseLeave={linksOut}>{txt}</span>

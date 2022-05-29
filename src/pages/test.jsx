@@ -88,10 +88,10 @@ const Test = () => {
       })
       .to(q(".fade"), {autoAlpha:0 });
 
-      const oddItems = q(".project .pro-item").filter(function (element, index) {
+      const oddItems = q(".project").filter(function (element, index) {
         return index % 2 !== 0;
       });
-      const evenItems = q(".project .pro-item").filter(function (element, index) {
+      const evenItems = q(".project ").filter(function (element, index) {
         return index % 2 === 0;
       });
    
@@ -101,13 +101,13 @@ const Test = () => {
         scrollTrigger: {
           trigger: scaledProjectsRef[0],
           scroller:"#viewport",
-          start: "center bottom",
+          start: ()=>"center bottom",
           endTrigger: q(".pro-cont"),
-          end: "bottom+=10% bottom",
+          end: ()=>"bottom+=10% bottom",
           scrub: true,
           ease:"none",
-          onEnter: ()=> console.log("run paralax")
-          // markers: true,
+          onEnter: ()=> console.log("run paralax"),
+          markers: true,
         },
       });
   
@@ -136,7 +136,7 @@ const Test = () => {
           scrollTrigger: {
             scroller: "#viewport",
             trigger: q(".footer-sec.fot"),
-            start:()=> "center-=8% center-=8%",
+            start:()=> "top-=8% center-=8%",
             end: ()=> "bottom bottom",
             // markers: true,
             id:"foot",

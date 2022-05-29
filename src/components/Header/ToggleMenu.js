@@ -201,27 +201,27 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
 
 
   // const bg_box = q(".menu-bg-box");
-    const movemenu = (e) => {
+  //   const movemenu = (e) => {
 
-      const { target} = e;
-      const { clientWidth, clientHeight } = target;
+  //     const { target} = e;
+  //     const { clientWidth, clientHeight } = target;
 
-      // const xPos = -(e.clientX  / clientWidth - 0.5);
-      // const yPos = -(e.clientY / clientHeight - 0.5);
-      // const rightIt = q(".menu-left-part a, .menu-left-part .head, .menu-right-part a");
+  //     // const xPos = -(e.clientX  / clientWidth - 0.5);
+  //     // const yPos = -(e.clientY / clientHeight - 0.5);
+  //     // const rightIt = q(".menu-left-part a, .menu-left-part .head, .menu-right-part a");
   
-   const grMaker = ()=>{
-    const angle= (Math.atan2((document.documentElement.clientHeight/2) - (e.clientY), (document.documentElement.clientWidth/2) - (e.clientX))*180 / Math.PI) - 90;
-    // const opa = (Math.abs(xPos) + Math.abs(yPos)) + .4
-    console.log(clientWidth, clientHeight )
-    const gr = "linear-gradient( " +angle+ "deg, rgba(51, 48, 41, 0) 37%, rgba(60,60,60, .9) 96%)";
-    return gr;
-   }
-      gsap.to(q(".bg-overlay"), {
-        backgroundImage: ()=>grMaker(),
-        // background: "#ff00ff"
-      })
-    }
+  // //  const grMaker = ()=>{
+  // //   const angle= (Math.atan2((document.documentElement.clientHeight/2) - (e.clientY), (document.documentElement.clientWidth/2) - (e.clientX))*180 / Math.PI) - 90;
+  // //   // const opa = (Math.abs(xPos) + Math.abs(yPos)) + .4
+  // //   console.log(clientWidth, clientHeight )
+  // //   const gr = "linear-gradient( " +angle+ "deg, rgba(51, 48, 41, 0) 37%, rgba(60,60,60, .9) 96%)";
+  // //   return gr;
+  // //  }
+  //     gsap.to(q(".bg-overlay"), {
+  //       backgroundImage: ()=>grMaker(),
+  //       // background: "#ff00ff"
+  //     })
+  //   }
   const moveLinks = (e) => {
     const { target} = e;
     // const { clientWidth, clientHeight } = target;
@@ -257,15 +257,12 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
     <div
       className={`menu-wrapper ${isOpen ? "open" : "close"}`}
       ref={menuWrapper}
-    >
-      
-      <div
+    >   
+        <div
         className={`bg-overlay ${!isMobile && isOpen ? "fade-in" : ""}`}
         onClick={closeMenuTrigger}
         ref={menuBgRef}
-        onMouseMove={(e)=>movemenu(e)}
       ></div>
-
       <div className="menu-bg-box">
         {!isMobile ? (
           <Menu

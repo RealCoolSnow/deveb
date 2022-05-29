@@ -300,8 +300,10 @@ section.sec-form {
       &.f-top {
         padding: 0 5%;
 
+
         .navlinks-contain {
           align-items: center;
+          right: 5%;
 
           li {
             display: none;
@@ -558,9 +560,10 @@ section.sec-form {
       padding: 160vh 0 3.1rem 0!important;
     }
 
-    &.services {
+    &.services.head {
       margin: 3.646vw 0;
-      height: auto;
+      // height: auto;
+      margin-bottom: -26vh;
       // position: fixed!important;
       width:100vw;
       .head{
@@ -637,7 +640,7 @@ section.sec-form {
       margin-bottom: 99.5px;
     }
   }
-  .projects-page div.pro-cont {margin-top: -160%;}
+  .projects-page div.pro-cont {margin-top: -184%;;}
   div.contact-page {
     // padding-top: 31vh;
     
@@ -1221,9 +1224,9 @@ section.sec-form {
 
 @media (max-width: 450px) {
   #viewport{
-    background: url("./assets/serv.jpg");
-    background-size: contain;
-    background-position: 0px -98px;
+    // background: url("./assets/serv.jpg");
+    // background-size: 375px auto;
+    // background-position: 0px -89px;
   }
   .frame-wrapper {
     .frame {
@@ -2079,18 +2082,20 @@ section.sec-form {
       }
     }
 
-    &.services {
+    &.services.head {
+      margin-top: 48px;
       .h2 {
-        padding-top: 8rem;
+        padding-top: 0rem;
         padding-bottom: 0.25rem;
 
         h3 {
-          font-size: 1.65rem;
-          margin-top: 31px;
-          margin-bottom: 37.3px;
-          line-height: 2.5rem;
-          padding-left: 5.4%;
-          padding-right: 5%;
+          font-size: 1.7rem;
+          margin-top: 33px;
+           margin-bottom: 37.3px;
+          line-height: 2.6rem;
+           padding-left: 5.4%;
+           padding-right: 5%;
+         letter-spacing: .8px;
         }
 
         h6 {
@@ -2544,20 +2549,23 @@ section.sec-form {
       }
     }
 
-    &.services {
+    &.services.head {
       .h2 {
-        padding-top: 8.9rem;
+        padding-top: 3.9rem;
         padding-bottom: 0rem;
 
         h3 {
-          font-size: 1.58rem;
-          margin-top: 28px;
+          font-size: 1.63rem;
+          margin-top: 30px;
           margin-bottom: 37.3px;
-          line-height: 2.4rem;
+          line-height: 2.5rem;
+      
         }
 
         h6 {
-          font-size: 0.7rem;
+          font-size: 0.9rem;
+          margin-bottom: 0;
+          margin-top: 10px;
         }
 
         div.links-wrapper {

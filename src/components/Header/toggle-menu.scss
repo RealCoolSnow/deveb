@@ -9,7 +9,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: black;
+  background:var(--bg-l);
   border-radius: 0 0 0 100%;
 
   &.open {
@@ -27,9 +27,7 @@
     left: inherit;
     right: 0;
     // bottom: 0;
-    background-image: linear-gradient(
-      45deg, rgba(51, 48, 41, 0) 37%, rgba(60,60,60, .9) 96%);
-    // background: #141414;
+   
     width: 100vw;
     height: 100vh;
     // opacity: 0;
@@ -107,7 +105,7 @@
         display: block;
 
         > span.head {
-          color: var(--secondary-font-color);
+          color: var(--black-font-main);
           font-size: 0.7vw;
           line-height: 1.5vw;
           position: relative;
@@ -123,7 +121,7 @@
           &.email{width: 100%; cursor: none;}
 
           span {
-            color: var(--light-font-color);
+            color: var(--black-font);
             transition: color 0.4s linear;
             font-size: 0.9vw;
             line-height: 1.8vw;
@@ -151,7 +149,7 @@
 
           &:hover {
             span {
-              color: var(--primary-font-color);
+              color: var(--black-font-main);
             }
 
             svg {
@@ -173,9 +171,16 @@
     }
 
     .menu-right-part {
+      span.head{
+        color: var(--black-font-main);
+        font-size: 0.7vw;
+        line-height: 1.5vw;
+        position: relative;
+        padding: 0 15px;
+      }
       a {
         // color: var(--secondary-font-color);
-        color: #a1a1a6;
+        color: var(--black-font);
         line-height: 1;
         // transition: all 0.3s ease;
         font-size: 2.6vw;
@@ -188,7 +193,7 @@
         margin-bottom: 2px;
 
         &.active {
-          color: var(--primary-font-color);
+          color: var(--black-font-main);
 
           &::after {
             left: 0;
@@ -196,11 +201,17 @@
         }
 
         &:hover {
-          color: var(--primary-font-color);
+          color: var(--black-font-main);
 
           &::after {
             left: 0;
           }
+        }
+        &.fc{
+          padding: 5px 15px 15px;
+        }
+        &:last-child{
+          padding: 15px 15px 5px;
         }
 
         // &::after {
@@ -254,13 +265,13 @@
 
         svg {
           height: 18px;
-          fill: var(--light-menu-link-color);
+          // fill: var(--light-menu-link-color);
           display: flex;
           align-items: center;
           justify-content: center;
 
           path {
-            fill: var(--light-menu-link-color);
+            // fill: var(--light-menu-link-color);
           }
 
           &:nth-child(1) {
@@ -325,6 +336,9 @@
 
 @media (max-width: 768px) {
   .menu-wrapper {
+    // background: url(../../assets/menu.jpg);
+    // background-size: 375px auto;
+    // background-position: -190px -91px;
     .bg-overlay{
       display: none;
     }
@@ -375,6 +389,19 @@
       }
       .bottom-part {
         display: block;
+        padding-top: 23px;
+        a.estimate-btn{
+          background-color: #0084FF;
+          color: var(--bg-l);
+        }
+        .header-socials a svg{
+          height: 20px;
+          width: 100%;
+          // fill:var(--black-font-main)
+          path{
+            fill:var(--black-font-main)
+          }
+        }
       }
     }
   }
@@ -404,28 +431,28 @@
         .header-socials {
           max-width: 80% !important;
 
-          svg {
-            // height: 18px;
+          a svg {
+            height: 19px;
 
-            &:nth-child(1) {
+            &.whats {
               height: 21px;
             }
 
-            &:nth-child(2) {
-              height: 18px;
-            }
+            // &:nth-child(2) {
+            //   height: 18px;
+            // }
 
-            &:nth-child(3) {
-              height: 24px;
-            }
+            // &:nth-child(3) {
+            //   height: 24px;
+            // }
 
-            &:nth-child(4) {
-              height: 23px;
-            }
+            // &:nth-child(4) {
+            //   height: 23px;
+            // }
 
-            &:nth-child(5) {
-              height: 23px;
-            }
+            // &:nth-child(5) {
+            //   height: 23px;
+            // }
           }
         }
       }
@@ -437,7 +464,7 @@
   .menu-wrapper {
     .menu-box {
       .menu-right-part {
-        margin-top: 10%;
+        margin-top: 13%;
         min-height: 42vh;
         margin-bottom: 10%;
 
@@ -450,11 +477,11 @@
         a.estimate-btn {
           max-width: 90vw !important;
           padding: 15px 0;
-          margin-bottom: 7.5%;
+          margin-bottom: 9.5%;
         }
 
         .header-socials {
-          max-width: 78% !important;
+          max-width: 74% !important;
         }
       }
     }

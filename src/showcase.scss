@@ -231,15 +231,21 @@ section.showcase-pin {
 //   }
 // }
 
-@media ( max-width: 1000px ) {
+@media ( max-width: 1000px ) and (min-width: 768px) {
   section.showcase-pin {
-   .show-text .show-text-contain h4{
-     font-size: 38px;
+   .show-text .show-text-contain {
+     .grid-text-contain{
+       width: 83.5%;
+     }
+   h4{
+     font-size: 41px;
    }
+   p{font-size: 14.5px;}
+  }
    .show-images {
           .show-img-contain {
-            width: 35.5vw;
-            height: 35.5vw;
+            width: 41.5vw;
+            height: 41.5vw;
           }
         }
   }
@@ -327,6 +333,19 @@ section.showcase-pin {
 
       }
     }
+    &.serv{
+      .showcase-mobile-container{
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 0;
+        .mobile-showcase-box{
+        
+          h4{
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -382,16 +401,34 @@ section.showcase-pin {
         // }
       }
     }
+    &.serv{
+      .showcase-mobile-container{
+        &:first-of-type{
+          margin-top: 12px;
+        }
+        p{
+          letter-spacing: .2px;
+        }
+      }
+    }
   }
 }
 
-@media ( max-width: 374px ) {
-  section.showcase-pin {
+@media ( max-width: 376px ) {
+  section.showcase-pin.serv {
 
     .showcase-mobile-container {
+      margin-right: 20px;
+      margin-left: 20px;
+      &:first-of-type{
+        margin-top: 80px;
+      }
 
       .mobile-showcase-box {
         // margin-bottom: 116px;
+        &.w-des{
+          margin-bottom: 112px;
+        }
 
         .showcase-container {
           min-width: 300px;
@@ -399,19 +436,20 @@ section.showcase-pin {
         }
 
         h4 {
-          font-size: 27px;
-          margin-top: 21px;
-          margin-bottom: 23px;
+          font-size: 28px;
+          margin-top: 27px;
+          margin-bottom: 27px;
         }
         
         p {
           font-size: 0.92rem;
-          line-height: 1.25rem;
-          color: var(--lighter-menu-link-color);
+          letter-spacing: .3px;
+          line-height: 1.29rem;
+          // color: var(--lighter-menu-link-color);
         }
   
         .btn-container {
-          margin-top: 23px;
+          margin-top: 28px;
 
           a.btn-more {
             padding: 13px 20px 11px;

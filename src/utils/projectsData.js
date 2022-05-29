@@ -14,7 +14,7 @@ export const prjData = [
     a:{text:"View more", url:"pr15-1"},
     img:{
       cover:"",
-      colors:{right: "#000000", left:"#b79b7eb3"},
+      colors:{right: "#000000", left:"#e39499cc"},
       url:vim
     }
   },
@@ -27,7 +27,7 @@ export const prjData = [
     a:{text:"View more", url:"pr15-2"},
     img:{
       cover:"",
-      colors:{right: "#000000", left:"#aaa095b3"},
+      colors:{right: "#000000", left:"#9ebddecc"},
       url:comfeey
     }
   },
@@ -40,7 +40,7 @@ export const prjData = [
     a:{text:"View more", url:"pr15-3"},
     img:{
       cover:"",
-      colors:{right: "#000000", left:"#b79b7eb3"},
+      colors:{right: "#000000", left:"#696ea4cc"},
       url:dopop
     }
   },
@@ -53,7 +53,7 @@ export const prjData = [
     a:{text:"View more", url:"pr15-4"},
     img:{
       cover:"",
-      colors:{right: "#000000", left:"#aaa095b3"},
+      colors:{right: "#000000", left:"#fe8155cc"},
       url:dopegood
     }
   },
@@ -66,7 +66,7 @@ export const prjData = [
     a:{text:"View more", url:"pr15-5"},
     img:{
       cover:"",
-      colors:{right: "#000000", left:"#b79b7eb3"},
+      colors:{right: "#000000", left:"#aea6a6cc"},
       url:amarc
     }
   },

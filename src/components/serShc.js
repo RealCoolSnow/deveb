@@ -155,7 +155,7 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
   return (
     <section
       style={!isMobile? {marginTop: 0 } : {}}
-      className="showcase-pin footer-preSec"
+      className="showcase-pin serv"
       ref={el}
       dataheight={dataHeight}
 

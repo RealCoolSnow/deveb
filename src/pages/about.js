@@ -285,7 +285,7 @@ const AboutPage = () => {
             scrollTrigger: {
               scroller: "#viewport",
               trigger: q(".footer-sec.fot"),
-              start:()=> "center-=8% center-=8%",
+              start:()=> "top-=8% center-=8%",
               end: ()=> "bottom bottom",
               // markers: true,
               id:"foot",
