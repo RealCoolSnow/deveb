@@ -58,7 +58,7 @@ const Head = () => {
                   aria-label="estimate-project"
                   className="estimate-btn btn"
                 >
-                  Estimate project
+                  Get a quote
                 </Link>
 
                 <Link

@@ -92,7 +92,7 @@ const FooterMB = () => {
           </div>
           <div className="footer-secs r">
           <Link className="co-btn co-white" to="/contact">
-          Estimate project
+          Get a quote
               </Link>
             <div>
             <div>

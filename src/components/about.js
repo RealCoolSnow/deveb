@@ -310,21 +310,20 @@ const {isMobile} = useAppContext();
        ( <div className="mb">
           <p>About</p>
           <h2 >
-             We help people feel good in a space.
+             We lunch digital products in the best way possible.
           </h2>
         </div> )
         : 
         (
         <h2 style={{paddingTop:"150px"}}>
-          <div>We help people feel</div> <div> good in a space.</div>
+          <div>We lunch digital products in</div> <div> the best way possible</div>
         </h2>
         )
         }
         
         
         <h5 style={!isMobile?{paddingTop:"170px" }: null}>
-          A team of expert architects and designers who create cozy, modern, and
-          minimalist spaces.
+        A digital agency with solid web design and development expertise.
         </h5>
       </div>
       <div className="image-wrap fc">

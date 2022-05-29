@@ -301,11 +301,13 @@ section.showcase-pin {
     margin-left: 0;
 
     .showcase-mobile-container {
+      &:first-of-type{
+        margin-top:50px;
+      }
       
-
       .mobile-showcase-box {
         &.h-showcase{
-          margin-bottom: 83px;
+          margin-bottom: 74px;
         }
 
         h4 {
@@ -324,7 +326,10 @@ section.showcase-pin {
         }
 
         .btn-container {
-          margin-top: 24px;
+          margin-top: 31px;
+          a.btn-more{
+            padding: 17px 29px 15px;
+          }
 
           // .btn-more-title span {
           //   letter-spacing: 0.018rem !important;

@@ -298,10 +298,10 @@ section.footer-sec.fot{
         color: white;
         border-radius: 30px;
         letter-spacing: .9px;
-        padding: 15px;
-        margin: 33px 0;
-        width: 100%;
-        font-weight: 500;
+        padding: 17px;
+          margin: 33px 0;
+         width: 100%;
+         font-weight: 600;
         letter-spacing: .5px;
       }
       .footer-secs.r div img{opacity: .4}
@@ -412,7 +412,7 @@ section.footer-sec.fot{
     .footer-foot{
       justify-content: space-between;
       flex-direction: column;
-      height: 66%;
+      height: 50%;
       width: 100%;
       padding: 0 4.6%;
       .footer-secs.l{
@@ -439,4 +439,24 @@ section.footer-sec.fot{
     }
   }
 } 
+}
+
+@media (max-width: 450px){
+  section.footer-sec.fot .trig {
+    .footer-main h6 {
+      font-size: 19px;
+      span{
+        font-size: 44.34px;
+        margin-top: -5px;
+      }
+    }
+    .footer-foot{
+      height: 51.5%;
+      .footer-secs.r {
+        padding-bottom: 29px;
+      
+      }
+    }
+
+  }
 }

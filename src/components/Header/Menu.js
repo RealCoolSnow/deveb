@@ -60,7 +60,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
        { leftPart ?  <span className="head">Menu</span> : ''}
           <Link
             to="/services"
-            className={activeRoute === "services fc" ? "active fc" : ""}
+            className={activeRoute === "services" ? "active fc" : "fc"}
             onClick={() => linkClicked("services")}
             onMouseMove={moveLinks}
             onMouseLeave={!isMobile? (e)=>leavem(e) : null}
