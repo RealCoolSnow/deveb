@@ -7,10 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import HeroScroll from "./HeroScroll.js"
 import { useAppContext } from "../contexts/appcontext.js";
 
-import {
-  useLocation,
-  useHistory 
-} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 const paths = {
@@ -36,13 +33,10 @@ let tl;
 
 const Frame = () => {
 
-  const [atTheTop, setAtTheTop] = useState(true);
-  const [currentSection, setCurrentSection] = useState(1);
-
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
   
-  const {pageTitle, ScrollYValue, isMobile} = useAppContext();
+  const {pageTitle, ScrollYValue, isMobile, isMenuOpen} = useAppContext();
 
   const location = useLocation()
 
@@ -90,7 +84,7 @@ const Frame = () => {
       createTimeLine(overlayPath);
     }
 
-    if( !isMobile ) tl.play(0);
+    if( !isMobile && !isMenuOpen ) tl.play(0);
   }, [location]);
   
 
