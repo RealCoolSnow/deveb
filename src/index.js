@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {AppProvider} from './contexts/appcontext.js'
-import {
-  BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
-  <Router >
-    <AppProvider>
-      <App />
-    </AppProvider>
-  </Router>,
+  <>
+    <svg className="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path className="overlay__path" vectorEffect="non-scaling-stroke" d="M 0 0 h 0 c 0 50 0 50 0 100 H 0 V 0 Z" />
+    </svg>
+    <BrowserRouter >
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </BrowserRouter>
+  </>,
   document.getElementById('root')
 );
 

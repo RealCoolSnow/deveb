@@ -7,15 +7,86 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import HeroScroll from "./HeroScroll.js"
 import { useAppContext } from "../contexts/appcontext.js";
 
-const Frame = () => {
+import { useLocation } from "react-router-dom";
 
-  const [atTheTop, setAtTheTop] = useState(true);
-  const [currentSection, setCurrentSection] = useState(1);
+
+const paths = {
+  step1: {
+    unfilled: "M 0 100 V 100 Q 50 100 100 100 V 100 z",
+    inBetween: {
+      curve1: "M 0 100 V 50 Q 50 100 100 50 V 100 z",
+      curve2: "M 0 100 V 50 Q 50 0 100 50 V 100 z",
+    },
+    filled: "M 0 100 V 0 Q 50 0 100 0 V 100 z",
+  },
+  step2: {
+    filled: "M 0 0 V 100 Q 50 100 100 100 V 0 z",
+    inBetween: {
+      curve2: "M 0 0 V 50 Q 50 0 100 50 V 0 z",
+      curve1: "M 0 0 V 50 Q 50 100 100 50 V 0 z",
+    },
+    unfilled: "M 0 0 V 0 Q 50 0 100 0 V 0 z",
+  },
+};
+
+let tl;
+
+const Frame = () => {
 
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
   
-  const {pageTitle, ScrollYValue} = useAppContext();
+  const {pageTitle, ScrollYValue, isMobile, isMenuOpen} = useAppContext();
+
+  const location = useLocation()
+
+  const createTimeLine = (overlayPath) => {
+    tl = gsap.timeline({
+        paused: true
+      })
+      .set(overlayPath, {
+        attr: { d: paths.step1.unfilled },
+      })
+      .to(
+        overlayPath,
+        {
+          duration: 0.3,
+          ease: "power4.in",
+          attr: { d: paths.step1.inBetween.curve2 },
+        },
+        0
+      )
+      .to(overlayPath, {
+        duration: 0.1,
+        ease: "power1",
+        attr: { d: paths.step1.filled },
+      })
+
+      .set(overlayPath, {
+        attr: { d: paths.step2.filled },
+      })
+      // .to(overlayPath, {
+      //     duration: 0.2,
+      //     ease: 'sine.in',
+      //     attr: { d: paths.step2.inBetween.curve1 }
+      // })
+      .to(overlayPath, {
+        duration: 1,
+        ease: "power4",
+        attr: { d: paths.step2.unfilled },
+      });
+  };
+
+  useEffect(() => {
+    console.log('location changed: frame')
+    if (!tl) {
+      const overlayPath = document.querySelector(".overlay__path");
+      createTimeLine(overlayPath);
+    }
+
+    if( !isMobile && !isMenuOpen ) tl.play(0);
+  }, [location]);
+  
 
   useEffect(() => {
 
