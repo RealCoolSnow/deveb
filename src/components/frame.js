@@ -42,13 +42,14 @@ const Frame = () => {
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
   
-  const {pageTitle, ScrollYValue} = useAppContext();
+  const {pageTitle, ScrollYValue, isMobile} = useAppContext();
 
   const location = useLocation()
 
   const createTimeLine = (overlayPath) => {
-    tl = gsap
-      .timeline()
+    tl = gsap.timeline({
+        paused: true
+      })
       .set(overlayPath, {
         attr: { d: paths.step1.unfilled },
       })
@@ -89,7 +90,7 @@ const Frame = () => {
       createTimeLine(overlayPath);
     }
 
-    tl.play(0);
+    if( !isMobile ) tl.play(0);
   }, [location]);
   
 
