@@ -311,7 +311,7 @@ export const servData = [
     num: "",
     id: "h21ex1",
     h4: "Design",
-    p: "People want to feel good in a space. We can make it happen by creating environments that are pleasing, aesthetic, and functional.",
+    p: "Design makes its mark through first impressions. Using eye-catching design and meaningful user experiences, we establish long-lasting relationships with your customers.",
     a: { text: "View more", url: "/projects#In" },
     img: {
       cover: dopegood,
@@ -323,7 +323,7 @@ export const servData = [
     num: "",
     id: "h21ex2",
     h4: "Development",
-    p: "Our responsibility to a project extends beyond the walls of the building. We always seize the opportunity to maximize the relationship between the structure and its external context.",
+    p: "Your website is the face of your business. Together, our developers and designers build an efficient, interactive and responsive platform that will appeal to your target audience.",
     a: { text: "Learn more", url: "/projects#Ex" },
     img: {
       cover: vim,
@@ -335,7 +335,7 @@ export const servData = [
     num: "",
     id: "h21ex3",
     h4: "Branding",
-    p: "Photorealistic 3D rendering is a process performed by CGI artists with the help of professional software. The results of this process are photo-like 2D visuals. In the context of architecture, those visuals depict interiors and exteriors of buildings that are yet to be constructed.",
+    p: "We give your business a face and identify your brand by creating the most suitable logo, along with mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
     a: { text: "Learn more", url: "/projects#3dr" },
     img: {
       cover: dopop,
