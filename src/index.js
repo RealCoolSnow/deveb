@@ -7,9 +7,9 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <>
-      <svg className="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path className="overlay__path" vectorEffect="non-scaling-stroke" d="M 0 0 h 0 c 0 50 0 50 0 100 H 0 V 0 Z" />
-      </svg>
+    <svg className="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path className="overlay__path" vectorEffect="non-scaling-stroke" d="M 0 0 h 0 c 0 50 0 50 0 100 H 0 V 0 Z" />
+    </svg>
     <BrowserRouter >
       <AppProvider>
         <App />

@@ -294,8 +294,8 @@ function Header({ history }) {
         onDragCapture={(e) => e.stopPropagation()}
       >
         <div>
-          <a
-            href="/"
+          <Link
+            to="/"
             className={`logo light ${isMobile ? "light" : ""}`}
             onClick={closeMenuIfOpen}
           >
@@ -341,7 +341,7 @@ function Header({ history }) {
                 </tspan>
               </text>
             </svg> */}
-          </a>
+          </Link>
 
           <div className="navlinks-contain">
             {links
@@ -370,8 +370,8 @@ function Header({ history }) {
                         : null
                     }
                   >
-                    <a
-                      href={url}
+                    <Link
+                      to={url}
                       aria-label={ariaLabel}
                       className={`
                         ${ariaLabel === "contact page" ? "btn" : ""}
@@ -385,7 +385,7 @@ function Header({ history }) {
                       `}
                     >
                       {text}
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
