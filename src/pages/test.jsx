@@ -58,8 +58,8 @@ const Test = () => {
       setReset()
     }, 550);
 
-    changePT("AM-Projects");
-    document.title = "AM-Projects";
+    changePT("Deveb-Projects");
+    document.title = "Deveb-Projects";
     // if( tag ) {
     //   const newTag = tag[0].toUpperCase() + tag.substr(1)
 
@@ -107,7 +107,7 @@ const Test = () => {
           scrub: true,
           ease:"none",
           onEnter: ()=> console.log("run paralax"),
-          markers: true,
+          // markers: true,
         },
       });
   

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import Scene from "./three/scene.js";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
 
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import ScrollToPlugin from "gsap/ScrollToPlugin";
 
@@ -14,21 +14,39 @@ const Head = () => {
   const { isMobile } = useAppContext();
  const [url, seturl] = useState("")
   const el = useRef();
+  const q = gsap.utils.selector(el);
   const vidRef = useRef();
-// useEffect(()=>{
+  useLayoutEffect(()=>{
+   
+    
 
-//     el.current.style.transform="none"
-//     if(isMobile){
-//       seturl("/assets/video/all-mobile.m4v")
-//     }
-//     else if(!isMobile){
-//       seturl("/assets/video/allLow.m4v")
-//     }
-  
-// },[isMobile])
-// useEffect(()=>{
-//  vidRef.current.load()
-// },[url])
+    const headSpans = q(".headSpan");
+
+    gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
+
+  },[])
+useEffect(()=>{
+  const headSpans = q(".headSpan");
+
+  gsap.to(
+    headSpans,
+    {
+      autoAlpha: 1,
+      duration: 0.8,
+      delay:.6,
+    }
+  );
+
+  gsap.to(
+    headSpans,
+    {
+      yPercent: 0,
+      duration: 0.8,
+      delay:.6,
+    }
+  );
+ 
+},[])
   
 
   return (

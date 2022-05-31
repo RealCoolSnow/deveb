@@ -185,6 +185,8 @@ const HomePage = () => {
     setTimeout(() => {
       setReset()
     }, 500);
+    changePT("Deveb");
+    document.title = "Deveb";
     return ()=>{
       }
     }, [isMobile])
@@ -212,14 +214,14 @@ const HomePage = () => {
       direction === 1? changePp("Contact"): changePp("other")
     }
     if (!isMobile){
-      changePp("other")
       if(pintl.current){
         pintl.current.progress(0)
         // entvideo()
       }
-    gsap.set(q(".head"),{
-      marginBottom: "15vh"
-    })
+      gsap.set(q(".head"),{
+        marginBottom: "15vh"
+      })
+      changePp("other")
     gsap.set(q(".h2 h6, .h2 h3,.btn-container"),
     {
       opacity:0,
@@ -227,25 +229,25 @@ const HomePage = () => {
 
     const headSpans = q(".headSpan");
 
-    gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
+    // gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
 
-    gsap.to(
-      headSpans,
-      {
-        autoAlpha: 1,
-        duration: 0.8,
-      },
-      1
-    );
+    // gsap.to(
+    //   headSpans,
+    //   {
+    //     autoAlpha: 1,
+    //     duration: 0.8,
+    //   },
+    //   1
+    // );
 
-    gsap.to(
-      headSpans,
-      {
-        yPercent: 0,
-        duration: 0.8,
-      },
-      1
-    );
+    // gsap.to(
+    //   headSpans,
+    //   {
+    //     yPercent: 0,
+    //     duration: 0.8,
+    //   },
+    //   1
+    // );
 
   
     const spans = q(".h1 h1 ");
