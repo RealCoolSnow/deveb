@@ -247,7 +247,8 @@ section.footer-sec.fot{
   padding: 0!important;
 
   .trig{
-    justify-content: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
     .backgr{
       position: fixed;
       bottom:0;
@@ -326,7 +327,7 @@ section.footer-sec.fot{
 
 
 .trig{
-  
+   
   .footer-main{
     height: 35%;
     flex-direction: column;
@@ -389,7 +390,7 @@ section.footer-sec.fot{
   .trig{
     
     .footer-main{
-      height: 35%;
+      height: 49%;
       flex-direction: column;
       justify-content: flex-end;
       h6{
