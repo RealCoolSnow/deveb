@@ -101,6 +101,18 @@ section.sec-form {
   }
 }
 
+.contact-page .con-foot .footer-foot {
+  .footer-secs.l {
+    h5 {
+      width: max-content;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media ( min-width: 768px ) {
   button.btn-more:not(.active, .invalid) .btn-more-title span:after {
     // color: #fff !important;
@@ -119,6 +131,47 @@ section.sec-form {
         padding-top: 0;
       }
       
+    }
+
+    section.footer-sec.fot {
+      margin-left: 0;
+
+      .trig .footer-foot {
+        height: 50%;
+        
+        .footer-secs.l h5 {
+          width: max-content;
+          margin: 0 auto;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media ( max-width: 500px ) {
+  .contact-page section.contact-footer.fot {
+    margin-left: 0;
+
+    .trig {
+
+      .footer-foot {
+        height: auto !important;
+        .footer-secs.l {
+          padding-top: 3rem;
+          margin-bottom: 6rem;
+
+          h5 {
+            width: max-content;
+            margin: 0 auto;
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 }
