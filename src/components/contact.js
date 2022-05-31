@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect , useLayoutEffect} from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import SecondaryBtn from "./SecondaryBtn/SecondaryBtn";
@@ -13,7 +13,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
-import {gsap }from "gsap";
+import { gsap } from "gsap";
 
 import movingLine from "../assets/light-line.svg";
 
@@ -51,27 +51,26 @@ const Con = () => {
     return () => {};
   }, [isMobile]);
   useLayoutEffect(() => {
-    const sec1 = q(".sec-form h6, .sec-form h1")
-    gsap.set(q("form"), {autoAlpha:0, yPercent:5,})
-   gsap.set(sec1, {autoAlpha: 0, yPercent:30})
-    return () => {
-    };
-  }, [])
-  useEffect(()=>{
-    const sec1 = q(".sec-form h6, .sec-form h1, form")
-     gsap.to(sec1, {
-       autoAlpha:1,
-       stagger: .08,
-       duration:1.5,
-       delay: .6,
-     })
-     gsap.to(sec1,{
-      yPercent:0,
-      stagger: .08,
-      duration:.6,
-      delay:.6,
-     })
-  },[])
+    const sec1 = q(".sec-form h6, .sec-form h1");
+    gsap.set(q("form"), { autoAlpha: 0, yPercent: 5 });
+    gsap.set(sec1, { autoAlpha: 0, yPercent: 30 });
+    return () => {};
+  }, []);
+  useEffect(() => {
+    const sec1 = q(".sec-form h6, .sec-form h1, form");
+    gsap.to(sec1, {
+      autoAlpha: 1,
+      stagger: 0.08,
+      duration: 1.5,
+      delay: 0.6,
+    });
+    gsap.to(sec1, {
+      yPercent: 0,
+      stagger: 0.08,
+      duration: 0.6,
+      delay: 0.6,
+    });
+  }, []);
 
   const [showThanks, setShowThanks] = useState(false);
 
@@ -705,7 +704,7 @@ const Con = () => {
                     >
                       <img className="drib" src={drib} />
                     </a>
-                   
+
                     <a
                       href="https://www.behance.net/amirmohseni"
                       target="_blank"
@@ -734,36 +733,63 @@ const Con = () => {
       )}
 
       {isMobile ? (
-        <div style={{ height: "50vh" }}>
-          <section id="bab" className="sec-form footer-sec fot">
+        <div style={{ height: '50vh'}}>
+          <section id="bab" className="contact-footer footer-sec fot">
             <div className="trig">
-          <div className="footer-foot">
-          <div className="footer-secs l">
-            <h5 
-            onClick={()=>copyToClipboard()}
-            onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#000", txt: "#fff"}, text: "Click to copy"})} 
-            onMouseLeave={()=>changePointer(false)}
-            className={emailHover? "active" : ""}
-            ref={copycl}
-            >
-              Info@deveb.co
-            </h5>
-            <p>Mechnykova St, 2, Kyiv, 02000</p>
-          </div>
-          <div className="footer-secs r">
-            <div>
-              <a href="https://www.instagram.com/am__arc/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
-              <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="drib" src={drib} /></a>
-              <a href="https://www.behance.net/amirmohseni" target="_blank"><img className="be" src={be} /></a>
-              <a href="https://t.me/am_arc_com" target="_blank"><img className="git" src={git} /></a>
-              <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
+              <div className="footer-foot">
+                <div className="footer-secs l">
+                  <h5
+                    onClick={() => copyToClipboard()}
+                    onMouseEnter={() =>
+                      changePointer({
+                        isHover: true,
+                        color: { bg: "#000", txt: "#fff" },
+                        text: "Click to copy",
+                      })
+                    }
+                    onMouseLeave={() => changePointer(false)}
+                    className={emailHover ? "active" : ""}
+                    ref={copycl}
+                  >
+                    Info@deveb.co
+                  </h5>
+                  <p>Mechnykova St, 2, Kyiv, 02000</p>
+                </div>
+                <div className="footer-secs r">
+                  <div>
+                    <a
+                      href="https://www.instagram.com/am__arc/?hl=en"
+                      target="_blank"
+                    >
+                      <img className="insta" src={insta} />
+                    </a>
+                    <a
+                      href="https://www.upwork.com/fl/am1amirmohseni"
+                      target="_blank"
+                    >
+                      <img className="drib" src={drib} />
+                    </a>
+                    <a
+                      href="https://www.behance.net/amirmohseni"
+                      target="_blank"
+                    >
+                      <img className="be" src={be} />
+                    </a>
+                    <a href="https://t.me/am_arc_com" target="_blank">
+                      <img className="git" src={git} />
+                    </a>
+                    <a
+                      href="https://api.whatsapp.com/send?phone=380970006043"
+                      target="_blank"
+                    >
+                      {" "}
+                      <img className="whats" src={whats} />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-           
-          </div>
-        </div>
-        </div>
           </section>
-       
         </div>
       ) : null}
     </>
