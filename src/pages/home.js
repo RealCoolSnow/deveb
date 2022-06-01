@@ -423,8 +423,8 @@ const HomePage = () => {
     <main id="viewport" ref={el} data-scroll-container >
 
       <Helmet>
-        <title><em>Deveb</em> | Art meets development</title>
-        <meta name="description" content="A group of <strong>web artists</strong>, gathered to fulfil your digital dream and deliver it to your customers of choice." />
+        <title>Deveb | Art meets development</title>
+        <meta name="description" content="A group of web artists, gathered to fulfil your digital dream and deliver it to your customers of choice." />
       </Helmet>
 
       <div id="sti" style={!isMobile ? {height: "190vh"}: {}}>
