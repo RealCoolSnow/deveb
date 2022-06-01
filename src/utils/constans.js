@@ -213,8 +213,8 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: dopop,
-      colors: { cur: "#808CFF", pointer: "#8C98FF", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
-      klass: "threeD first",
+      colors: { cur: "#808CFF", pointer: "#808cffbf", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
+      klass: "first",
     },
   },
   {
@@ -225,7 +225,7 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: dopegood,
-      colors: { cur: "#FFB18C", pointer: "#E8DCD3", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
+      colors: { cur: "#FFB18C", pointer: "#FFA073bf", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
       klass: "threeD",
     },
   },
@@ -237,7 +237,7 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: amarc,
-      colors: { cur: "#6E6E73", pointer: "#E8DCD3", bg:"#F2F2F2", tx:"#86868C", br:"#D7D7D9"},
+      colors: { cur: "#6E6E73", pointer: "#404040bf", bg:"#F2F2F2", tx:"#86868C", br:"#D7D7D9"},
       klass: "threeD",
     },
   },
@@ -249,7 +249,7 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: vim,
-      colors: { cur: "#FF999F", pointer: "#E8DCD3", bg:"#FEE0E2", tx:"#E68A90", br:"#FEA5AB"},
+      colors: { cur: "#FF999F", pointer: "#ff8087bf", bg:"#FEE0E2", tx:"#E68A90", br:"#FEA5AB"},
       klass: "threeD",
     },
   },
@@ -261,8 +261,8 @@ export const home = [
     a: { text: "Learn more", url:"/projects#Ex" },
     img: {
       cover: comfeey,
-      colors: { cur: "#77A9D9", pointer: "#1F3D61", bg:"#E0F0FF" , tx:"#78A9D9", br:"#A6D4FF"},
-      klass: "int end",
+      colors: { cur: "#77A9D9", pointer: "#669bccbf", bg:"#E0F0FF" , tx:"#78A9D9", br:"#A6D4FF"},
+      klass: "end",
     },
   },
 ];

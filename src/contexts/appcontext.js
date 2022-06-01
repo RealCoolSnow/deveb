@@ -57,6 +57,9 @@ export const AppProvider=({children})=>{
   const changePointer = (pay)=>{
     dispatch({type: 'CHANGEHOVER', payload: pay})
   }
+  const changeScPointer = (pay)=>{
+    dispatch({type: 'CHANGEPOINTER', payload: pay})
+  }
   const changePp = (pay)=>{
     dispatch({type: 'CHANGECONBTN', payload: pay})
   }
@@ -72,7 +75,7 @@ export const AppProvider=({children})=>{
 
   return(
     <AppContext.Provider value={{ ...state, openMenu, closeMenu, setMobileTrue,
-      setMobileFalse, scrollY, updateNeeded, changePT, changePointer, changePp, setReset, setaniClick, setfaqp}}
+      setMobileFalse, scrollY, updateNeeded, changePT, changePointer,changeScPointer, changePp, setReset, setaniClick, setfaqp}}
     >
       {children}
     </AppContext.Provider>

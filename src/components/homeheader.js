@@ -3,6 +3,7 @@ import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import Scene from "./three/scene.js";
 import { Link } from "react-router-dom";
+import Three from "./Blob/Three.js"
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
 
@@ -56,7 +57,7 @@ useEffect(()=>{
           <div className="darkLay"></div>
           <div className="darkLay2"></div>
         </div>
-
+        <Three/>
         {isMobile ? (
           <div className="h1 mobile-home-head">
             <h1 style={{ position: isMobile ? "static" : "" }}>

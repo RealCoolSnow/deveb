@@ -40,5 +40,8 @@ export const menuReducer = (state, action)=>{
   if(action.type === "CHANGEFAQ"){
     return {...state, faqp: action.payload}
   }
+  if(action.type === "CHANGEPOINTER"){
+    return {...state, pointer: {...state.pointer, ...action.payload}}
+  }
   return state;
 }

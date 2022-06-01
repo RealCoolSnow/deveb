@@ -42,7 +42,7 @@ const HomePage = () => {
   const el = useRef();
   const tl = useRef();
   const proTL = useRef();
-  const { isMobile, pageTitle, changePT,resetLoco, setReset, changePp, changePointer } = useAppContext();
+  const { isMobile, pageTitle, changePT,resetLoco, setReset, changePp, changePointer, changeScPointer} = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
   const q = gsap.utils.selector(el);
@@ -209,7 +209,7 @@ const HomePage = () => {
             function updateBodyColor(color) {
               var bg = txt.dataset.bg;
               var cur = txt.dataset.cur;
-              changePointer({isHover: false, color:{bg: cur, }})
+              changeScPointer({ curchange:true, cur: cur, })
               gsap.to(el.current, {
                 backgroundColor: () => txt.dataset.bg,
                 ease: "none",
@@ -219,11 +219,11 @@ const HomePage = () => {
             }
             const leavep = ()=>{
               gsap.to( el.current, {background: "#F5F5F7", ease: 'none', duration: .7,})
-               changePointer({isHover:false})
+               changePointer({isHover:false,color:{bg:"#000"}})
             }
             const leaveup = ()=>{
               gsap.to( el.current, {background: "#F5F5F7", ease: 'none', duration: .7,})
-              changePointer({isHover:false})
+              changePointer({isHover:false, color:{bg:"#000"}})
             }
       
             ScrollTrigger.create({

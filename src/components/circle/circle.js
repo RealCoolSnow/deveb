@@ -20,7 +20,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
         
         const Circle = ({size})=>{
   const { isMobile, pointer } = useAppContext();
-  const {isHover, color, text, blend, fsize} = pointer;
+  const {isHover, color, text, blend, fsize, curchange, cur} = pointer;
  
   const el = useRef();
   const q = gsap.utils.selector(el);
@@ -84,10 +84,30 @@ import { useAppContext } from "../../contexts/appcontext.js";
       gsap.to(el.current,{
         duration: .2,
         ease: "Power3.InOut",
-        background:()=> color? color.bg :"#000000"
+        // background:()=> color? color.bg :"#000000"
+        background:()=> "#000000"
       })
     }
   }, [isHover, color])
+  useEffect(()=>{
+    if(curchange){
+      isHover && (
+        gsap.to(el.current,{
+          duration: .2,
+          ease: "Power3.InOut",
+          background:()=> color? color.bg: cur ,
+        })
+      )
+      !isHover && (
+        gsap.to(el.current,{
+          duration: .2,
+          ease: "Power3.InOut",
+          background:()=> cur? cur:color.bg ,
+        })
+      )
+    
+    }
+  },[curchange, cur, color, isHover])
   return(
     <div className={`circle ${size}`} ref={el}>{text?  (<p>{text}</p>) : null}</div>
   )

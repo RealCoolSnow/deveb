@@ -136,7 +136,7 @@ const movefil= (e)=>{
               <filter id="a" x="0" y="0" width="729.43" height="729.425" filterUnits="userSpaceOnUse">
                 <feOffset dy="3"/>
                 <feGaussianBlur stdDeviation="15" result="blur"/>
-                <feFlood flood-opacity=".02"/>
+                <feFlood floodOpacity=".02"/>
                 <feComposite operator="in" in2="blur"/>
                 <feComposite in="SourceGraphic"/>
               </filter>

@@ -8,7 +8,7 @@ import {Link} from "react-router-dom"
 import { useAppContext } from "../contexts/appcontext.js";
 
 const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
-  const { isMobile,changePointer } = useAppContext();
+  const { isMobile,changeScPointer, pointer} = useAppContext();
 
   const imageTimeline = useRef();
   const el = useRef();
@@ -216,10 +216,10 @@ const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
           <div className="show-text" data-scroll id={sci}>
             <div className="show-text-contain">
               {showcasedata.map((item, idx) => {
-                const { num, h4, p, a, img, id,  } = item;
+                const { num, h4, p, a, img, id } = item;
                 const {bg, tx, br, cur} = img.colors;
                 return (
-                  <div key={idx}>
+                  <div key={id+idx}>
                     <div className="grid-text-contain text">
                       <span
                         className={`span-back ${img.klass}`}
@@ -250,19 +250,20 @@ const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
           <div className={dataHeight=== "200vh"? "show-images r0" : "show-images r1"}>
             <div className="show-img-contain" data-scroll data-scroll-sticky data-scroll-target={`#${sci}`} data-scroll-offset="0%,%45">
               {showcasedata.map((item, idx) => {
-                const { img } = item;
+                const { img, id } = item;
+
                 const {
                   cover,
                   klass,
-                  colors: { right, left, bg },
+                  colors: { right, left, bg,pointer },
                 } = img;
                 return (
-                  <Link to={item.a.url} key={idx}>
-                  <div
+                  <Link key={id} to={item.a.url}>
+                  <div  
                   className={klass + " show-image fixed"}
                   style={{backgroundImage:" url(" +cover+")"}}
-                  onMouseOver={()=> changePointer({isHover: true, color:{bg: bg, txt: "#ffffff"}, text: "Click"})}
-                  onMouseLeave={()=> changePointer({isHover: false})}
+                  onMouseOver={()=> changeScPointer({ isHover: true, color:{bg: pointer, txt: "#ffffff"}, text: "Click"})}
+                  onMouseLeave={()=> changeScPointer({isHover: false, text:""})}
                   >
                   </div>
                   </Link>
