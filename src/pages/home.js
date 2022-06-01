@@ -166,7 +166,7 @@ const HomePage = () => {
   const el = useRef();
   const tl = useRef();
   const proTL = useRef();
-  const { isMobile, pageTitle, changePT,resetLoco, setReset, changePp } = useAppContext();
+  const { isMobile, pageTitle, resetLoco, setReset, changePp } = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
   const q = gsap.utils.selector(el);
@@ -182,12 +182,9 @@ const HomePage = () => {
     opacity: .5,
   }
   useEffect(() => {
-
     setTimeout(() => {
       setReset()
     }, 500);
-    changePT("Deveb");
-    document.title = "Deveb";
     return ()=>{
       }
     }, [isMobile])

@@ -10,6 +10,7 @@ import {servData} from '../utils/constans.js'
 import TestingCompo from '../components/testcompo.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Serv from '../components/serv.js'
+import Helmet from 'react-helmet'
 
 // const Serv = lazy( () => import('../components/serv.js'))
 const ShowcaseServ = lazy( () => import('../components/serShc.js'))
@@ -34,9 +35,6 @@ const ServicesPage = () => {
       setReset()
     }, 500);
 
-    
-    changePT("Deveb-Services");
-    document.title = "Deveb-Services";
     // if(isMobile){
     //       sl.current.style.transform="none";
     //       gsap.set(sl.current,{
@@ -285,6 +283,12 @@ if(!isMobile){
   },[resetLoco, isMobile])
   return (
     <main ref={sl} id="viewport" data-scroll-container>
+
+      <Helmet>
+        <title>Deveb | Services we offer in Deveb</title>
+        <meta name="description" content="We provide all the services you need to ship your digital product and reach to your target audience. From analysis to design, development and finally launching." />
+      </Helmet>
+
         <Serv/>
       <Suspense fallback={ <Loading/> }>
         <ShowcaseServ showcasedata={servData} dataHeight='100vh'/>

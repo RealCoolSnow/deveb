@@ -13,6 +13,7 @@ import gsap from 'gsap';
 import Loading from "./Loading.js"
 
 import { useHistory } from "react-router-dom"
+import Helmet from 'react-helmet';
 
 const PrjContain = lazy( () => import('../components/projectscontainer.js'))
 const Con = lazy( () => import('../components/contact.js'))
@@ -66,6 +67,12 @@ const PortPage = () => {
 
   return( 
     <main id="viewport" data-scroll-container className="projects-page" >
+
+      <Helmet>
+        <title>Deveb | Our Projects</title>
+        <meta name="description" content="Our previous works" />
+      </Helmet>
+
       <div className="fade">
 
       <ProHead Cat={cat} catFunction={catFunction}/>

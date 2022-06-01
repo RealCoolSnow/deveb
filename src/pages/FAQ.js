@@ -12,6 +12,7 @@ import {fData, mFData, fSecond} from '../utils/faqData.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Loading from "./Loading.js"
 import QuesBo from '../components/faqbody.js'
+import Helmet from 'react-helmet';
 
 const QuesBody = lazy( () => import('../components/faqbody.js'))
 const QSeperator = lazy( () => import('../components/QSeperator/QSeperator.js'))
@@ -34,6 +35,11 @@ const FAQPage = () => {
 
   return (
     <main id="viewport" ref={el} data-scroll-container style={{height:"50px"}}>
+
+      <Helmet>
+        <title>Deveb | FAQ</title>
+        <meta name="description" content="Answers to frequently asked questions" />
+      </Helmet>
 
       <Scene/>
       

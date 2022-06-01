@@ -8,6 +8,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import FooterMB from'../components/footermb.jsx'
 
 import "./privacy.scss";
+import Helmet from "react-helmet";
 const Privacy = () => {
   const {isMobile, changePp, setReset, resetLoco} = useAppContext();
   
@@ -85,6 +86,12 @@ if (!isMobile){
   return (
     <>
     <main id="viewport" data-scroll-container ref={el}>
+
+      <Helmet>
+        <title>Deveb | Privacy policy</title>
+        <meta name="description" content="our Privacy and Policy" />
+      </Helmet>
+
        <div  className="pr-container">
       <h1 data-scroll data-scroll-speed=".4">Privacy policy</h1>
       <p>Last updated: February 17, 2022</p>
