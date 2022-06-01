@@ -4,9 +4,9 @@ import * as THREE from "three";
 import * as dat from "dat.gui";
 import { TweenMax, Elastic, Quart } from "gsap";
 
-export function init() {
-  createWorld();
-  // createGUI();
+export function init(child) {
+  createWorld(child);
+  createGUI();
   createPrimitive();
   animation();
 }
@@ -26,7 +26,9 @@ let mat;
 const shapeGroup = new THREE.Group();
 const start = Date.now();
 
-function createWorld() {
+container = document.querySelector('.bloby')
+
+function createWorld(child) {
   _width = window.innerWidth;
   _height = window.innerHeight;
   //---
@@ -40,7 +42,7 @@ function createWorld() {
   renderer.setSize(_width, _height);
   renderer.shadowMap.enabled = true;
   //---
-  document.body.appendChild(renderer.domElement);
+  child.appendChild(renderer.domElement);
   //---
   window.addEventListener("resize", onWindowResize, false);
 }

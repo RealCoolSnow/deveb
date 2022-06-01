@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { init } from './utils'
 
 import './three.scss'
@@ -6,6 +6,8 @@ import './three.scss'
 import { vertexShader, fragmentShader } from './webGL'
 
 export default function Three() {
+
+  const container = useRef(null)
 
   useEffect( () => {
     const vertexShaderScript = document.createElement("script");
@@ -23,23 +25,13 @@ export default function Three() {
     document.body.appendChild(vertexShaderScript)
     document.body.appendChild(fragmentShaderScript)
 
-    init()
+    init(container.current)
   },[])
 
   return (
     <>
-      <div className='container-fluid fixed-top header disable-selection' style={{ paddingTop: '400px'}}>
-        <div className="row">
-          <div className="col">
-            <h1>
-              <strong>Blob</strong>
-            </h1>
-          </div>
-        </div>
+      <div ref={container}>
       </div>
-
-      <div id="container"></div>
-
     </>
   )
 }
