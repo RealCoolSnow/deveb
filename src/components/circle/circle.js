@@ -84,10 +84,10 @@ import { useAppContext } from "../../contexts/appcontext.js";
       gsap.to(el.current,{
         duration: .2,
         ease: "Power3.InOut",
-        background:"#000000"
+        background:()=> color? color.bg :"#000000"
       })
     }
-  }, [isHover])
+  }, [isHover, color])
   return(
     <div className={`circle ${size}`} ref={el}>{text?  (<p>{text}</p>) : null}</div>
   )
