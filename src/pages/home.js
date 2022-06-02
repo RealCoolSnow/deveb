@@ -21,6 +21,10 @@ import Process from '../components/process.js'
 import Footer from'../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
 import Showcase  from '../components/showcase.js'
+import Helmet from 'react-helmet';
+import Three from '../components/Blob/Three.js';
+import { options, camera } from '../components/Blob/utils'
+
 
 //  const iArray= [i1,i2,i3,i4,i5,i6,i7,i8,i9,i10, i11,i12,i13,i14,i15,i16,i17, i18,i19,i20,i21,i22,i23,i24,i25,i26,i27, i28,i29,i30, i31,i32,i33,i34,i35,i36,i37, i38,i39,i40, i41,i42,i43,i44,i45,i46,i47, i48,i49,i50, i51,i52,i53,i54,i55,i56,i57, i58,i59,i60, i61]
 //  const rArray= [i61,i60,i59,i58,i57,i56,i55,i54,i53,i52,i51,i50,i49,i48,i47,i46,i45,i44,i43,i42,i41,i40,i39,i38,i37,i36,i35,i34,i33,i32,i31,i30,i29, i28,i27,i26,i25,i24,i23, i22,i21,i20,i19,i18, i17,i16,i15,i14,i13,i12,i11,i10,i9,i8,i7,i6,i5,i4,i3,i2,i1]
@@ -42,7 +46,7 @@ const HomePage = () => {
   const el = useRef();
   const tl = useRef();
   const proTL = useRef();
-  const { isMobile, pageTitle, changePT,resetLoco, setReset, changePp, changePointer, changeScPointer} = useAppContext();
+  const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer} = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
   const q = gsap.utils.selector(el);
@@ -58,13 +62,9 @@ const HomePage = () => {
     opacity: .5,
   }
   useEffect(() => {
-
     setTimeout(() => {
       setReset()
     }, 500);
-    changePT("Deveb");
-    document.title = "Deveb";
-
     return ()=>{
       }
     }, [isMobile])
@@ -83,7 +83,6 @@ const HomePage = () => {
     // }
   useEffect(()=>{
    
-    
     const changeBg = (direction)=>{
       gsap.to(q(".backgr"), { 
         autoAlpha: ()=> (direction === 1? 1: 0),
@@ -131,13 +130,42 @@ const HomePage = () => {
     const spans = q(".h1 h1 ");
     const revealH2 = gsap.fromTo(
       q(".h2 h6, .h2 h3, .btn-container"),
-      { y: 20 },
-      {
-        y: 0,
-        duration: 6,
-        autoAlpha: 1,
-      }
-    );
+        { y: 20 },
+        {
+          onStart: ()=>  {
+            options.setlight2()
+            gsap.to(q(".hue-can"),{
+              // background: "none",
+              autoAlpha:0,
+              duration:.1,
+              delay:.8,
+          })
+          },
+          onReverseComplete:()=>  {
+            options.main()
+            gsap.to(q(".hue-can"),{
+              // background: "#f5f5f7",
+              autoAlpha:1,
+              duration:.4,
+              // delay:,
+          })
+          },  
+          y: 0,
+          duration: 6,
+          autoAlpha: 1,
+        }
+      );
+      // options.setblue();
+
+    const cam = {
+      num: 9.9,
+      zednum: 17,
+    }
+    // const {size} = options.perlin;
+
+    console.log('Camera')
+    console.log(camera)
+  
     pintl.current = gsap
       .timeline({
         scrollTrigger: {
@@ -157,17 +185,27 @@ const HomePage = () => {
           scrub: 0.5,
         },
       })
+      .to(cam,{
+        num: 0,
+        zednum: 22,
+        size: 6,
+        duration:25,
+        // scrub: true,
+        onUpdate: () => {
+          camera.position.set(0, cam.num, cam.zednum)
+        }
+      })
       .to(q(".darkLay2"), {
         autoAlpha:()=> 1,
+
         duration: 18,
-        // onComplete:()=>ScrollTrigger.refresh(true),
-      })
+      },"<")
       .to(
         spans,
         {
           duration: 4,
           autoAlpha: 0,
-          y: -20,
+          y: -20,   
         },
         "<5.5"
       )
@@ -422,13 +460,25 @@ const HomePage = () => {
            }
   }, [resetLoco, isMobile])
 
-  
-
   return( 
    
     <main id="viewport" ref={el} data-scroll-container >
+
+      <Helmet>
+        <title>Deveb | Art meets development</title>
+        <meta name="description" content="A group of web artists, gathered to fulfil your digital dream and deliver it to your customers of choice." />
+      </Helmet>
+      <div data-scroll style={{height: "186vh", position:"absolute"}} id="mycan">
+        <div data-scroll data-scroll-sticky data-scroll-target="#sti">
+        <div className="hue-can" style={{position: "absolute",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue"}}></div>
+       <Three/>
+        </div>
+      </div>
+   
+      
       <div id="sti" style={!isMobile ? {height: "190vh"}: {}}>
       <Head />
+
       </div>
 
       {/* <Suspense fallback={ <Loading/> }> */}
@@ -440,10 +490,7 @@ const HomePage = () => {
         }
         <Showcase showcasedata={home} dataHeight="200vh" sci="i1"/>
       
-
         {/* <Showcase  showcasedata={homeExt} dataHeight="300vh" sci="i2"/> */}
-
-
         
         <Process/>
         {
@@ -453,9 +500,6 @@ const HomePage = () => {
         {/* <TestingCompo/> */}
 
       {/* </Suspense> */}
-
-
-
 
     </main>
   )

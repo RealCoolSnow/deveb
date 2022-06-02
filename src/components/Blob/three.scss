@@ -16,6 +16,7 @@ canvas {
 
 p {
   color: rgba(255,255,255, 0.5);
+  // display: none;
 }
 
 .header{
@@ -31,9 +32,10 @@ a, a:hover, a:visited {
 
 h1 {
   &:after {
-    content: ' ThreeJS';
+    // content: ' ThreeJS';
     font-size: 0.6rem;
     position: relative;
+    display: none;
     top: -1rem;
   }
 }

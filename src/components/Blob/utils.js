@@ -2,10 +2,10 @@
 
 import * as THREE from "three";
 import * as dat from "dat.gui";
-import { TweenMax, Elastic, Quart } from "gsap";
+import { TweenMax, Elastic, Quart, gsap } from "gsap";
 
-export function init() {
-  createWorld();
+export function init(child) {
+  createWorld(child);
   // createGUI();
   createPrimitive();
   animation();
@@ -13,34 +13,42 @@ export function init() {
 
 const Theme = {
   primary: 0xffffff,
-  secundary: 0x292733,
+  secundary: 0x000000,
   danger: 0xff0000,
   darker: 0x000000,
 };
 
 //--------------------------------------------------------------------
-let scene, camera, renderer, container;
+let scene, renderer, container;
 let _width, _height;
 let _primitive;
 let mat;
 const shapeGroup = new THREE.Group();
 const start = Date.now();
 
-function createWorld() {
+export let camera
+
+const cam = {}
+
+container = document.querySelector('.bloby')
+
+function createWorld(child) {
   _width = window.innerWidth;
   _height = window.innerHeight;
   //---
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(Theme.secundary);
+  // scene.background = new THREE.Color(Theme.secundary);
   //---
-  camera = new THREE.PerspectiveCamera(35, _width / _height, 1, 1000);
-  camera.position.set(0, 0, 16);
+  cam.num = 9.9
+
+  camera = new THREE.PerspectiveCamera(49, _width / _height, 1, 1000);
+  camera.position.set(0, cam.num, 17);
   //---
-  renderer = new THREE.WebGLRenderer({ antialias: false, alpha: false });
+  renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
   renderer.setSize(_width, _height);
   renderer.shadowMap.enabled = true;
   //---
-  document.body.appendChild(renderer.domElement);
+  child.appendChild(renderer.domElement);
   //---
   window.addEventListener("resize", onWindowResize, false);
 }
@@ -116,7 +124,7 @@ const primitiveElement = function () {
   });
   //---
   var wir_mat = new THREE.MeshBasicMaterial({ color: Theme.darker });
-  var geo = new THREE.IcosahedronBufferGeometry(2, 6);
+  var geo = new THREE.IcosahedronBufferGeometry(2, 32);
   var wir = new THREE.IcosahedronBufferGeometry(2.3, 2);
   this.shape = new THREE.Mesh(geo, mat);
   this.point = new THREE.Points(wir, mat);
@@ -130,19 +138,19 @@ function createPrimitive() {
   _primitive = new primitiveElement();
 }
 
-const options = {
+export const options = {
   perlin: {
-    speed: 0.4,
-    size: 0.7,
+    speed: 0.20,
+    size: .44,
     perlins: 1.0,
     decay: 1.2,
-    displace: 1.0,
-    complex: 0.5,
-    waves: 3.7,
-    eqcolor: 10.0,
-    rcolor: 1.5,
-    gcolor: 1.5,
-    bcolor: 1.5,
+    displace: .19,
+    complex: 0,
+    waves: 20,
+    eqcolor: 7.1,
+    rcolor: 2.1,
+    gcolor: 0,
+    bcolor: .6,
     fragment: true,
     points: false,
     redhell: true,
@@ -156,6 +164,23 @@ const options = {
       ease: Elastic.easeOut,
     });
   },
+  main: function () {
+    gsap.to(this.perlin, {
+      //decay: Math.random() * 1.0,
+      redhell: true,
+      speed: 0.20,
+      size: .44,
+       displace: .19,
+      complex: 0,
+       waves: 20,
+       eqcolor: 7.1,
+       rcolor: 2.1,
+       gcolor: 0,
+       bcolor: .6,
+      duration:1,
+    });
+  },
+  
   random: function () {
     //this.perlin.redhell = Math.random() >= 0.5; // 10 1 0.1 1.2
     TweenMax.to(this.perlin, 1, {
@@ -170,10 +195,11 @@ const options = {
     this.perlin.redhell = true; // 10 1 0.1 1.2
     TweenMax.to(this.perlin, 1, {
       //speed: 0.12,
-      eqcolor: 10.0,
-      rcolor: 1.5,
-      gcolor: 1.5,
-      bcolor: 1.5,
+      size:.79,
+      eqcolor: 6.1,
+      rcolor: 2.5,
+      gcolor: .4,
+      bcolor: 2,
       ease: Quart.easeInOut,
     });
   },
@@ -236,8 +262,79 @@ const options = {
       ease: Quart.easeInOut,
     });
   },
-};
+  setorange: function () {
+    this.perlin.redhell = true; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      size: .68,
+      eqcolor: 4,
+      rcolor: .7,
+      gcolor: 1,
+      bcolor: 0,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setblue: function () {
+    this.perlin.redhell = false; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      // redhell :false,
+      eqcolor: 6,
+      rcolor: .8,
+      gcolor: 2.5,
+      bcolor: 1.5,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setbluerd: function () {
+    // this.perlin.redhell = false; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      redhell :true,
+      eqcolor: 7.1,
+      rcolor: 2.1,
+      gcolor: 0,
+      bcolor: .6,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setpurple: function () {
+    this.perlin.redhell = true; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      size: .68,
+      eqcolor: 3,
+      rcolor: 2.5,
+      gcolor: 1.2,
+      bcolor: 1.7,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setlight: function () {
+    this.perlin.redhell = true; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      eqcolor: 6.3,
+      rcolor: 2.5,
+      gcolor: 0.7,
+      bcolor: 2,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setlight2: function () {
+    this.perlin.redhell = true; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      eqcolor: 4.4,
+      rcolor: 2.5,
+      gcolor: 0.4,
+      bcolor: 2,
+      duration:1.4,
+      ease: "power2.InOut",
+    });
+  },
 
+};
+// options.setblue();
 function createGUI() {
   var gui = new dat.GUI();
 
@@ -269,6 +366,11 @@ function createGUI() {
   gui.add(options, "volcano").name("• Volcano");
   gui.add(options, "tornasol").name("• Tornasol");
   gui.add(options, "cloud").name("• Cotton Candy");
+  gui.add(options, "setbluerd").name("• bluerd");
+  gui.add(options, "setorange").name("• orange");
+  gui.add(options, "setpurple").name("• purple");
+
+
   gui.add(options.perlin, "points", true).name("Points");
 }
 //--------------------------------------------------------------------

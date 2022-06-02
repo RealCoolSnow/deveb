@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
 import { useAppContext } from "../contexts/appcontext.js";
+import Helmet from "react-helmet";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,8 +41,6 @@ const ProjectPage = () => {
   };
 
   useEffect(() => {
-    changePT(prName);
-    document.title = prName;
     const q = gsap.utils.selector(el);
     callUpd();
     changePointer({isHover: false})
@@ -111,6 +110,12 @@ const ProjectPage = () => {
 
   return (
     <main className="single-pj" ref={el} id="viewport">
+
+      <Helmet>
+        <title>Deveb | Project {prName}</title>
+        <meta name="description" content={`About how we built ${prName}.`} />
+      </Helmet>
+
       {newArr.map((i) => {
         const { img, id } = i;
         return (

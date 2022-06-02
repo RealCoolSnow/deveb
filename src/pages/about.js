@@ -9,13 +9,14 @@ import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco';
 // const AbHead = lazy( () => import('../components/abouthead.js'))
 import About from '../components/about.js'
+import Helmet from 'react-helmet';
 const Footer = lazy( () => import('../components/footer.js'))
 const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
 // const Loading = lazy( () => import('./Loading.js'))
 const AboutPage = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const { isMobile, pageTitle, changePT, resetLoco,setReset, changePp } = useAppContext();
+  const { isMobile, pageTitle, resetLoco,setReset, changePp } = useAppContext();
   const view= useRef();
   useLoco(!isMobile);
   const el = useRef();
@@ -47,8 +48,6 @@ const AboutPage = () => {
     return () => {};
   }, [resetLoco]);
   useEffect(() => {
-    changePT("About");
-       document.title = "About us";
     window.history.scrollRestoration = 'manual'
     setTimeout(() => {
       setReset()
@@ -549,6 +548,11 @@ const AboutPage = () => {
 
   return (
     <main ref={el} id="viewport" data-scroll-container>
+
+      <Helmet>
+        <title>Deveb | About</title>
+        <meta name="description" content="We at deveb strive to fulfill your digital dreams and present your product in the most approachable way possible." />
+      </Helmet>
 
         <About/>
       <Suspense fallback={ <Loading/> } >

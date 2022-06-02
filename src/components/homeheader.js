@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Three from "./Blob/Three.js"
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
+import { options } from './Blob/utils'
+
 
 import { gsap } from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
@@ -48,6 +50,21 @@ useEffect(()=>{
   );
  
 },[])
+const callcolor= (color)=>{
+  // if(color === "orange"){
+  //   options.setorange()
+  // }
+  //  else if(color === "blue"){
+  //   options.setblue()
+  // }
+  // else if(color === "purple"){
+  //   options.setpurple()
+  // } else
+  // if(color === "white"){
+  //   options.main()
+  // }
+
+}
   
 
   return (
@@ -57,7 +74,7 @@ useEffect(()=>{
           <div className="darkLay"></div>
           <div className="darkLay2"></div>
         </div>
-        <Three/>
+        {/* <Three/> */}
         {isMobile ? (
           <div className="h1 mobile-home-head">
             <h1 style={{ position: isMobile ? "static" : "" }}>
@@ -93,13 +110,13 @@ useEffect(()=>{
         ) : (
           <div className="h1">
             <h1 style={{ position: "absolute" }}>
-              <span className="headSpan">
+              <span className="headSpan" onMouseOver={()=>callcolor("orange")} onMouseLeave={()=>callcolor("white")}>
                 <span>Design.</span>
               </span>
-              <span className="headSpan">
+              <span className="headSpan" onMouseOver={()=>callcolor("purple")} onMouseLeave={()=>callcolor("white")} >
                 <span>Development.</span>
               </span>
-              <span className="headSpan">
+              <span className="headSpan" onMouseOver={()=>callcolor("blue")} onMouseLeave={()=>callcolor("white")}>
                 <span>Branding</span>
               </span>
             </h1>
