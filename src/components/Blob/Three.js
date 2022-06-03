@@ -34,7 +34,7 @@ export default function Three() {
 
   return (
     <>
-      <div ref={container}>
+      <div ref={container} style={{marginTop:"-100vh"}}>
       </div>
     </>
   )

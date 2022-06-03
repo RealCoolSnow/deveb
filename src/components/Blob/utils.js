@@ -6,7 +6,7 @@ import { TweenMax, Elastic, Quart, gsap } from "gsap";
 
 export function init(child) {
   createWorld(child);
-  // createGUI();
+  createGUI();
   createPrimitive();
   animation();
 }
@@ -72,7 +72,7 @@ const primitiveElement = function () {
       },
       pointscale: {
         type: "f",
-        value: 0.2,
+        value: .3,
       },
       decay: {
         type: "f",
@@ -142,7 +142,7 @@ export const options = {
   perlin: {
     speed: 0.20,
     size: .44,
-    perlins: 1.0,
+    perlins: 9.0,
     decay: 1.2,
     displace: .19,
     complex: 0,
@@ -301,7 +301,7 @@ export const options = {
   setpurple: function () {
     this.perlin.redhell = true; // 10 1 0.1 1.2
     gsap.to(this.perlin, {
-      size: .68,
+     
       eqcolor: 3,
       rcolor: 2.5,
       gcolor: 1.2,
@@ -342,7 +342,7 @@ function createGUI() {
   perlinGUI.add(options, "perlinRandom").name("• Random Shape");
   perlinGUI.add(options.perlin, "speed", 0.1, 1.0).name("Speed").listen();
   perlinGUI.add(options.perlin, "size", 0.0, 3.0).name("Size").listen();
-  //perlinGUI.add(options.perlin, 'decay', 0.0, 1.0).name('Decay').listen();
+  perlinGUI.add(options.perlin, 'decay', 0.0, 1.0).name('Decay').listen();
   perlinGUI.add(options.perlin, "waves", 0.0, 20.0).name("Waves").listen();
   perlinGUI.add(options.perlin, "complex", 0.1, 1.0).name("Complex").listen();
   perlinGUI

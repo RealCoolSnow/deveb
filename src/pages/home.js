@@ -82,6 +82,15 @@ const HomePage = () => {
     //   gsap.to(q("#homevid"), {display: "block", duration:0})
     // }
   useEffect(()=>{
+    window.onload = function () {
+      var uagent = navigator.userAgent;
+      var safari = uagent.match(/safari\/(\S+)/);
+       if(safari){
+        options.setpurple();
+        gsap.set(q(".hue-can"), {autoAlpha:0})
+        console.log(uagent)
+       }
+    }
    
     const changeBg = (direction)=>{
       gsap.to(q(".backgr"), { 
@@ -138,7 +147,7 @@ const HomePage = () => {
               // background: "none",
               autoAlpha:0,
               duration:.1,
-              delay:.8,
+              delay:.7,
           })
           },
           onReverseComplete:()=>  {
@@ -468,9 +477,9 @@ const HomePage = () => {
         <title>Deveb | Art meets development</title>
         <meta name="description" content="A group of web artists, gathered to fulfil your digital dream and deliver it to your customers of choice." />
       </Helmet>
-      <div data-scroll style={{height: "186vh", position:"absolute"}} id="mycan">
+      <div data-scroll style={{height: "100vh", position:"absolute"}} id="mycan">
         <div data-scroll data-scroll-sticky data-scroll-target="#sti">
-        <div className="hue-can" style={{position: "absolute",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue"}}></div>
+        <div className="hue-can" style={{position: "relative",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue"}}></div>
        <Three/>
         </div>
       </div>
