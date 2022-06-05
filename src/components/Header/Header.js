@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,useLayoutEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { useAppContext } from "../../contexts/appcontext.js";
 import ToggleMenu from "./ToggleMenu";
@@ -47,7 +47,10 @@ function Header({ history }) {
   const el = useRef();
   const tempSvg = useRef();
   const mainSvg = useRef();
-
+  // useLayoutEffect(() => {
+  //   const q = gsap.utils.selector(el);
+  //   pageTitle === "sp" && gsap.set(q(".fadelinks"), {autoAlpha:0})
+  // }, [])
   useEffect(() => {
     if (ScrollYValue === 0) {
       gsap.set(mainSvg.current, {
@@ -62,10 +65,13 @@ function Header({ history }) {
     }
     const loc = window.location.pathname.split("/")[1];
     setActivePath(loc || "home");
+   
   }, []);
+
   useEffect(() => {
     // if(ScrollYValue === 10){
     const q = gsap.utils.selector(el);
+
     const navlinks = q(".navlinks-contain li.fadelinks");
     gsap.to(navlinks, {
       y: () => (ScrollYValue === 10 ? -20 : 0),
@@ -357,7 +363,7 @@ function Header({ history }) {
                   <li
                     key={id}
                     className={
-                      ariaLabel === "contact page" ? "estimateBtn" : "fadelinks"
+                      ariaLabel === "contact page" ? "estimateBtn" : `fadelinks ${pageTitle === "sp" && "dn"}`
                     }
                     // style={ariaLabel === "contact page" ? pageTitle === "Contact" ? myst : undefined}
                     onClick={closeMenuIfOpen}

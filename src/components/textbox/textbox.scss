@@ -1,0 +1,128 @@
+.tb-contain{
+    width: 100%;
+  margin: calc(100vh / 4 ) auto;
+    // margin-bottom: 30px;
+    text-align: left;
+    display: inline-block;
+    &.short{
+        width: calc((100vw/12)*6);
+    }
+    &.long{ width: calc((100vw/12)*8);}
+    &.wv4{
+        width: calc((100vw/12)*4);
+    }
+    &.alignment{
+        text-align: center;
+    }
+    h3{
+        font-size: 23.14px;
+        color: var(--gray-dark);
+        font-weight: 500;
+        margin-bottom: 49px;
+        margin-top:- 7px;
+    }
+    h1{
+        color: var(--black-font-main);
+        font-weight: 500;
+        font-size: 50px;
+        padding-top: 15px;
+    }
+    p{
+        font-size: 26.8px;
+        line-height: 1.65;
+        color: var(--black-font-main);
+    }
+    h2{
+        font-size: 42.5px;
+        font-weight: 500;
+        color: var(--black-font-main);
+    }
+    .double-contain{
+       display: flex;
+      
+       .vw4{
+        flex: calc(12vw*4);
+       }   
+       .short{
+        width: calc(12vw*6);
+    }
+    }
+}
+// .tb-contain + .cover-contain{margin-top: - 38px;}
+.cover-contain{
+    margin: 0  calc(100vw / 12);
+    // &:first-child{}
+    &.full-w{
+        width: calc((100vw / 12) * 10);
+    }
+    &.half-w{
+        width: calc((100vw / 12) * 4.7);
+        margin: 0 40px;
+        margin-top: 15px;
+        display: inline-block;
+    }
+    &.medium-w{
+        width: calc((100vw / 12) * 6);
+    }
+    .cover{
+        background: pink;
+        // height: 771px;
+        border-radius: 50px;
+        margin: 0 auto;
+        
+        &.full-H{       
+        padding-bottom: 62.5%;
+
+        }
+        &.small-h{
+            // height: 578px;
+            padding-bottom: 100%;
+        }
+        &.medium-h{
+            padding-bottom: 78.3%;
+        }
+       
+    }
+    h2{
+        margin: 146.5px auto;
+        text-align: left;
+    }
+}
+.double-contain{
+    margin: 0  calc(100vw / 12);
+    position: relative;
+    h2{ 
+        text-align: left;
+        position: absolute;
+        font-weight: 500;
+    font-size: 42px;
+    padding-top: 5px;
+    }
+    &.normal{
+           .flex-contain{
+               margin-top: 0;
+               .cover-contain:first-child{
+                   align-self: flex-start;
+               }
+           }
+    }
+    .flex-contain{
+     display: flex;
+     flex-direction: row;
+     align-items: flex-start;
+     margin-top: 25vh;
+    //  height: calc(((100vw / 12) * 4.7) + 146px);
+
+     height: 106vh;
+        .cover-contain{
+            &:first-child{
+                align-self: flex-end;
+                margin-left: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+
+        }
+    }
+}

@@ -7,6 +7,7 @@ import ErrorPage from './errorpage'
 import Services from './services'
 import ProjectPage from './projectPage'
 import Privacy from './privacy.js'
+import Vimo from './vim.js'
 
 export{
   About,
@@ -18,4 +19,5 @@ export{
   Services,
   ProjectPage,
   Privacy,
+  Vimo
 }

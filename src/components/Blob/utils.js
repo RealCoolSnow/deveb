@@ -6,7 +6,7 @@ import { TweenMax, Elastic, Quart, gsap } from "gsap";
 
 export function init(child) {
   createWorld(child);
-  createGUI();
+  // createGUI();
   createPrimitive();
   animation();
 }

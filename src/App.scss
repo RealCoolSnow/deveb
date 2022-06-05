@@ -145,7 +145,7 @@ button {
 
     &.f-top {
       z-index: 998;
-      z-index: 0;
+      // z-index: 0;
 
       height: 8.2vh;
 
@@ -216,7 +216,9 @@ button {
           display: list-item;
           padding: 0 0 0 27px;
           // transition: opacity 0.3s ease;
-
+          &.dn{
+            display: none;
+          }
           a {
             color: var(--black-font);
             text-decoration: none;
@@ -224,7 +226,7 @@ button {
             font-weight: 500;
             letter-spacing: 0;
             // transition: all 0.3s ease;
-
+           
             &:hover {
               color: var(--black-font-main);
             }

@@ -19,6 +19,12 @@ import {
   Services,
   ProjectPage,
   Privacy,
+  Vimo,
+  // Dope,
+  // Comfeey,
+  // Amarc,
+  // Dopop,
+
 } from "./pages";
 import { useAppContext } from "./contexts/appcontext.js";
 import Circle from "./components/circle/circle.js";
@@ -83,7 +89,22 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/projects/:id" children={<ProjectPage />} />
+        <Route path="/projects/vimcosmo" >
+          <Vimo/>
+        </Route>
+        {/* <Route path="/projects/dopegood" >
+          <Dope/>
+        </Route>
+        <Route path="/projects/dopop"  >
+          <Dopop/>
+        </Route>
+        <Route path="/projects/am-arc" >
+          <Amarc/>
+        </Route>
+        <Route path="/projects/comfeey" >
+          <Comfeey/>
+        </Route> */}
+
 
         <Route path="/projects/:tag?" exact>
           <Test />

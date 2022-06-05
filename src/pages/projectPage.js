@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { prjData } from "../utils/projectsData.js";
 import "../projects.scss";
 import { gsap } from "gsap";
+import Textbox from "../components/textbox/textbox.js";
+import Coverimage from "../components/textbox/coverimage.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
@@ -20,21 +22,22 @@ const ProjectPage = () => {
   useLoco(!isMobile)
   
 
-  const prName = "project" + id.split("pr")[1].split("-")[0];
-  const category = window.location.search.split("?")[1];
+  // const prName = "project" + id.split("pr")[1].split("-")[0];
+  const category = window.location.href.split("projects/")[1];
+  console.log(category)
 
   const finded = prjData.filter(
     (pr) =>
-       pr.family === prName  && pr.a.url !== id
+       pr.family === category
       // pr.family === prName && pr.tags.includes(category) && pr.a.url !== id
 
   );
 
   let newArr = [];
 
-  const clickedItem = prjData.filter((pr) => pr.a.url === id);
+  // const clickedItem = prjData.filter((pr) => pr.a.url === id);
 
-  newArr = [...clickedItem, ...finded];
+  newArr = [...finded];
 
   const callUpd = () => {
     return setProject(newArr);
@@ -112,21 +115,46 @@ const ProjectPage = () => {
     <main className="single-pj" ref={el} id="viewport">
 
       <Helmet>
-        <title>Deveb | Project {prName}</title>
-        <meta name="description" content={`About how we built ${prName}.`} />
+        <title>Deveb | Project </title>
+        <meta name="description" content={`About how we built `} />
       </Helmet>
 
       {newArr.map((i) => {
-        const { img, id } = i;
+        const { img, id, elements } = i;
         return (
+          <>
           <div key={id} className="single-pr-co">
             <img src={img.url} loading="lazy" decoding="async" />
           </div>
+          {  
+             elements.map(elem =>{
+              const{type}= elem;
+              if (type === "cover") {
+                const {width, height}= elem
+                return (
+                  <Coverimage width={width} height={height}/>
+                )
+              } 
+              else if(type === "textbox"){
+                const{h1,h2,h3,pi, width, alignment} = elem;
+                return <Textbox h1={h1} h2={h2} h3={h3} pi={pi} width={width} alignment={alignment}/>
+              }
+            })
+          }
+          </>
         );
       })}
 
       <div className="pj-footer">
         <span> 01/ 0{newArr.length} </span>
+        {/* <Textbox h3="dopop" h1="Online marketplace for create, buy and sell NFT's"/>
+        <Textbox h3="Expectaion" pi="Ultimately, we were aiming to build a NFT market with a user-friendly interface that would appeal to people who are new to crypto space. Our main challenge was handling the large amount of user data and their NFT assets while keeping the contract transactions secure."/>
+        <Textbox h2="Front-end development" />
+        <Textbox pi="Dopop had a simple and modern design with two themes. Since the design shared many similar components we had to make reuseable components in the front-end to use across the website and easily share data between them."/>
+        <Coverimage width="full-w" height="full-H"/>
+        <Textbox h2="Front-end development" />
+        <Coverimage width="half-w" height="small-h"/> */}
+
       </div>
     </main>
   );

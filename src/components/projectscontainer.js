@@ -154,7 +154,7 @@ const PrjContain = ({ projects, Cat }) => {
         {projects.map((item, idx) => {
           const { name, img, a, iframeSrc, desc, id, vidid } = item;
 
-          const urlLink = a ? `/projects/${a.url}?${newCat}` : "";
+          const urlLink = a ? `/projects/${a.url}` : "";
 
           return isMobile ? (
             <div
@@ -201,7 +201,7 @@ const PrjContain = ({ projects, Cat }) => {
             </div>
           ) : !iframeSrc ? (
             <Link
-              to={`/projects/${a.url}?${newCat}`}
+              to={`/projects/${a.url}`}
               key={idx}
               className={`project project-${idx + 2} `}
               data-scroll
