@@ -89,9 +89,9 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/projects/vimcosmo" >
+        {/* <Route path="/projects/vimcosmo" >
           <Vimo/>
-        </Route>
+        </Route> */}
         {/* <Route path="/projects/dopegood" >
           <Dope/>
         </Route>
@@ -105,7 +105,9 @@ function App() {
           <Comfeey/>
         </Route> */}
 
-
+        <Route path="/projects/:id" exact>
+          <ProjectPage />
+        </Route>
         <Route path="/projects/:tag?" exact>
           <Test />
         </Route>

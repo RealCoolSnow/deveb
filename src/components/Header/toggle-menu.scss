@@ -103,6 +103,7 @@
 
       > div {
         display: block;
+        text-align: left;
 
         > span.head {
           color: var(--black-font-main);
@@ -173,10 +174,11 @@
     .menu-right-part {
       span.head{
         color: var(--black-font-main);
-        font-size: 0.7vw;
+        font-size: 10px;
         line-height: 1.5vw;
         position: relative;
         padding: 0 15px;
+        text-align: left;
       }
       a {
         // color: var(--secondary-font-color);

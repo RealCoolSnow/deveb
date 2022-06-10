@@ -14,7 +14,7 @@ const Coverimage = ({width, height, double, h2, align, mt})=>{
 
               ):(
                   <div className={`double-contain ${align}`}>
-                       <h2>{h2}</h2>
+                       <h2 >{h2}</h2>
                        <div className="flex-contain">
                          <div className={`cover-contain half-w`}>
                              <div className="cover small-h"></div>

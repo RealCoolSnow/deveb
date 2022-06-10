@@ -8,16 +8,21 @@ import Coverimage from "../components/textbox/coverimage.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
+import Footer from'../components/footer.js'
+import FooterMB from '../components/footermb.jsx'
 import { useAppContext } from "../contexts/appcontext.js";
 import Helmet from "react-helmet";
+import Button from "../components/textbox/button.js";
+import { TimelineLite } from "gsap/gsap-core";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectPage = () => {
-  const { isMobile, pageTitle, changePT, changePointer } = useAppContext();
+  const { isMobile, resetLoco, changePp, changePointer } = useAppContext();
  
   const [project, setProject] = useState();
   const el = useRef();
+  const fooT= useRef();
   let { id } = useParams();
   useLoco(!isMobile)
   
@@ -38,124 +43,128 @@ const ProjectPage = () => {
   // const clickedItem = prjData.filter((pr) => pr.a.url === id);
 
   newArr = [...finded];
+  const title= finded[0]? finded[0].elements[0].h3: ""
+  console.log(finded)
 
   const callUpd = () => {
     return setProject(newArr);
   };
 
   useEffect(() => {
-    const q = gsap.utils.selector(el);
-    callUpd();
+  
+    // callUpd();
     changePointer({isHover: false})
-
-    // const images = q("img");
-    // // console.log(images)
-    // gsap.set(images, {
-    //   css: {
-    //     zIndex: (i, target, targets) => targets.length - i,
-    //     //  webkitClipPath: 'inset(0% 0% 100% 0%)',
-    //     //  clipPath: 'inset(0% 0% 100% 0%)'
-    //   },
-    // });
-    // // gsap.to(el.current,{
-    // //   backgroundImage: "linear-gradient(90deg, rgb(130, 103, 76) 0%, rgb(232, 220, 211) 100%)",
-    // //   duration: .5,
-    // // })
-    // gsap.fromTo(
-    //   images[0],
-    //   {
-    //     css: { clipPath: "inset(0% 0% 100% 0%)" },
-    //   },
-    //   {
-    //     css: { clipPath: "inset(0% 0% 0% 0%)" },
-    //     duration: 0.7,
-    //     delay: 0.3,
-    //     ease: "power3.Out",
-    //   }
-    // );
-    // images.forEach((img, i) => {
-    //   gsap.fromTo(
-    //     img,
-    //     {
-    //       y: "-0vh",
-    //     },
-    //     {
-    //       y: "0vh",
-    //       scrollTrigger: {
-    //         trigger: q(".single-pr-co")[i],
-    //         scrub: true,
-    //         // markers:true,
-    //         start: "top bottom", // position of trigger meets the scroller position
-    //         snap: {
-    //           snapTo: 0.5, // 0.5 'cause the scroll animation range is 200vh for parallax effect
-    //           duration: 1,
-    //           ease: "power4.inOut",
-    //         },
-    //       },
-    //       ease: "none",
-    //     }
-    //   );
-    // });
-
-    //  ScrollTrigger.create({
-    //   snap: {
-    //     snapTo: .5,
-    //     duration: 0.5
-    //   }
-    // });
-    // return () => {
-    //   ScrollTrigger.update()
-    //   ScrollTrigger.getAll().forEach((instance) => {
-    //     instance.kill();
-    //   });
-    // };
+    
   }, []);
+  useEffect(()=>{
+    
+    const q = gsap.utils.selector(el);
+    const changeBg = (direction)=>{
+      gsap.to(q(".backgr"), { 
+        autoAlpha: ()=> (direction === 1? 1: 0),
+        duration:1
+      })
+      direction === 1? changePp("Contact"): changePp("other")
+    }
+    
+if(!isMobile){
+    
+    fooT.current = gsap
+    .timeline({
+        // duration:10,
+        
+      scrollTrigger: {
+        scroller: "#viewport",
+        trigger: q(".footer-sec.fot"),
+        start:()=> "top-=8% center-=8%",
+        end: ()=> "bottom bottom",
+        // markers: true,
+        id:"foot",
+    //     // scrub:true,
+        onLeaveBack: ({direction})=> changeBg(direction),
+      onEnter: ({direction})=> changeBg(direction),
+      },
+    })
+       .to(q(".trig"),{
+         autoAlpha:1,
+         duration:1,
+       }, "<")
 
-  return (
+       return()=>{
+        fooT.current.kill()
+        if( fooT.current.ScrollTrigger){
+          fooT.current.ScrollTrigger.kill();
+        }
+       }
+      } else if( isMobile){
+        el.current.style.transform="none";
+        
+        fooT.current = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: q(".footer-sec.fot"),
+            start:()=> "top-=8% center-=8%",
+            end: ()=> "bottom bottom",
+            // markers: true,
+            id:"foot",
+            onLeaveBack: ({direction})=> changeBg(direction),
+          onEnter: ({direction})=> changeBg(direction),
+          },
+        })
+           .to(q(".trig"),{
+             autoAlpha:1,
+             duration:1,
+           }, "<")
+          
+           return()=>{
+            fooT.current.kill()
+            if( fooT.current.ScrollTrigger){
+              fooT.current.ScrollTrigger.kill();
+            }
+           }
+      }
+  },[resetLoco, isMobile])
+
+  return(
     <main className="single-pj" ref={el} id="viewport">
+      
+       <Helmet>
+        <title>{`Deveb | ${title ? title : ""}`}</title>
+        <meta name="description" content={`About how we built ${title? title: ""} `} />
+       </Helmet>
 
-      <Helmet>
-        <title>Deveb | Project </title>
-        <meta name="description" content={`About how we built `} />
-      </Helmet>
-
-      {newArr.map((i) => {
-        const { img, id, elements } = i;
-        return (
-          <>
-          <div key={id} className="single-pr-co">
-            <img src={img.url} loading="lazy" decoding="async" />
-          </div>
-          {  
-             elements.map(elem =>{
-              const{type}= elem;
-              if (type === "cover") {
-                const {width, height}= elem
-                return (
-                  <Coverimage width={width} height={height}/>
-                )
-              } 
-              else if(type === "textbox"){
-                const{h1,h2,h3,pi, width, alignment} = elem;
-                return <Textbox h1={h1} h2={h2} h3={h3} pi={pi} width={width} alignment={alignment}/>
-              }
-            })
+       {newArr.map((i) => {
+    const { img, id, elements } = i;
+    return (
+      <>
+      {/* <div key={id} className="single-pr-co">
+        <img src={img.url} loading="lazy" decoding="async" />
+      </div> */}
+      {  
+         elements.map(elem =>{
+          const{type}= elem;
+          if (type === "cover") {
+            const {width, height, double, h2, id, align,mt, }= elem
+            console.log(double)
+            return (
+              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} />
+            )
+          } 
+          else if(type === "textbox"){
+            const{h1,h2,h3,pi, width, alignment, id, double, mt, h2width} = elem;
+            return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width}/>
           }
-          </>
-        );
-      })}
-
-      <div className="pj-footer">
-        <span> 01/ 0{newArr.length} </span>
-        {/* <Textbox h3="dopop" h1="Online marketplace for create, buy and sell NFT's"/>
-        <Textbox h3="Expectaion" pi="Ultimately, we were aiming to build a NFT market with a user-friendly interface that would appeal to people who are new to crypto space. Our main challenge was handling the large amount of user data and their NFT assets while keeping the contract transactions secure."/>
-        <Textbox h2="Front-end development" />
-        <Textbox pi="Dopop had a simple and modern design with two themes. Since the design shared many similar components we had to make reuseable components in the front-end to use across the website and easily share data between them."/>
-        <Coverimage width="full-w" height="full-H"/>
-        <Textbox h2="Front-end development" />
-        <Coverimage width="half-w" height="small-h"/> */}
-
-      </div>
+          else if(type === "button"){
+            return <Button/>
+          }
+        })
+      }
+      </>
+    );
+  })}
+   {
+      isMobile?  <FooterMB />: <Footer /> 
+    }
     </main>
   );
 };
