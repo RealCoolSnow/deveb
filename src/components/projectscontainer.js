@@ -52,8 +52,9 @@ const PrjContain = ({ projects, Cat }) => {
       const scaledProjectsRef = q(".project").slice(0, 2);
       gsap.set(scaledProjectsRef, {
         // yPercent: 10,
-        scale: 0.85,
+        scale: ()=> isMobile?.95 :0.85,
         autoAlpha: 0,
+        y: ()=> isMobile? 10 :0,
         transformOrigin: "bottom center",
       });
     return () => {
@@ -72,6 +73,7 @@ const PrjContain = ({ projects, Cat }) => {
       scale: 1,
       delay: 0.55,
       duration: 1.1,
+      y:0,
       stagger: 0.13,
       ease: "power2.out",
     });

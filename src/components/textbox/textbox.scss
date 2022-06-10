@@ -200,6 +200,11 @@
             }
         }
     }
+    .double-contain{ 
+        h2{
+            font-size: 30px;
+        }
+    }
 }
 @media (max-width: 950px){
     main.single-pj .tb-contain{
@@ -209,14 +214,17 @@
         h1{ font-size: 39px;}
         h3{ font-size: 17.14px;}
         p{ font-size: 20.8px;}
-        .double-contain{ 
-            h2{ 
-               width: 400px;
-            }
-            // .vw4 h2.mid{
+        // .vw4 h2.mid{
             //     width: 417px;
             // }
         }
+        .double-contain{ 
+            .flex-contain{
+                height: 82vh;
+            }
+            h2{ 
+               width: 350px;
+            }
     }
 }
 
@@ -303,7 +311,7 @@
           text-align: left;
         margin:calc(100vw/5 * 1.65) auto;
         p{
-            font-size: 27px;
+            font-size: 24.75px;
             padding-top: 20px;
             padding-bottom: 0;
             line-height: 1.43;
