@@ -174,6 +174,12 @@
     }
     .double-contain{ 
         h2{ font-size: 37px;}
+        .flex-contain{
+            height: 100vh;
+        }
+    }
+    .bn-contain a .bn p{
+        font-size: 24.8px ;
     }
 }
 @media (max-width: 1120px){
@@ -184,6 +190,12 @@
     }
     .double-contain{ 
         h2{ font-size: 34px;}
+        .flex-contain{
+            height: 92vh;
+        }
+    }
+    .bn-contain a .bn p{
+        font-size: 22.8px ;
     }
 }
 @media (max-width: 1100px){
@@ -205,6 +217,9 @@
             font-size: 30px;
         }
     }
+    .bn-contain a .bn p{
+        font-size: 20.8px ;
+    }
 }
 @media (max-width: 950px){
     main.single-pj .tb-contain{
@@ -220,7 +235,7 @@
         }
         .double-contain{ 
             .flex-contain{
-                height: 82vh;
+                height: 76vh;
             }
             h2{ 
                width: 350px;
@@ -238,20 +253,33 @@
       .tb-contain{
         margin:15vh auto;
         p{
-          font-size: 24.8px;
+          font-size: 22.8px;
           line-height: 1.65;
         }
         &.long{
             width: calc(100vw / 12 * 10);
         }
         &.short{
-            width: 90vw;
+            width: 75vw;
         }
         h1{
-            font-size: 46px;
+            // font-size: 46px;
             padding-bottom: 5vh;
         }
   
+      }
+      .cover-contain.medium-w{
+          width: 83.333vw;
+      }
+      .bn-contain{
+          width: 380px;
+          height: 380px;
+          margin:auto;
+          margin-top: 3vw;
+          a .bn{
+              top:0;
+              height: 380px;
+          }
       }
       .double-contain{
         h2{
@@ -263,7 +291,7 @@
           
         }
        .flex-contain{
-         height: 45vh;
+         height: 67vh;
          margin-top: 15vh;
          .cover-contain{
            width: 42.16vw;

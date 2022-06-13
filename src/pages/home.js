@@ -3,15 +3,13 @@ import Head from'../components/homeheader.js'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from "gsap"
 import TestingCompo from '../components/testcompo.js';
-// import ServHead from'../components/serviceshead'
-// import MServHead from'../components/MServiceHead/MobileServiceHead'
-// import Process from'../components/process.js'
 // import Con from'../components/contact.js'
 // import Showcase from '../components/showcase.js'
 import Loading from "./Loading.js"
 import { home, homeExt } from '../utils/constans.js'
 import useLoco from '../utils/useLoco.js';
 import { useAppContext } from "../contexts/appcontext.js";
+import Bowser from "bowser";
 // import design from "../assets/design1.jpg"
 // import viz from "../assets/viz.jpg"
 import "../serv.scss";
@@ -24,20 +22,6 @@ import Showcase  from '../components/showcase.js'
 import Helmet from 'react-helmet';
 import Three from '../components/Blob/Three.js';
 import { options, camera } from '../components/Blob/utils'
-
-
-//  const iArray= [i1,i2,i3,i4,i5,i6,i7,i8,i9,i10, i11,i12,i13,i14,i15,i16,i17, i18,i19,i20,i21,i22,i23,i24,i25,i26,i27, i28,i29,i30, i31,i32,i33,i34,i35,i36,i37, i38,i39,i40, i41,i42,i43,i44,i45,i46,i47, i48,i49,i50, i51,i52,i53,i54,i55,i56,i57, i58,i59,i60, i61]
-//  const rArray= [i61,i60,i59,i58,i57,i56,i55,i54,i53,i52,i51,i50,i49,i48,i47,i46,i45,i44,i43,i42,i41,i40,i39,i38,i37,i36,i35,i34,i33,i32,i31,i30,i29, i28,i27,i26,i25,i24,i23, i22,i21,i20,i19,i18, i17,i16,i15,i14,i13,i12,i11,i10,i9,i8,i7,i6,i5,i4,i3,i2,i1]
-//  const dArray=[d1,d2,d3,d4,d5,d6,d7,d8,d9,d10, d11,d12,d13,d14,d15,d16,d17, d18,d19,d20,d21,d22,d23,d24,d25,d26,d27, d28,d29,d30, d31,d32,d33,d34,d35,d36,d37, d38,d39,d40, d41,d42,d43,d44,d45,d46,d47, d48,d49,d50, d51,d52,d53,d54,d55,d56,d57, d58,d59,d60, d61]
- 
-
-// const ServHead = lazy( () => import('../components/serviceshead'))
-// const MServHead = lazy( () => import('../components/MServiceHead/MobileServiceHead'))
-// const Process = lazy( () => import('../components/process.js'))
-// const Footer = lazy( () => import('../components/footer.js'))
-// const FooterMB = lazy( () => import('../components/footermb.jsx'))
-
-// const Showcase = lazy( () => import('../components/showcase.js'))
 
 // const Loading = lazy( () => import('./Loading.js'))
 const HomePage = () => {
@@ -70,27 +54,20 @@ const HomePage = () => {
     }, [isMobile])
     const ref = React.createRef();
     const refviz = React.createRef();
-    // const leftvideo= ()=>{
-    //   if(document.querySelector("#homevid")){
-    //     document.querySelector("#homevid").pause()
-    //     gsap.to(q("#homevid"), {display: "none", duration:0})
-    //   }
-    //   else return;
-    // }
-    // const entvideo= ()=>{
-    //   document.querySelector("#homevid").play()
-    //   gsap.to(q("#homevid"), {display: "block", duration:0})
-    // }
+  
   useEffect(()=>{
-    window.onload = function () {
-      var uagent = navigator.userAgent;
+    const browser = Bowser.getParser(window.navigator.userAgent);
+
+console.log(`The current browser name is "${browser.getBrowserName()}"`);
+    // window.onload = function () {
+      var uagent = browser.getBrowserName();
       var safari = uagent.match(/safari\/(\S+)/);
-       if(safari){
+      console.log(uagent)
+       if(uagent === "Safari"){
         options.setpurple();
         gsap.set(q(".hue-can"), {autoAlpha:0})
-        console.log(uagent)
        }
-    }
+    // }
    
     const changeBg = (direction)=>{
       gsap.to(q(".backgr"), { 
@@ -104,6 +81,10 @@ const HomePage = () => {
         pintl.current.progress(0)
         // entvideo()
       }
+      if( proTL.current ){
+        proTL.current.progress(0)
+        // entvideo()
+      }
       gsap.set(q(".head"),{
         marginBottom: "15vh"
       })
@@ -115,26 +96,6 @@ const HomePage = () => {
 
     const headSpans = q(".headSpan");
 
-    // gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
-
-    // gsap.to(
-    //   headSpans,
-    //   {
-    //     autoAlpha: 1,
-    //     duration: 0.8,
-    //   },
-    //   1
-    // );
-
-    // gsap.to(
-    //   headSpans,
-    //   {
-    //     yPercent: 0,
-    //     duration: 0.8,
-    //   },
-    //   1
-    // );
-
   
     const spans = q(".h1 h1 ");
     const revealH2 = gsap.fromTo(
@@ -142,21 +103,24 @@ const HomePage = () => {
         { y: 20 },
         {
           onStart: ()=>  {
-            options.setlight2()
+          
+              options.setlight2()
             gsap.to(q(".hue-can"),{
               // background: "none",
               autoAlpha:0,
               duration:.1,
               delay:.7,
           })
+        
           },
           onReverseComplete:()=>  {
-            options.main()
+            uagent !== "Safari" &&  options.main()
+            uagent === "Safari" &&  options.setpurple()
+
             gsap.to(q(".hue-can"),{
               // background: "#f5f5f7",
-              autoAlpha:1,
+              autoAlpha:()=>uagent !== "Safari" ?1 :0,
               duration:.4,
-              // delay:,
           })
           },  
           y: 0,
@@ -164,13 +128,11 @@ const HomePage = () => {
           autoAlpha: 1,
         }
       );
-      // options.setblue();
 
     const cam = {
       num: 9.9,
       zednum: 17,
     }
-    // const {size} = options.perlin;
 
     console.log('Camera')
     console.log(camera)
@@ -182,12 +144,11 @@ const HomePage = () => {
           trigger: q(".head"),
           start:()=> "top top",
           end:()=> "bottom top+=10%",
-          // markers:true,
+          markers:true,
           id:"pintl",
-          pin:true,
-          pinReparent:true,
-          anticipatePin:1,
-          // invalidateOnRefresh: true,
+          // pin:true,
+          // pinReparent:true,
+          // anticipatePin:1,
           // onLeave:()=> leftvideo(),
           // onEnterBack: ()=> entvideo(),
 
@@ -221,10 +182,7 @@ const HomePage = () => {
       .addLabel("finishedSec1", "<5")
       .add(revealH2, "finishedSec1");
 
-      // ScrollTrigger.addEventListener("refreshInit", () => {progress = pintl.current.progress});
-      // ScrollTrigger.addEventListener("refresh", () => pintl.current.scroll(progress * ScrollTrigger.maxScroll(window)));
-
-        fooT.current = gsap
+      fooT.current = gsap
         .timeline({
           scrollTrigger: {
             scroller: "#viewport",
@@ -233,7 +191,6 @@ const HomePage = () => {
             end: ()=> "bottom bottom",
             // markers: true,
             id:"foot",
-        //     // scrub:true,
             onLeaveBack: ({direction})=> changeBg(direction),
           onEnter: ({direction})=> changeBg(direction),
           },
@@ -247,11 +204,6 @@ const HomePage = () => {
            const texts = q(".grid-text-contain .span-back");
 
            texts.forEach((txt) => {
-            // const creategrad = (rcolor, lcolor) => {
-            //   const gra =
-            //     "linear-gradient(90deg," + rcolor + " 0%," + lcolor + " 100%)";
-            //   return gra;
-            // };
       
             function updateBodyColor(color) {
               var bg = txt.dataset.bg;
@@ -261,7 +213,6 @@ const HomePage = () => {
                 backgroundColor: () => txt.dataset.bg,
                 ease: "none",
                 autoAlpha: 1,
-                // background: "transparent",
               });
             }
             const leavep = ()=>{
@@ -278,7 +229,6 @@ const HomePage = () => {
               scroller: "#viewport",
               start: () => "top bottom-=10%",
               end: () => "bottom top",
-              // scrub: true,
               // markers:true,
               id: "showcaseGradient",
               invalidateOnRefresh: true,
@@ -299,7 +249,6 @@ const HomePage = () => {
             scrub: true,
             // markers:true,
             id: "proce",
-            // invalidateOnRefresh: true,
           },
           })
           .to(q(".process-grid"),{
@@ -336,7 +285,7 @@ const HomePage = () => {
                           scrub: true,
                           // invalidateOnRefresh: true,
                           // markers:true,
-                          anticipatePin: 1,
+                          // anticipatePin: 1,
                           // onEnter: () => console.log(images),
                         },
                       })
@@ -381,38 +330,32 @@ const HomePage = () => {
                       );
                     });
 
-                    ScrollTrigger.create({
-                      scroller:"#viewport",
-                      trigger: imagewrap[j],
-                      start: ()=> "center center",
-                      endTrigger: endTr[j],
-                      end: ()=> "bottom bottom",
-                      // pin: imagewrap[j],
-                      id: "pinSc",
-                      // onEnter: ()=> console.log("pinning showcase"),
-                      // anticipatePin: 1,
-                      // pinReparent:true,
-                      // invalidateOnRefresh:true,
-                      // markers:true,
-                     });
+                    // ScrollTrigger.create({
+                    //   scroller:"#viewport",
+                    //   trigger: imagewrap[j],
+                    //   start: ()=> "center center",
+                    //   endTrigger: endTr[j],
+                    //   end: ()=> "bottom bottom",
+                    //   id: "pinSc",
+                    //  });
             })
             
-            
-            // const killsc = (i)=> {console.log(ScrollTrigger.getById(i))}
-            // ScrollTrigger.addEventListener("refreshInit", ()=>killsc("pintl") )
             return()=>{
             fooT.current.kill()
             if( fooT.current.ScrollTrigger){
               fooT.current.ScrollTrigger.kill();
             }
-           if( tl.current){
-            tl.current.kill()
-           }
            if( pintl.current.ScrollTrigger){
             pintl.current.ScrollTrigger.kill()
            }
            if(pintl.current){
             pintl.current.kill();
+           }
+           if( proTL.current.ScrollTrigger){
+            proTL.current.ScrollTrigger.kill()
+           }
+           if(proTL.current){
+            proTL.current.kill();
            }
             if (ScrollTrigger.getById("tl0")){
               ScrollTrigger.getById("tl0").kill()
@@ -423,9 +366,9 @@ const HomePage = () => {
             if(ScrollTrigger.getById("can")){
               ScrollTrigger.getById("can").kill()
             }
-            if(ScrollTrigger.getById("pinSc")){
-              ScrollTrigger.getById("pinSc").kill()
-            }
+            // if(ScrollTrigger.getById("pinSc")){
+            //   ScrollTrigger.getById("pinSc").kill()
+            // }
             // imageTimeline.current.kill()
            }
           }
@@ -435,7 +378,7 @@ const HomePage = () => {
               clearProps: "transform"
             })
             // entvideo()
-            
+            camera.position.set(0, -12, 50)
             gsap.set(q(".h2.home h3, .h2.home h6, h1"),{
               autoAlpha:1,
               y:0,

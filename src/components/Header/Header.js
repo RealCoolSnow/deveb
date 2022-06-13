@@ -51,6 +51,12 @@ function Header({ history }) {
   //   const q = gsap.utils.selector(el);
   //   pageTitle === "sp" && gsap.set(q(".fadelinks"), {autoAlpha:0})
   // }, [])
+  useLayoutEffect(()=>{
+    const q = gsap.utils.selector(el);
+    gsap.set(q(".estimateBtn p")[1],{yPercent:-100, xPercent:0})
+    gsap.set(q(".estimateBtn p")[0],{xPercent:100})
+
+  },[isMobile])
   useEffect(() => {
     if (ScrollYValue === 0) {
       gsap.set(mainSvg.current, {
@@ -262,6 +268,28 @@ function Header({ history }) {
       });
     }
   }, [contact]);
+  useEffect(()=>{
+    const q = gsap.utils.selector(el);
+    // gsap.set(q(".estimateBtn p")[1],{yPercent:-100, xPercent:0})
+    // gsap.set(q(".estimateBtn p")[0],{xPercent:100})
+
+    gsap.to(q(".estimateBtn p")[1],{
+      xPercent: -100,
+      duration:3.5,
+      repeat:-1,
+      repeatDelay:.01,
+      ease:"none",
+      // yoyo:true,
+    })
+    gsap.to(q(".estimateBtn p")[0],{
+      xPercent: 0,
+      duration:3.5,
+      repeat:-1,
+      repeatDelay:0.01,
+      ease:"none",
+      // yoyo:true,
+    })
+  },[])
 
   const toggleMenu = (e) => {
     e.stopPropagation();
@@ -376,7 +404,30 @@ function Header({ history }) {
                         : null
                     }
                   >
-                    <Link
+                {   
+                ariaLabel === "contact page" ? 
+                  <div className="contactbtn-wrap">
+                       <Link
+                      to={url}
+                      aria-label={ariaLabel}
+                      className={`
+                        ${ariaLabel === "contact page" ? "btn" : ""}
+                        ${activePath === urlpath ? "active" : ""}
+                        ${
+                          pageTitle === "Contact" &&
+                          ariaLabel === "contact page"
+                            ? "disNone"
+                            : ""
+                        }
+                      `}
+                    >
+                      <p>{text}</p>
+                      <p>{text}</p>
+                    </Link>
+                  </div>
+                :
+                
+                <Link
                       to={url}
                       aria-label={ariaLabel}
                       className={`
@@ -392,6 +443,8 @@ function Header({ history }) {
                     >
                       {text}
                     </Link>
+                    
+                    }
                   </li>
                 );
               })}

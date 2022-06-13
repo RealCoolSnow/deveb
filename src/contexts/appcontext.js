@@ -7,7 +7,7 @@ const initState ={
   footerItems: {},
   ScrollYValue:0,
   needed:[],
-  isMobile: true,
+  isMobile: "",
   refresh: false,
   contact:"other",
   aniClick: false,

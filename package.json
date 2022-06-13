@@ -6,6 +6,7 @@
   "dependencies": {
     "@react-three/drei": "^8.20.2",
     "@react-three/fiber": "^7.0.9",
+    "bowser": "^2.11.0",
     "dat.gui": "^0.7.9",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.4",

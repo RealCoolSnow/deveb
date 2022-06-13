@@ -244,13 +244,37 @@ button {
         li.estimateBtn {
           padding: 20px 35px 20px 42px;
           // margin-top: -1px;
+          .contactbtn-wrap{
+            background: var(--blue-cta);
+            border-radius: 24px;
+            height: 34px;
+            position: relative;
+            width: 93px;
+            overflow: hidden;
+            pointer-events: none;
+            p{
+              padding: 5px;
+              color: white;
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+              background: none;
+              left: 0px;
+              pointer-events: none;
+            }
+          }
 
           a {
-            background-color: var(--blue-cta);
-            color: var(--bg-l);
+            // background-color: var(--blue-cta);
+            // color: var(--bg-l);
+            position: absolute;
+           top: 0;
+           left: 0;
+           height: 100%;
+           width: 100%;
             font-size: 0.73vw;
             font-weight: 600;
-            padding: 1.3vh 1.1vw 1.2vh;
+            padding:0;
             transition: background-color 0.3s ease;
             letter-spacing: 0;
 
