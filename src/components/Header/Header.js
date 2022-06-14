@@ -53,8 +53,8 @@ function Header({ history }) {
   // }, [])
   useLayoutEffect(()=>{
     const q = gsap.utils.selector(el);
-    gsap.set(q(".estimateBtn p")[1],{yPercent:-100, xPercent:0})
-    gsap.set(q(".estimateBtn p")[0],{xPercent:100})
+    gsap.set(q(".estimateBtn p")[1],{yPercent:-150, xPercent:0})
+    gsap.set(q(".estimateBtn p")[0],{xPercent:100, yPercent:-50,})
 
   },[isMobile])
   useEffect(() => {

@@ -16,7 +16,7 @@ void main() {
     b = tan(qnoise + bcolor);
   } else {
     r = normalize(qnoise + rcolor);
-    g = cos(qnoise + gcolor);
+    g = sin(qnoise + gcolor);
     b = sin(qnoise + bcolor);
   }
   gl_FragColor = vec4(r, g, b, 1.0);

@@ -147,10 +147,10 @@ export const options = {
     displace: .19,
     complex: 0,
     waves: 20,
-    eqcolor: 7.1,
-    rcolor: 2.1,
-    gcolor: 0,
-    bcolor: .6,
+    eqcolor: 3.1,
+      rcolor: 2.5,
+      gcolor: 2.4,
+      bcolor: 2,
     fragment: true,
     points: false,
     redhell: true,
@@ -321,14 +321,36 @@ export const options = {
       ease: Quart.easeInOut,
     });
   },
+  setlightpink: function () {
+    this.perlin.redhell = true; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      eqcolor: 3.1,
+      rcolor: 2.5,
+      gcolor: 2.4,
+      bcolor: 2,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
+  setlightblue: function () {
+    this.perlin.redhell = false; // 10 1 0.1 1.2
+    gsap.to(this.perlin, {
+      eqcolor: 6.4,
+      rcolor: 2.5,
+      gcolor: 3,
+      bcolor: 1.53,
+      duration:1,
+      ease: Quart.easeInOut,
+    });
+  },
   setlight2: function () {
     this.perlin.redhell = true; // 10 1 0.1 1.2
     gsap.to(this.perlin, {
-      eqcolor: 4.4,
+      eqcolor: 3.1,
       rcolor: 2.5,
-      gcolor: 0.4,
+      gcolor: 2,
       bcolor: 2,
-      duration:1.4,
+      duration:1,
       ease: "power2.InOut",
     });
   },
@@ -368,7 +390,7 @@ function createGUI() {
   gui.add(options, "cloud").name("• Cotton Candy");
   gui.add(options, "setbluerd").name("• bluerd");
   gui.add(options, "setorange").name("• orange");
-  gui.add(options, "setpurple").name("• purple");
+  gui.add(options, "setlightpink").name("• pink");
 
 
   gui.add(options.perlin, "points", true).name("Points");

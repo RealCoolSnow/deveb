@@ -64,8 +64,8 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
       var safari = uagent.match(/safari\/(\S+)/);
       console.log(uagent)
        if(uagent === "Safari"){
-        options.setpurple();
-        gsap.set(q(".hue-can"), {autoAlpha:0})
+        // options.setpurple();
+        // gsap.set(q(".hue-can"), {autoAlpha:0})
        }
     // }
    
@@ -85,6 +85,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
         proTL.current.progress(0)
         // entvideo()
       }
+      camera.position.set(0, 9.9, 17)
       gsap.set(q(".head"),{
         marginBottom: "15vh"
       })
@@ -105,6 +106,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
           onStart: ()=>  {
           
               options.setlight2()
+            //  options.setlightpink()
             gsap.to(q(".hue-can"),{
               // background: "none",
               autoAlpha:0,
@@ -114,12 +116,13 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
         
           },
           onReverseComplete:()=>  {
-            uagent !== "Safari" &&  options.main()
-            uagent === "Safari" &&  options.setpurple()
+            // uagent !== "Safari" && 
+             options.setlightpink()
+            // uagent === "Safari" &&  options.setpurple()
 
             gsap.to(q(".hue-can"),{
               // background: "#f5f5f7",
-              autoAlpha:()=>uagent !== "Safari" ?1 :0,
+              autoAlpha:()=>uagent !== "Safari" ?0 :0,
               duration:.4,
           })
           },  
@@ -144,7 +147,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
           trigger: q(".head"),
           start:()=> "top top",
           end:()=> "bottom top+=10%",
-          markers:true,
+          // markers:true,
           id:"pintl",
           // pin:true,
           // pinReparent:true,
@@ -366,6 +369,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
             if(ScrollTrigger.getById("can")){
               ScrollTrigger.getById("can").kill()
             }
+            // camera.position.set(0, -12, 50)
             // if(ScrollTrigger.getById("pinSc")){
             //   ScrollTrigger.getById("pinSc").kill()
             // }
@@ -377,6 +381,10 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
             gsap.set(q("section.head"),{
               clearProps: "transform"
             })
+            if(pintl.current){
+              pintl.current.progress(0)
+              // entvideo()
+            }
             // entvideo()
             camera.position.set(0, -12, 50)
             gsap.set(q(".h2.home h3, .h2.home h6, h1"),{
@@ -422,7 +430,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
       </Helmet>
       <div data-scroll style={{height: "100vh", position:"absolute"}} id="mycan">
         <div data-scroll data-scroll-sticky data-scroll-target="#sti">
-        <div className="hue-can" style={{position: "relative",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue"}}></div>
+        <div className="hue-can" style={{position: "relative",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue", opacity:"0"}}></div>
        <Three/>
         </div>
       </div>
