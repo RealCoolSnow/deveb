@@ -59,20 +59,7 @@ section.footer-sec, div.con-foot {
     justify-content: flex-end;
     z-index: 2;
 
-    .f-filler{
-      background: #f5f5f7;
-      // background: red;
-      z-index: 999;
-      position: absolute;
-      top:0;
-      transform: translate(-50%,-50%);
-      left:0;
-      mix-blend-mode: difference;
-      width: 30px;
-      height: 30px;
-      border-radius: 100%;
-      pointer-events: none;
-    }
+  
     svg{
       width: 535px;
       position: absolute;
@@ -234,6 +221,21 @@ section.footer-sec, div.con-foot {
     }
   }
 }
+.f-filler{
+  background: #f5f5f7;
+  // background: red;
+  z-index: 999;
+  position: fixed;
+  top:0;
+  transform: translate(-50%,-50%);
+  left:0;
+  mix-blend-mode: difference;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  pointer-events: none;
+}
+
 @media (max-width: 1240px){
   section.footer-sec .footer-foot{
     min-width: 425px;

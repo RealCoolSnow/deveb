@@ -8,6 +8,7 @@ import insta from "../assets/insta.svg";
 import foot from "../assets/footlogo.svg";
 import git from "../assets/git.svg";
 import drib from "../assets/dribbble.svg";
+import { scrolltop} from "../utils/useLoco" 
 
 
 import { useAppContext } from "../contexts/appcontext.js";
@@ -74,30 +75,43 @@ const Footer = () => {
 const growfil = ()=>{
   gsap.to(q(".f-filler"), {
     scale:40,
+    // autoAlpha:1,
     transformOrigin:"center",
-    duration:.6,
-    ease:"power3.inOut"
-    // top:"50%",
-    // left:"50%",
-    // xPercent:-50,
-    // yPercent:-50,
+    duration:.55,
+    ease:"power3.Out",
+    delay:.01,
+  
   });
+  gsap.to(q(".f-filler"), {
+    autoAlpha:1,
+    duration:.1,
+    // ease:"power3.In",
+   
+  })
   sethover(true)
 }
 const shrinkfil = ()=>{
   gsap.to(q(".f-filler"), {
     scale:1,
-    duration:.6,
-    ease:"power3.inOut"
-    // top:"0%",
-    // left:"0%",
+    duration:.55,
+    ease:"power3.In",
+   
   })
+  gsap.to(q(".f-filler"), {
+    autoAlpha:0,
+    duration:.1,
+    delay: .55,
+    // ease:"power3.In",
+   
+  })
+
   sethover(false)
 }
 const movefil= (e)=>{
+  console.log(e.pageY , window.scrollTop)
   gsap.to(q(".f-filler"),{
-    x:e.clientX,
-    y:e.clientY,
+    x:()=>e.clientX,
+    y:()=> scrolltop + e.clientY,
   })
 }
   useEffect(() => {
@@ -125,16 +139,18 @@ const movefil= (e)=>{
   
   }, []);
   return (
-    <section ref={el}  id="bab"   className="sec-form footer-sec fot" onMouseMove={movefil} >
+    <div ref={el}>
+
+    <section   id="bab"  data-scroll-call className="sec-form footer-sec fot" onMouseMove={movefil} >
       <div className="trig">
         <div className="backgr" data-scroll data-scroll-sticky data-scroll-target="#bab"></div>
         <div className="footer-main">
-          <div className="f-filler"></div>
-
+       <div className="f-filler"></div>
+         
           <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729.43 729.425" >
             <defs>
               <filter id="a" x="0" y="0" width="729.43" height="729.425" filterUnits="userSpaceOnUse">
-                <feOffset dy="3"/>
+                <feOffset dy="3" input="SourceAlpha"/>
                 <feGaussianBlur stdDeviation="15" result="blur"/>
                 <feFlood floodOpacity=".02"/>
                 <feComposite operator="in" in2="blur"/>
@@ -183,6 +199,7 @@ const movefil= (e)=>{
         </div>
       </div>
     </section>
+    </div>
   );
 };
 export default Footer;

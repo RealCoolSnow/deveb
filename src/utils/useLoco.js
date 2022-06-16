@@ -6,8 +6,10 @@ import "./loco.css";
 import { useAppContext } from "../contexts/appcontext.js";
 
 gsap.registerPlugin(ScrollTrigger);
+export var scrolltop= "";
 const useLoco = (start) => {
   var { scrollY, resetLoco  } = useAppContext();
+
   
   useEffect(() => {
     if (!start) return;
@@ -56,15 +58,17 @@ const useLoco = (start) => {
 
     locoScroll.on("scroll", (args) => {
       ScrollTrigger.update()
+      // console.log(locoScroll);
       const sY = args.delta.y;
+      scrolltop= sY;
       if( sY > 10) {
         scrollY(10)
       }
       else {
         scrollY(0)
       }
-    
   })
+
     //   // if (callonce && btnobj){
     //     var locodata="";
     //     if (args.currentElements[btnobj] === "undefiend" ){
@@ -78,10 +82,11 @@ const useLoco = (start) => {
     // });
     
     // locoScroll.on("call", (obj, status)=>{
-    //   if (status === "enter"){
-    //   oncallfunc(obj);
-    //   setCallonce(true);
-    //   console.log(obj, status)}
+      // if (status === "enter"){
+      // oncallfunc(obj);
+      // setCallonce(true);
+      // console.log(obj, status)
+    // }
     // })
     const timer = setTimeout(function(){
       locoScroll.update()

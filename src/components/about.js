@@ -316,7 +316,7 @@ const {isMobile} = useAppContext();
         : 
         (
         <h2 style={{paddingTop:"150px"}}>
-          <div>We lunch digital products in</div> <div> the best way possible</div>
+          <div>We launch digital products in</div> <div> the best way possible</div>
         </h2>
         )
         }

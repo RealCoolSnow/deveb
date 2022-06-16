@@ -243,10 +243,9 @@ div.pro-cont {
   }
 }
 
-main.single-pj {
+main#viewport.single-pj {
+  background: #ffffff;
   height: 100%;
-  // background: url("./assets/covers/project.jpg");
-  // background-size:1440px auto ;
   text-align: center;
   width: 100vw;
   position: relative;
@@ -258,7 +257,7 @@ main.single-pj {
     }
   }
   img {
-    height: 80vh;
+    // height: 80vh;
     margin: auto;
     display: block;
     position: relative;

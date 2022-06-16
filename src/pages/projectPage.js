@@ -7,13 +7,12 @@ import Textbox from "../components/textbox/textbox.js";
 import Coverimage from "../components/textbox/coverimage.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loading from "./Loading.js"
-import useLoco from '../utils/useLoco.js'
+import useLoco,{ scrolltop} from '../utils/useLoco.js'
 import Footer from'../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
 import { useAppContext } from "../contexts/appcontext.js";
 import Helmet from "react-helmet";
 import Button from "../components/textbox/button.js";
-import { TimelineLite } from "gsap/gsap-core";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +28,7 @@ const ProjectPage = () => {
 
   // const prName = "project" + id.split("pr")[1].split("-")[0];
   const category = window.location.href.split("projects/")[1];
-  console.log(category)
+  // console.log(category)
 
   const finded = prjData.filter(
     (pr) =>
@@ -44,7 +43,7 @@ const ProjectPage = () => {
 
   newArr = [...finded];
   const title= finded[0]? finded[0].elements[0].h3: ""
-  console.log(finded)
+  // console.log(finded)
 
   const callUpd = () => {
     return setProject(newArr);
@@ -66,7 +65,7 @@ const ProjectPage = () => {
       })
       direction === 1? changePp("Contact"): changePp("other")
     }
-    
+
 if(!isMobile){
     
     fooT.current = gsap
@@ -126,7 +125,7 @@ if(!isMobile){
   },[resetLoco, isMobile])
 
   return(
-    <main className="single-pj" ref={el} id="viewport">
+    <main className="single-pj" ref={el} id="viewport" onMouseMove={()=> console.log(scrolltop)}>
       
        <Helmet>
         <title>{`Deveb | ${title ? title : ""}`}</title>
@@ -145,7 +144,7 @@ if(!isMobile){
           const{type}= elem;
           if (type === "cover") {
             const {width, height, double, h2, id, align,mt, }= elem
-            console.log(double)
+            // console.log(double)
             return (
               <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} />
             )
