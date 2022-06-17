@@ -1600,7 +1600,8 @@ section.process {
       // margin-left: 5%;
       // margin-right: 5%;
       width: calc(100vw - 48px);
-      margin-bottom: -300px;
+      // margin-bottom: -300px;
+      height: auto;
 
       h3 {
         font-size: 2.7rem;
@@ -1612,6 +1613,7 @@ section.process {
 
       .process-grid {
         row-gap: 1.05rem;
+        position: relative;
 
         .process-col {
           margin-top: 10px;

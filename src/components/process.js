@@ -9,10 +9,10 @@ const Process = () => {
   gsap.registerPlugin(ScrollTrigger);
     const q = gsap.utils.selector(el);
     const prTl = useRef();
-    const {changePointer}=useAppContext();
+    const {changePointer, isMobile}=useAppContext();
    
   return (
-    <section data-scroll className="process " ref={el} id="pro" style={{height: "190vh"}}>
+    <section data-scroll className="process " ref={el} id="pro" style={isMobile? {}:{height: "190vh"}}>
       <div className="prtrig" data-scroll data-scroll-sticky data-scroll-target="#pro" data-scroll-offset="0,72%">
       <div className="process-head">
         <h3>
