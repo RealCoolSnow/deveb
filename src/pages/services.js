@@ -31,6 +31,7 @@ const ServicesPage = () => {
   useLoco(!isMobile)
   
   useEffect(() => {
+    changePT("Services");
     setTimeout(() => {
       setReset()
     }, 500);

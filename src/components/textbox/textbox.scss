@@ -397,9 +397,14 @@
           width: 90vw;
           height: 90vw;
           margin:40px auto;
+          a{top:0;}
           .bn{
               padding-bottom: 90vw;
               top:0;
+              height: 100%;
+              width: 100%;
+              margin:0;
+              margin-bottom: 40px;
           }
 
       }

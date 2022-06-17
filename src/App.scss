@@ -242,6 +242,7 @@ button {
         }
 
         li.estimateBtn {
+          cursor: pointer;
           padding: 20px 35px 20px 42px;
           // margin-top: -1px;
           .contactbtn-wrap{
@@ -275,6 +276,7 @@ button {
             font-size: 0.73vw;
             font-weight: 600;
             padding:0;
+            pointer-events: none;
             transition: background-color 0.3s ease;
             letter-spacing: 0;
 
@@ -283,6 +285,12 @@ button {
               color: white;
             }
             
+          }
+          &.con-dn{
+            padding-right: 0;
+            .contactbtn-wrap{
+              display: none;
+            }
           }
         }
         .disNone{

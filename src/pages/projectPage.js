@@ -125,7 +125,7 @@ if(!isMobile){
   },[resetLoco, isMobile])
 
   return(
-    <main className="single-pj" ref={el} id="viewport" onMouseMove={()=> console.log(scrolltop)}>
+    <main className="single-pj" ref={el} id="viewport" >
       
        <Helmet>
         <title>{`Deveb | ${title ? title : ""}`}</title>

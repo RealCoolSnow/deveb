@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect,useLayoutEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, useHistory } from "react-router-dom";
 import { useAppContext } from "../../contexts/appcontext.js";
 import ToggleMenu from "./ToggleMenu";
 import { links } from "../../utils/constans";
@@ -290,7 +290,8 @@ function Header({ history }) {
       // yoyo:true,
     })
   },[])
-
+  const histori = useHistory();
+  const handleclick =() => histori.push('/contact');
   const toggleMenu = (e) => {
     e.stopPropagation();
 
@@ -391,10 +392,12 @@ function Header({ history }) {
                   <li
                     key={id}
                     className={
-                      ariaLabel === "contact page" ? "estimateBtn" : `fadelinks ${pageTitle === "sp" && "dn"}`
+                      ariaLabel === "contact page" ? `estimateBtn ${pageTitle=== "contact" && "con-dn"}` : `fadelinks ${pageTitle === "sp" && "dn"}`
                     }
                     // style={ariaLabel === "contact page" ? pageTitle === "Contact" ? myst : undefined}
-                    onClick={closeMenuIfOpen}
+                    onClick={ariaLabel === "contact page"?
+                    handleclick
+                    :closeMenuIfOpen}
                     onMouseMove={
                       ariaLabel === "contact page" ? (e) => moveBtn(e) : null
                     }
@@ -403,6 +406,7 @@ function Header({ history }) {
                         ? () => setMoveBtn(false)
                         : null
                     }
+                    // onClick={handleclick}
                   >
                 {   
                 ariaLabel === "contact page" ? 

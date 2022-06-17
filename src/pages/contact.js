@@ -12,12 +12,15 @@ const Con = lazy( () => import('../components/contact.js'))
 // const Loading = lazy( () => import('./Loading.js'))
 gsap.registerPlugin(ScrollTrigger)
 const ContactPage = () => {
-  const { isMobile, pageTitle, setReset } = useAppContext();
+  const { isMobile, pageTitle, setReset, changePT } = useAppContext();
   useLoco(!isMobile);
+
   useEffect(()=>{
        setTimeout(() => {
          setReset()
        }, 500);
+
+       changePT("contact")
    return ()=>{
     // ScrollTrigger.update();
     // ScrollTrigger.getAll().forEach((instance) => {

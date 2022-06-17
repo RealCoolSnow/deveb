@@ -16,7 +16,7 @@ const FooterMB = lazy( () => import('../components/footermb.jsx'))
 // const Loading = lazy( () => import('./Loading.js'))
 const AboutPage = () => {
   gsap.registerPlugin(ScrollTrigger);
-  const { isMobile, pageTitle, resetLoco,setReset, changePp } = useAppContext();
+  const { isMobile, changePT, resetLoco,setReset, changePp } = useAppContext();
   const view= useRef();
   useLoco(!isMobile);
   const el = useRef();
@@ -48,6 +48,7 @@ const AboutPage = () => {
     return () => {};
   }, [resetLoco]);
   useEffect(() => {
+    changePT("About");
     window.history.scrollRestoration = 'manual'
     setTimeout(() => {
       setReset()
@@ -334,6 +335,7 @@ const AboutPage = () => {
         gsap.set(q(".text-wrap2.pi p"),{
           fontSize: "35px"
         } )
+        gsap.set(q(".image-wrap"), {scale:1, autoAlpha:1})
         gsap.set(pis[1], {y:230})
         gsap.set(q(".darkLayer"), {autoAlpha:0})
         loadingTL.current = gsap
