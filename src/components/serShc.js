@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef,useLayoutEffect } from "react";
 import "../showcase.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,7 +16,13 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   const [set, setset] = useState(false);
-
+  useLayoutEffect(()=>{
+    if(isMobile){
+      gsap.set(q(".showcase-full-img.first"),{
+        autoAlpha:0, yPercent:10,
+      })
+    }
+  },[isMobile])
   useEffect(() => {
     // if (!isMobile) {
       const imgTrigger = q(".show-images");

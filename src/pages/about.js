@@ -331,12 +331,12 @@ const AboutPage = () => {
         //   fooT.current.progress(0)
         // }
         const texts = q(".texts-wrap h2,.texts-wrap h5,.texts-wrap p");
-        const spans = q(".mb h2");
+        const spans = q(".mb h2 div");
         gsap.set(q(".text-wrap2.pi p"),{
           fontSize: "35px"
         } )
-        gsap.set(q(".image-wrap"), {scale:1, autoAlpha:1})
-        gsap.set(pis[1], {y:230})
+        gsap.set(q(".image-wrap"), {scale:1, yPercent:10, autoAlpha:0})
+        gsap.set(pis[1], {y:370})
         gsap.set(q(".darkLayer"), {autoAlpha:0})
         loadingTL.current = gsap
         .timeline({})
@@ -363,7 +363,12 @@ const AboutPage = () => {
             },
           },
           0.4
-        );
+        )
+        .to(q(".image-wrap"),{
+          yPercent:0,
+          autoAlpha:1,
+          duration:.5,
+        }, "<.2")
     
       imgTl.current = gsap.timeline({
         scrollTrigger: {
@@ -441,7 +446,7 @@ const AboutPage = () => {
           imgTrig[1],
           {
             autoAlpha: 0,
-            duration:2.5,
+            duration:6.5,
           },
           ".8"
         )
@@ -451,7 +456,7 @@ const AboutPage = () => {
             autoAlpha: 1,
             duration: 0.8,
           },
-          "<.34"
+          "<3.7"
         )
       
         .to(
@@ -483,8 +488,8 @@ const AboutPage = () => {
         .to(
           pis[1],
           {
-            y: "-7vh",
-            duration: 10,
+            y: "-1vh",
+            duration: 8,
           },
           "<.2"
         )
@@ -494,7 +499,7 @@ const AboutPage = () => {
            autoAlpha:0,
             duration: 1,
           },
-          "<45%"
+          "<38%"
         );
         const changeBg = (direction)=>{
           gsap.to(q(".backgr"), { 

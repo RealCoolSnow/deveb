@@ -1,5 +1,5 @@
 import gsap from 'gsap/all'
-import React, { lazy, Suspense, useEffect, useRef } from 'react'
+import React, { lazy, Suspense, useEffect, useLayoutEffect, useRef } from 'react'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 // import Con from'../components/contact.js'
 // import Serv from'../components/serv.js'
@@ -30,6 +30,7 @@ const ServicesPage = () => {
   const { resetLoco, setReset, changePT, changePp, isMobile } = useAppContext();
   useLoco(!isMobile)
   
+
   useEffect(() => {
     changePT("Services");
     setTimeout(() => {
@@ -251,6 +252,10 @@ if(!isMobile){
         sl.current.style.transform="none";
         gsap.set(sl.current,{
           clearProps: "transform"
+        })
+
+        gsap.to(q(".showcase-full-img.first"),{
+          autoAlpha:1, yPercent:0, duration:.4, delay:.05,
         })
         
         fooT.current = gsap

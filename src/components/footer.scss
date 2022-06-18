@@ -422,6 +422,11 @@ section.footer-sec.fot{
         padding-top: 119px;
         h5{
           letter-spacing: .2px;
+          width: fit-content;
+          margin: auto;
+          &::after{
+            width: 100%;
+          }
         }
       }
       .footer-secs.r{

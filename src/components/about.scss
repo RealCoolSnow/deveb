@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 45vw;
+    width: 60vw;
     margin: 0 auto;
     // transform: translateX(-50%);
     .darkLayer{
@@ -29,12 +29,14 @@
         // transform: translateY(44%);
     }
     h2{
-        font-size: 54px;
+        font-size: 47px;
     }
     h5{
-        font-size: 38.5px;
+        font-size: 35.5px;
         z-index:1;
         opacity: 0;
+        max-width: 80vh;
+        // padding: 171px 47px 0px;
     }
 }
 // .texts-wrap + .image-wrap{ margin-top: 81vh;}
@@ -81,7 +83,7 @@
     height: 75vh;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 48%;
     align-items: center;
     margin: auto;
     justify-content: center;

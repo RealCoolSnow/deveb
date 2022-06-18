@@ -735,7 +735,10 @@ section.process {
       padding: 0 4.9%;
       display: block;
       div.mb{
-        width: 100%;
+        width: fit-content;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: left;
         height: 61%;
         display: inline-flex;
         flex-direction: column;
@@ -757,10 +760,13 @@ section.process {
       }
       h5{
         font-size: 27.5px;
-    padding-right: 46px;
-    top: 34%;
-    line-height: 1.6;
-    text-align: left;
+        padding-right: 0;
+        max-width: 334px;
+        top: 34%;
+        transform: translateX(-50%);
+        left: 50%;
+        line-height: 1.6;
+        text-align: left;
       }
      
     }
@@ -1853,8 +1859,8 @@ section.process {
     }
   }
   #stick .image-wrap img{
-    max-width: 99vw;
-    height: 99vw;
+    max-width: 100vw;
+    height: 100vw;
     object-fit: cover;
   }
   #stick {
@@ -1862,11 +1868,14 @@ section.process {
       padding: 0 24px;
       div.mb{
         left:24px;
+        transform: translateX(0%);
         text-align: left;
       }
      
       h5{
         // font-size: 27.5px;
+        transform: translateX(0%);
+        left: 24px;
     padding-right: 24px;
       }
      
@@ -1900,8 +1909,20 @@ section.process {
     // }
   }
 }
+@media (max-width: 416px){
+  section.process {
+    .process-grid p{
+     font-size: 1.03rem;
+    }
+  }
+  div#stick {
+    .texts-wrap div.mb h2{
+      font-size: 2.4rem;
+    }
+  }
+}
 
-@media (max-width: 390px) {
+@media (max-width: 394px) {
   .frame-wrapper {
     .frame {
       &.f-top {
@@ -2346,6 +2367,11 @@ section.process {
       }
     }
   }
+  div#stick {
+    .texts-wrap div.mb h2{
+      font-size: 2.3rem;
+    }
+  }
 }
 
 @media (max-width: 376px) {
@@ -2673,7 +2699,7 @@ section.process {
         }
 
         p {
-          font-size: 0.7rem;
+          font-size: 0.9rem;
         }
       }
     }
@@ -2780,6 +2806,11 @@ section.process {
           font-size: 0.76rem;
         }
       }
+    }
+  }
+  div#stick {
+    .texts-wrap div.mb h2{
+      font-size: 2.2rem;
     }
   }
 }

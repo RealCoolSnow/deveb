@@ -310,7 +310,7 @@ const {isMobile} = useAppContext();
        ( <div className="mb">
           <p>About</p>
           <h2 >
-             We lunch digital products in the best way possible.
+            <div className="anim-lines"> We launch digital </div>   <div className="anim-lines">products in the</div>   <div className="anim-lines">best way possible.</div>  
           </h2>
         </div> )
         : 

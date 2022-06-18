@@ -1,11 +1,12 @@
 div.pr-container{
-    color: white;
+    // color: white;
+    text-align: left;
     width: 50%;
     margin: 0 auto;
     padding-top: 17.5rem;
     padding-bottom: 17rem;
     a{
-        color: white;
+        color: black;
         font-weight: 500;
         text-decoration: none;
     }
@@ -13,7 +14,7 @@ div.pr-container{
         font-size: 57.8px;
         font-weight: 500;
         margin-bottom: 72px;
-        color: var(--contact-button-back);
+        color: var(--black-font-main);
     }
     h2{
         font-size: 42.4px;
@@ -21,12 +22,12 @@ div.pr-container{
         margin-top: 100.5px;
         margin-bottom: 17px;
         letter-spacing: .9px;
-        color: #D7D7D9;
+        color: var(--black-font-main);
     }
     h3{
         font-size: 27px;
     font-weight: 500;
-    color: #D7D7D9;
+    color: var(--black-font-main);
     margin-bottom: 20px;
     margin-top: 56px;
     }
@@ -37,7 +38,7 @@ div.pr-container{
         margin-bottom: 26px;
         margin-right: 16px;
         letter-spacing: .3px;
-        color: #D7D7D9;
+        color: var(--black-font);
     }
     ul{
         margin-left: 24px;
@@ -47,7 +48,7 @@ div.pr-container{
             font-weight: 400;
             line-height: 1.7;
             letter-spacing: .3px;
-            color: #D7D7D9;
+            color: var(--black-font);
             span{
                 margin-left: -10px;
             }
@@ -57,6 +58,7 @@ div.pr-container{
 }
 @media (max-width: 768px) {
     div.pr-container{
+       
         width: 82%;
         h1,h2{
             line-height: 1.3;

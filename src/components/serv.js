@@ -32,17 +32,17 @@ const Serv = () => {
     return () => {
 
     };
-  }, [])
+  }, [isMobile])
   useEffect(()=>{
-    const fadeElems=q("h6, h3 div, .links button, .head img");
-    gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3]],{
+    const fadeElems=q("h6, h3 div, .links button");
+    gsap.to(fadeElems,{
       autoAlpha:1,
       stagger: .08,
       duration:1.5,
       delay:.2,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
-    gsap.to([fadeElems[0], fadeElems[1], fadeElems[2], fadeElems[3], fadeElems[4]],{
+    gsap.to(fadeElems,{
       yPercent:0,
       stagger: .08,
       duration:.6,
@@ -59,7 +59,7 @@ const Serv = () => {
     })
    
 
-  },[])
+  },[isMobile])
 
   const scrollToService = (idx) => {
 
@@ -96,7 +96,9 @@ const Serv = () => {
             </h3>
           ): (
             <h3>
-               <div>Branding, concept design & web developments, we've got everything covered.</div>
+           <div>Branding, concept </div><div> design & 
+            web </div><div>developments, we've</div><div> got
+            everything covered.</div>     
             </h3>
           )}
         </div>

@@ -309,6 +309,9 @@ section.showcase-pin {
         &.h-showcase{
           margin-bottom: 74px;
         }
+        &.w-des:last-child{
+          margin-bottom: 0;
+        }
 
         h4 {
           font-size: 1.96rem;

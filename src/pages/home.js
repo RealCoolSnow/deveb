@@ -378,16 +378,16 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
           }
           else if(isMobile){
             el.current.style.transform="none";
-            gsap.set(q("section.head"),{
-              clearProps: "transform"
-            })
+            // gsap.set(q("section.head"),{
+            //   clearProps: "transform"
+            // })
             if(pintl.current){
               pintl.current.progress(0)
               // entvideo()
             }
             // entvideo()
             camera.position.set(0, -12, 50)
-            gsap.set(q(".h2.home h3, .h2.home h6, h1"),{
+            gsap.set(q(".h2.home h3, .h2.home h6"),{
               autoAlpha:1,
               y:0,
             })

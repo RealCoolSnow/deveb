@@ -24,13 +24,44 @@ const Head = () => {
     
 
     const headSpans = q(".headSpan");
+    if(isMobile){
+      gsap.set(headSpans, { yPercent: 70, autoAlpha: 0 });
+    } else 
+    if(!isMobile){
+      gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
+    }
 
-    gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
-
-  },[])
+  },[isMobile])
 useEffect(()=>{
   const headSpans = q(".headSpan");
-
+if(isMobile){
+  gsap.to(
+    headSpans,
+    {
+      autoAlpha: 1,
+      duration: 1,
+      // delay:.6,
+      stagger: {
+        delay:.8,
+        amount: 0.38,
+        ease: "power2.Out",
+      },
+    }
+  );
+  gsap.to(
+    headSpans,
+    {
+      yPercent: 0,
+      duration:1,
+      stagger: {
+        delay:.8,
+        amount: 0.4,
+        ease: "power2.Out",
+      },
+    }
+  );
+}
+else if(!isMobile) {
   gsap.to(
     headSpans,
     {
@@ -48,8 +79,10 @@ useEffect(()=>{
       delay:.6,
     }
   );
+}
  
-},[])
+ 
+},[isMobile])
 const callcolor= (color)=>{
   // if(color === "orange"){
   //   options.setorange()

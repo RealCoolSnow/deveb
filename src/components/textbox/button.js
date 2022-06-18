@@ -2,11 +2,13 @@ import {React, useEffect, useRef} from "react"
 import "./textbox.scss"
 import {Link} from "react-router-dom"
 import gsap from "gsap"
+import { useAppContext } from "../../contexts/appcontext"
 import { scrolltop } from "../../utils/useLoco"
 
 const Button =()=>{
   const el = useRef();
   const q = gsap.utils.selector(el);
+  const {isMobile} = useAppContext();
   useEffect(()=>{
 
     
@@ -43,7 +45,8 @@ const Button =()=>{
         <Link onMouseMove={moveb} onMouseEnter={growRipple} onMouseLeave={shrinkRipple}>
            <div className="bn"  >
              <p>Click to run project</p>
-             <div className="btn-ripple"></div>
+             {!isMobile && <div className="btn-ripple"></div>}
+             
            </div> 
         </Link>
         </div>
