@@ -50,16 +50,18 @@ function createWorld(child) {
   //---
   child.appendChild(renderer.domElement);
   //---
-  // window.addEventListener("resize", onWindowResize, false);
+  window.addEventListener("resize", onWindowResize, false);
 }
-// function onWindowResize() {
-//   _width = window.innerWidth;
-//   _height = window.innerHeight;
-//   renderer.setSize(_width, _height);
-//   camera.aspect = _width / _height;
-//   camera.updateProjectionMatrix();
-//   console.log("- resize -");
-// }
+function onWindowResize() {
+  _width = window.innerWidth;
+  if(_width >450) {
+    _height = window.innerHeight;
+    renderer.setSize(_width, _height);
+    camera.aspect = _width / _height;
+    camera.updateProjectionMatrix();
+    // console.log(_width)
+  } else return;
+}
 //--------------------------------------------------------------------
 const primitiveElement = function () {
   this.mesh = new THREE.Object3D();
