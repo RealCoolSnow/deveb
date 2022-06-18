@@ -5,7 +5,7 @@ import gsap from "gsap"
 import { useAppContext } from "../../contexts/appcontext"
 import { scrolltop } from "../../utils/useLoco"
 
-const Button =()=>{
+const Button =({url})=>{
   const el = useRef();
   const q = gsap.utils.selector(el);
   const {isMobile} = useAppContext();
@@ -42,13 +42,13 @@ const Button =()=>{
 
     return (
         <div ref={el} className="bn-contain">
-        <Link onMouseMove={moveb} onMouseEnter={growRipple} onMouseLeave={shrinkRipple}>
+        <a href={url} target="__blank" onMouseMove={moveb} onMouseEnter={growRipple} onMouseLeave={shrinkRipple}>
            <div className="bn"  >
              <p>Click to run project</p>
              {!isMobile && <div className="btn-ripple"></div>}
              
            </div> 
-        </Link>
+        </a>
         </div>
     )
 }

@@ -378,9 +378,9 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
           }
           else if(isMobile){
             el.current.style.transform="none";
-            // gsap.set(q("section.head"),{
-            //   clearProps: "transform"
-            // })
+            gsap.set(q("section.head"),{
+              clearProps: "transform"
+            })
             if(pintl.current){
               pintl.current.progress(0)
               // entvideo()
