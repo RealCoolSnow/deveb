@@ -30,6 +30,7 @@ const AboutPage = () => {
   useLayoutEffect(() => {
     const texts = q(".texts-wrap h2 div,.texts-wrap h5");
     const spans = q("h2 div");
+
     gsap.set(texts, { autoAlpha: 0 });
 
     gsap.set(q(".mem-row"), {
@@ -44,6 +45,10 @@ const AboutPage = () => {
     gsap.set(spans, {
       y: 20,
     });
+    isMobile && gsap.set(q(".mb p"),{
+      autoAlpha:0,
+      y:20,
+    })
     // gsap.set(q(".texts-wrap h5"),{ autoAlpha:0})
     return () => {};
   }, [resetLoco]);
@@ -332,6 +337,7 @@ const AboutPage = () => {
         // }
         const texts = q(".texts-wrap h2,.texts-wrap h5,.texts-wrap p");
         const spans = q(".mb h2 div");
+        const mbp= q(".mb p");
         gsap.set(q(".text-wrap2.pi p"),{
           fontSize: "35px"
         } )
@@ -341,24 +347,24 @@ const AboutPage = () => {
         loadingTL.current = gsap
         .timeline({})
         .to(
-          spans,
+          [mbp, spans ],
           {
             y: 0,
             duration: 0.6,
             stagger: {
-              amount: 0.1,
+              amount: 0.2,
               ease: "power2.Out",
             },
           },
           0.4
         )
         .to(
-          spans,
+          [mbp, spans],
           {
             autoAlpha: 1,
             duration: 1.2,
             stagger: {
-              amount: 0.1,
+              amount: 0.2,
               ease: "power2.Out",
             },
           },

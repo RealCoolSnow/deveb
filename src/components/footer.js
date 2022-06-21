@@ -55,13 +55,11 @@ const Footer = () => {
     });
   }
   // useEffect(()=>{
-  //   if(emailHover){
-  //     gsap.to(q(".footer-secs.l"),{
-  //       autoAlpha:1,
-  //       duration:.3,
-  //     })
-  //   }
-  // },[emailHover])
+  //   // if(hover){
+  //   //  shrink.pause()
+  //   // }
+  //   // else shrink.play()
+  // },[hover])
   function copyToClipboard() {
     var from = copycl.current;
     var range = document.createRange();
@@ -72,46 +70,45 @@ const Footer = () => {
     window.getSelection().removeAllRanges();
     changePointer({isHover: true, color:{bg:"#000", txt: "#fff"}, text: "copied ✓"})
 }
+const grow= gsap.timeline({ defaults: {
+  overwrite: 'auto',
+}});
+const shrink = gsap.timeline();
 const growfil = ()=>{
-  gsap.to(q(".f-filler"), {
+  // shrink.pause(0);
+  grow.to(q(".f-filler"), {
+    opacity:1,
+    duration:0,
+  })
+  grow.to(q(".f-filler"), {
     scale:40,
-    // autoAlpha:1,
     transformOrigin:"center",
     duration:.55,
     ease:"power3.Out",
-    delay:.01,
   
-  });
-  gsap.to(q(".f-filler"), {
-    autoAlpha:1,
-    duration:.1,
-    // ease:"power3.In",
-   
-  })
+  },">");
+
   sethover(true)
 }
 const shrinkfil = ()=>{
-  gsap.to(q(".f-filler"), {
-    scale:1,
+  sethover(false)
+  shrink.to(q(".f-filler"), {
+    scale:0,
     duration:.55,
     ease:"power3.In",
-   
   })
-  gsap.to(q(".f-filler"), {
-    autoAlpha:0,
-    duration:.1,
-    delay: .55,
-    // ease:"power3.In",
-   
-  })
+  .to(q(".f-filler"), {
+    opacity:()=> hover? 1 :0,
+    duration:0,
+  },">");
 
-  sethover(false)
 }
 const movefil= (e)=>{
   console.log(e.pageY , window.scrollTop)
   gsap.to(q(".f-filler"),{
     x:()=>e.clientX,
     y:()=> scrolltop + e.clientY,
+    duration:0,
   })
 }
   useEffect(() => {
@@ -120,20 +117,9 @@ const movefil= (e)=>{
       gsap.set(q(".backgr"), {
         autoAlpha:0,
       });
-      // const changeBg = (direction)=>{
-      //   console.log(direction)
-      //   gsap.to(q(".backgr"), { 
-      //     autoAlpha: ()=> (direction === 1? 1: 0),
-      //     duration:1
-      //   })
-      //   direction === 1? changePp("Contact"): changePp("other")
-      // }
-      // const prt1 =q(".footer-main h6");
-      // const prt2 = q(".tabs-holder");
-      // const prt3 = q(".footer-foot");
+     
       gsap.set(q(".trig"), {
         autoAlpha:0,
-        // yPercent:60,
       })
 
   

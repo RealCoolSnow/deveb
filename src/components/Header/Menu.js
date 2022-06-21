@@ -31,7 +31,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
                 <MenuLink
                   to="mailto:am@am-arc.com"
                   name="email"
-                  txt="am@am-arc.com"
+                  txt="info@deveb.co"
                   moveLinks={!isMobile?moveLinks : null}
                   linksOut={!isMobile?linksOut : null}
                 />
@@ -39,11 +39,11 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
 
               <div className="mid">
                 <span className="head">Social</span>
-                <MenuLink to="https://www.instagram.com/am__arc/?hl=en" name="insta" txt="Instagram" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://www.instagram.com/deveb.co/?hl=en" name="insta" txt="Instagram" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://api.whatsapp.com/send?phone=380970006043" name="Whatsapp" txt="Whatsapp" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://t.me/am_arc_com"  name="Telegram" txt="Telegram" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://www.behance.net/amirmohseni" name="behance" txt="Behance" moveLinks={moveLinks} linksOut={linksOut}/>
-                <MenuLink to="https://www.upwork.com/fl/am1amirmohseni" name="upwork" txt="Upwork" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://www.upwork.com/o/companies/~015873da0933dd1dbd/" name="upwork" txt="Upwork" moveLinks={moveLinks} linksOut={linksOut}/>
               
               </div>
 

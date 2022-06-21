@@ -154,8 +154,8 @@ if(!isMobile){
             return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width}/>
           }
           else if(type === "button"){
-            const {url} = elem;
-            return <Button url={url}/>
+            const {url, id} = elem;
+            return <Button key={id} url={url}/>
           }
         })
       }

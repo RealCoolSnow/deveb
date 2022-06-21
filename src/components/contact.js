@@ -686,14 +686,14 @@ const Con = () => {
                     className={emailHover ? "active" : ""}
                     ref={copycl}
                   >
-                    am@am-arc.com
+                    info@deveb.com
                   </h5>
                   <p>Mechnykova St, 2, Kyiv, 02000</p>
                 </div>
                 <div className="footer-secs r">
                   <div>
                     <a
-                      href="https://www.instagram.com/am__arc/?hl=en"
+                      href="https://www.instagram.com/deveb.co/?hl=en"
                       target="_blank"
                     >
                       <img className="insta" src={insta} />
@@ -758,7 +758,7 @@ const Con = () => {
                 <div className="footer-secs r">
                   <div>
                     <a
-                      href="https://www.instagram.com/am__arc/?hl=en"
+                      href="https://www.instagram.com/deveb.co/?hl=en"
                       target="_blank"
                     >
                       <img className="insta" src={insta} />

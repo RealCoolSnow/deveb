@@ -104,13 +104,14 @@
 }
 .bn-contain{
     display: inline-block;
-    width: calc(100vw/12 * 5);
+    width: calc(100vw/12 * 3.5);
     height: calc(100vw/12 * 3);
     position: relative;
+    margin: 0 calc(100vw/12 * .75);
     // transform: translateY(-25%);
     // padding: 0 calc(100vw / 12) 0;
     a{
-        top: -25%;
+        top: -20%;
         position: relative;
 
         .bn{
@@ -123,7 +124,7 @@
             overflow: hidden;
             pointer-events: none;
             z-index: 1;
-            margin:0 calc(100vw/12) ;
+            margin:5% auto ;
             // top: -25%;
             .btn-ripple{
                 width: 20px;

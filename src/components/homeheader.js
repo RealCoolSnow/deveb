@@ -14,7 +14,7 @@ import { gsap } from "gsap";
 // import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 const Head = () => {
-  const { isMobile } = useAppContext();
+  const { isMobile, resetLoco } = useAppContext();
  const [url, seturl] = useState("")
   const el = useRef();
   const q = gsap.utils.selector(el);
@@ -24,17 +24,25 @@ const Head = () => {
     
 
     const headSpans = q(".headSpan");
+    const ctaLinks= q(".call-action a");
+    // gsap.set([headSpans], {  autoAlpha: 0 });
+
     if(isMobile){
-      gsap.set(headSpans, { yPercent: 70, autoAlpha: 0 });
+
+      gsap.set([headSpans, ctaLinks], { yPercent: 70, autoAlpha:0 });
+      // gsap.set(ctaLinks[0], {
+      //   yPercent:70, autoAlpha:0,
+      // })
     } else 
     if(!isMobile){
-      gsap.set(headSpans, { yPercent: 40, autoAlpha: 0 });
+      gsap.set(headSpans, { yPercent: 40, autoAlpha:0});
     }
 
-  },[isMobile])
+  },[resetLoco])
 useEffect(()=>{
   const headSpans = q(".headSpan");
 if(isMobile){
+  const ctaLinks= q(".call-action a");
   gsap.to(
     headSpans,
     {
@@ -48,6 +56,16 @@ if(isMobile){
       },
     }
   );
+  gsap.to(ctaLinks, {
+    autoAlpha: 1,
+    duration: .5,
+    // delay:.6,
+    delay:.4,
+    stagger: {
+      amount: 0.38,
+      ease: "none",
+    },
+  })
   gsap.to(
     headSpans,
     {
@@ -60,6 +78,19 @@ if(isMobile){
       },
     }
   );
+  gsap.to(
+    ctaLinks,
+    {
+      yPercent: 0,
+      duration:.5,
+      delay:.4,
+      stagger: {
+        amount: 0.4,
+        ease: "none",
+      },
+    }
+  );
+
 }
 else if(!isMobile) {
   gsap.to(

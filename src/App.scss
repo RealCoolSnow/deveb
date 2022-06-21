@@ -578,6 +578,7 @@ section {
           overflow: hidden;
 
           a.estimate-btn {
+            opacity: 0;
             width: fit-content;
             display: block;
             margin: 0 auto;
@@ -596,6 +597,7 @@ section {
           }
 
           a.view-projects-btn {
+            opacity: 0;
             margin: 20px auto 0;
             width: fit-content;
             font-size: 0.89rem;
