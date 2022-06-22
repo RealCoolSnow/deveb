@@ -5,10 +5,13 @@ import * as dat from "dat.gui";
 import { TweenMax, Elastic, Quart, gsap } from "gsap";
 
 export function init(child) {
+
   createWorld(child);
   // createGUI();
   createPrimitive();
   animation();
+
+  return () => destroyBubble(child)
 }
 
 const Theme = {
@@ -23,7 +26,7 @@ let scene, renderer, container;
 let _width, _height;
 let _primitive;
 let mat;
-const shapeGroup = new THREE.Group();
+let shapeGroup = new THREE.Group();
 const start = Date.now();
 
 export let camera
@@ -52,6 +55,24 @@ function createWorld(child) {
   //---
   window.addEventListener("resize", onWindowResize, false);
 }
+
+function destroyBubble(bubbleContainer) {
+
+  window.removeEventListener("resize", onWindowResize, false);
+
+  scene = null;
+  camera = null;
+  _primitive = null;
+  mat = null;
+  renderer = null
+  shapeGroup = new THREE.Group();
+
+
+  while ( bubbleContainer.firstElementChild ) {
+    bubbleContainer.firstElementChild.remove()
+  }
+}
+
 function onWindowResize() {
   _width = window.innerWidth;
   if(_width >450) {
@@ -399,7 +420,8 @@ function createGUI() {
 }
 //--------------------------------------------------------------------
 function animation() {
-  var performance = Date.now() * 0.003;
+  if( !renderer ) return
+
   //---
   //_primitive.shape.visible = !options.perlin.points;
   _primitive.point.visible = options.perlin.points;
