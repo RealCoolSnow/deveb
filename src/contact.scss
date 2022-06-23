@@ -134,6 +134,12 @@ section.sec-form {
       form{
 
         margin-bottom: 0;
+        .options-btns{
+          justify-content: flex-start;
+          a{
+            margin-right: 1rem;
+          }
+        } 
       }
       h6{
         padding-top: 0;

@@ -167,6 +167,7 @@ const Test = () => {
           }
           else if (isMobile){
             el.current.style.transform="none";
+            gsap.set(el.current,{transform:"none"})
             gsap.set(q(".fade"), {autoAlpha:1 })
             // gsap.to(q("#stickbb h1"), {autoAlpha: 1, duration:.5, onComplete: ()=> ScrollTrigger.refresh()})
            my.current = gsap.timeline({

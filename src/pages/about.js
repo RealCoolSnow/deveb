@@ -307,7 +307,9 @@ const AboutPage = () => {
   
   
         return()=>{
-          loadingTL.current.kill();
+          if(loadingTL.current){
+            loadingTL.current.kill()
+          }
           imgTl.current.kill();
           if(imgTl.current.ScrollTrigger){
             imgTl.current.ScrollTrigger.kill();
@@ -332,6 +334,12 @@ const AboutPage = () => {
       }
       else if (isMobile){
         el.current.style.transform="none";
+        gsap.set(q(".texts-wrap"), {
+          transform:"none"
+        })
+        if(loadingTL.current){
+          loadingTL.current.kill()
+        }
         // if(fooT.current){
         //   fooT.current.progress(0)
         // }

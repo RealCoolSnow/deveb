@@ -55,7 +55,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
         el.current.style.mixBlendMode="difference";
         // console.log(el.current.childNodes[0]);
         if(fsize) {el.current.childNodes[0].style.fontSize= fsize;}
-      } else 
+      }  
       if(color){
         gsap.to(q("p"),{
           color: color.txt,
@@ -78,7 +78,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
       });
       el.current.style.mixBlendMode="normal";
     }
-  }, [isHover,color])
+  }, [isHover,color,isMobile])
   useEffect(()=>{
     if(!isHover){
       gsap.to(el.current,{

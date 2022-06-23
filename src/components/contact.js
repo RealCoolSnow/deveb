@@ -209,7 +209,7 @@ const Con = () => {
       setShowThanks(true);
       changePointer({
         isHover: true,
-        color: { bg: "#ffffff", txt: "#000000" },
+        color: { bg: "#fff", txt: "#000" },
         text: "✕",
         blend: true,
         fsize: "20px",
@@ -349,7 +349,7 @@ const Con = () => {
     window.getSelection().removeAllRanges();
     changePointer({
       isHover: true,
-      color: { bg: "#ffffff", txt: "#3d7299" },
+      color: { bg: "#000000", txt: "#ffffff" },
       text: "copied ✓",
     });
   }
@@ -678,7 +678,7 @@ const Con = () => {
                     onMouseEnter={() =>
                       changePointer({
                         isHover: true,
-                        color: { bg: "#ffffff", txt: "#3d7299" },
+                        color: { bg: "#000000", txt: "#FFFFFF" },
                         text: "Click to copy",
                       })
                     }

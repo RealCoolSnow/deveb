@@ -327,7 +327,7 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap fc">
-        <img src={isMobile?imgMB: img2} />
+        <img src={img2} />
       </div>
       <div className="members-wrap">
         <div className="mem-row">

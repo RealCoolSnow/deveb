@@ -582,8 +582,8 @@ section {
             width: fit-content;
             display: block;
             margin: 0 auto;
-            background-color: var(--button-bg-color);
-            color: var(--button-primary-color);
+            background-color: var(--blue-span);
+            color: var(--bg-l);
             font-size: 0.89rem;
             font-weight: 600;
             padding: 16px 25px;
@@ -601,8 +601,8 @@ section {
             margin: 20px auto 0;
             width: fit-content;
             font-size: 0.89rem;
-            border-bottom: 2px solid var(--secondary-font-color);
-            color: var(--primary-color);
+            border-bottom: 2px solid var(--black-font);
+            color: var(--black-font-main);
             padding-bottom: 3px;
           }
         }

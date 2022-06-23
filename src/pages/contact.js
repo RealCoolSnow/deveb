@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from 'react'
+import React, { lazy, Suspense, useEffect, useRef } from 'react'
 
 import gsap from 'gsap'
 import useLoco from '../utils/useLoco.js'
@@ -12,7 +12,8 @@ const Con = lazy( () => import('../components/contact.js'))
 // const Loading = lazy( () => import('./Loading.js'))
 gsap.registerPlugin(ScrollTrigger)
 const ContactPage = () => {
-  const { isMobile, pageTitle, setReset, changePT } = useAppContext();
+  const ref= useRef();
+  const { isMobile, pageTitle, setReset, changePT, resetLoco} = useAppContext();
   useLoco(!isMobile);
 
   useEffect(()=>{
@@ -28,8 +29,13 @@ const ContactPage = () => {
     // });
    } 
   },[])
+  useEffect(()=>{
+    if(isMobile){
+      ref.current.style.transform="none";
+    }
+  },[ isMobile])
   return (
-  <div id="viewport" data-scroll-container >
+  <div ref={ref} id="viewport" data-scroll-container >
 
       <Helmet>
         <title>Deveb | Get in touch</title>
