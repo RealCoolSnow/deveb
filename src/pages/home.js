@@ -21,7 +21,7 @@ import FooterMB from '../components/footermb.jsx'
 import Showcase  from '../components/showcase.js'
 import Helmet from 'react-helmet';
 import Three from '../components/Blob/Three.js';
-import { options, camera } from '../components/Blob/utils'
+// import { options,  } from '../components/Blob/utils'
 
 // const Loading = lazy( () => import('./Loading.js'))
 const HomePage = () => {
@@ -30,7 +30,7 @@ const HomePage = () => {
   const el = useRef();
   const tl = useRef();
   const proTL = useRef();
-  const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer} = useAppContext();
+  const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer, changePT} = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
   const q = gsap.utils.selector(el);
@@ -46,6 +46,7 @@ const HomePage = () => {
     opacity: .5,
   }
   useEffect(() => {
+    changePT("Home");
     setTimeout(() => {
       setReset()
     }, 500);
@@ -85,7 +86,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
         proTL.current.progress(0)
         // entvideo()
       }
-      camera.position.set(0, 9.9, 17)
+      // camera.position.set(0, 9.9, 17)
       gsap.set(q(".head"),{
         marginBottom: "15vh"
       })
@@ -105,7 +106,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
         {
           onStart: ()=>  {
           
-              options.setlight2()
+              // options.setlight2()
             //  options.setlightpink()
             gsap.to(q(".hue-can"),{
               // background: "none",
@@ -117,7 +118,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
           },
           onReverseComplete:()=>  {
             // uagent !== "Safari" && 
-             options.setlightpink()
+            //  options.setlightpink()
             // uagent === "Safari" &&  options.setpurple()
 
             gsap.to(q(".hue-can"),{
@@ -137,8 +138,8 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
       zednum: 17,
     }
 
-    console.log('Camera')
-    console.log(camera)
+    // console.log('Camera')
+    // console.log(camera)
   
     pintl.current = gsap
       .timeline({
@@ -165,7 +166,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
         duration:25,
         // scrub: true,
         onUpdate: () => {
-          camera.position.set(0, cam.num, cam.zednum)
+          // camera.position.set(0, cam.num, cam.zednum)
         }
       })
       .to(q(".darkLay2"), {
@@ -386,7 +387,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
               // entvideo()
             }
             // entvideo()
-            camera.position.set(0, -12, 50)
+            // camera.position.set(0, -12, 50)
             gsap.set(q(".h2.home h3, .h2.home h6"),{
               autoAlpha:1,
               y:0,

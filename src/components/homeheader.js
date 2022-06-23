@@ -22,7 +22,6 @@ const Head = () => {
   useLayoutEffect(()=>{
    
     
-
     const headSpans = q(".headSpan");
     const ctaLinks= q(".call-action a");
     // gsap.set([headSpans], {  autoAlpha: 0 });
