@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./footer.scss";
 import whats from "../assets/whs.svg";
 import be from "../assets/be.svg";
@@ -54,12 +54,14 @@ const Footer = () => {
       duration: .5,
     });
   }
+
   // useEffect(()=>{
   //   // if(hover){
   //   //  shrink.pause()
   //   // }
   //   // else shrink.play()
   // },[hover])
+
   function copyToClipboard() {
     var from = copycl.current;
     var range = document.createRange();
@@ -76,27 +78,38 @@ const grow= gsap.timeline({ defaults: {
 const shrink = gsap.timeline();
 const growfil = ()=>{
   // shrink.pause(0);
+  grow.to(q(".foot-svg"),{
+    scale: 1.02,
+    duration:.3,
+    ease: "power3.Out"
+  })
   grow.to(q(".f-filler"), {
     opacity:1,
     duration:0,
-  })
+  },"<")
   grow.to(q(".f-filler"), {
     scale:40,
     transformOrigin:"center",
     duration:.55,
     ease:"power3.Out",
   
-  },">");
+  },">")
+
 
   sethover(true)
 }
 const shrinkfil = ()=>{
   sethover(false)
+  shrink.to(q(".foot-svg"),{
+    scale: 1,
+    duration:.3,
+    ease: "power3.In"
+  })
   shrink.to(q(".f-filler"), {
     scale:0,
     duration:.55,
     ease:"power3.In",
-  })
+  },"<")
   .to(q(".f-filler"), {
     opacity:()=> hover? 1 :0,
     duration:0,
@@ -104,13 +117,28 @@ const shrinkfil = ()=>{
 
 }
 const movefil= (e)=>{
-  console.log(e.pageY , window.scrollTop)
   gsap.to(q(".f-filler"),{
     x:()=>e.clientX,
     y:()=> scrolltop + e.clientY,
     duration:0,
-  })
+  });
+  const {target}= e;
+  const ofTop = target.getBoundingClientRect().top;
+  const ofLeft = target.getBoundingClientRect().left;
+  var s = e.clientX - ofLeft;
+  var o = (e.clientY - ofTop);
+  // console.log(target.offsetWidth)
+  gsap.to(q(".foot-svg"),{
+      xPercent: ((s - 535 / 2) / 535) * 2,
+      yPercent:( (o -535 / 2) / 535) * 2,
+
+      ease: "Power3.inOut",
+      duration: .3,
+   
+  });
 }
+const histori = useHistory();
+const handleclick =() => histori.push('/contact');
   useEffect(() => {
     // ScrollTrigger.refresh();
 
@@ -127,13 +155,13 @@ const movefil= (e)=>{
   return (
     <div ref={el}>
 
-    <section   id="bab"  data-scroll-call className="sec-form footer-sec fot" onMouseMove={movefil} >
+    <section   id="bab"  data-scroll-call className="sec-form footer-sec fot"  >
       <div className="trig">
         <div className="backgr" data-scroll data-scroll-sticky data-scroll-target="#bab"></div>
         <div className="footer-main">
        <div className="f-filler"></div>
          
-          <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729.43 729.425" >
+          <svg  onMouseMove={movefil} onClick={handleclick} className="foot-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729.43 729.425" >
             <defs>
               <filter id="a" x="0" y="0" width="729.43" height="729.425" filterUnits="userSpaceOnUse">
                 <feOffset dy="3" input="SourceAlpha"/>
@@ -145,7 +173,7 @@ const movefil= (e)=>{
             </defs>
             <g data-name="Group 1200">
               <g filter="url(#a)" data-name="Group 1199">
-               <path onMouseEnter={growfil} onMouseLeave={shrinkfil} data-name="Path 418" d="M556.58 105.892A319.757 319.757 0 0 0 45.004 361.709c0 176.559 143.154 319.712 319.713 319.712 173.826 0 315.135-138.746 319.541-311.495q.176-4.109.176-8.218V41.997a159.711 159.711 0 0 0-127.854 63.895Z" fill="#fff" />
+               <path  onMouseEnter={growfil} onMouseLeave={shrinkfil} data-name="Path 418" d="M556.58 105.892A319.757 319.757 0 0 0 45.004 361.709c0 176.559 143.154 319.712 319.713 319.712 173.826 0 315.135-138.746 319.541-311.495q.176-4.109.176-8.218V41.997a159.711 159.711 0 0 0-127.854 63.895Z" fill="#fff" />
              </g>
             </g>
           </svg>

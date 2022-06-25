@@ -1,22 +1,39 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import { init } from './utils'
-
+import gsap from 'gsap'
 import './three.scss'
-
+import { useAppContext } from '../../contexts/appcontext'
 import { vertexShader, fragmentShader } from './webGL'
 
 export default function Three() {
 
   const container = useRef(null)
+  const q = gsap.utils.selector(container);
+  const {isMobile} = useAppContext()
+ useLayoutEffect(()=>{
+ gsap.set(container.current,{
+   y: 60,
+   autoAlpha:0,
+ })
+ },[isMobile])
 
-  useEffect( () => {
+  useEffect(() => {
     addVertex()
-
+    gsap.to(container.current,{
+      y: 0,
+      duration:.6,
+      delay:.2,
+    })
+    gsap.to(container.current,{
+      autoAlpha: 1,
+      duration:.5,
+      delay:.2,
+    })
     const destroyer = init(container.current)
 
     return () => destroyer()
     
-  },[])
+  },[isMobile])
 
   const addVertex = () => {
 

@@ -23,21 +23,20 @@ const Head = () => {
    
     
     const headSpans = q(".headSpan");
-    const ctaLinks= q(".call-action a");
     // gsap.set([headSpans], {  autoAlpha: 0 });
-
+    
+    const ctaLinks= q(".call-action a.estimate-btn, .call-action a.view-projects-btn");
     if(isMobile){
 
-      gsap.set([headSpans, ctaLinks], { yPercent: 70, autoAlpha:0 });
-      // gsap.set(ctaLinks[0], {
-      //   yPercent:70, autoAlpha:0,
-      // })
+      gsap.set([headSpans, ctaLinks[1]], { yPercent: 70, autoAlpha:0 });
+      gsap.set( ctaLinks[0], { yPercent: 40, autoAlpha:0 });
+   
     } else 
     if(!isMobile){
       gsap.set(headSpans, { yPercent: 40, autoAlpha:0});
     }
 
-  },[resetLoco])
+  },[isMobile])
 useEffect(()=>{
   const headSpans = q(".headSpan");
 if(isMobile){
@@ -48,8 +47,8 @@ if(isMobile){
       autoAlpha: 1,
       duration: 1,
       // delay:.6,
+      delay:.5,
       stagger: {
-        delay:.8,
         amount: 0.38,
         ease: "power2.Out",
       },
@@ -57,9 +56,9 @@ if(isMobile){
   );
   gsap.to(ctaLinks, {
     autoAlpha: 1,
-    duration: .5,
+    duration: .6,
     // delay:.6,
-    delay:.4,
+    delay:.86,
     stagger: {
       amount: 0.38,
       ease: "none",
@@ -70,8 +69,8 @@ if(isMobile){
     {
       yPercent: 0,
       duration:1,
+      delay:.5,
       stagger: {
-        delay:.8,
         amount: 0.4,
         ease: "power2.Out",
       },
@@ -81,8 +80,8 @@ if(isMobile){
     ctaLinks,
     {
       yPercent: 0,
-      duration:.5,
-      delay:.4,
+      duration:.6,
+      delay:.86,
       stagger: {
         amount: 0.4,
         ease: "none",

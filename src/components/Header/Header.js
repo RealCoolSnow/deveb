@@ -33,7 +33,6 @@ function Header({ history }) {
     if (loc !== activePath) {
       window.scrollTo({
         top: 0,
-        // behavior: 'smooth'
       });
       ScrollTrigger.update();
     }
@@ -291,7 +290,10 @@ function Header({ history }) {
     })
   },[])
   const histori = useHistory();
-  const handleclick =() => histori.push('/contact');
+  const handleclick =() =>{ 
+    closeMenuIfOpen()
+    histori.push('/contact');
+  }
   const toggleMenu = (e) => {
     e.stopPropagation();
 

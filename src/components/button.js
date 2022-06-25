@@ -107,6 +107,7 @@ const Button = ({
           yPercent: 0,
           borderRadius: 0,
         });
+        
         gsap.to(teXt, 0.4, {
           color: "#fff",
         });
@@ -115,6 +116,10 @@ const Button = ({
           yPercent: -130,
           skewY: -3,
         });
+        br && gsap.to(q(".btn-more"),{
+          borderColor: "#000",
+          duration: .5,
+        })
       } else if (btnhover === false) {
         gsap.to(ripple, 0.5, {
           yPercent: ()=> act? 0: 100,
@@ -132,6 +137,10 @@ const Button = ({
           x: 0,
           y: 0,
         });
+        br && gsap.to(q(".btn-more"),{
+          borderColor: br,
+          duration: .5,
+        })
       }
     
 

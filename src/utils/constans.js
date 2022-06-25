@@ -4,9 +4,9 @@ import t3d from '../assets/covers/ren.jpg'
 import ani from '../assets/covers/ani.jpg'
 import vr from '../assets/covers/vr.jpg'
 import dopegood from '../assets/covers/dopegood.jpg'
-import amarc from '../assets/covers/amarc2.png'
+import amarc from '../assets/covers/am-arc.jpg'
 import vim from '../assets/covers/vim.jpg'
-import dopop from '../assets/covers/dopop2.png'
+import dopop from '../assets/covers/dopop2.jpg'
 import comfeey from '../assets/covers/comfeey.jpg'
 
 
@@ -237,7 +237,7 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: amarc,
-      colors: { cur: "#6E6E73", pointer: "#404040bf", bg:"#F2F2F2", tx:"#86868C", br:"#D7D7D9"},
+      colors: { cur: "#F2AB79", pointer: "#F2AB79bf", bg:"#FFEDE0", tx:"#F2AB79", br:"#F2AB79"},
       klass: "threeD",
     },
   },
@@ -249,7 +249,7 @@ export const home = [
     a: { text: "Learn more",  url:"/projects#In" },
     img: {
       cover: vim,
-      colors: { cur: "#FF999F", pointer: "#ff8087bf", bg:"#FEE0E2", tx:"#E68A90", br:"#FEA5AB"},
+      colors: { cur: "#FF99CE", pointer: "#CC669Bbf", bg:"#FAE1EE", tx:"#E67FB4", br:"#FEA5D3"},
       klass: "threeD",
     },
   },

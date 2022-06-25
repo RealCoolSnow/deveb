@@ -57,17 +57,17 @@ const HomePage = () => {
     const refviz = React.createRef();
   
   useEffect(()=>{
-    const browser = Bowser.getParser(window.navigator.userAgent);
+    // const browser = Bowser.getParser(window.navigator.userAgent);
 
-console.log(`The current browser name is "${browser.getBrowserName()}"`);
+// console.log(`The current browser name is "${browser.getBrowserName()}"`);
     // window.onload = function () {
-      var uagent = browser.getBrowserName();
-      var safari = uagent.match(/safari\/(\S+)/);
-      console.log(uagent)
-       if(uagent === "Safari"){
+      // var uagent = browser.getBrowserName();
+      // var safari = uagent.match(/safari\/(\S+)/);
+      // console.log(uagent)
+      //  if(uagent === "Safari"){
         // options.setpurple();
         // gsap.set(q(".hue-can"), {autoAlpha:0})
-       }
+      //  }
     // }
    
     const changeBg = (direction)=>{
@@ -78,6 +78,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
       direction === 1? changePp("Contact"): changePp("other")
     }
     if (!isMobile){
+       options.setlightpink();
       if(pintl.current){
         pintl.current.progress(0)
         // entvideo()
@@ -123,7 +124,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
 
             gsap.to(q(".hue-can"),{
               // background: "#f5f5f7",
-              autoAlpha:()=>uagent !== "Safari" ?0 :0,
+              autoAlpha:()=> 0,
               duration:.4,
           })
           },  
@@ -387,7 +388,7 @@ console.log(`The current browser name is "${browser.getBrowserName()}"`);
               // entvideo()
             }
             // entvideo()
-            camera.position.set(0, -12, 50);
+            camera.position.set(0, -11, 50);
             gsap.set(q(".h2.home h3, .h2.home h6"),{
               autoAlpha:1,
               y:0,
