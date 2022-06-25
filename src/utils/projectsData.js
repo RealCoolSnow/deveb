@@ -8,7 +8,7 @@ export const prjData = [
   {
     id:"p15i11",
     name: 'VimCosmo',
-    desc: 'Interior design, Rendering',
+    desc: "Online marketplace for NFT's",
     tags:['Interior',],
     family:"vimcosmo",
     elements:[
@@ -106,7 +106,7 @@ export const prjData = [
   {
     id:"p15i22",
     name: 'Comfeey',
-    desc: 'Interior design, Rendering',
+    desc: 'Furniture brand, Ecommerce website',
     tags:['3D Model'],
     family:"comfeey",
     elements:[
@@ -197,7 +197,7 @@ export const prjData = [
   {
     id:"p15i33",
     name: 'DoPop',
-    desc: 'Interior design, Rendering',
+    desc: "Online marketplace, web3",
     tags:['Interior', '3D Rendering','3DRendering',],
     family:"dopop",
     elements:[
@@ -287,7 +287,7 @@ export const prjData = [
   {
     id:"p15i44",
     name: 'Dope good',
-    desc: 'Interior design, Rendering',
+    desc: 'Modern home furniture store',
     tags:['3D Model'],
     family:"dopegood",
     elements:[
@@ -377,7 +377,7 @@ export const prjData = [
   {
     id:"p15i55",
     name: 'AM-Arc',
-    desc: 'Interior design, Rendering',
+    desc: 'Architectural design & visualization studio',
     tags:['Interior', '3D Rendering','3DRendering',],
     family:"amarc",
     elements:[

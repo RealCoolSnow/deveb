@@ -45,47 +45,33 @@ if(isMobile){
     headSpans,
     {
       autoAlpha: 1,
-      duration: 1,
-      // delay:.6,
-      delay:.5,
-      stagger: {
-        amount: 0.38,
-        ease: "power2.Out",
-      },
+      stagger: .08,
+      duration:1.5,
+      delay:.65,
     }
   );
   gsap.to(ctaLinks, {
     autoAlpha: 1,
-    duration: .6,
-    // delay:.6,
-    delay:.86,
-    stagger: {
-      amount: 0.38,
-      ease: "none",
-    },
+    stagger: .08,
+      duration:.6,
+      delay:.8,
   })
   gsap.to(
     headSpans,
     {
       yPercent: 0,
-      duration:1,
-      delay:.5,
-      stagger: {
-        amount: 0.4,
-        ease: "power2.Out",
-      },
+      stagger: .08,
+      duration:.6,
+      delay:.65,
     }
   );
   gsap.to(
     ctaLinks,
     {
-      yPercent: 0,
+      yPercent:0,
+      stagger: .08,
       duration:.6,
-      delay:.86,
-      stagger: {
-        amount: 0.4,
-        ease: "none",
-      },
+      delay:.8,
     }
   );
 
