@@ -1309,9 +1309,11 @@ section.process {
     &.head {
       padding-top: 55px;
       .h1.mobile-home-head {
-        align-items: flex-end;
+        // align-items: flex-end;
         // padding-bottom: 59%;
-        padding-bottom: 52%;
+        // padding-bottom: 52%;
+        align-items: center;
+        padding-top: 60%;
 
 
         h1 {
