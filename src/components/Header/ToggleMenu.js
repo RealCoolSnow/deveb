@@ -190,13 +190,13 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
   };
 
   const linkClicked = (name) => {
-    if (name !== activeRoute) {
+    // if (name !== activeRoute) {
       closeMenuAnim();
 
       setTimeout(() => {
         closer();
       }, 800);
-    }
+    // }
   };
 
 

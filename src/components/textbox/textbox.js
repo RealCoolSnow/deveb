@@ -13,7 +13,7 @@ const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width })=>{
             }
             
                { h1 && !double && (
-                    <h1 className={`${h3 === "DopeGood"? "w500" : ""} `}>{h1}</h1>
+                    <h1 className={`${h3 === "DopeGood"? "w500" : ""} `} id="headLines">{h1}</h1>
                 )}
            
                { h2 && !double && (

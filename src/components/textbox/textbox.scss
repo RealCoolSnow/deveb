@@ -30,6 +30,10 @@
             width: 500px;
             margin: auto;
         }
+        .lineChildren{
+            opacity: 0;
+            transform: translateY(25px);
+        }
     }
     p{
         font-size: 26.8px;

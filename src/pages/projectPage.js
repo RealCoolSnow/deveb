@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import { prjData } from "../utils/projectsData.js";
 import "../projects.scss";
@@ -7,6 +7,7 @@ import Textbox from "../components/textbox/textbox.js";
 import Coverimage from "../components/textbox/coverimage.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loading from "./Loading.js"
+import SplitText from "../utils/split3.js"
 import useLoco,{ scrolltop} from '../utils/useLoco.js'
 import Footer from'../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
@@ -48,13 +49,58 @@ const ProjectPage = () => {
   const callUpd = () => {
     return setProject(newArr);
   };
+ 
+  useLayoutEffect(()=>{
+    const q = gsap.utils.selector(el);
+  
+    gsap.set(q("h3"), {autoAlpha:0, y: 20,});
+    gsap.set(q(".cover.full-H")[0], {autoAlpha:0, yPercent:10,});
+
+
+  },[isMobile])
 
   useEffect(() => {
-  
+    const q = gsap.utils.selector(el);
+    // gsap.set(q("h1"),{autoAlpha:1})
+    const split = new SplitText("#headLines", {
+      type: "lines",
+      linesClass: "lineChildren",
+    });
+    gsap.to(split.lines,{
+      y: 0,
+      duration:.4,
+      delay:.65,
+      stagger: .1,
+    })
+    gsap.to(q("h3"),{
+      y: 0,
+      duration:.4,
+      delay:.45,
+      // stagger: .1,
+    })
+    gsap.to(split.lines,{
+      autoAlpha: 1 ,
+      duration:.85,
+      delay:.65,
+      stagger: .1,
+    })
+    gsap.to(q("h3"),{
+      autoAlpha: 1,
+      duration:.865,
+      delay:.45,
+      // stagger: .1,
+    })
+    gsap.to(q(".cover.full-H")[0], 
+     {
+        autoAlpha:1, yPercent:0,
+        duration:.4,
+        delay:.8,
+     }
+    );
     // callUpd();
     changePointer({isHover: false})
     
-  }, []);
+  }, [isMobile]);
   useEffect(()=>{
     
     const q = gsap.utils.selector(el);
