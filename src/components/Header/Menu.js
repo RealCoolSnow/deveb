@@ -47,10 +47,10 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
               
               </div>
 
-              <div className="bott">
-                {/* <span className="head">Theme</span> */}
-                {/* <ThemeSwitch /> */}
-              </div>
+              {/* <div className="bott">
+                <span className="head">Theme</span>
+                <ThemeSwitch />
+              </div> */}
             </div>
           :
             ''

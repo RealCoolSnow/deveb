@@ -1,3 +1,35 @@
+@media ( min-width: 1630px ) {
+  .frame-wrapper .frame.f-top {
+    .logo svg.sm-logo{
+      width: 1.7vw;
+    }
+    .navlinks-contain li
+    {
+      padding: 0 0 0 calc(5.8vw / 7 * 2);
+      &.estimateBtn {
+        padding: 20px calc(5.8vw / 7 * 2.5);
+         .contactbtn-wrap{
+        height: 2.05vw;
+        width: 5.8vw;
+        border-radius: 50px ;
+        font-size: .7vw;
+      }
+      }
+      &.menu .menuLines{
+        width: 1.3vw;
+      }
+    }
+  }
+  section.head h1{
+    font-size: 3.7vw;
+  }
+  section.head .h2{
+    h3{
+      font-size: 2.5rem;
+    }
+    h6{font-size: 1.61vw;}
+  }
+}
 @media ( max-width: 1630px ) {
   section.sec-form {
     max-width: 40%;

@@ -21,6 +21,7 @@ const useLoco = (start) => {
       smooth: true,
       multiplier: 0.55,
       smartphone: {smooth: true},
+      tablet: {smooth: true},
       class: "revealed",
       lerp:0.07,
     });
@@ -59,14 +60,15 @@ const useLoco = (start) => {
     locoScroll.on("scroll", (args) => {
       ScrollTrigger.update()
       // console.log(locoScroll);
-      const sY = args.delta.y;
-      scrolltop= sY;
-      if( sY > 10) {
-        scrollY(10)
-      }
-      else {
-        scrollY(0)
-      }
+      // const sY = args.delta.y;
+      // scrolltop= sY;
+      // if( sY > 10) {
+      //   scrollY(10)
+      // }
+      // else {
+      //   scrollY(0)
+      // }
+      console.log(locoScroll)
   })
 
     //   // if (callonce && btnobj){

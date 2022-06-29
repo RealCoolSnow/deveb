@@ -472,8 +472,8 @@ function Header({ history }) {
               <svg
                 className="menuLines l1"
                 xmlns="http://www.w3.org/2000/svg"
-                width="27"
-                height="3"
+                // width="27"
+                // height="3"
                 viewBox="0 0 27 3"
               >
                 <rect
@@ -489,8 +489,8 @@ function Header({ history }) {
               <svg
                 className="menuLines l2"
                 xmlns="http://www.w3.org/2000/svg"
-                width="27"
-                height="3"
+                // width="27"
+                // height="3"
                 viewBox="0 0 27 3"
               >
                 <rect

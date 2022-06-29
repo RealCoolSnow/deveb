@@ -3,6 +3,7 @@ import amarc from '../assets/covers/am-arc.jpg'
 import vim from '../assets/covers/vim.jpg'
 import dopop from '../assets/covers/dopop.jpg'
 import comfeey from '../assets/covers/comf2.jpg'
+import {vim1, vim2, vim3, vim4, vim5, vim6} from "../assets/covers/vim"
 export const prjData = [
   
   {
@@ -25,6 +26,7 @@ export const prjData = [
         id:"vc11",
         mt:true,
         type:"cover",
+        src:vim1,
         double:false,
         width:"full-w",
         height:"full-H",
@@ -41,6 +43,7 @@ export const prjData = [
         id:"vc21",
         type:"cover",
         double:false,
+        src:vim2,
         width:"medium-w",
         height:"medium-h",
       },
@@ -58,6 +61,7 @@ export const prjData = [
         double:true,
         align:"space between",
         width:"full-w",
+        src:[vim3, vim4],
         h2:"Front-end development",
         h2width:"full",
       },
@@ -72,12 +76,14 @@ export const prjData = [
         id:"vc41",
         type:"cover",
         double:false,
+        src:vim5,
         width:"full-w",
         height:"full-H",
       },
       {
         id:"vcmb11",
         type:"cover",
+        src:vim6,
         double:false,
         width:"full-w mb",
         height:"full-H",
@@ -92,8 +98,12 @@ export const prjData = [
       {
         id:"vc51",
         type:"cover",
-        double:true,
-        align:"normal",
+        src:vim6,
+        double:false,
+        width:"full-w",
+        height:"full-H",
+        // double:true,
+        // align:"normal",
       },
     ],
     a:{text:"View more", url:"vimcosmo"},

@@ -189,10 +189,10 @@ if(!isMobile){
          elements.map(elem =>{
           const{type}= elem;
           if (type === "cover") {
-            const {width, height, double, h2, id, align,mt, }= elem
+            const {width, height, double, h2, id, align,mt,src }= elem
             // console.log(double)
             return (
-              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} />
+              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src}/>
             )
           } 
           else if(type === "textbox"){

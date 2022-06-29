@@ -1,8 +1,8 @@
-import inter from '../assets/covers/int.jpg'
-import ext from '../assets/covers/ext.jpg'
-import t3d from '../assets/covers/ren.jpg'
-import ani from '../assets/covers/ani.jpg'
-import vr from '../assets/covers/vr.jpg'
+// import inter from '../assets/covers/int.jpg'
+// import ext from '../assets/covers/ext.jpg'
+// import t3d from '../assets/covers/ren.jpg'
+// import ani from '../assets/covers/ani.jpg'
+// import vr from '../assets/covers/vr.jpg'
 import dopegood from '../assets/covers/dopegood.jpg'
 import amarc from '../assets/covers/am-arc.jpg'
 import vim from '../assets/covers/vim.jpg'
@@ -267,44 +267,44 @@ export const home = [
   },
 ];
 
-export const homeExt = [
-  {
-    num: "01",
-    id: "h21ex1",
-    h4: "3D Rendering",
-    p: "",
-    a: { text: "Learn more", url:"/projects#3dr"},
-    img: {
-      cover: t3d,
-      colors: {right: "#736059", left: "#D9D4D1" , bg:"#59493ec2" },
-      klass: "cgi",
-    },
-  },
-  {
-    num: "02",
-    id: "h21ex2",
-    h4: "Animation",
-    p: "",
-    a: { text: "Learn more", url:"/projects#Ani" },
-    img: {
-      cover: ani,
-      colors: { right: "#73695C", left: "#E6E1DA", bg:"#b2a498cc"},
-      klass: "ex",
-    },
-  },
-  {
-    num: "03",
-    id: "h21ex3",
-    h4: "Virtual tour",
-    p: "",
-    a: { text: "Learn more", url: "/projects#VR" },
-    img: {
-      cover: vr,
-      colors: { right: "#25261E", left: "#646659", bg:"#ec9a9eb3" },
-      klass: "vr end",
-    },
-  },
-];
+// export const homeExt = [
+//   {
+//     num: "01",
+//     id: "h21ex1",
+//     h4: "3D Rendering",
+//     p: "",
+//     a: { text: "Learn more", url:"/projects#3dr"},
+//     img: {
+//       cover: t3d,
+//       colors: {right: "#736059", left: "#D9D4D1" , bg:"#59493ec2" },
+//       klass: "cgi",
+//     },
+//   },
+//   {
+//     num: "02",
+//     id: "h21ex2",
+//     h4: "Animation",
+//     p: "",
+//     a: { text: "Learn more", url:"/projects#Ani" },
+//     img: {
+//       cover: ani,
+//       colors: { right: "#73695C", left: "#E6E1DA", bg:"#b2a498cc"},
+//       klass: "ex",
+//     },
+//   },
+//   {
+//     num: "03",
+//     id: "h21ex3",
+//     h4: "Virtual tour",
+//     p: "",
+//     a: { text: "Learn more", url: "/projects#VR" },
+//     img: {
+//       cover: vr,
+//       colors: { right: "#25261E", left: "#646659", bg:"#ec9a9eb3" },
+//       klass: "vr end",
+//     },
+//   },
+// ];
 
 export const servData = [
   {
