@@ -4,6 +4,8 @@ import vim from '../assets/covers/vim.jpg'
 import dopop from '../assets/covers/dopop.jpg'
 import comfeey from '../assets/covers/comf2.jpg'
 import {vim1, vim2, vim3, vim4, vim5, vim6} from "../assets/covers/vim"
+import {a1, a2, a3, a4, a5, a6} from "../assets/covers/am"
+
 export const prjData = [
   
   {
@@ -405,6 +407,7 @@ export const prjData = [
         mt:true,
         type:"cover",
         double:false,
+        src:a1,
         width:"full-w",
         height:"full-H",
       },
@@ -420,6 +423,7 @@ export const prjData = [
         id:"vc25",
         type:"cover",
         double:false,
+        src:a2,
         width:"medium-w",
         height:"medium-h",
       },
@@ -434,6 +438,7 @@ export const prjData = [
       {
         id:"vc35",
         type:"cover",
+        src:[a3,a4],
         double:true,
         align:"space between",
         width:"full-w",
