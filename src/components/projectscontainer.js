@@ -112,43 +112,6 @@ const PrjContain = ({ projects, Cat }) => {
     }
   };
 
-  // function onPlayerReady(event) {
-  //   event.target.playVideo();
-  // }
-
-  // var done = false;
-  // function onPlayerStateChange(event) {
-  //   if (event.data === window.YT.PlayerState.PLAYING && !done) {
-  //     // setTimeout(stopVideo, 6000);
-  //     done = true;
-  //   }
-  // }
-  // function stopVideo() {
-  //   player.stopVideo();
-  // }
-
-  // function playVideo() {
-  //   player.playVideo();
-  // }
-
-  // function LoadVideo() {
-  // const videos = q(".ani-cover");
-  // // videos.forEach( (vi,i)=>{
-
-  //    player = new window.YT.Player("video0", {
-  //     events: {
-  //       onReady: onPlayerReady,
-  //       onStateChange: onPlayerStateChange,
-  //     },
-  //   });
-  // // })
-  // }
-
-  // useEffect(()=>{
-  //  if(aniClick){
-  //    q("")
-  //  }
-  // },[aniClick])
 
   return (
     <div className="pro-cont" ref={el}>
@@ -210,6 +173,8 @@ const PrjContain = ({ projects, Cat }) => {
               onMouseEnter={() =>
                 changePointer({
                   isHover: true,
+                  sesize:"1.9",
+                  fsize:"7px",
                   color: { bg: img.colors.left, txt: "#ffffff" },
                   text: name,
                 })

@@ -74,6 +74,10 @@
         margin-top: 15px;
         display: inline-block;
     }
+    &.pd{
+        padding-bottom: 25vh;
+    }
+
     &.medium-w{
         width: calc((100vw / 12) * 7);
         display: inline-block;
@@ -170,6 +174,7 @@
     }
     &.normal{
            .flex-contain{
+               height: auto;
                margin-top: 0;
                .cover-contain:first-child{
                    align-self: flex-start;

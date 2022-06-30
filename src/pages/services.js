@@ -113,10 +113,11 @@ if(!isMobile){
    });
 
     const images = q(".show-image:not(.end)");
+    const fulimages = q(".show-image");
 
     images.forEach((image, i) => {
       const nextImage = image.nextElementSibling;
-
+      // console.log(image[i+1])
        imageTimeline.current = gsap.timeline({
         scrollTrigger: {
           scroller:"[data-scroll-container]",
@@ -147,12 +148,14 @@ if(!isMobile){
             return "0%";
           },
           y: () => {
-            return -20;
+            return -15;
           },
           ease: "none",
+          // onComplete:()=>console.log(images[i+1])
         },
         0
       )
+      .fromTo(fulimages[i+1], { y: () => { return 15 } }, { y: () => { return 0 }, ease: "none" }, 0)
 
       .fromTo(
         image,

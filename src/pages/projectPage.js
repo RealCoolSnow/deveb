@@ -97,8 +97,46 @@ const ProjectPage = () => {
         delay:.8,
      }
     );
-    // callUpd();
     changePointer({isHover: false})
+  
+    if(!isMobile){
+      const images = q(".cover");
+      // const fulimages = q(".show-image");
+  
+      images.forEach((image, i) => {
+        // const nextImage = image.nextElementSibling;
+        // console.log(image[i+1])
+       var imageTimeline = gsap.timeline({
+          scrollTrigger: {
+            scroller:"[data-scroll-container]",
+            trigger: image,
+            start: () => "top bottom",
+            endTrigger: image,
+            end: () => "bottom top",
+            scrub: true,
+            id:"repeat"+ i,
+            // invalidateOnRefresh: true,
+            // markers:true,
+          },
+        })
+  
+        .fromTo(
+          image,
+          {
+            backgroundPosition: () => {
+              return "0% -150";
+            },
+          },
+          {
+            backgroundPosition: () => {
+              return "0 0px";
+            },
+            ease: "none",
+            // onComplete:()=>console.log(images[i+1])
+          },
+          0
+        )}
+        )}
     
   }, [isMobile]);
   useEffect(()=>{
@@ -171,7 +209,7 @@ if(!isMobile){
   },[resetLoco, isMobile])
 
   return(
-    <main className="single-pj" ref={el} id="viewport" >
+    <main className="single-pj" ref={el} id="viewport" data-scroll-container>
       
        <Helmet>
         <title>{`Deveb | ${title ? title : ""}`}</title>
@@ -189,10 +227,10 @@ if(!isMobile){
          elements.map(elem =>{
           const{type}= elem;
           if (type === "cover") {
-            const {width, height, double, h2, id, align,mt,src }= elem
+            const {width, height, double, h2, id, align,mt,src,pb }= elem
             // console.log(double)
             return (
-              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src}/>
+              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} pb={pb}/>
             )
           } 
           else if(type === "textbox"){

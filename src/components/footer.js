@@ -200,10 +200,10 @@ const handleclick =() => histori.push('/contact');
           </div>
           <div className="footer-secs r">
             <div>
-              <a href="https://www.instagram.com/am__arc/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
-              <a href="https://www.upwork.com/fl/am1amirmohseni" target="_blank"><img className="drib" src={drib} /></a>
-              <a href="https://www.behance.net/amirmohseni" target="_blank"><img className="be" src={be} /></a>
-              <a href="https://t.me/am_arc_com" target="_blank"><img className="git" src={git} /></a>
+              <a href="https://www.instagram.com/deveb.co/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
+              <a href="https://dribbble.com/Deveb_co/about" target="_blank"><img className="drib" src={drib} /></a>
+              <a href="https://www.behance.net/deveb" target="_blank"><img className="be" src={be} /></a>
+              <a href="https://github.com/deveb-co" target="_blank"><img className="git" src={git} /></a>
               <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
             </div>
             <Link to="/privacyandpolicy">

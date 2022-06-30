@@ -20,7 +20,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
         
         const Circle = ({size})=>{
   const { isMobile, pointer } = useAppContext();
-  const {isHover, color, text, blend, fsize, curchange, cur} = pointer;
+  const {isHover, color, text, blend, fsize, curchange, cur, sesize} = pointer;
  
   const el = useRef();
   const q = gsap.utils.selector(el);
@@ -42,10 +42,12 @@ import { useAppContext } from "../../contexts/appcontext.js";
   useEffect(()=>{
     if(isHover){
       gsap.to(el.current, {
-        scale: 1.7,
+        scale:()=> sesize? sesize: 1.7,
         duration: .4,
         ease: "Power3.InOut",
       });
+      if(fsize) {el.current.childNodes[0].style.fontSize= fsize;}
+
       if(blend){
         gsap.to(el.current,{
           background: color.bg,

@@ -64,7 +64,7 @@
     // min-width: 50vw;
     max-width: 60vw;
     height: auto;
-    max-height: 80vh;
+    max-height: 66vh;
     width: 44.7vw;
     display: flex;
     justify-content:space-evenly;
@@ -174,7 +174,8 @@
     .menu-right-part {
       span.head{
         color: var(--black-font-main);
-        font-size: 10px;
+        // font-size: 10px;
+        font-size: 0.7vw;
         line-height: 1.5vw;
         position: relative;
         padding: 0 15px;

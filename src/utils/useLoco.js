@@ -13,7 +13,7 @@ const useLoco = (start) => {
   
   useEffect(() => {
     if (!start) return;
-    console.log("run loco reset")
+    // console.log("run loco reset")
     const scEl = document.querySelector("#viewport");
     let locoScroll = null;
      locoScroll = new LocomotiveScroll({
@@ -60,15 +60,15 @@ const useLoco = (start) => {
     locoScroll.on("scroll", (args) => {
       ScrollTrigger.update()
       // console.log(locoScroll);
-      // const sY = args.delta.y;
-      // scrolltop= sY;
-      // if( sY > 10) {
-      //   scrollY(10)
-      // }
-      // else {
-      //   scrollY(0)
-      // }
-      console.log(locoScroll)
+      const sY = args.delta.y;
+      scrolltop= sY;
+      if( sY > 10) {
+        scrollY(10)
+      }
+      else {
+        scrollY(0)
+      }
+      // console.log(locoScroll)
   })
 
     //   // if (callonce && btnobj){
@@ -92,7 +92,7 @@ const useLoco = (start) => {
     // })
     const timer = setTimeout(function(){
       locoScroll.update()
-      console.log("updating")
+      // console.log("updating")
       }, 100);
    
 
@@ -102,7 +102,7 @@ const useLoco = (start) => {
         ScrollTrigger.scrollerProxy(scEl, null);
         locoScroll.destroy();
         locoScroll = null;
-        console.log("Kill", locoScroll);
+        // console.log("Kill", locoScroll);
         clearTimeout(timer);
       }
     };
