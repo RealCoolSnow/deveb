@@ -147,12 +147,18 @@ const Con = () => {
   };
 
   const sendContactForm = async () => {
-    if (sendingForm) return;
 
+    console.log('sending contact form');
+    console.log(sendingForm);
+    if (sendingForm) return;
+    
     setFormErr({
       name: "",
       email: "",
     });
+    
+    console.log('checkFields');
+    console.log(checkFields(true));
 
     if (!checkFields(true)) {
       return;
@@ -162,6 +168,7 @@ const Con = () => {
       await recap.current.executeAsync();
     } catch (err) {
       console.log("Google recaptcha failed");
+      console.log(err);
       return;
     }
 
@@ -607,7 +614,7 @@ const Con = () => {
               )}
 
               <ReCAPTCHA
-                sitekey="6LcLMYIfAAAAAI23mMBl5bohz5-SMNJQ5yzcTO0S"
+                sitekey="6LeSE7sgAAAAAILTSp7XGAmPzuiWEAq-j4NSvJpf"
                 size="invisible"
                 ref={recap}
               />
