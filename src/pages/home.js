@@ -428,8 +428,8 @@ const HomePage = () => {
     <main id="viewport" ref={el} data-scroll-container >
 
       <Helmet>
-        <title>Deveb | Art meets development</title>
-        <meta name="description" content="A group of web artists, gathered to fulfil your digital dream and deliver it to your customers of choice." />
+        <title>Deveb | Branding, Design, Development</title>
+        <meta name="description" content="We create websites, UI/UX design, and shape brands. Deveb team has a solid design and development expertise." />
       </Helmet>
       <div data-scroll style={{height: "100vh", position:"absolute"}} id="mycan">
         <div data-scroll data-scroll-sticky data-scroll-target="#sti">

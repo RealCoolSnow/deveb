@@ -312,7 +312,7 @@ export const servData = [
     id: "h21ex1",
     h4: "Design",
     p: "Design makes its mark through first impressions. Using eye-catching design and meaningful user experiences, we establish long-lasting relationships with your customers.",
-    a: { text: "View more", url: "/projects#In" },
+    a: { text: "View more", url: "/projects" },
     img: {
       cover: dopegood,
       colors: { bg: "#FFEAE0", br: "#FFC3A6" },
@@ -324,7 +324,7 @@ export const servData = [
     id: "h21ex2",
     h4: "Development",
     p: "Your website is the face of your business. Together, our developers and designers build an efficient, interactive and responsive platform that will appeal to your target audience.",
-    a: { text: "Learn more", url: "/projects#Ex" },
+    a: { text: "Learn more", url: "/projects" },
     img: {
       cover: vim,
       colors: { bg: "#FEE0E2", br: "#FEA5AB" },
@@ -336,7 +336,7 @@ export const servData = [
     id: "h21ex3",
     h4: "Branding",
     p: "We give your business a face and identify your brand by creating the most suitable logo, along with mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
-    a: { text: "Learn more", url: "/projects#3dr" },
+    a: { text: "Learn more", url: "/projects" },
     img: {
       cover: dopop,
       colors: { bg: "#D3D6F0", br: "#9CA5F0" },
@@ -348,7 +348,7 @@ export const servData = [
     id: "h21ex4",
     h4: "Concept design",
     p: "The architectural movie provides a highly immersive experience for presentation and property marketing. It shows surroundings, interior and exterior design, and walks the viewer through the property as if it were already built.",
-    a: { text: "Learn more", url: "/projects#Ani" },
+    a: { text: "Learn more", url: "/projects" },
     img: {
       cover: comfeey,
       colors: { bg: "#E0F0FF", br: "#A6D4FF" },

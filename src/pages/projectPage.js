@@ -227,15 +227,15 @@ if(!isMobile){
          elements.map(elem =>{
           const{type}= elem;
           if (type === "cover") {
-            const {width, height, double, h2, id, align,mt,src,pb }= elem
+            const {width, height, double, h2, id, align,mt,src,pb, end }= elem
             // console.log(double)
             return (
-              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} pb={pb}/>
+              <Coverimage key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} pb={pb} end={end}/>
             )
           } 
           else if(type === "textbox"){
-            const{h1,h2,h3,pi, width, alignment, id, double, mt, h2width} = elem;
-            return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width}/>
+            const{h1,h2,h3,pi, width, alignment, id, double, mt, h2width, } = elem;
+            return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width} />
           }
           else if(type === "button"){
             const {url, id} = elem;
@@ -247,7 +247,7 @@ if(!isMobile){
     );
   })}
    {
-      isMobile?  <FooterMB />: <Footer /> 
+      isMobile?  <FooterMB />: <Footer prj={true} /> 
     }
     </main>
   );

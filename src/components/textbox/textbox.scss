@@ -105,6 +105,10 @@
         &.medium-h{
             padding-bottom: 66.3%;
         }
+        &.end{
+            position: relative;
+            z-index: 200;
+        }
        
     }
     h2{

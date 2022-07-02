@@ -17,7 +17,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Footer = () => {
+const Footer = ({prj}) => {
   const el = useRef(null);
   const q = gsap.utils.selector(el);
   const myTl = useRef();
@@ -79,7 +79,7 @@ const shrink = gsap.timeline();
 const growfil = ()=>{
   // shrink.pause(0);
   grow.to(q(".foot-svg"),{
-    scale: 1.02,
+    scale: 1.033,
     duration:.3,
     ease: "power3.Out"
   })
@@ -102,7 +102,7 @@ const shrinkfil = ()=>{
   sethover(false)
   shrink.to(q(".foot-svg"),{
     scale: 1,
-    duration:.3,
+    duration:.55,
     ease: "power3.In"
   })
   shrink.to(q(".f-filler"), {
@@ -113,8 +113,19 @@ const shrinkfil = ()=>{
   .to(q(".f-filler"), {
     opacity:()=> hover? 1 :0,
     duration:0,
-  },">");
+  },">")
+ 
 
+}
+const backfill= ()=>{
+  gsap.to(q(".foot-svg"),{
+    xPercent:0,
+    yPercent:0,
+
+    ease: "Power3.Out",
+    duration: .55,
+ 
+});
 }
 const movefil= (e)=>{
   gsap.to(q(".f-filler"),{
@@ -129,8 +140,8 @@ const movefil= (e)=>{
   var o = (e.clientY - ofTop);
   // console.log(target.offsetWidth)
   gsap.to(q(".foot-svg"),{
-      xPercent: ((s - 535 / 2) / 535) * 2,
-      yPercent:( (o -535 / 2) / 535) * 2,
+      xPercent: ((s - 535 / 2) / 535) * 3,
+      yPercent:( (o -535 / 2) / 535) * 3,
 
       ease: "Power3.inOut",
       duration: .3,
@@ -141,6 +152,9 @@ const histori = useHistory();
 const handleclick =() => histori.push('/contact');
   useEffect(() => {
     // ScrollTrigger.refresh();
+    if(prj){
+      gsap.set(q(".f-filler"),{background:"#ffffff"})
+    }
 
       gsap.set(q(".backgr"), {
         autoAlpha:0,
@@ -161,12 +175,12 @@ const handleclick =() => histori.push('/contact');
         <div className="footer-main">
        <div className="f-filler"></div>
          
-          <svg  onMouseMove={movefil} onClick={handleclick} className="foot-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729.43 729.425" >
+          <svg  onMouseMove={movefil} onMouseLeave={backfill} onClick={handleclick} className="foot-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 729.43 729.425" >
             <defs>
               <filter id="a" x="0" y="0" width="729.43" height="729.425" filterUnits="userSpaceOnUse">
                 <feOffset dy="3" input="SourceAlpha"/>
                 <feGaussianBlur stdDeviation="15" result="blur"/>
-                <feFlood floodOpacity=".02"/>
+                <feFlood floodOpacity={prj?".05" :".02"}/>
                 <feComposite operator="in" in2="blur"/>
                 <feComposite in="SourceGraphic"/>
               </filter>
