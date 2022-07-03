@@ -12,8 +12,9 @@ export default function Three() {
   const {isMobile} = useAppContext()
  useLayoutEffect(()=>{
  gsap.set(container.current,{
-   y: 60,
+   y: 80,
    autoAlpha:0,
+
  })
  },[isMobile])
 
@@ -21,13 +22,15 @@ export default function Three() {
     addVertex()
     gsap.to(container.current,{
       y: 0,
-      duration:.6,
-      delay:.2,
+      duration:.85,
+   ease: "power3.Out",
+      delay:()=>isMobile?.2: .7,
     })
     gsap.to(container.current,{
       autoAlpha: 1,
-      duration:.5,
-      delay:.2,
+      duration:.65,
+      ease: "power3.Out",
+      delay:()=>isMobile?.2: .7,
     })
     const destroyer = init(container.current)
 

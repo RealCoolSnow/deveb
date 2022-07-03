@@ -8,6 +8,8 @@ import insta from "../assets/insta.svg";
 import foot from "../assets/footlogo.svg";
 import git from "../assets/git.svg";
 import drib from "../assets/dribbble.svg";
+import linkedin from "../assets/linkedin.svg";
+
 import { scrolltop} from "../utils/useLoco" 
 
 
@@ -210,15 +212,34 @@ const handleclick =() => histori.push('/contact');
             >
               Info@deveb.co
             </h5>
-            <p>Mechnykova St, 2, Kyiv, 02000</p>
+            {/* <p>Mechnykova St, 2, Kyiv, 02000</p> */}
+            <p>Rotterdam, The Netherlands</p>
+
           </div>
           <div className="footer-secs r">
             <div>
-              <a href="https://www.instagram.com/deveb.co/?hl=en" target="_blank"><img className="insta" src={insta} /></a>
-              <a href="https://dribbble.com/Deveb_co/about" target="_blank"><img className="drib" src={drib} /></a>
-              <a href="https://www.behance.net/deveb" target="_blank"><img className="be" src={be} /></a>
-              <a href="https://github.com/deveb-co" target="_blank"><img className="git" src={git} /></a>
-              <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a>
+              <a href="https://www.instagram.com/deveb.co/?hl=en" target="_blank" 
+              onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+              onMouseLeave={()=> changePointer({isHover: false})}
+             ><img className="insta" src={insta} /></a>
+              <a href="https://dribbble.com/Deveb_co/about" target="_blank"
+              onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+              onMouseLeave={()=> changePointer({isHover: false})}
+              >
+                <img className="drib" src={drib} /></a>
+              <a href="https://www.behance.net/deveb" target="_blank"
+               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+               onMouseLeave={()=> changePointer({isHover: false})}
+              ><img className="be" src={be} /></a>
+              <a href="https://github.com/deveb-co" target="_blank"
+               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+               onMouseLeave={()=> changePointer({isHover: false})}
+              ><img className="git" src={git} /></a>
+              {/* <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a> */}
+              <a href="https://www.linkedin.com/in/deveb-co/" target="_blank"
+               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+               onMouseLeave={()=> changePointer({isHover: false})}
+              > <img className="linkedin" src={linkedin} /></a>
             </div>
             <Link to="/privacyandpolicy">
             <p>Privacy Policy</p>

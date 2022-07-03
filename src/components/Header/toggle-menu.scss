@@ -265,6 +265,35 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        a{
+          &:nth-child(1) svg {
+            // height: 18px;
+            height: 21px;
+
+          }
+
+          &:nth-child(2) svg {
+            // height: 16px;
+            height: 18px;
+
+          }
+
+          &:nth-child(3) svg {
+            // height: 21px;
+            height: 19px;
+
+          }
+
+          &:nth-child(4) svg {
+            // height: 22px;
+            height: 18px;
+
+          }
+
+          &:nth-child(5) svg {
+            height: 19px;
+          }
+        }
 
         svg {
           height: 18px;
@@ -272,30 +301,15 @@
           display: flex;
           align-items: center;
           justify-content: center;
+        
+          // path {
+          //   // fill: var(--light-menu-link-color);
+          // }
 
-          path {
-            // fill: var(--light-menu-link-color);
-          }
-
-          &:nth-child(1) {
-            height: 18px;
-          }
-
-          &:nth-child(2) {
-            height: 16px;
-          }
-
-          &:nth-child(3) {
+          &.linkedin{
             height: 21px;
           }
 
-          &:nth-child(4) {
-            height: 22px;
-          }
-
-          &:nth-child(5) {
-            height: 19px;
-          }
         }
       }
     }

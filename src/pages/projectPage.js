@@ -112,7 +112,7 @@ const ProjectPage = () => {
             trigger: image,
             start: () => "top bottom",
             endTrigger: image,
-            end: () => "bottom top",
+            end: () => i== 1? "center top" : "bottom top",
             scrub: true,
             id:"repeat"+ i,
             // invalidateOnRefresh: true,
@@ -124,7 +124,7 @@ const ProjectPage = () => {
           image,
           {
             backgroundPosition: () => {
-              return "0% -150";
+              return "0% -200";
             },
           },
           {
