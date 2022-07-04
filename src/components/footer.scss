@@ -61,7 +61,7 @@ section.footer-sec, div.con-foot {
 
   
     svg{
-      width: 535px;
+      width: 475px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -215,11 +215,11 @@ section.footer-sec, div.con-foot {
         color: var(--black-font-main);
         &:after {
           content: "";
-          width: 75%;
+          width: 77%;
           height: 0.7px;
           background-color: var(--black-font-main);
           left: 0;
-          bottom: -1px;
+          bottom: 7px;
           position: absolute;
         }
       }

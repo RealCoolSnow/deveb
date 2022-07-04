@@ -34,19 +34,26 @@ const Privacy = () => {
 if (!isMobile){
   fooT.current = gsap
   .timeline({
+      // duration:10,
+      
     scrollTrigger: {
-      trigger: q(".footer-sec.fot"),
       scroller: "#viewport",
-      start:()=> "center-=8% center-=8%",
+      trigger: q(".footer-sec.fot"),
+      start:()=> "top-=8% center-=8%",
       end: ()=> "bottom bottom",
       // markers: true,
       id:"foot",
+  //     // scrub:true,
       onLeaveBack: ({direction})=> changeBg(direction),
     onEnter: ({direction})=> changeBg(direction),
     },
   })
      .to(q(".trig"),{
        autoAlpha:1,
+      //  stagger: {
+      //   amount: 0.3,
+      //   ease: "power2.Out",
+      // },
        duration:1,
      }, "<")
     
@@ -59,21 +66,21 @@ if (!isMobile){
      
 } else {
   fooT.current = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: q(".footer-sec.fot"),
-      start:()=> "top-=8% center-=8%",
-      end: ()=> "bottom bottom",
-      // markers: true,
-      id:"foot",
-      onLeaveBack: ({direction})=> changeBg(direction),
-    onEnter: ({direction})=> changeBg(direction),
-    },
-  })
-     .to(q(".trig"),{
-       autoAlpha:1,
-       duration:1,
-     }, "<")
+        .timeline({
+          scrollTrigger: {
+            trigger: q(".footer-sec.fot"),
+            start:()=> "top-=8% center-=8%",
+            end: ()=> "bottom bottom",
+            // markers: true,
+            id:"foot",
+            onLeaveBack: ({direction})=> changeBg(direction),
+          onEnter: ({direction})=> changeBg(direction),
+          },
+        })
+           .to(q(".trig"),{
+             autoAlpha:1,
+             duration:1,
+           }, "<")
     
      return()=>{
       fooT.current.kill()
@@ -94,7 +101,7 @@ if (!isMobile){
 
        <div  className="pr-container">
       <h1 data-scroll data-scroll-speed=".4">Privacy policy</h1>
-      <p>Last updated: February 17, 2022</p>
+      <p>Last updated: July 4, 2022</p>
       <p>
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the
@@ -122,7 +129,7 @@ if (!isMobile){
         </li>
         <li>
           <span>•</span> Company (referred to as either "the Company", "We",
-          "Us" or "Our" in this Agreement) refers to AM-ARC, Mechnykova St, 2,
+          "Us" or "Our" in this Agreement) refers to Deveb, Mechnykova St, 2,
           Kyiv, 02000.
         </li>
         <li>
@@ -159,8 +166,8 @@ if (!isMobile){
           infrastructure itself (for example, the duration of a page visit).
         </li>
         <li>
-          <span>•</span> Website refers to AM-ARC, accessible from
-         <Link to="/"> https://am-arc.com/</Link>
+          <span>•</span> Website refers to Deveb, accessible from
+         <Link to="/"> https://Deveb.co/</Link>
         </li>
         <li>
           <span>•</span> You means the individual accessing or using the
@@ -515,7 +522,7 @@ if (!isMobile){
       <h2 data-scroll data-scroll-speed=".4">Contact Us</h2>
       <p>
         If you have any questions about this Privacy Policy, please contact us
-        by email: am@am-arc.com
+        by email: info@deveb.co
       </p>
       </div>
       {

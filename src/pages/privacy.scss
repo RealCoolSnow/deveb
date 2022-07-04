@@ -3,8 +3,10 @@ div.pr-container{
     text-align: left;
     width: 50%;
     margin: 0 auto;
+    position: relative;
+    z-index: 200;
     padding-top: 17.5rem;
-    padding-bottom: 17rem;
+    // padding-bottom: 17rem;
     a{
         color: black;
         font-weight: 500;

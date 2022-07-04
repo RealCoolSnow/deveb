@@ -14,6 +14,8 @@ import FooterMB from '../components/footermb.jsx'
 import { useAppContext } from "../contexts/appcontext.js";
 import Helmet from "react-helmet";
 import Button from "../components/textbox/button.js";
+import Buttonsec from "../components/textbox//buttonsec.js"
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,7 +114,7 @@ const ProjectPage = () => {
             trigger: image,
             start: () => "top bottom",
             endTrigger: image,
-            end: () => i== 1? "center top" : "bottom top",
+            end: () =>  "bottom top",
             scrub: true,
             id:"repeat"+ i,
             // invalidateOnRefresh: true,
@@ -123,16 +125,11 @@ const ProjectPage = () => {
         .fromTo(
           image,
           {
-            backgroundPosition: () => {
-              return "0% -200";
-            },
+            backgroundPosition: () => "0% 0%",
           },
           {
-            backgroundPosition: () => {
-              return "0 0px";
-            },
+            backgroundPosition: () => "0 100%",
             ease: "none",
-            // onComplete:()=>console.log(images[i+1])
           },
           0
         )}
@@ -240,6 +237,10 @@ if(!isMobile){
           else if(type === "button"){
             const {url, id} = elem;
             return <Button key={id} url={url}/>
+          }
+          else if(type === "butsec"){
+            const {url, id, width, height, double, h2, align,mt,src,pb, end } = elem;
+            return <Buttonsec key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} url={url}/>
           }
         })
       }

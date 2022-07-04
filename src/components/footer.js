@@ -39,8 +39,8 @@ const Footer = ({prj}) => {
       // console.log(o, e.target.getBoundingClientRect().height)
       console.log(e.target)
     gsap.to(e.target, {
-      x: ((s - target.offsetWidth / 2) / target.offsetWidth) * 20,
-      y:( o - .5) * 10,
+      x: ((s - target.offsetWidth / 2) / target.offsetWidth) * 1,
+      y:( o - .5) * 60,
       ease: "Power3.inOut",
       duration: .5,
     });
@@ -80,10 +80,11 @@ const grow= gsap.timeline({ defaults: {
 const shrink = gsap.timeline();
 const growfil = ()=>{
   // shrink.pause(0);
+  // changePointer({isHover: true, color:{bg:"#000", txt: "#fff"}, text: "Click", blend: true,})
   grow.to(q(".foot-svg"),{
-    scale: 1.033,
+    scale: 1.08,
     duration:.3,
-    ease: "power3.Out"
+    ease: "expo.Out",
   })
   grow.to(q(".f-filler"), {
     opacity:1,
@@ -102,6 +103,8 @@ const growfil = ()=>{
 }
 const shrinkfil = ()=>{
   sethover(false)
+  // changePointer({isHover: false})
+
   shrink.to(q(".foot-svg"),{
     scale: 1,
     duration:.55,
@@ -142,11 +145,11 @@ const movefil= (e)=>{
   var o = (e.clientY - ofTop);
   // console.log(target.offsetWidth)
   gsap.to(q(".foot-svg"),{
-      xPercent: ((s - 535 / 2) / 535) * 3,
-      yPercent:( (o -535 / 2) / 535) * 3,
+      xPercent: ((s - 535 / 2) / 535) * 6,
+      yPercent:( (o -535 / 2) / 535) * 5,
 
-      ease: "Power3.inOut",
-      duration: .3,
+      ease: "expo.Out",
+      duration: .4,
    
   });
 }
