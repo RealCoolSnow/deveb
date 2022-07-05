@@ -117,6 +117,8 @@ const ProjectPage = () => {
             end: () =>  "bottom top",
             scrub: true,
             id:"repeat"+ i,
+            ease:"none",
+            duration:10,
             // invalidateOnRefresh: true,
             // markers:true,
           },
@@ -125,13 +127,23 @@ const ProjectPage = () => {
         .fromTo(
           image,
           {
-            backgroundPosition: () => "0% 0%",
+            backgroundPosition: () => "0% 180%",
           },
           {
-            backgroundPosition: () => "0 100%",
+            backgroundPosition: () => "0 50%",
             ease: "none",
+            duration:5,
           },
           0
+        )
+        .to(
+          image,
+          {
+            backgroundPosition: () => "0 -80%",
+            ease: "none",
+            duration:5,
+          },
+          5
         )}
         )}
     
