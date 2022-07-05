@@ -21,9 +21,9 @@ export const prjData = [
       {
         id:"vt11",
         type:"textbox",
-        h3:"Dopop",
+        h3:"Vimcosmo",
         mt:true,
-        h1:"Online marketplace for create, buy and sell NFT's",
+        h1:"Beauty brand, Online shop",
         width:"short",
         alignment:"alignment",
       },
@@ -40,7 +40,7 @@ export const prjData = [
         id:"vt21",
         type:"textbox",
         h3:"Expectaion",
-        pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
+        pi:"our designer’s main objective was to catch user’s attention to the products and encourage them to purchase, so he designed a layout in which the products could be found on every page.  In addition we wanted to make sure that Everything, from images to color schemes meet the client’s needs and be consistent with their branding.",
         width:"long",
       
       },
@@ -82,7 +82,7 @@ export const prjData = [
       {
         id:"vt31",
         type:"textbox",
-        pi:"Featuring the most popular trendy design styles, Dopop has a dark and light theme. Since the design shared many similar components, we have made reuseable components in the front-end to use across the website and easily share data between them.",
+        pi:"We developed a content management system for the client, so they can add, delete or change content as they see fit",
         width:"long",
         alignment:"vw3",
       },
@@ -106,8 +106,9 @@ export const prjData = [
         id:"vt41",
         type:"textbox",
         double:true,
-        h2:"Technologies",
-        pi:"React was the perfect fit for achieving this and managing data efficiently. Furthermore, we used Gsap and Lottie to create smooth aimations.",
+        h2width:"short",
+        h2:"Fast And Responsive Design",
+        pi:"Our websites are all mobile-friendly and designed to adapt to different devices, so Vimcosmo is no exception. Since the site’s contents are very limited, we used multiple interesting animations to keep users entertained. The website is very light and fast, with a file size of only 5MB.",
       },  
       {
         id:"vc51",

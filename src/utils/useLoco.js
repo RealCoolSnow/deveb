@@ -19,11 +19,14 @@ const useLoco = (start) => {
      locoScroll = new LocomotiveScroll({
       el: scEl,
       smooth: true,
-      multiplier: 0.55,
+      // multiplier: 0.55,
+      multiplier: 0.81,
       smartphone: {smooth: true},
       tablet: {smooth: true},
       class: "revealed",
-      lerp:0.07,
+      // lerp:0.2,
+      lerp:0.095,
+
     });
 
     ScrollTrigger.scrollerProxy(scEl, {

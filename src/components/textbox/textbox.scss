@@ -257,7 +257,8 @@
     .double-contain{ 
         h2{ font-size: 37px;}
         .flex-contain{
-            height: 100vh;
+            // height: 100vh;
+            height: calc(39.1666666667vw + 20vw);
         }
     }
     .butncover .bn-contain p{
@@ -273,7 +274,7 @@
     .double-contain{ 
         h2{ font-size: 34px;}
         .flex-contain{
-            height: 92vh;
+            // height: 92vh;
         }
     }
     .butncover .bn-contain p{
@@ -317,7 +318,7 @@
         }
         .double-contain{ 
             .flex-contain{
-                height: 76vh;
+                // height: 76vh;
             }
             h2{ 
                width: 350px;
@@ -373,7 +374,7 @@
           
         }
        .flex-contain{
-         height: 67vh;
+        //  height: 67vh;
          margin-top: 15vh;
          .cover-contain{
            width: 42.16vw;
