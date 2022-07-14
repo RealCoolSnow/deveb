@@ -7,6 +7,7 @@ import '../about.scss'
 import { useAppContext } from "../contexts/appcontext.js";
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco';
+import SplitText from "../utils/split3.js"
 // const AbHead = lazy( () => import('../components/abouthead.js'))
 import About from '../components/about.js'
 import Helmet from 'react-helmet';
@@ -71,7 +72,7 @@ const AboutPage = () => {
           loadingTL.current.progress(0)
         }
         if(tl.current){
-          tl.current.progress(0)
+          tl.current.progress(10)
         }
         if(philTl.current){
           philTl.current.progress(0)
@@ -82,11 +83,14 @@ const AboutPage = () => {
         gsap.set( imgTrig[1],{ autoAlpha:1})
         gsap.set(
           q(".darkLayer"),{autoAlpha:0})
-
+          const split = new SplitText("#headLines", {
+            type: "lines",
+            linesClass: "lineChildren",
+          });
         loadingTL.current = gsap
         .timeline({})
         .to(
-          spans,
+          split.lines,
           {
             y: 0,
             duration: 0.6,
@@ -98,7 +102,7 @@ const AboutPage = () => {
           0.4
         )
         .to(
-          spans,
+          split.lines,
           {
             autoAlpha: 1,
             duration: 1.2,
@@ -116,7 +120,7 @@ const AboutPage = () => {
             autoAlpha: 1,
             scale: 1.5,
             duration: 0.5,
-            stagger: 0.13,
+            // stagger: 0.13,
             ease: "power2.out",
           },
           0.5
@@ -165,11 +169,11 @@ const AboutPage = () => {
               start: () =>
                 "top+=" +
                 (img.offsetTop +
-                  (img.offsetHeight / 4) * (images.length - 1 - i)) +
+                  (img.offsetHeight / 3) * (images.length - 1 - i)) +
                 " bottom",
               end: () => "bottom+=" + img.offsetTop + " bottom",
               scrub: true,
-              id: "imgs",
+              id: "imgs" + i,
               invalidateOnRefresh: true,
               // markers:true,
             },
@@ -318,12 +322,21 @@ const AboutPage = () => {
           if(memtl.ScrollTrigger){
             memtl.ScrollTrigger.kill();
           }
+          if(tl.current){
+            tl.current.kill();
+          }
+          if(tl.current.ScrollTrigger){
+            tl.current.ScrollTrigger.kill();
+          }
+          if(ScrollTrigger.getById("imgs0")){
+            ScrollTrigger.getById("imgs0").kill()
+          }
           philTl.current.kill();
           if(philTl.current.ScrollTrigger){
             philTl.current.ScrollTrigger.kill();
           }
-          if( ScrollTrigger.getById("imgs")){
-            ScrollTrigger.getById("imgs").kill();
+          if( ScrollTrigger.getById("imgs1")){
+            ScrollTrigger.getById("imgs1").kill();
           }
           fooT.current.kill()
           if( fooT.current.ScrollTrigger){

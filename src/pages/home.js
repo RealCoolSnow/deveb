@@ -371,6 +371,12 @@ const HomePage = () => {
             if(ScrollTrigger.getById("can")){
               ScrollTrigger.getById("can").kill()
             }
+            if(ScrollTrigger.getById("showcasegradient")){
+              ScrollTrigger.getById("showcasegradient").kill()
+            }
+            if(imageTimeline.current){
+              imageTimeline.current.kill()
+            }
             // camera.position.set(0, -12, 50)
             // if(ScrollTrigger.getById("pinSc")){
             //   ScrollTrigger.getById("pinSc").kill()

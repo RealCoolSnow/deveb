@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useLayoutEffect } from "react";
 import "./about.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import img1 from "../assets/about.jpg";
-import img2 from "../assets/about2.jpg";
+import img1 from "../assets/covers/ab2.jpg";
+import img2 from "../assets/covers/ab1.jpg";
+import winkle from "../assets/about.png";
+
 import imgMB from "../assets/aboutmb.jpg";
 
 import { useAppContext } from "../contexts/appcontext";
@@ -315,8 +317,8 @@ const {isMobile} = useAppContext();
         </div> )
         : 
         (
-        <h2 style={{paddingTop:"150px"}}>
-          <div>We launch digital products in</div> <div> the best way possible</div>
+        <h2 id="headLines" style={{paddingTop:"150px"}}>
+          We launch digital products in the best way possible <img src={winkle}/>
         </h2>
         )
         }

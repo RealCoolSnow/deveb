@@ -138,6 +138,22 @@ section.footer-sec, div.con-foot {
       &.l {
         text-align: left;
         position: relative;
+        h5 {
+          font-size: 13.88px;
+          font-weight: 400;
+          position: relative;
+          cursor: none;
+          color: var(--black-font-main);
+          &:after {
+            content: "";
+            width: 77%;
+            height: 0.7px;
+            background-color: var(--black-font-main);
+            left: 0;
+            bottom: 0px;
+            position: absolute;
+          }
+        }
         // &:before{
         //   content: "Click to copy";
         //   width: max-content;
@@ -160,75 +176,57 @@ section.footer-sec, div.con-foot {
           display: inline-flex;
           justify-content: space-between;
           align-items: center;
+          img{
+            margin: auto;
+            display: block;
+            position: relative;
+          }
           .be {
             height: 11px;
             right: 3px;
-            top: 1px;
-            position: relative;
+            // top: 1px;
+          
           }
           .git {
-            position: relative;
-            top: 3px;
+            // top: 3px;
             height: 13px;
             right: 3px;
           }
           .insta {
             height: 12px;
-            position: relative;
-            top: 2px;
+            // top: 2px;
           }
           .drib {
-            position: relative;
             height: 12px;
-            top: 2px;
+            // top: 2px;
           }
           .whats {
             height: 12px;
-            top: 3px;
-            position: relative;
+            // top: 3px;
             right: 5px;
           }
           .linkedin {
             height: 15px;
-            top: 3px;
-            position: relative;
+            // top: 3px;
             right: 5px;
           }
         }
         a{
           cursor: none;
-          padding: 3px 10px;
+          padding: 0px 13px 3px;
           &:first-child{margin-left:-10px;}
-          &:last-child{margin-right: -10px;}
+          &.pp{padding: 0px; cursor: none;}
 
         }
-        p{
-          cursor: pointer;
-          
-        }
       }
-      h5 {
-        font-size: 13.88px;
-        font-weight: 400;
-        position: relative;
-        cursor: none;
-        color: var(--black-font-main);
-        &:after {
-          content: "";
-          width: 77%;
-          height: 0.7px;
-          background-color: var(--black-font-main);
-          left: 0;
-          bottom: 7px;
-          position: absolute;
-        }
-      }
+  
       p {
         letter-spacing: 0.2px;
         font-size: 9.1px;
         padding-top: 12px;
         display: inline-block;
         color: var(--black-font);
+        padding-right: 3px;
       }
     }
   }

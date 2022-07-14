@@ -244,8 +244,11 @@ const handleclick =() => histori.push('/contact');
                onMouseLeave={()=> changePointer({isHover: false})}
               > <img className="linkedin" src={linkedin} /></a>
             </div>
-            <Link to="/privacyandpolicy">
-            <p>Privacy Policy</p>
+            <Link to="/privacyandpolicy" className="pp" 
+             onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+             onMouseLeave={()=> changePointer({isHover: false})}
+            >
+            <p >Privacy Policy</p>
             </Link>
           </div>
         </div>
