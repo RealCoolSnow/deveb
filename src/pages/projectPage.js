@@ -60,10 +60,7 @@ const ProjectPage = () => {
 
 
   },[isMobile])
-
-  useEffect(() => {
-    const q = gsap.utils.selector(el);
-    // gsap.set(q("h1"),{autoAlpha:1})
+  const functionnn = (()=>{
     const split = new SplitText("#headLines", {
       type: "lines",
       linesClass: "lineChildren",
@@ -74,18 +71,28 @@ const ProjectPage = () => {
       delay:.65,
       stagger: .1,
     })
+ gsap.to(split.lines,{
+      autoAlpha: 1 ,
+      duration:.85,
+      delay:.65,
+      stagger: .1,
+    })
+  })
+
+  useEffect(() => {
+    const q = gsap.utils.selector(el);
+    // gsap.set(q("h1"),{autoAlpha:1})
+    document.fonts.ready.then(()=>{
+      functionnn()
+    })
+  
     gsap.to(q("h3"),{
       y: 0,
       duration:.4,
       delay:.45,
       // stagger: .1,
     })
-    gsap.to(split.lines,{
-      autoAlpha: 1 ,
-      duration:.85,
-      delay:.65,
-      stagger: .1,
-    })
+   
     gsap.to(q("h3"),{
       autoAlpha: 1,
       duration:.865,

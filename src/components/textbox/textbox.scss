@@ -21,12 +21,13 @@
         margin-bottom: 49px;
         margin-top:- 7px; 
     }
-    h1{
+    #headLines{
         color: var(--black-font-main);
         font-weight: 500;
         font-size: 50px;
         padding-top: 15px;
         &.w500{
+            font-size: 50px;
             width: 500px;
             margin: auto;
         }

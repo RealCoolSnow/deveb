@@ -311,17 +311,24 @@ const {isMobile} = useAppContext();
         {isMobile? 
        ( <div className="mb">
           <p>About</p>
-          <h2 >
+          {/* <h2 >
             <div className="anim-lines"> We launch digital </div>   <div className="anim-lines">products in the</div>   <div className="anim-lines">best way possible.</div>  
-          </h2>
+          </h2> */}
+        
         </div> )
-        : 
-        (
-        <h2 id="headLines" style={{paddingTop:"150px"}}>
+        : ""}
+        
+         {/* <h2 id="headLines" style={{paddingTop:"150px"}}> */}
+        <div id="headLines" style={{paddingTop:"150px"}}>
           We launch digital products in the best way possible <img src={winkle}/>
-        </h2>
-        )
-        }
+        </div> 
+        <h1 style={{paddingTop:"150px"}}>
+          We launch digital products in the best way possible <img src={winkle}/>
+        </h1> 
+
+           {/* </h2> */}
+        
+        
         
         
         <h5 style={!isMobile?{paddingTop:"170px" }: null}>
@@ -333,15 +340,15 @@ const {isMobile} = useAppContext();
       </div>
       <div className="members-wrap">
         <div className="mem-row">
-          <div className="members"></div>
-          <div className="members"></div>
-          {!isMobile?<div className="members"></div> : null }
+          <div className="members react">React</div>
+          <div className="members three">Three.js</div>
+          {!isMobile?<div className="members gsap">Gsap</div> : null }
           
         </div>
         <div className="mem-row">
-          <div className="members"></div>
-          <div className="members"></div>
-          {!isMobile?<div className="members"></div> : null }
+          <div className="members js">Js</div>
+          <div className="members htm">HTML</div>
+          {!isMobile?<div className="members css">CSS</div> : null }
         </div>
       </div>
       <div className="text-wrap2">
