@@ -829,7 +829,7 @@ section.process {
         font-size: 27.5px;
         padding-right: 0;
      
-        top: 34%;
+        top: 150px;
         // transform: translateX(-50%);
         // left: 50%;
         line-height: 1.6;
@@ -1002,7 +1002,7 @@ section.process {
       left: 0%;
       transform: none;
       text-align: left;
-      top: 35%;
+      top: calc(150px + 7%);
       display: block;
       position: absolute;
       padding: 0 5%;
