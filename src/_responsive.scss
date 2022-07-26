@@ -294,6 +294,10 @@
     .texts-wrap{
       width: 60vw;
       h5{ font-size:33.5px;}
+      #headLines, h1 {
+        font-size: 39px;
+        img{width: 47px; height: 47px;}
+      }
    }
    .text-wrap2:not(.pi){
       width:61%;
@@ -301,7 +305,7 @@
    }
    .image-wrap img{
      min-width: 60vw;
-    max-width: 64vw;
+    max-width: 67vw;
     height: auto;
    }
   }
@@ -789,18 +793,26 @@ section.process {
       display: block;
       div.mb{
         width: fit-content;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0%;
+        transform: none;
         text-align: left;
-        height: 61%;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        top: 27%;
+        display: block;
         position: absolute;
         padding: 0 5%;
+        // left: 50%;
+        // transform: translateX(-50%);
+        // text-align: left;
+        // height: 61%;
+        // display: inline-flex;
+        // flex-direction: column;
+        // justify-content: flex-end;
+        // position: absolute;
+        // padding: 0 5%;
         p{
           color: #B9B9BF;
         }
+       
         h2{
           position: relative;
           text-align: left;
@@ -822,6 +834,17 @@ section.process {
         // left: 50%;
         line-height: 1.6;
         text-align: left;
+      }
+      #headLines, h1{
+        padding-top: 150px;
+  display: block;
+  opacity: 1;
+  visibility: inherit;
+  text-align: left;
+  margin-top: 7%;
+      }
+      h1{
+        display: none;
       }
      
     }
@@ -968,6 +991,38 @@ section.process {
 
   
 
+}
+
+@media (max-width: 550px) {
+  #stick {
+    .texts-wrap{
+
+    div.mb{
+      width: fit-content;
+      left: 0%;
+      transform: none;
+      text-align: left;
+      top: 35%;
+      display: block;
+      position: absolute;
+      padding: 0 5%;
+    }
+    #headLines, h1{
+      font-size: 30px;
+      text-align: left;
+      margin-top: 20%;
+      max-width: 500px;
+      min-width: 330px;
+      img{
+        display: none;
+      }
+    }
+    h5{
+      max-width: 480px;
+      min-width: 330px;
+    }
+   } 
+  }
 }
 
 @media (max-width: 500px) {

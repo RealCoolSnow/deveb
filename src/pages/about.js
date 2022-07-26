@@ -111,6 +111,8 @@ const AboutPage = () => {
     const h5selector = q(".texts-wrap h5");
       const texts = q(".texts-wrap .lineChildren,.texts-wrap h5,.texts-wrap p");
       const imgTrig = q(".image-wrap img");
+      const imgWr = q(".image-wrap.fc");
+
       const spans = q(".lineChildren");
       const h1select = q("h1");
 
@@ -189,11 +191,11 @@ const AboutPage = () => {
       imgTl.current = gsap.timeline({
         scrollTrigger: {
           scroller: "[data-scroll-container]",
-          trigger: imgTrig,
-          start: () => "top center-=10%",
+          // trigger: imgWr,
+          start: () => "bottom center",
           end: () => "bottom top",
-          //  markers:true,
-          invalidateOnRefresh: true,
+           markers:true,
+          // invalidateOnRefresh: true,
           onEnter: ({ direction }) => fadeOut(direction),
           onLeaveBack: ({ direction }) => fadeOut(direction),
         },
@@ -473,11 +475,11 @@ const AboutPage = () => {
   
       const fadeOut = (direction) => {
         return (
-          gsap.to(q(".lineChildren"), {
+          gsap.to(q(".lineChildren, h1"), {
             autoAlpha: () => (direction === 1 ? 0 : 1),
             duration: 0,
           }),
-          gsap.to(texts[2], {
+          gsap.to(q("h5"), {
             autoAlpha: () => (direction === 1 ? 1 : 0),
             duration: 0,
           }),
@@ -509,7 +511,7 @@ const AboutPage = () => {
           ease: "none",
         })
         .to(
-          texts[2],
+          q("h5"),
           {
             autoAlpha: 0,
             duration: 3.3,
