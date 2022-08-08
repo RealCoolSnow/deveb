@@ -95,9 +95,11 @@ useEffect(()=>{
         {/* <div className="darklay2" style={darklay2}></div> */}
       <div className="darklayer"></div>
       {
-        isMobile? <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>
-        :
-        <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+         !isMobile.tablet && isMobile.mobile && <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>}
+      {   isMobile.tablet &&<h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+      }
+      {
+        !isMobile.mobile &&<h1><div>Take a look at</div> <div>some of our projects</div> </h1>
       }
         
 
