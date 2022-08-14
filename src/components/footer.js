@@ -157,9 +157,9 @@ const histori = useHistory();
 const handleclick =() => histori.push('/contact');
   useEffect(() => {
     // ScrollTrigger.refresh();
-    if(prj){
-      gsap.set(q(".f-filler"),{background:"#ffffff"})
-    }
+    // if(prj){
+    //   gsap.set(q(".f-filler"),{background:"#ffffff"})
+    // }
 
       gsap.set(q(".backgr"), {
         autoAlpha:0,
@@ -185,7 +185,7 @@ const handleclick =() => histori.push('/contact');
               <filter id="a" x="0" y="0" width="729.43" height="729.425" filterUnits="userSpaceOnUse">
                 <feOffset dy="3" input="SourceAlpha"/>
                 <feGaussianBlur stdDeviation="15" result="blur"/>
-                <feFlood floodOpacity={prj?".05" :".02"}/>
+                <feFlood floodOpacity=".02"/>
                 <feComposite operator="in" in2="blur"/>
                 <feComposite in="SourceGraphic"/>
               </filter>

@@ -102,18 +102,23 @@
       // margin-right: 17%;
 
       > div {
-        display: block;
+        display: flex;
         text-align: left;
+        flex-direction: column;
 
         > span.head {
           color: var(--black-font-main);
-          font-size: 0.7vw;
-          line-height: 1.5vw;
+          font-size: .34rem;
+          line-height: 2;
           position: relative;
-          padding: 0 12px;
+          display: inline-block;
+          padding: 4px 12px 0;
         }
 
         a, p {
+          &:first-child{
+            margin-top: -5px;
+          }
           position: relative;
           width: min-content;
           height: max-content;
@@ -124,9 +129,9 @@
           span {
             color: var(--black-font);
             transition: color 0.4s linear;
-            font-size: 0.9vw;
-            line-height: 1.8vw;
-            padding: 0.3vw 12px;
+            font-size: 0.44rem;
+            line-height: 2;
+            padding: 0.3vw .4rem;
             font-weight: 600;
           }
 
@@ -175,8 +180,8 @@
       span.head{
         color: var(--black-font-main);
         // font-size: 10px;
-        font-size: 0.7vw;
-        line-height: 1.5vw;
+        font-size: 0.34rem;
+        line-height: 2.15;
         position: relative;
         padding: 0 15px;
         text-align: left;
@@ -187,12 +192,13 @@
         line-height: 1;
         // transition: all 0.3s ease;
         font-size: 2.6vw;
+        font-size: 1.262rem;
         overflow: hidden;
         position: relative;
         display: flex;
         width: min-content;
         // padding-bottom: 13px;
-        padding:15px 15px;
+        padding:.51rem;
         margin-bottom: 2px;
 
         &.active {
@@ -211,10 +217,10 @@
           }
         }
         &.fc{
-          padding: 5px 15px 15px;
+          padding: .17rem .51rem .51rem;
         }
         &:last-child{
-          padding: 15px 15px 5px;
+          padding: .51rem .51rem .17rem;
         }
 
         // &::after {
@@ -327,14 +333,14 @@
 
         > div {
           > span.head {
-            font-size: 10px;
-            line-height: 21px;
+            // font-size: 10px;
+            // line-height: 21px;
           }
 
           a {
             span {
-              font-size: 13px;
-              line-height: 26px;
+              // font-size: 13px;
+              // line-height: 26px;
               padding-bottom: 2.392px;
             }
           }
@@ -343,7 +349,7 @@
 
       .menu-right-part {
         a {
-          font-size: 37.5024px;
+          // font-size: 37.5024px;
           // padding-bottom: 5px;
         }
       }
@@ -433,7 +439,7 @@
         margin-bottom: 11.5%;
 
         a {
-          font-size: 2.75rem;
+          font-size: 2.15rem;
         }
       }
 

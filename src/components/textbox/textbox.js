@@ -1,7 +1,8 @@
 import React from "react";
+import Button from "../button";
 import "./textbox.scss"
 
-const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width })=>{
+const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width, butt, mob })=>{
 
     return(
         <div className={`tb-contain ${width} ${alignment}`} >
@@ -13,7 +14,7 @@ const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width })=>{
             }
             
                { h1 && !double && (
-                    <div className={`${h3 === "DopeGood" || h3 === "Vimcosmo" ? "w500" : ""} `} style={{fontSize: "50px"}} id="headLines">{h1}</div>
+                    <div className={`${h3 === "DopeGood" || h3 === "Vimcosmo" ? "w500" : ""} `} style={mob? {fontSize: "1.8rem"}:{fontSize: "1.69rem"}} id="headLines">{h1}</div>
                 )}
            
                { h2 && !double && (
@@ -22,6 +23,9 @@ const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width })=>{
           
                 {pi && !double && (
                     <p>{pi}</p>
+                )}
+                 {butt && !double && (
+                    <Button text="Visit Live" url={butt}/>
                 )}
          
           {

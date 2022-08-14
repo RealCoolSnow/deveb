@@ -43,14 +43,16 @@ section.showcase-pin {
         }
       }
       h4 {
-        font-size: 38.5px;
+        // font-size: 38.5px;
+        font-size: 1.302rem;
         font-weight: 500;
         letter-spacing: 0.4px;
         color: var(--black-font-main);
       }
       p {
         color: var(--black-font);
-        font-size: 13.4px;
+        // font-size: 13.4px;
+        font-size: .453rem;
         padding-bottom: 10px;
         letter-spacing: 0.38px;
         font-weight: 400;
@@ -160,7 +162,7 @@ section.showcase-pin {
         max-width: 490px;
         margin: 0 auto;
         text-align: center;
-        font-size: 1rem;
+        font-size: .6rem;;
         font-weight: 400;
         color: var(--black-font);
       }
@@ -243,9 +245,11 @@ section.showcase-pin {
        width: 66.5%;
      }
    h4{
-     font-size: 41px;
+    //  font-size: 41px;
    }
-   p{font-size: 14.5px;}
+   p{
+    padding-right: 0;
+    }
   }}
    .show-images {
      width: 55%;
@@ -339,7 +343,7 @@ section.showcase-pin {
         }
 
         h4 {
-          font-size: 1.96rem;
+          font-size: 1.6rem;
           margin: auto;
           margin-top: 24px;
           margin-bottom: 24px;
@@ -349,7 +353,7 @@ section.showcase-pin {
         }
         
         p {
-          font-size: 1.035rem;
+          font-size: .875rem;
           line-height: 24px;
         }
 

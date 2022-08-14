@@ -107,7 +107,7 @@ if(!isMobile){
        onEnter: () => updateBodyColor(),
        onEnterBack: () => updateBodyColor(),
        onLeave: ()=> txt.classList.contains("end")? gsap.to( sl.current, {background: "#F5F5F7", ease: 'none', duration: .7,}) : null,
-       onLeaveBack: ()=> txt.classList.contains("first")? gsap.to( sl.current, {background: "#F5F5F7", ease: 'none', duration: .7,}) : null,
+       onLeaveBack: ()=> txt.classList.contains("first")? gsap.to( sl.current, {background: "#ffffff", ease: 'none', duration: .7,}) : null,
      
      });
    });

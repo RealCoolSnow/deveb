@@ -7,13 +7,15 @@ import '../about.scss'
 import { useAppContext } from "../contexts/appcontext.js";
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco';
+import Footer from '../components/footer';
+import FooterMB from "../components/footermb.jsx"
 import SplitText from "../utils/split3.js"
 // const AbHead = lazy( () => import('../components/abouthead.js'))
 import About from '../components/about.js'
 import Helmet from 'react-helmet';
 import { BooleanKeyframeTrack } from 'three';
-const Footer = lazy( () => import('../components/footer.js'))
-const FooterMB = lazy( () => import('../components/footermb.jsx'))
+// const Footer = lazy( () => import('../components/footer.js'))
+// const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
 // const Loading = lazy( () => import('./Loading.js'))
 const AboutPage = () => {
@@ -194,7 +196,7 @@ const AboutPage = () => {
           // trigger: imgWr,
           start: () => "bottom center",
           end: () => "bottom top",
-           markers:true,
+          //  markers:true,
           // invalidateOnRefresh: true,
           onEnter: ({ direction }) => fadeOut(direction),
           onLeaveBack: ({ direction }) => fadeOut(direction),
@@ -274,7 +276,7 @@ const AboutPage = () => {
           duration: 10,
           scrollTrigger: {
             scroller: "#viewport",
-            trigger:q(".text-wrap2.pi"),
+            trigger:imgTrig[1],
             start: () => "bottom bottom-=5%",
             end: () => "bottom+=10% top",
             // markers: true,
@@ -288,7 +290,7 @@ const AboutPage = () => {
           imgTrig[1],
           {
             autoAlpha: 0,
-            duration:1.1,
+            duration:5.1,
           },
           0
         )
@@ -298,55 +300,63 @@ const AboutPage = () => {
             autoAlpha: 1,
             duration: 0.8,
           },
-          "<.34"
+          "<.44"
         )
       
         .to(
           pis[0],
           {
-            y: "-65vh",
+            y: "-20vh",
             // height:100,
-            duration: 4,
+            duration: 28,
           },
-          "<.2"
+          "<.4"
         )
         .to(
           pis[0],
           {
            autoAlpha:0,
-            duration: 1,
+            duration:5,
           },
-          "<55%"
+          "<75%"
         )
         .to(
           pis[1],
           {
            autoAlpha:1,
-            duration: .8,
+            duration: 2,
           },
-          "<60%"
+          "<80%"
         )
        
         .to(
           pis[1],
           {
-            y: "-70vh",
-            duration: 4,
+            y: "3vh",
+            duration: 28,
           },
-          "<.2"
+          ">-3"
         )
         .to(
           pis[1],
           {
            autoAlpha:0,
-            duration: 1,
+            duration: 5,
           },
-          "<45%"
+          "<65%"
         );
         const changeBg = (direction)=>{
           gsap.to(q(".backgr"), { 
             autoAlpha: ()=> (direction === 1? 1: 0),
             duration:1
+          })
+          gsap.to(el.current,{
+            backgroundColor: ()=> (direction === 1? "#f5f5f7": "#ffffff"),
+            duration:1,
+          })
+          gsap.to(q(".darkLayer"),{
+            backgroundColor: ()=> (direction === 1? "#f5f5f7": "#ffffff"),
+            duration:1,
           })
           direction === 1? changePp("Contact"): changePp("other")
         }
@@ -427,7 +437,7 @@ const AboutPage = () => {
           fontSize: "35px"
         } )
         gsap.set(q(".image-wrap"), {scale:1, yPercent:10, autoAlpha:0})
-        gsap.set(pis[1], {y:370})
+        gsap.set(pis[1], {y:"15rem"})
         gsap.set(q(".darkLayer"), {autoAlpha:0})
         loadingTL.current = gsap
         .timeline({})
@@ -511,7 +521,7 @@ const AboutPage = () => {
           ease: "none",
         })
         .to(
-          q("h5"),
+          q("h5")[0],
           {
             autoAlpha: 0,
             duration: 3.3,
@@ -524,7 +534,7 @@ const AboutPage = () => {
           duration: 10,
           scrollTrigger: {
             trigger:q(".text-wrap2.pi"),
-            start: () => "bottom bottom-=5%",
+            start: () => "top center-=5%",
             end: () => "bottom+=10% top",
             // markers: true,
             scrub: true,
@@ -537,7 +547,7 @@ const AboutPage = () => {
           imgTrig[1],
           {
             autoAlpha: 0,
-            duration:6.5,
+            duration:1.5,
           },
           ".8"
         )
@@ -547,15 +557,15 @@ const AboutPage = () => {
             autoAlpha: 1,
             duration: 0.8,
           },
-          "<3.7"
+          "<.7"
         )
       
         .to(
           pis[0],
           {
-            y: "-10vh",
+            y: "0vh",
             // height:100,
-            duration: 10,
+            duration: 5,
           },
           "<.2"
         )
@@ -573,7 +583,7 @@ const AboutPage = () => {
            autoAlpha:1,
             duration: .8,
           },
-          "<60%"
+          "<10%"
         )
        
         .to(
@@ -653,13 +663,11 @@ const AboutPage = () => {
       </Helmet>
 
         <About/>
-      <Suspense fallback={ <Loading/> } >
         {/* <AbHead/> */}
        { 
        !isMobile?    <Footer prj={true}/> : <FooterMB/>
     
        }
-      </Suspense>
 
     </main>
   )

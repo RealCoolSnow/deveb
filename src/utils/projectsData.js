@@ -42,6 +42,7 @@ export const prjData = [
         h3:"Expectaion",
         pi:"our designer’s main objective was to catch user’s attention to the products and encourage them to purchase, so he designed a layout in which the products could be found on every page.  In addition we wanted to make sure that Everything, from images to color schemes meet the client’s needs and be consistent with their branding.",
         width:"long",
+        butt:"https://vimcosmo.com/",
       
       },
       // {
@@ -65,8 +66,8 @@ export const prjData = [
         type:"butsec",
         // double:false,
         url:"https://vimcosmo.com/",
-        width:"medium-w",
-        height:"medium-h",
+        width:"full-w",
+        height:"full-H",
         src:vim2,
       },
       {
@@ -78,6 +79,11 @@ export const prjData = [
         src:[vim3, vim4],
         h2:"Front-end development",
         h2width:"full",
+      },
+      {
+        id:"ws2",
+        type:"whitespace",
+        height:"25vw",
       },
       {
         id:"vt31",
@@ -159,6 +165,7 @@ export const prjData = [
         type:"textbox",
         h3:"Expectaion",
         pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
+        butt:"https://dopop.net",
         width:"long",
       
       },
@@ -183,8 +190,8 @@ export const prjData = [
         type:"butsec",
         // double:false,
         url:"https://dopop.net",
-        width:"medium-w",
-        height:"medium-h",
+        width:"full-w",
+        height:"full-H",
         src:do2,
       },
       {
@@ -210,6 +217,11 @@ export const prjData = [
         align:"space between",
         src:[do6, do5],
         align:"normal",
+      },
+      {
+        id:"ws1",
+        type:"whitespace",
+        height:"66vw",
       },
       {
         id:"vt43",
@@ -266,6 +278,7 @@ export const prjData = [
         h3:"Expectaion",
         pi:"Creating the brand identity, logo design, website design, and web development for a modern furniture brand was requested. The overall design had to match the gorgeous modern furniture and the online e-commerce website had to be fully customizable.",
         width:"long",
+        butt:"https://dopegood.com",
       
       },
       // {
@@ -289,8 +302,8 @@ export const prjData = [
         type:"butsec",
         // double:false,
         url:"https://dopegood.com",
-        width:"medium-w",
-        height:"medium-h",
+        width:"full-w",
+        height:"full-H",
         src:d2,
       },
       {
@@ -394,6 +407,7 @@ export const prjData = [
         h3:"Expectaion",
         pi:"Designing and developing a modern and minimal website, with multiple features, such as architectural virtual reality tours and animations, for a studio with high design expectations, was a tremendously enjoyable experience for us.",
         width:"long",
+        butt:"https://am-arc.com"
       
       },
       // {
@@ -417,8 +431,8 @@ export const prjData = [
         type:"butsec",
         // double:false,
         url:"https://am-arc.com",
-        width:"medium-w",
-        height:"medium-h",
+        width:"full-w",
+        height:"full-H",
         src:a2,
       },
       {
@@ -470,107 +484,107 @@ export const prjData = [
       url:amarc
     }
   },
-  {
-    id:"p15i22",
-    name: 'Comfeey',
-    desc: 'Furniture brand, Ecommerce website',
-    tags:['3D Model'],
-    family:"comfeey",
-    elements:[
-      {
-        id:"vt12",
-        type:"textbox",
-        h3:"Comfeey",
-        mt:true,
-        h1:"Modern Furniture brand, Ecommerce website",
-        width:"short",
-        alignment:"alignment",
-      },
-      {
-        id:"vc12",
-        mt:true,
-        type:"cover",
-        double:false,
-        width:"full-w",
-        height:"full-H",
-      },
-      {
-        id:"vt22",
-        type:"textbox",
-        h3:"Expectaion",
-        pi:"Essentially, the purpose of an Ecommerce site is to sell products and gain more customers, so this has been our main focus and we have achieved this by creating a modern and minimalistic design. Since it enables faster download speeds, easy maintenance, easier navigation, and utilizes fewer server resources.",
-        width:"long",
+  // {
+  //   id:"p15i22",
+  //   name: 'Comfeey',
+  //   desc: 'Furniture brand, Ecommerce website',
+  //   tags:['3D Model'],
+  //   family:"comfeey",
+  //   elements:[
+  //     {
+  //       id:"vt12",
+  //       type:"textbox",
+  //       h3:"Comfeey",
+  //       mt:true,
+  //       h1:"Modern Furniture brand, Ecommerce website",
+  //       width:"short",
+  //       alignment:"alignment",
+  //     },
+  //     {
+  //       id:"vc12",
+  //       mt:true,
+  //       type:"cover",
+  //       double:false,
+  //       width:"full-w",
+  //       height:"full-H",
+  //     },
+  //     {
+  //       id:"vt22",
+  //       type:"textbox",
+  //       h3:"Expectaion",
+  //       pi:"Essentially, the purpose of an Ecommerce site is to sell products and gain more customers, so this has been our main focus and we have achieved this by creating a modern and minimalistic design. Since it enables faster download speeds, easy maintenance, easier navigation, and utilizes fewer server resources.",
+  //       width:"long",
       
-      },
-      // {
-      //   id:"vc22",
-      //   type:"cover",
-      //   double:false,
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
-      // {
-      //   id:"vb12",
-      //   type:"button",
-      //   // double:false,
-      //   url:"https://comfeey.com",
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
-      {
-        id:"vb11",
-        type:"butsec",
-        // double:false,
-        url:"https://comfeey.com",
-        width:"medium-w",
-        height:"medium-h",
-        // src:vim2,
-      },
-      {
-        id:"vc32",
-        type:"cover",
-        double:true,
-        align:"space between",
-        width:"full-w",
-        h2:"Front-end development",
-        h2width:"full",
-      },
-      {
-        id:"vt32",
-        type:"textbox",
-        pi:"A key to any type of project is identifying insights and trends pertinent to front-end development, web design architecture, and design thinking.",
-        width:"long"
-      },
-      {
-        id:"vc42",
-        type:"cover",
-        double:false,
-        width:"full-w",
-        height:"full-H",
-      },
-      {
-        id:"vt42",
-        type:"textbox",
-        double:true,
-        h2width:"mid",
-        h2:"Challenges and tchnologies",
-        pi:"Comfeey has been built with WordPress and Wocommerce. Typically  WordPress websites are slow and outdated compared to other programming technologies. Therefore, we aimed to improve and provide better performance.",
-      },  
-      {
-        id:"vc52",
-        type:"cover",
-        double:true,
-        align:"normal",
-        end:true,
-      },
-    ],
-    a:{text:"View more", url:"comfeey"},
-    img:{
-      cover:"",
-      colors:{right: "#000000", left:"#669BCCbf"},
-      url:comfeey
-    }
-  },
+  //     },
+  //     // {
+  //     //   id:"vc22",
+  //     //   type:"cover",
+  //     //   double:false,
+  //     //   width:"medium-w",
+  //     //   height:"medium-h",
+  //     // },
+  //     // {
+  //     //   id:"vb12",
+  //     //   type:"button",
+  //     //   // double:false,
+  //     //   url:"https://comfeey.com",
+  //     //   width:"medium-w",
+  //     //   height:"medium-h",
+  //     // },
+  //     {
+  //       id:"vb11",
+  //       type:"butsec",
+  //       // double:false,
+  //       url:"https://comfeey.com",
+  //       width:"medium-w",
+  //       height:"medium-h",
+  //       // src:vim2,
+  //     },
+  //     {
+  //       id:"vc32",
+  //       type:"cover",
+  //       double:true,
+  //       align:"space between",
+  //       width:"full-w",
+  //       h2:"Front-end development",
+  //       h2width:"full",
+  //     },
+  //     {
+  //       id:"vt32",
+  //       type:"textbox",
+  //       pi:"A key to any type of project is identifying insights and trends pertinent to front-end development, web design architecture, and design thinking.",
+  //       width:"long"
+  //     },
+  //     {
+  //       id:"vc42",
+  //       type:"cover",
+  //       double:false,
+  //       width:"full-w",
+  //       height:"full-H",
+  //     },
+  //     {
+  //       id:"vt42",
+  //       type:"textbox",
+  //       double:true,
+  //       h2width:"mid",
+  //       h2:"Challenges and tchnologies",
+  //       pi:"Comfeey has been built with WordPress and Wocommerce. Typically  WordPress websites are slow and outdated compared to other programming technologies. Therefore, we aimed to improve and provide better performance.",
+  //     },  
+  //     {
+  //       id:"vc52",
+  //       type:"cover",
+  //       double:true,
+  //       align:"normal",
+  //       end:true,
+  //     },
+  //   ],
+  //   a:{text:"View more", url:"comfeey"},
+  //   img:{
+  //     cover:"",
+  //     colors:{right: "#000000", left:"#669BCCbf"},
+  //     url:comfeey
+  //   }
+  // },
   
   // {
   //   id:"p18i8",

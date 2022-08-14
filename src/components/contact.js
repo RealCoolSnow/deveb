@@ -750,7 +750,7 @@ const Con = () => {
                       <img className="linkedin" src={linkedin} />
                     </a>
                   </div>
-                  <Link to="/privacyandpolicy">
+                  <Link to="/privacyandpolicy" className="pp">
                     <p>Privacy Policy</p>
                   </Link>
                 </div>

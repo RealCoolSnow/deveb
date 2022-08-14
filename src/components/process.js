@@ -69,8 +69,8 @@ const Process = () => {
   const handleclick =() => histori.push('/contact');
    
   return (
-    <section data-scroll className="process " ref={el} id="pro" style={isMobile? {}:{height: "190vh"}}>
-      <div className="prtrig" data-scroll data-scroll-sticky data-scroll-target="#pro" data-scroll-offset="0,72%">
+    <section data-scroll className="process " ref={el} id="pro" style={isMobile? {}:{height: "200vh"}}>
+      <div className="prtrig" data-scroll data-scroll-sticky data-scroll-target="#pro" data-scroll-offset="-25%,80%">
       <div className="process-head">
         <h3>
         How it works

@@ -152,7 +152,20 @@ const ProjectPage = () => {
           },
           5
         )}
-        )}
+        )} else {
+         const imgs =q(".cover");
+         gsap.set(imgs, {
+          backgroundPosition: () => "50% 50%",
+         
+         })
+         gsap.set(imgs[1], {
+          // backgroundPosition: () => "50% 50%",
+          backgroundSize:"contain",
+         
+         })
+       
+      }
+          
     
   }, [isMobile]);
   useEffect(()=>{
@@ -250,8 +263,8 @@ if(!isMobile){
             )
           } 
           else if(type === "textbox"){
-            const{h1,h2,h3,pi, width, alignment, id, double, mt, h2width, } = elem;
-            return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width} />
+            const{h1,h2,h3,pi, width, alignment, id, double, mt, h2width,butt } = elem;
+            return <Textbox key={id} h1={h1} h2={h2} h3={h3} pi={pi} mb={isMobile} mt={mt} double={double} width={width} alignment={alignment} h2width={h2width} butt={butt} mob={isMobile} />
           }
           else if(type === "button"){
             const {url, id} = elem;
@@ -260,6 +273,12 @@ if(!isMobile){
           else if(type === "butsec"){
             const {url, id, width, height, double, h2, align,mt,src,pb, end } = elem;
             return <Buttonsec key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} url={url}/>
+          }
+          else if (type === "whitespace"){
+            const {height, id}=elem;
+            return (<>
+            <div key={id} style={{width:"100%", height:height}}></div>
+            </>)
           }
         })
       }

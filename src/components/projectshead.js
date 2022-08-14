@@ -95,11 +95,9 @@ useEffect(()=>{
         {/* <div className="darklay2" style={darklay2}></div> */}
       <div className="darklayer"></div>
       {
-         !isMobile.tablet && isMobile.mobile && <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>}
-      {   isMobile.tablet &&<h1><div>Take a look at</div> <div>some of our projects</div> </h1>
-      }
-      {
-        !isMobile.mobile &&<h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+        isMobile? <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>
+        :
+        <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
       }
         
 
@@ -108,17 +106,11 @@ useEffect(()=>{
 
           {/* <div className="lines">
             line1
-
             <div className="extra-space"></div>
-
           </div>
-
           <div className="lines">
-
            line2
-
             <div className="extra-space"></div>
-
           </div> */}
 
 

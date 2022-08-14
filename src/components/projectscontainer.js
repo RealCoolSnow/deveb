@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 // let player;
 const PrjContain = ({ projects, Cat }) => {
   const { isMobile, resetLoco, changePointer, aniClick } = useAppContext();
- const {mobile, tablet} = isMobile;
+
   const el = useRef();
   const q = gsap.utils.selector(el);
   const newCat = Cat.split(" ").join("");
@@ -52,9 +52,9 @@ const PrjContain = ({ projects, Cat }) => {
       const scaledProjectsRef = q(".project").slice(0, 2);
       gsap.set(scaledProjectsRef, {
         // yPercent: 10,
-        scale: ()=> mobile?.98 :0.85,
+        scale: ()=> isMobile?.98 :0.85,
         autoAlpha: 0,
-        y: ()=> mobile? 30 :0,
+        y: ()=> isMobile? 30 :0,
         transformOrigin: "bottom center",
       });
     return () => {
@@ -105,7 +105,7 @@ const PrjContain = ({ projects, Cat }) => {
           return;
         }
 
-        el.style.height = mobile
+        el.style.height = isMobile
           ? el.offsetWidth + "px"
           : window.innerHeight * 0.9 + "px";
       });
@@ -121,7 +121,7 @@ const PrjContain = ({ projects, Cat }) => {
 
           const urlLink = a ? `/projects/${a.url}` : "";
 
-          return mobile ? (
+          return isMobile ? (
             <div
               key={idx}
               className={`project${

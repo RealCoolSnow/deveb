@@ -225,7 +225,7 @@ const HomePage = () => {
                changePointer({isHover:false,color:{bg:"#000"}})
             }
             const leaveup = ()=>{
-              gsap.to( el.current, {background: "#F5F5F7", ease: 'none', duration: .7,})
+              gsap.to( el.current, {background: "#ffffff", ease: 'none', duration: .7,})
               changePointer({isHover:false, color:{bg:"#000"}})
             }
       
@@ -239,8 +239,8 @@ const HomePage = () => {
               invalidateOnRefresh: true,
               onEnter: () => updateBodyColor(),
               onEnterBack: () => updateBodyColor(),
-              onLeave: ()=> txt.classList.contains("end")? leavep() : null,
-              onLeaveBack: ()=> txt.classList.contains("first")? leaveup() : null,
+              onLeave: ()=> txt.classList.contains("end")? leavep(0) : null,
+              onLeaveBack: ()=> txt.classList.contains("first")? leaveup(1) : null,
             
             });
           });
@@ -249,7 +249,9 @@ const HomePage = () => {
           scrollTrigger:{
             trigger: q(".process"),
             scroller: "#viewport",
-            start: () => "center bottom-=10%",
+            // start: () => "center bottom-=10%",
+            start: () => "center bottom+=10%",
+
             end: () => "bottom bottom-=20%",
             scrub: true,
             // markers:true,

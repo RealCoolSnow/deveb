@@ -2,6 +2,8 @@ import React,{useRef} from "react";
 import { useAppContext } from "../../contexts/appcontext.js";
 import gsap from "gsap";
 import "./textbox.scss"
+// import Button from "../button.js";
+
 
 const Buttonsec = ({width,pb,mt,img,url,height,})=>{
 const {isMobile} = useAppContext();
@@ -82,7 +84,7 @@ const shrinkRipple=()=>{
                <div className={`cover ${height}`} style={img?{background: `url(${img})`, backgroundSize: "cover"}:{}}>
                </div>
             </div>
-            <div  className="bn-contain" ref={el} >
+            {/* <div  className="bn-contain" ref={el} >
              <p>Click to run project</p>
              <a href={url} target="__blank"  >
              <div className="bn" onMouseMove={moveb} onMouseEnter={growRipple} onMouseLeave={shrinkRipple}>
@@ -90,7 +92,7 @@ const shrinkRipple=()=>{
              
              </div> 
            </a>
-        </div>
+        </div> */}
     
          </div>
     )

@@ -35,7 +35,8 @@
     #headLines, h1{
         max-width: 700px;
         min-width: 600px;
-        font-size: 47px;
+        // font-size: 47px;
+        font-size: 1.591rem;
         font-weight: 500;
         .lineChildren{
             display: inline;
@@ -51,10 +52,10 @@
         }
     }
     h5{
-        font-size: 35.5px;
+        font-size: 1.206rem;
         z-index:1;
         opacity: 0;
-        max-width: 80vh;
+        max-width: 22rem;
         // padding: 171px 47px 0px;
     }
 }
@@ -123,29 +124,34 @@
     justify-content: center;
     h5,p{
         color: var(--black-font-main);
-    font-size: 38.5px;
+    // font-size: 38.5px;
+    font-size: 1.03rem;
+    line-height: 1.6;
     text-align: center;
     font-weight: 500;
     z-index:2;
     letter-spacing: .4px;
     }
     &.pi{
-        position: absolute;
+        position: relative;
         left: 0;
+        text-align: center;
         bottom: 0px;
         width: 100%;
-        height: 30vh;
+        height: 100vh;
         display: block;
+        padding-top: 15rem;
         margin-top: -16px;
-        margin-bottom:25vh;
+        margin-bottom: -65vh;
+        // margin-bottom:25vh;
         p{  
               opacity: 0;
             font-size: 54px;
             font-weight: 500;
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            // bottom: 10%;
+            // left: 50%;
+            // transform: translateX(-50%);
             span{
                 font-size: 16px;
                 font-weight: 400;

@@ -319,10 +319,10 @@ const {isMobile} = useAppContext();
         : ""}
         
          {/* <h2 id="headLines" style={{paddingTop:"150px"}}> */}
-        <div id="headLines" style={{paddingTop:"150px"}}>
+        <div id="headLines" >
           We launch digital products in the best way possible <img src={winkle}/>
         </div> 
-        <h1 style={{paddingTop:"150px"}}>
+        <h1 >
           We launch digital products in the best way possible <img src={winkle}/>
         </h1> 
 
@@ -358,16 +358,16 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap so">
-        <img src={img1} id="im" />
+        <img src={img1} />
       </div>
       
       <div className="ab" >
-      <div className="text-wrap2 pi" data-scroll data-scroll-sticky data-scroll-target="#im">
-        <p>
+      <div className="text-wrap2 pi" id="im">
+        <p data-scroll data-scroll-sticky data-scroll-target="#im" data-scroll-offset="-70%, 50%">
           <span>Philosophy</span> Less is more
         </p>
-        {isMobile? <p>Worldwide <span style={{  position: "relative",top: "0", display: "block"}}>we work with</span></p> : 
-          <p>Worldwide, we work with</p>
+        {isMobile? <p >Worldwide <span style={{  position: "relative",top: "0", display: "block"}}>we work with</span></p> : 
+          <p data-scroll data-scroll-sticky data-scroll-target="#im" data-scroll-offset="-70%, 50%">Worldwide, we work with</p>
         }
       
       </div>

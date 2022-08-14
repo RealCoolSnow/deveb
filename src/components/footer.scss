@@ -34,7 +34,7 @@ section.footer-sec, div.con-foot {
     // margin-top: -105vh;
     height: 100vh;
     min-height: 594px;
-    padding: 0vh 0 3.1rem 0;
+    padding: 0vh 0 1.5rem 0;
     // pointer-events: none;
 
   }
@@ -133,8 +133,11 @@ section.footer-sec, div.con-foot {
       width: 100%;
     }
     .footer-secs {
-      display: inline-grid;
-      margin: 0 5px;
+      display: flex;
+    margin: 0 5px;
+    align-content: space-around;
+    flex-direction: column;
+    justify-content: center;
       &.l {
         text-align: left;
         position: relative;
@@ -213,7 +216,7 @@ section.footer-sec, div.con-foot {
         }
         a{
           cursor: none;
-          padding: 0px 13px 3px;
+          padding: 0px 13px 0px;
           &:first-child{margin-left:-10px;}
           &.pp{padding: 0px; cursor: none;}
 
@@ -223,8 +226,8 @@ section.footer-sec, div.con-foot {
       p {
         letter-spacing: 0.2px;
         font-size: 9.1px;
-        padding-top: 12px;
-        display: inline-block;
+        padding-top: 13px;
+        display: block;
         color: var(--black-font);
         padding-right: 3px;
       }
@@ -309,6 +312,7 @@ section.footer-sec.fot{
       .co-btn{
         background: #0084FF;
         color: white;
+        font-size: .83rem;
         border-radius: 30px;
         letter-spacing: .9px;
         padding: 17px;

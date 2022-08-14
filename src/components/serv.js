@@ -86,7 +86,7 @@ const Serv = () => {
   return (
     <main ref={MainWrapper}>
       <section className="head services">
-        <div className="h2 center">
+        <div className={isMobile?"h2 center":"h2 centerized"}>
           <h6>Services</h6>
           {!isMobile? (
             <h3>
@@ -96,13 +96,14 @@ const Serv = () => {
             </h3>
           ): (
             <h3>
-           <div>Branding, concept </div><div> design & 
-            web </div><div>developments, we've</div><div> got
+           <div>Branding, concept  design & 
+            web developments, we've got
             everything covered.</div>     
             </h3>
+
           )}
+          {!isMobile &&   <img src={hand}/>}
         </div>
-        {!isMobile &&   <img src={hand}/>}
       
 
       </section>
