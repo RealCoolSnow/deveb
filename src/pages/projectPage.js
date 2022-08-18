@@ -172,6 +172,10 @@ const ProjectPage = () => {
     
     const q = gsap.utils.selector(el);
     const changeBg = (direction)=>{
+      gsap.to(el.current, { 
+        backgroundColor:()=> direction === 1?"#f5f5f7" : "#ffffff",
+        duration:1
+      })
       gsap.to(q(".backgr"), { 
         autoAlpha: ()=> (direction === 1? 1: 0),
         duration:1
@@ -271,10 +275,10 @@ if(!isMobile){
             return <Button key={id} url={url}/>
           }
           else if(type === "butsec"){
-            const {url, id, width, height, double, h2, align,mt,src,pb, end } = elem;
-            return <Buttonsec key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} url={url}/>
+            const {butt, id, width, height, double, h2, align,mt,src,pb, end } = elem;
+            return <Buttonsec key={id} width={width} height={height} mt={mt} double={double} h2={h2} align={align} img={src} url={butt}/>
           }
-          else if (type === "whitespace"){
+          else if (type === "whitespace" && isMobile){
             const {height, id}=elem;
             return (<>
             <div key={id} style={{width:"100%", height:height}}></div>

@@ -4,7 +4,7 @@ import { gsap, Power3 } from "gsap";
 
 const Button = ({
   ss,
-  did,
+  href,
   text,
   url,
   br,
@@ -171,7 +171,16 @@ const Button = ({
               <span></span>
             </span>
           </Link>
-        ) : (
+        ) : href? (
+          <a className="btn-more" href={href} target="_blank" style={br? {borderColor: br}:{}}>
+          <span className="btn-more-title">
+            <span data-text={text}>{text}</span>
+          </span>
+          <span className="btn-more-ripple">
+            <span></span>
+          </span>
+        </a>
+        ) :(
           <button onClick={ () => catFunction ? catFunction(url) : ''} className={`btn-more ${ active && (act === undefined) ? 'active' : '' } ${ act ? "act" : ""}`} >
             <span className="btn-more-title">
               <span data-text={text}>{text}</span>

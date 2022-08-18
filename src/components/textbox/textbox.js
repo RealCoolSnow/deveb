@@ -25,7 +25,7 @@ const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width, butt, m
                     <p>{pi}</p>
                 )}
                  {butt && !double && (
-                    <Button text="Visit Live" url={butt}/>
+                    <Button text="Visit Live" href={butt}/>
                 )}
          
           {
