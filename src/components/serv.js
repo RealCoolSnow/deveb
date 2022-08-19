@@ -39,14 +39,14 @@ const Serv = () => {
       autoAlpha:1,
       stagger: .08,
       duration:1.5,
-      delay:.2,
+      delay:.6,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
     gsap.to(fadeElems,{
       yPercent:0,
       stagger: .08,
       duration:.6,
-      delay:.2,
+      delay:.6,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
     gsap.to(q(".head img"), {
@@ -54,7 +54,7 @@ const Serv = () => {
       scale:1,
       duration:.4,
       ease:"power2.inOut",
-      delay:.6,
+      delay:1,
       // onComplete:()=>ScrollTrigger.refresh(true),
     })
    
