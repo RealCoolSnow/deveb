@@ -9,7 +9,6 @@ import { useAppContext } from "../contexts/appcontext.js";
 
 import { useLocation } from "react-router-dom";
 
-
 const paths = {
   step1: {
     unfilled: "M 0 100 V 100 Q 50 100 100 100 V 100 z",
@@ -32,6 +31,8 @@ const paths = {
 let tl;
 
 const Frame = () => {
+
+  const [lastLocation,setLastLocation] = useState('')
 
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -78,13 +79,23 @@ const Frame = () => {
   };
 
   useEffect(() => {
-    console.log('location changed: frame')
+    
     if (!tl) {
       const overlayPath = document.querySelector(".overlay__path");
       createTimeLine(overlayPath);
     }
 
-    if( !isMobile && !isMenuOpen ) tl.play(0);
+    if( !isMobile && !isMenuOpen ) {
+
+      if( !lastLocation ) {
+        setLastLocation(location.pathname)
+        tl.play(0);
+      } else if ( location.pathname !== lastLocation ) {
+        setLastLocation(location.pathname)
+        tl.play(0);
+      }
+    }
+
   }, [location]);
   
 

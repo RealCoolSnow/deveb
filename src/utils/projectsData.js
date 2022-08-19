@@ -447,7 +447,7 @@ export const prjData = [
       {
         id:"vt35",
         type:"textbox",
-        pi:"We have decided to use smooth scrolling to create a more appealing user experience as well as add some additional animation to the overall design. This feature was quite a perfect match for the rest of the website since their studio are also providing animation services.",
+        pi:"We have decided to use smooth scrolling to create a more appealing user experience as well as add some additional animation to the overall design. This feature was quite a perfect match for the rest of the website since their studio is also providing animation services.",
         width:"long"
       },
       {
@@ -464,7 +464,7 @@ export const prjData = [
         double:true,
         h2width:"mid",
         h2:"Challenges and tchnologies",
-        pi:"Maintaining performance while creating complex animations is quite challenging using React, smooth scroll and Gsap together. Several custom animation codes were implemented in order to avoid memory leaks and achive the best performance possible.",
+        pi:"Maintaining performance while creating complex animations is quite challenging using React, smooth scroll and Gsap together. Several custom animation codes were implemented in order to avoid memory leaks and achieve the best performance possible.",
       },  
       {
         id:"vc55",
