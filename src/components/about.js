@@ -331,7 +331,7 @@ const {isMobile} = useAppContext();
         
         
         
-        <h5 style={!isMobile?{paddingTop:"170px" }: null}>
+        <h5 style={!isMobile?{paddingTop:"1rem" }: null}>
         A digital agency with solid web design and development expertise.
         </h5>
       </div>
@@ -340,15 +340,26 @@ const {isMobile} = useAppContext();
       </div>
       <div className="members-wrap">
         <div className="mem-row">
-          <div className="members react">React</div>
-          <div className="members three">Three.js</div>
-          {!isMobile?<div className="members gsap">Gsap</div> : null }
+          <div className="back"></div>
+          <div className="members naz"></div>
+          <div className="members react">Full</div>
+          <div className="members three">Stack</div>
+          {!isMobile?<div className="members gsap">Dev</div> : null }
           
         </div>
         <div className="mem-row">
+        <div className="back"></div>
           <div className="members js">Js</div>
           <div className="members htm">HTML</div>
           {!isMobile?<div className="members css">CSS</div> : null }
+          <div className="members amir"></div>
+        </div>
+        <div className="mem-row">
+        <div className="back"></div>
+        <div className="members iliya"></div>
+          <div className="members js">Full</div>
+          <div className="members htm">Stack</div>
+          {!isMobile?<div className="members css">dev</div> : null }
         </div>
       </div>
       <div className="text-wrap2">

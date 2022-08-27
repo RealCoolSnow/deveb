@@ -38,7 +38,7 @@ const AboutPage = () => {
     gsap.set(texts, { autoAlpha: 0 });
 
     gsap.set(q(".mem-row"), {
-      xPercent: (index, target) => (index === 0 ? -5 : 5),
+      xPercent: (index, target) => (index === 1 ? 5 : -5),
     });
     !isMobile && gsap.set(q(".image-wrap"), {
       yPercent: 35,
@@ -258,7 +258,7 @@ const AboutPage = () => {
           },
         })
         .to(q(".mem-row"), {
-          xPercent: (index, target) => (index === 0 ? 5 : -5),
+          xPercent: (index, target) => (index === 1 ? -5 : 5),
           duration: 20,
           ease: "none",
         })
@@ -298,9 +298,9 @@ const AboutPage = () => {
           pis[0],
           {
             autoAlpha: 1,
-            duration: 0.8,
+            duration: 1,
           },
-          "<.44"
+          "<.94"
         )
       
         .to(
@@ -310,7 +310,7 @@ const AboutPage = () => {
             // height:100,
             duration: 28,
           },
-          "<.4"
+          "<-2.5"
         )
         .to(
           pis[0],
@@ -335,7 +335,7 @@ const AboutPage = () => {
             y: "3vh",
             duration: 28,
           },
-          ">-3"
+          ">-7"
         )
         .to(
           pis[1],
@@ -516,7 +516,7 @@ const AboutPage = () => {
           },
         })
         .to(q(".mem-row"), {
-          xPercent: (index, target) => (index === 0 ? 5 : -5),
+          xPercent: (index, target) => (index === 1 ? -5 : 5),
           duration: 20,
           ease: "none",
         })

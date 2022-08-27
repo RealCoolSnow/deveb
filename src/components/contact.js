@@ -58,6 +58,7 @@ const Con = () => {
     gsap.set(sec1, { autoAlpha: 0, yPercent: 30 });
     return () => {};
   }, []);
+  
   useEffect(() => {
     const sec1 = q(".sec-form h6, .sec-form h1, form");
     gsap.to(sec1, {
