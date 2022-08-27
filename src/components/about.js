@@ -349,9 +349,9 @@ const {isMobile} = useAppContext();
         </div>
         <div className="mem-row">
         <div className="back"></div>
-          <div className="members js">Js</div>
-          <div className="members htm">HTML</div>
-          {!isMobile?<div className="members css">CSS</div> : null }
+          <div className="members js">UI/UX</div>
+          <div className="members htm">Design</div>
+          {!isMobile?<div className="members css">Branding</div> : null }
           <div className="members amir"></div>
         </div>
         <div className="mem-row">
