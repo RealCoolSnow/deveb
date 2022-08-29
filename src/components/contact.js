@@ -409,9 +409,9 @@ const Con = () => {
   return (
     <>
       {showThanks ? (
-        <Thanks showToggle={() => setShowThanks(false)} />
+        <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
       ) : (
-        
+          
         <section
           data-scroll-container
           ref={MainWrapper}

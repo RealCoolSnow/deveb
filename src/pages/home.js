@@ -391,6 +391,10 @@ const HomePage = () => {
             gsap.set(q("section.head"),{
               clearProps: "transform"
             })
+            gsap.set(q(".process-grid, .prtrig"),{
+              clearProps: "transform"
+            })
+           
             options.setlightpink();
             if(pintl.current){
               pintl.current.progress(0)

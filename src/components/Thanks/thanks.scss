@@ -31,14 +31,43 @@
 @media ( max-width: 768px ) {
 
   .thanks-container {
+    cursor: default;
   
     h2 {
-      font-size: 5rem;
+      font-size: 4.3rem;
       margin-bottom: 0.5rem;
+      padding-top: 1.7rem;
     }
   
     p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+    }
+    .checkcontain{
+      background: dodgerblue;
+      width: 5rem;
+      height: 5rem;
+      position: relative;
+      border-radius: 50%;
+      svg{
+        width: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        path{
+          fill:white;
+        }
+    
+      }
+    }
+    .backbtn{
+      background: black;
+      max-width: 500px;
+      width: 87%;
+      padding: 16px 0;
+      border-radius: 30px;
+      position: absolute;
+      bottom: 2.6rem;
     }
   }
 
@@ -49,12 +78,13 @@
   .thanks-container {
   
     h2 {
-      font-size: 4.5rem;
+      font-size: 3.5rem;
     }
   
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       line-height: 1.8rem;
+      padding: 0;
     }
   }
 
