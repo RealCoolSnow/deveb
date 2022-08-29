@@ -204,9 +204,9 @@ const Con = () => {
       });
     }
 
-    await fetch(`https://deveb-api.herokuapp.com/`); // Awake if server is sleep
+    await fetch(`https://deveb-api.fly.dev/`); // Awake if server is sleep
 
-    let sendForm = await fetch(`https://deveb-api.herokuapp.com/api/send`, {
+    let sendForm = await fetch(`https://deveb-api.fly.dev/api/send`, {
       method: "post",
       body: attachs || {},
       headers: ContactForm,
