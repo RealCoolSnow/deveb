@@ -411,6 +411,7 @@ const Con = () => {
       {showThanks ? (
         <Thanks showToggle={() => setShowThanks(false)} />
       ) : (
+        
         <section
           data-scroll-container
           ref={MainWrapper}

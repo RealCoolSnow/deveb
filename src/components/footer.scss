@@ -284,11 +284,15 @@ section.footer-sec.fot{
       min-width: fit-content;
       .footer-secs.r, .footer-secs.l{
         text-align: center;
+        a{
+          cursor: pointer;
+        }
       }
       h5{
         font-size: 18px;
         font-weight: 500;
         letter-spacing: .5px;
+        cursor: default;
 
         &::after{
           left: 50%;
