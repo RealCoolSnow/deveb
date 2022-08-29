@@ -342,24 +342,25 @@ const {isMobile} = useAppContext();
         <div className="mem-row">
           <div className="back"></div>
           <div className="members naz"></div>
-          <div className="members react">Full</div>
-          <div className="members three">Stack</div>
+          <div className="members react">{isMobile?"Developer":"Full"}</div>
+          {!isMobile?<div className="members css">Stack</div> : null }
           {!isMobile?<div className="members gsap">Dev</div> : null }
           
         </div>
         <div className="mem-row">
         <div className="back"></div>
-          <div className="members js">UI/UX</div>
-          <div className="members htm">Design</div>
+          <div className="members js">{isMobile?"Designer":"UI/UX"}</div>
+          {!isMobile?<div className="members css">Design</div> : null }
+
           {!isMobile?<div className="members css">Branding</div> : null }
           <div className="members amir"></div>
         </div>
         <div className="mem-row">
         <div className="back"></div>
         <div className="members iliya"></div>
-          <div className="members js">Full</div>
-          <div className="members htm">Stack</div>
-          {!isMobile?<div className="members css">dev</div> : null }
+          <div className="members js">{isMobile?"Developer":"Full"}</div>
+          {!isMobile?<div className="members css">Stack</div> : null }
+          {!isMobile?<div className="members css">Dev</div> : null }
         </div>
       </div>
       <div className="text-wrap2">

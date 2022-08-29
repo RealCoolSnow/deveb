@@ -160,7 +160,7 @@ const ProjectPage = () => {
          })
          gsap.set(imgs[1], {
           // backgroundPosition: () => "50% 50%",
-          backgroundSize:"contain",
+          backgroundSize:"cover",
          
          })
        
