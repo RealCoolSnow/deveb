@@ -151,8 +151,8 @@ const Con = () => {
 
   const sendContactForm = async () => {
 
-    console.log('sending contact form');
-    console.log(sendingForm);
+    // console.log('sending contact form');
+    // console.log(sendingForm);
     if (sendingForm) return;
     
     setFormErr({
@@ -160,8 +160,8 @@ const Con = () => {
       email: "",
     });
     
-    console.log('checkFields');
-    console.log(checkFields(true));
+    // console.log('checkFields');
+    // console.log(checkFields(true));
 
     if (!checkFields(true)) {
       return;
@@ -171,7 +171,7 @@ const Con = () => {
       await recap.current.executeAsync();
     } catch (err) {
       console.log("Google recaptcha failed");
-      console.log(err);
+      // console.log(err);
       return;
     }
 
