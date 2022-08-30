@@ -35,9 +35,16 @@ const Test = () => {
     zIndex: 1,
   }
   const { tag } = useParams();
-//   useEffect(()=>{
-//     catFunction(cat)
-//   },[])
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 768;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   useEffect(() => {
     changePointer({isHover: false})
@@ -172,6 +179,9 @@ const Test = () => {
           else if (isMobile){
             el.current.style.transform="none";
             gsap.set(el.current,{transform:"none"})
+            gsap.set(q(".pro-sec main"),{
+              clearProps: "transform"
+            })
             gsap.set(q(".fade"), {autoAlpha:1 })
             // gsap.to(q("#stickbb h1"), {autoAlpha: 1, duration:.5, onComplete: ()=> ScrollTrigger.refresh()})
            my.current = gsap.timeline({
@@ -239,7 +249,7 @@ const Test = () => {
       <div className="fade" >
         {/* <div className="fade-layer1" style={darklay1}></div> */}
 
-       <ProHead Cat={cat} catFunction={catFunction}/>
+       <ProHead Cat={cat} catFunction={catFunction} width={width}/>
       </div>
       {
         isMobile && ( <PrjCon projects={projects} Cat={cat}/>)

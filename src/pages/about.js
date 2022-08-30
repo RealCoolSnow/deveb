@@ -31,6 +31,8 @@ const AboutPage = () => {
   const tl = useRef();
 
   const q = gsap.utils.selector(el);
+ 
+
   useLayoutEffect(() => {
     const texts = q(".texts-wrap h2 div,.texts-wrap h5");
     // const spans = q("h2 div");
@@ -75,9 +77,9 @@ const AboutPage = () => {
       {
         y: 0,
         duration: 0.6,
-        delay:.4,
+        delay:.6,
         stagger: {
-          amount: 0.1,
+          amount: 0.15,
           ease: "power2.Out",
         },
       },
@@ -87,7 +89,7 @@ const AboutPage = () => {
       split.lines,
       {
         autoAlpha: 1,
-        delay:.4,
+        delay:.6,
         duration: 1.2,
         onComplete: ()=>  {
           gsap.to(q("h1"),{
@@ -100,7 +102,7 @@ const AboutPage = () => {
         })
       },
         stagger: {
-          amount: 0.1,
+          amount: 0.15,
           ease: "power2.Out",
         },
       },
@@ -108,6 +110,11 @@ const AboutPage = () => {
     )
      }
     //  );
+    useEffect(()=>{
+      document.fonts.ready.then(()=>{
+        functionnn()
+      })    
+    },[])
   useEffect(()=>{
     const pis = q(".text-wrap2 p");
     const h5selector = q(".texts-wrap h5");
@@ -118,10 +125,7 @@ const AboutPage = () => {
       const spans = q(".lineChildren");
       const h1select = q("h1");
 
-  document.fonts.ready.then(()=>{
-    functionnn()
-  })
-      
+   
       if(!isMobile){
         changePp("other")
         if(loadingTL.current){
@@ -445,7 +449,7 @@ const AboutPage = () => {
           [mbp ],
           {
             y: 0,
-            duration: 0.6,
+            duration: 0.45,
             stagger: {
               amount: 0.2,
               ease: "power2.Out",
@@ -662,7 +666,7 @@ const AboutPage = () => {
         <meta name="description" content="We at deveb strive to fulfill your digital dreams and present your product in the most approachable way possible." />
       </Helmet>
 
-        <About/>
+        <About />
         {/* <AbHead/> */}
        { 
        !isMobile?    <Footer prj={true}/> : <FooterMB/>

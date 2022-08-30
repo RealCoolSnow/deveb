@@ -187,15 +187,15 @@ function Header({ history }) {
         });
       }
       gsap.to(q(".menuLines.l1"), {
-        rotate: 45,
-        y: () => (isMobile ? 2 : 6),
-        x: () => (isMobile ? 5 : 1),
+        rotate: -45,
+        y: () => (isMobile ? 4 : 3),
+        x: () => (isMobile ? 0 : 0),
         duration: 0.4,
       });
       gsap.to(q(".menuLines.l2"), {
-        rotate: -45,
-        y: () => (isMobile ? -7 : -3),
-        x: () => (isMobile ? 5 : 1),
+        rotate: 45,
+        y: () => (isMobile ? -3 : -4),
+        x: () => (isMobile ? 0 : 0),
         duration: 0.4,
       });
     } else {

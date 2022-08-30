@@ -320,10 +320,10 @@ const {isMobile} = useAppContext();
         
          {/* <h2 id="headLines" style={{paddingTop:"150px"}}> */}
         <div id="headLines" >
-          We launch digital products in the best way possible <img src={winkle}/>
+          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}}src={winkle}/>
         </div> 
         <h1 >
-          We launch digital products in the best way possible <img src={winkle}/>
+          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}} src={winkle}/>
         </h1> 
 
            {/* </h2> */}

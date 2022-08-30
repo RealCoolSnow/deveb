@@ -17,7 +17,16 @@ const Serv = () => {
   gsap.registerPlugin(ScrollTrigger)
 
   // const[isScrollStarted,setIsScrollStarted]=useState(!1);useEffect(()=>(isMobile&&mobileLinksScroller.current&&mobileLinksScroller.current.addEventListener("scroll",checkLinksScroll),()=>{mobileLinksScroller.current&&mobileLinksScroller.current.removeEventListener("scroll",checkLinksScroll)}),[isMobile,isScrollStarted]);const checkLinksScroll=e=>{const{scrollLeft:l,offsetWidth:t,scrollWidth:r}=e.target;Number(l/(r-t)).toFixed(2)>.04?isScrollStarted&&(setIsScrollStarted(!1),toggleFader(!0)):isScrollStarted||(setIsScrollStarted(!0),toggleFader(!1))},toggleFader=e=>{const l=gsap.utils.selector(MainWrapper),t=gsap.timeline({defaults:{duration:.5}}),r=l(".mobile-fade.fade-right");e?t.to(r,{x:50,autoAlpha:0}):t.to(r,{x:0,autoAlpha:1})};
- 
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 768;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
   useLayoutEffect(() => {
     const fadeElems=q("h6, h3 div, .links-wrapper button");
     gsap.set(fadeElems, {
@@ -88,21 +97,26 @@ const Serv = () => {
       <section className="head services">
         <div className={isMobile?"h2 center":"h2 centerized"}>
           <h6>Services</h6>
-          {!isMobile? (
+          {isMobile? width > 500?(
+             <h3>
+             <div>Branding, concept design &  </div>
+             <div>web developments, we've got</div>
+             <div>everything covered.</div>
+             </h3>
+          ):(
+            <h3>
+            <div>Branding, concept </div><div>design & 
+            web</div><div> developments, we've </div><div>got
+            everything covered.</div>
+            </h3>
+          ):(
             <h3>
             <div>Branding, concept design &  </div>
             <div>web developments, we've got</div>
             <div>everything covered.</div>
             </h3>
-          ): (
-            <h3>
-           <div>Branding, concept  design & 
-            web developments, we've got
-            everything covered.</div>     
-            </h3>
-
-          )}
-          {!isMobile &&   <img src={hand}/>}
+          ) }
+          {width> 500 &&    <img src={hand}/>}
         </div>
       
 

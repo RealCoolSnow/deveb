@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { useAppContext } from "../contexts/appcontext.js";
 
-const ProHead = ({ Cat, catFunction }) => {
+const ProHead = ({ Cat, catFunction, width }) => {
   const { isMobile, setReset, resetLoco} = useAppContext();
 
   const [activeTag, setActiveTag] = useState("");
@@ -95,9 +95,12 @@ useEffect(()=>{
         {/* <div className="darklay2" style={darklay2}></div> */}
       <div className="darklayer"></div>
       {
-        isMobile? <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>
+        isMobile? width> 500?   <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+        :
+        <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>
         :
         <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+
       }
         
 
