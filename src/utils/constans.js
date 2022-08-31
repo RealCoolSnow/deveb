@@ -210,7 +210,7 @@ export const home = [
     id: "hp104",
     h4: "NFT digital marketplace",
     p: "",
-    a: { text: "Learn more",  url:"/projects#In" },
+    a: { text: "Learn more",  url:"/projects" },
     img: {
       cover: dopop,
       colors: { cur: "#808CFF", pointer: "#808cffbf", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
@@ -222,7 +222,7 @@ export const home = [
     id: "hp101",
     h4: "Online store, Furniture brand",
     p: "",
-    a: { text: "Learn more",  url:"/projects#In" },
+    a: { text: "Learn more",  url:"/projects" },
     img: {
       cover: dopegood,
       colors: { cur: "#FFB18C", pointer: "#FFA073bf", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
@@ -234,7 +234,7 @@ export const home = [
     id: "hp102",
     h4: "Architectural design Studio",
     p: "",
-    a: { text: "Learn more",  url:"/projects#In" },
+    a: { text: "Learn more",  url:"/projects" },
     img: {
       cover: amarc,
       colors: { cur: "#F2AB79", pointer: "#F2AB79bf", bg:"#FFEDE0", tx:"#F2AB79", br:"#F2AB79"},
@@ -246,7 +246,7 @@ export const home = [
     id: "hp103",
     h4: "Online store, Cosmetic brand",
     p: "",
-    a: { text: "Learn more",  url:"/projects#In" },
+    a: { text: "Learn more",  url:"/projects" },
     img: {
       cover: vim,
       colors: { cur: "#FF99CE", pointer: "#CC669Bbf", bg:"#FAE1EE", tx:"#E67FB4", br:"#FEA5D3"},
@@ -258,7 +258,7 @@ export const home = [
     id: "hp105",
     h4: "Online store, Furniture brand",
     p: "",
-    a: { text: "Learn more", url:"/projects#Ex" },
+    a: { text: "Learn more", url:"/projects" },
     img: {
       cover: comfeey,
       colors: { cur: "#77A9D9", pointer: "#669bccbf", bg:"#E0F0FF" , tx:"#78A9D9", br:"#A6D4FF"},

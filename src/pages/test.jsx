@@ -3,7 +3,7 @@ import ProHead from '../components/projectshead.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Footer from '../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
-import Helmet from 'react-helmet'
+
 import { prjData } from '../utils/projectsData.js'
 import { useParams } from 'react-router'
 import {gsap} from 'gsap';
@@ -19,6 +19,7 @@ const Test = () => {
   // const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
   const [projects, setProjects] = useState(prjData);
   const my = useRef()
+  const mymb = useRef()
   const el = useRef();
   const q = gsap.utils.selector(el);
   const fooT= useRef();
@@ -34,16 +35,9 @@ const Test = () => {
     zIndex: 1,
   }
   const { tag } = useParams();
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 768;
-
-  React.useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleWindowResize);
-
-    // Return a function from the effect that removes the event listener
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+//   useEffect(()=>{
+//     catFunction(cat)
+//   },[])
 
   useEffect(() => {
     changePointer({isHover: false})
@@ -112,7 +106,7 @@ const Test = () => {
           end: ()=>"bottom+=10% bottom",
           scrub: true,
           ease:"none",
-          // onEnter: ()=> console.log("run paralax"),
+          onEnter: ()=> console.log("run paralax"),
           // markers: true,
         },
       });
@@ -178,7 +172,7 @@ const Test = () => {
           else if (isMobile){
             el.current.style.transform="none";
             gsap.set(el.current,{transform:"none"})
-            gsap.set(q(".pro-sec main"),{
+            gsap.set(q(".pro-sec"),{
               clearProps: "transform"
             })
             gsap.set(q(".fade"), {autoAlpha:1 })
@@ -239,20 +233,16 @@ const Test = () => {
     setCat(input);
     const newProjects = prjData.filter( (ei) => ei.tags.includes(input) )
     setProjects(newProjects);
-    // console.log("running catFunc")
+    console.log("running catFunc")
     setReset();
   }
 
   return( 
     <main id="viewport" ref={el} data-scroll-container className="projects-page" >
-       <Helmet>
-        <title>Deveb | Projects</title>
-        <meta name="description" content="We provide all the services you need to ship your digital product and reach to your target audience. From analysis to design, development and finally launching." />
-      </Helmet>
       <div className="fade" >
         {/* <div className="fade-layer1" style={darklay1}></div> */}
 
-       <ProHead Cat={cat} catFunction={catFunction} width={width}/>
+       <ProHead Cat={cat} catFunction={catFunction}/>
       </div>
       {
         isMobile && ( <PrjCon projects={projects} Cat={cat}/>)

@@ -116,7 +116,7 @@ import {
           <Route path="/projects/:id" exact>
             <ProjectPage />
           </Route>
-          <Route path="/projects/:tag?" exact>
+          <Route path="/projects" exact>
             <Test />
           </Route>
   
