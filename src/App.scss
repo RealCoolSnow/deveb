@@ -8,10 +8,6 @@
   --blue-cta:#3398FF;
   --blue-span:#0084FF;
 
-
-
-  // --bg-color: #000;
-  // --primary-color: #fff;
   --primary-font-color: #f5f5f7;
   --secondary-font-color: #b9b9bf;
   --lighter-menu-link-color: #d7d7d9;
@@ -378,7 +374,6 @@ section {
             // transition: all 0.3s ease;
             letter-spacing: 0;
 
-          
           }
 
           a.view-projects-btn {
@@ -828,21 +823,10 @@ section {
       }
 
       div.options-btns.budgets {
-        margin-bottom: 21px;
-        position: relative;
-        padding-bottom: 18px;
+        margin-bottom: 39px;
 
         a.sec-btn {
           margin-right: 0.4rem;
-        }
-
-        span.input-err {
-          position: absolute;
-          bottom: 0px;
-          left: 5px;
-          font-size: 0.4rem;
-          font-weight: 400;
-          color: #FF6666;
         }
 
       }
@@ -930,7 +914,6 @@ section {
   height: 100vh;
   top: 0;
   left: 0;
-
 }
 .contact-page .sec-form.mb .btn-container .btn-more{
   border: 1px solid var(--contact-button-border)
