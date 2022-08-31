@@ -143,26 +143,34 @@ const Con = () => {
         setActiveNeeds(activeNeeds.filter((activeIdx) => activeIdx !== idx));
       else setActiveNeeds([...activeNeeds, idx]);
     } else if (target === "budg") {
-      if (activeBudg === idx) setActiveBudg(-1);
-      else setActiveBudg(idx);
+      if (activeBudg === idx) {
+        setActiveBudg(-1);
+        setFormErr({
+          ...formErr,
+          budget: "Please select a budget"
+        });
+      } else {
+        setActiveBudg(idx)
+        if( formErr.budget.length ) setFormErr({
+          ...formErr,
+          budget: ""
+        });
+      };
     }
   };
 
   const sendContactForm = async () => {
 
-    // console.log('sending contact form');
-    // console.log(sendingForm);
     if (sendingForm) return;
     
     setFormErr({
       name: "",
       email: "",
     });
-    
-    // console.log('checkFields');
-    // console.log(checkFields(true));
 
-    if (!checkFields(true)) {
+    const checkFieldsResult = checkFields(true)
+
+    if (!checkFieldsResult) {
       return;
     }
 
@@ -170,7 +178,6 @@ const Con = () => {
       await recap.current.executeAsync();
     } catch (err) {
       console.log("Google recaptcha failed");
-      // console.log(err);
       return;
     }
 
@@ -181,18 +188,16 @@ const Con = () => {
 
     ContactForm.name = form.name;
     ContactForm.email = form.email;
-
+    
     if (form.message) ContactForm.message = form.message;
-
+    
     const { needs, budgets } = contactData;
+
+    ContactForm.budg = budgets[activeBudg];
 
     if (activeNeeds) {
       const needsArr = needs.filter((val, idx) => activeNeeds.includes(idx));
       ContactForm.needs = needsArr.join(" - ");
-    }
-
-    if (activeBudg) {
-      ContactForm.budg = budgets[activeBudg];
     }
 
     const attachs = new FormData();
@@ -312,6 +317,7 @@ const Con = () => {
     const newErr = {
       name: "",
       email: "",
+      budget: "",
     };
 
     if (!checkName()) {
@@ -323,6 +329,11 @@ const Con = () => {
     if (!checkEmail()) {
       inputCheck = false;
       if (sending) newErr.email = "Please enter a valid email";
+    }
+
+    if ( activeBudg === -1 ) {
+      inputCheck = false;
+      if (sending) newErr.budget = "Please select a budget";
     }
 
     if (!inputCheck) {
@@ -380,15 +391,24 @@ const Con = () => {
   const FocusedOut = (target) => {
     if (target === "name" && !checkName()) {
       setFormErr({
-        email: formErr.email,
         name: "Please fill your name",
+        email: formErr.email,
+        budget: formErr.budget,
       });
     } else if (target === "email" && !checkEmail()) {
       setFormErr({
         name: formErr.name,
         email: "Please enter a valid email",
+        budget: formErr.budget,
+      });
+    } else if (target === "budget" && activeBudg === -1 ) {
+      setFormErr({
+        email: formErr.email,
+        name: formErr.name,
+        budget: "Please select a budget",
       });
     }
+
   };
 
   useEffect(() => {
@@ -403,7 +423,7 @@ const Con = () => {
 
     if (isFormValid && !formValid) setFormValid(true);
     else if (!isFormValid && formValid) setFormValid(false);
-  }, [form]);
+  }, [form,activeBudg]);
 
   return (
     <>
@@ -625,7 +645,7 @@ const Con = () => {
             </div>
 
             <>
-              <div className="options-btns budgets">
+              <div className="options-btns budgets" onBlur={() => FocusedOut("budget")}>
                 <p>Budget (USD)</p>
 
                 {contactData.budgets.map((val, idx) => (
@@ -636,6 +656,12 @@ const Con = () => {
                     key={idx}
                   />
                 ))}
+
+                {
+                  formErr.budget && (
+                    <span className="input-err">{formErr.budget}</span>
+                  )
+                }
               </div>
 
               <div className="google-captcha">

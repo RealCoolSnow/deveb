@@ -828,10 +828,21 @@ section {
       }
 
       div.options-btns.budgets {
-        margin-bottom: 39px;
+        margin-bottom: 21px;
+        position: relative;
+        padding-bottom: 18px;
 
         a.sec-btn {
           margin-right: 0.4rem;
+        }
+
+        span.input-err {
+          position: absolute;
+          bottom: 0px;
+          left: 5px;
+          font-size: 0.4rem;
+          font-weight: 400;
+          color: #FF6666;
         }
 
       }
