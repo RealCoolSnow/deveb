@@ -125,7 +125,8 @@ section.showcase-pin {
       .showcase-container {
         min-width: 335px;
         max-width: 500px;
-        min-height: 335px;
+        // min-height: 335px;
+        padding-bottom: 100%;
         border-radius: 30px;
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;

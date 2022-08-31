@@ -162,27 +162,27 @@ const Frame = () => {
   //   2,
   //   3
   // ]
-  useEffect(()=>{
+  // useEffect(()=>{
     
-    const q = gsap.utils.selector(el);
-    console.log(ScrollYValue);
-    if(ScrollYValue ===10){
-      gsap.to(q(".hero-scroll"), {
-        y:  20 ,
-        duration: 0.5,
-        autoAlpha: 0,
-      })
+  //   const q = gsap.utils.selector(el);
+  //   // console.log(ScrollYValue);
+  //   if(ScrollYValue ===10){
+  //     gsap.to(q(".hero-scroll"), {
+  //       y:  20 ,
+  //       duration: 0.5,
+  //       autoAlpha: 0,
+  //     })
 
-    }
-    else if(ScrollYValue< 10){
-      gsap.to(q(".hero-scroll"), {
-        y:  0 ,
-        duration: 0.5,
-        autoAlpha: 1,
-      })
-    }
-    console.log("run frame")
-  },[ScrollYValue])
+  //   }
+  //   else if(ScrollYValue< 10){
+  //     gsap.to(q(".hero-scroll"), {
+  //       y:  0 ,
+  //       duration: 0.5,
+  //       autoAlpha: 1,
+  //     })
+  //   }
+  //   // console.log("run frame")
+  // },[ScrollYValue])
 
   return (
     <div className="frame-wrapper" ref={el}>

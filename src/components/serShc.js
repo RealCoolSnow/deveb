@@ -141,7 +141,7 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
     const texts = q(".grid-text-contain .span-back");
 
  
-    console.log("running showcase")
+    // console.log("running showcase")
     return()=>{
     
       // if (ScrollTrigger.getById("backBlackGrad")) {

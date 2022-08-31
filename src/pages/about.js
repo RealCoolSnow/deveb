@@ -229,7 +229,7 @@ const AboutPage = () => {
       };
       const images = q(".image-wrap");
       images.forEach((img, i) => {
-        console.log(img.offsetTop - img.offsetHeight / 5, img.offsetTop, img);
+        // console.log(img.offsetTop - img.offsetHeight / 5, img.offsetTop, img);
          tl.current = gsap
           .timeline({
             scrollTrigger: {

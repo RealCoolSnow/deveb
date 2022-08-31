@@ -254,7 +254,7 @@ function Header({ history }) {
   }, [movebtn]);
   useEffect(() => {
     const q = gsap.utils.selector(el);
-    console.log(contact);
+    // console.log(contact);
     if (contact === "Contact") {
       gsap.to(q(".estimateBtn"), {
         autoAlpha: 0,
