@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./footer.scss";
-import whats from "../assets/whs.svg";
 import be from "../assets/be.svg";
-import up from "../assets/up.svg";
 import insta from "../assets/insta.svg";
-import foot from "../assets/footlogo.svg";
 import git from "../assets/git.svg";
 import drib from "../assets/dribbble.svg";
 import linkedin from "../assets/linkedin.svg";

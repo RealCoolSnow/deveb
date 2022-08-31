@@ -13,7 +13,6 @@ const ProHead = ({ Cat, catFunction, width }) => {
 
   const [btnhover, setbtnHover] = useState(false);
   const el = useRef();
-  const myTl = useRef();
   const prjTl = useRef();
   const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);

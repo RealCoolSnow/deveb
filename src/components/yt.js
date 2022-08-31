@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useAppContext } from "../contexts/appcontext.js";
-import play from "../assets/play.svg";
 let YTPlayer;
 
 const Youto = ({ id, vidId, imgUrl, cat, name, desc }) => {

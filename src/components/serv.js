@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 // import {images} from '../utils/constans.js'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const services = ['Interior','Exterior','Rendering','Animation','Virtual Tour']
 
 const Serv = () => {
   const { isMobile } = useAppContext();

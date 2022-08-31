@@ -24,7 +24,6 @@ const ServicesPage = () => {
   const sl = useRef();
   const q = gsap.utils.selector(sl);
   const fooT= useRef();
-  const tl = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const { resetLoco, setReset, changePT, changePp, isMobile } = useAppContext();
   useLoco(!isMobile)

@@ -5,7 +5,6 @@ import '../about.scss'
 // import AbHead from '../components/abouthead.js'
 // import { FeaturedProducts, Hero, Services, Contact } from '../components'
 import { useAppContext } from "../contexts/appcontext.js";
-import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco';
 import Footer from '../components/footer';
 import FooterMB from "../components/footermb.jsx"
@@ -13,7 +12,6 @@ import SplitText from "../utils/split3.js"
 // const AbHead = lazy( () => import('../components/abouthead.js'))
 import About from '../components/about.js'
 import Helmet from 'react-helmet';
-import { BooleanKeyframeTrack } from 'three';
 // const Footer = lazy( () => import('../components/footer.js'))
 // const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
@@ -21,7 +19,6 @@ import { BooleanKeyframeTrack } from 'three';
 const AboutPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   const { isMobile, changePT, resetLoco,setReset, changePp } = useAppContext();
-  const view= useRef();
   useLoco(!isMobile);
   const el = useRef();
   const imgTl = useRef();

@@ -15,7 +15,6 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
   const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);
 
-  const [set, setset] = useState(false);
   useLayoutEffect(()=>{
     if(isMobile){
       gsap.set(q(".showcase-full-img.first"),{

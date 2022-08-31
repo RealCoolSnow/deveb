@@ -19,7 +19,6 @@ const Test = () => {
   // const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
   const [projects, setProjects] = useState(prjData);
   const my = useRef()
-  const mymb = useRef()
   const el = useRef();
   const q = gsap.utils.selector(el);
   const fooT= useRef();

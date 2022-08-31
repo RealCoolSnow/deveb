@@ -8,7 +8,6 @@ import Loading from "./Loading.js"
 import { home } from '../utils/constans.js'
 import useLoco from '../utils/useLoco.js';
 import { useAppContext } from "../contexts/appcontext.js";
-import Bowser from "bowser";
 // import design from "../assets/design1.jpg"
 // import viz from "../assets/viz.jpg"
 import "../serv.scss";
@@ -49,7 +48,6 @@ const HomePage = () => {
    
     changePT("Home");
     const changeBg = (dir)=>{
-
       gsap.to(q(".backgr"), { 
         autoAlpha: ()=> (dir === 1? 1: 0),
         duration:1
