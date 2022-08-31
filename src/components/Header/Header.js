@@ -104,23 +104,23 @@ function Header({ history }) {
     // }
   }, [ScrollYValue]);
 
-  const mbScroll = (e) => {
-    const scrollY = e.path[1].scrollY;
-    if (scrollY > 200 && !mbBlur) setMbBlur(true);
-    else if (scrollY < 200 && mbBlur) setMbBlur(false);
-  };
+  // const mbScroll = (e) => {
+  //   const scrollY = e.path[1].scrollY;
+  //   if (scrollY > 200 && !mbBlur) setMbBlur(true);
+  //   else if (scrollY < 200 && mbBlur) setMbBlur(false);
+  // };
 
-  useEffect(() => {
-    if (isMobile) {
-      window.addEventListener("scroll", mbScroll);
-    } else {
-      window.removeEventListener("scroll", mbScroll);
-    }
+  // useEffect(() => {
+  //   if (isMobile) {
+  //     window.addEventListener("scroll", mbScroll);
+  //   } else {
+  //     window.removeEventListener("scroll", mbScroll);
+  //   }
 
-    return () => {
-      window.removeEventListener("scroll", mbScroll);
-    };
-  }, [isMobile, mbBlur]);
+  //   return () => {
+  //     window.removeEventListener("scroll", mbScroll);
+  //   };
+  // }, [isMobile, mbBlur]);
 
   // Change at the top and navFade and Logo chagne animation
   useEffect(() => {
@@ -187,15 +187,15 @@ function Header({ history }) {
         });
       }
       gsap.to(q(".menuLines.l1"), {
-        rotate: 45,
-        y: () => (isMobile ? 2 : 6),
-        x: () => (isMobile ? 5 : 1),
+        rotate: -45,
+        y: () => (isMobile ? 4 : 3),
+        x: () => (isMobile ? 0 : 0),
         duration: 0.4,
       });
       gsap.to(q(".menuLines.l2"), {
-        rotate: -45,
-        y: () => (isMobile ? -7 : -3),
-        x: () => (isMobile ? 5 : 1),
+        rotate: 45,
+        y: () => (isMobile ? -3 : -4),
+        x: () => (isMobile ? 0 : 0),
         duration: 0.4,
       });
     } else {
@@ -254,7 +254,7 @@ function Header({ history }) {
   }, [movebtn]);
   useEffect(() => {
     const q = gsap.utils.selector(el);
-    console.log(contact);
+    // console.log(contact);
     if (contact === "Contact") {
       gsap.to(q(".estimateBtn"), {
         autoAlpha: 0,

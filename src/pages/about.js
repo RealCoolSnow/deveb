@@ -5,7 +5,6 @@ import '../about.scss'
 // import AbHead from '../components/abouthead.js'
 // import { FeaturedProducts, Hero, Services, Contact } from '../components'
 import { useAppContext } from "../contexts/appcontext.js";
-import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco';
 import Footer from '../components/footer';
 import FooterMB from "../components/footermb.jsx"
@@ -13,7 +12,6 @@ import SplitText from "../utils/split3.js"
 // const AbHead = lazy( () => import('../components/abouthead.js'))
 import About from '../components/about.js'
 import Helmet from 'react-helmet';
-import { BooleanKeyframeTrack } from 'three';
 // const Footer = lazy( () => import('../components/footer.js'))
 // const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
@@ -21,7 +19,6 @@ import { BooleanKeyframeTrack } from 'three';
 const AboutPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   const { isMobile, changePT, resetLoco,setReset, changePp } = useAppContext();
-  const view= useRef();
   useLoco(!isMobile);
   const el = useRef();
   const imgTl = useRef();
@@ -31,6 +28,8 @@ const AboutPage = () => {
   const tl = useRef();
 
   const q = gsap.utils.selector(el);
+ 
+
   useLayoutEffect(() => {
     const texts = q(".texts-wrap h2 div,.texts-wrap h5");
     // const spans = q("h2 div");
@@ -75,9 +74,9 @@ const AboutPage = () => {
       {
         y: 0,
         duration: 0.6,
-        delay:.4,
+        delay:.6,
         stagger: {
-          amount: 0.1,
+          amount: 0.15,
           ease: "power2.Out",
         },
       },
@@ -87,7 +86,7 @@ const AboutPage = () => {
       split.lines,
       {
         autoAlpha: 1,
-        delay:.4,
+        delay:.6,
         duration: 1.2,
         onComplete: ()=>  {
           gsap.to(q("h1"),{
@@ -100,7 +99,7 @@ const AboutPage = () => {
         })
       },
         stagger: {
-          amount: 0.1,
+          amount: 0.15,
           ease: "power2.Out",
         },
       },
@@ -108,6 +107,11 @@ const AboutPage = () => {
     )
      }
     //  );
+    useEffect(()=>{
+      document.fonts.ready.then(()=>{
+        functionnn()
+      })    
+    },[])
   useEffect(()=>{
     const pis = q(".text-wrap2 p");
     const h5selector = q(".texts-wrap h5");
@@ -118,10 +122,7 @@ const AboutPage = () => {
       const spans = q(".lineChildren");
       const h1select = q("h1");
 
-  document.fonts.ready.then(()=>{
-    functionnn()
-  })
-      
+   
       if(!isMobile){
         changePp("other")
         if(loadingTL.current){
@@ -225,7 +226,7 @@ const AboutPage = () => {
       };
       const images = q(".image-wrap");
       images.forEach((img, i) => {
-        console.log(img.offsetTop - img.offsetHeight / 5, img.offsetTop, img);
+        // console.log(img.offsetTop - img.offsetHeight / 5, img.offsetTop, img);
          tl.current = gsap
           .timeline({
             scrollTrigger: {
@@ -445,7 +446,7 @@ const AboutPage = () => {
           [mbp ],
           {
             y: 0,
-            duration: 0.6,
+            duration: 0.45,
             stagger: {
               amount: 0.2,
               ease: "power2.Out",
@@ -662,7 +663,7 @@ const AboutPage = () => {
         <meta name="description" content="We at deveb strive to fulfill your digital dreams and present your product in the most approachable way possible." />
       </Helmet>
 
-        <About/>
+        <About />
         {/* <AbHead/> */}
        { 
        !isMobile?    <Footer prj={true}/> : <FooterMB/>

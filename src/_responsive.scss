@@ -310,7 +310,7 @@
       h5{ font-size:33.5px;}
       #headLines, h1 {
         font-size: 39px;
-        img{width: 47px; height: 47px;}
+        img{width: 47px; height: 47px;  display: inline-block;}
       }
    }
    .text-wrap2:not(.pi){
@@ -409,13 +409,13 @@ section.process {
             // transform: translate(0px, 0px);
 
             &.active {
-              padding: 10.5px 6px;
+              // padding: 10.5px 6px;
               // background-color: #333333;
               border-radius: 50%;
-              margin-top: 5px;
+              // margin-top: 5px;
 
               .menuLines {
-                width: 20px;
+                // width: 20px;
               }
             }
           }
@@ -879,8 +879,10 @@ section.process {
   visibility: inherit;
   text-align: left;
   margin-top: 0;
-  line-height: .7;
+  line-height: 1.5;
   font-size: 1.491rem;
+  min-width: 500px;
+  max-width: 600px;
       }
       h1{
         display: none;
@@ -1143,6 +1145,7 @@ section.process {
         left: 0;
         transform: none;
         text-align: left;
+        width:100vw;
         // padding-top: 170px;
         padding-bottom: 0px;
 
@@ -1417,7 +1420,7 @@ section.process {
         a.logo.light {
           transform: translate(0.1vw, 0.5vw);
           svg.sm-logo{
-         height: 5vw;
+         height: 7vw;
          width: 34px;
         }}
 

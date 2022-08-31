@@ -30,7 +30,7 @@ export const menuReducer = (state, action)=>{
       return {...state, contact: action.payload}
     }
     if(action.type === "RESET_LOCO"){
-      console.log(state.resetLoco, "loco")
+      // console.log(state.resetLoco, "loco")
       return {...state, resetLoco: !state.resetLoco}
     }
     if(action.type === "SET_ANI"){

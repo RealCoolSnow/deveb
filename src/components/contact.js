@@ -3,7 +3,6 @@ import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import SecondaryBtn from "./SecondaryBtn/SecondaryBtn";
 import { useAppContext } from "../contexts/appcontext.js";
-import whats from "../assets/whs.svg";
 import be from "../assets/be.svg";
 import git from "../assets/git.svg";
 import insta from "../assets/insta.svg";
@@ -433,9 +432,10 @@ const Con = () => {
   return (
     <>
       {showThanks ? (
-        <Thanks showToggle={() => setShowThanks(false)} />
+        <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
       ) : (
-        
+        // <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
+          
         <section
           data-scroll-container
           ref={MainWrapper}

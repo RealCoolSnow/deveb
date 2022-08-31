@@ -5,21 +5,18 @@ import {
     withRouter,
   } from "react-router-dom";
   import "./App.scss";
-  import React, { useEffect, useRef } from "react";
+  import React, { useEffect, useRef,Suspense, lazy } from "react";
   import Frame from "./components/frame";
   // import Scrollbar from "./components/scrollbar/scrollbar.js";
   
   import {
-    About,
-    Home,
-    Contact,
-    FaQ,
-    Portfolio,
+    // About,
+    // Home,
+    // Contact,
     ErrorPage,
-    Services,
-    ProjectPage,
+    // Services,
+    // ProjectPage,
     Privacy,
-    Vimo,
     // Dope,
     // Comfeey,
     // Amarc,
@@ -32,6 +29,16 @@ import {
   
   import "./utils/loco.css";
   import Test from "./pages/test.jsx";
+  const Home = lazy(() => import('./pages/home.js'));
+  const Contact = lazy(() => import('./pages/contact.js'));
+  const Services = lazy(() => import('./pages/services.js'));
+  const ProjectPage = lazy(() => import('./pages/projectPage.js'));
+  const About = lazy(() => import('./pages/about.js'));
+  // const ErrorPage = lazy(() => import('./pages/errorpage.js'));
+
+
+  
+
   
   // import SmoothScrollbar from 'smooth-scrollbar';
   // import ScrollTriggerPlugin from './utils/ScrollTriggerPlugin';
@@ -51,11 +58,11 @@ import {
     function checkForMobileBg() {
       const width = window.innerWidth;
   
-      if (width > 768 && isMobile) {
+      if (width > 768 ) {
         setMobileFalse();
-      } else if (width < 768 && !isMobile) setMobileTrue();
+      } else if (width < 768 ) setMobileTrue();
     }
-    checkForMobileBg();
+    // checkForMobileBg();
   
     useEffect(() => {
       checkForMobileBg();
@@ -63,7 +70,7 @@ import {
       window.addEventListener("resize", checkForMobileBg);
   
       return () => window.removeEventListener("resize", checkForMobileBg);
-    }, [isMobile, setMobileTrue, setMobileFalse]);
+    }, [isMobile]);
   
     const circleRefs = useRef([]);
     circleRefs.current = [];
@@ -85,6 +92,7 @@ import {
         {!isMobile ? <Circle size="sm" delay="0" /> : null}
   
         <Switch>
+        <Suspense fallback={<div>Loading...</div>}>
           <Route path="/" exact>
             <Home />
           </Route>
@@ -108,13 +116,10 @@ import {
           <Route path="/projects/:id" exact>
             <ProjectPage />
           </Route>
-          <Route path="/projects/:tag?" exact>
+          <Route path="/projects" exact>
             <Test />
           </Route>
   
-          <Route path="/faq" exact>
-            <FaQ />
-          </Route>
           <Route path="/about" exact>
             <About />
           </Route>
@@ -134,6 +139,7 @@ import {
               <Test />
             </Route>  */}
   
+          </Suspense>
           <Route path="*">
             <ErrorPage />
           </Route>

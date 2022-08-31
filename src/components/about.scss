@@ -42,7 +42,7 @@
         .lineChildren{
             display: inline;
             opacity: 0;
-            transform: translateY(20%);
+            transform: translateY(40%);
         }
         img{
             width: 54px;
@@ -126,9 +126,9 @@
         &.js{ background: #E6F9FF; color:#98C9D9;}
         &.htm{ background: #E6FFFD; color:#98D9D4;}
         &.css{ background: #FFF7E6; color:#D9C398;}
-        &.naz{ background-image: url("../assets/covers/naz.jpg");}
-        &.amir{background-image: url("../assets/covers/amir.jpg");}
-        &.iliya{ background-image: url("../assets/covers/iliya.jpg");}
+        &.naz{ background-image: url("../assets/covers/naz.webp");}
+        &.amir{background-image: url("../assets/covers/amir.webp");}
+        &.iliya{ background-image: url("../assets/covers/iliya.webp");}
 
 
     

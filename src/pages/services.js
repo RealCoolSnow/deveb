@@ -7,7 +7,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
 import {servData} from '../utils/constans.js'
-import TestingCompo from '../components/testcompo.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Serv from '../components/serv.js'
 import Helmet from 'react-helmet'
@@ -25,7 +24,6 @@ const ServicesPage = () => {
   const sl = useRef();
   const q = gsap.utils.selector(sl);
   const fooT= useRef();
-  const tl = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const { resetLoco, setReset, changePT, changePp, isMobile } = useAppContext();
   useLoco(!isMobile)

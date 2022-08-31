@@ -13,7 +13,6 @@ const PrjContain = ({ projects, Cat }) => {
 
   const el = useRef();
   const q = gsap.utils.selector(el);
-  const newCat = Cat.split(" ").join("");
 
   const zoomPic = (e) => {
     gsap.fromTo(

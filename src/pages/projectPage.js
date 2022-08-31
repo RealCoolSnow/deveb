@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import Textbox from "../components/textbox/textbox.js";
 import Coverimage from "../components/textbox/coverimage.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Loading from "./Loading.js"
 import SplitText from "../utils/split3.js"
 import useLoco,{ scrolltop} from '../utils/useLoco.js'
 import Footer from'../components/footer.js'

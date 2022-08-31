@@ -2,19 +2,17 @@ import React, { lazy, Suspense, useEffect, useRef } from 'react'
 import Head from'../components/homeheader.js'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from "gsap"
-import TestingCompo from '../components/testcompo.js';
 // import Con from'../components/contact.js'
 // import Showcase from '../components/showcase.js'
 import Loading from "./Loading.js"
-import { home, homeExt } from '../utils/constans.js'
+import { home } from '../utils/constans.js'
 import useLoco from '../utils/useLoco.js';
 import { useAppContext } from "../contexts/appcontext.js";
-import Bowser from "bowser";
 // import design from "../assets/design1.jpg"
 // import viz from "../assets/viz.jpg"
 import "../serv.scss";
-import ServHead from '../components/serviceshead'
-import MServHead from '../components/MServiceHead/MobileServiceHead'
+// import ServHead from '../components/serviceshead'
+// import MServHead from '../components/MServiceHead/MobileServiceHead'
 import Process from '../components/process.js'
 import Footer from'../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
@@ -24,11 +22,11 @@ import Three from '../components/Blob/Three.js';
 import { options, camera } from '../components/Blob/utils'
 
 // const Loading = lazy( () => import('./Loading.js'))
+const MServHead = lazy( () => import('../components/MServiceHead/MobileServiceHead'))
+
 const HomePage = () => {
-  const h2wrap = useRef();
   const pintl = useRef();
   const el = useRef();
-  const tl = useRef();
   const proTL = useRef();
   const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer, changePT} = useAppContext();
   useLoco(!isMobile)
@@ -36,56 +34,34 @@ const HomePage = () => {
   const q = gsap.utils.selector(el);
   const fooT= useRef();
   const imageTimeline = useRef();
-  const style = {
-    background: "radial-gradient(50% 42.9% at 50% 42.91%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.549) 100%)",
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    top: 0,
-    left: 0,
-    opacity: .5,
-  }
-  useEffect(() => {
-    changePT("Home");
-    setTimeout(() => {
-      setReset()
-    }, 500);
-    return ()=>{
-      }
-    }, [isMobile])
-    const ref = React.createRef();
-    const refviz = React.createRef();
-  
-  useEffect(()=>{
-    // const browser = Bowser.getParser(window.navigator.userAgent);
+ 
+  // useEffect(() => {
+  //   changePT("Home");
+  //   setTimeout(() => {
+  //     setReset()
+  //   }, 500);
+  //   return ()=>{
+  //     }
+  //   }, [isMobile])
 
-// console.log(`The current browser name is "${browser.getBrowserName()}"`);
-    // window.onload = function () {
-      // var uagent = browser.getBrowserName();
-      // var safari = uagent.match(/safari\/(\S+)/);
-      // console.log(uagent)
-      //  if(uagent === "Safari"){
-        // options.setpurple();
-        // gsap.set(q(".hue-can"), {autoAlpha:0})
-      //  }
-    // }
+  useEffect(()=>{
    
-    const changeBg = (direction)=>{
+    changePT("Home");
+    const changeBg = (dir)=>{
       gsap.to(q(".backgr"), { 
-        autoAlpha: ()=> (direction === 1? 1: 0),
+        autoAlpha: ()=> (dir === 1? 1: 0),
         duration:1
       })
-      direction === 1? changePp("Contact"): changePp("other")
+      dir === 1? changePp("Contact"): changePp("other")
     }
-    if (!isMobile){
+    if (isMobile=== false){
+      console.log("runnig web")
        options.setlightpink();
       if(pintl.current){
         pintl.current.progress(0)
-        // entvideo()
       }
       if( proTL.current ){
         proTL.current.progress(0)
-        // entvideo()
       }
       camera.position.set(0, 9.9, 17)
       gsap.set(q(".head"),{
@@ -96,8 +72,6 @@ const HomePage = () => {
     {
       opacity:0,
     })
-
-    const headSpans = q(".headSpan");
 
   
     const spans = q(".h1 h1 ");
@@ -118,12 +92,9 @@ const HomePage = () => {
         
           },
           onReverseComplete:()=>  {
-            // uagent !== "Safari" && 
              options.setlightpink()
-            // uagent === "Safari" &&  options.setpurple()
 
             gsap.to(q(".hue-can"),{
-              // background: "#f5f5f7",
               autoAlpha:()=> 0,
               duration:.4,
           })
@@ -139,8 +110,6 @@ const HomePage = () => {
       zednum: 17,
     }
 
-    // console.log('Camera')
-    // console.log(camera)
   
     pintl.current = gsap
       .timeline({
@@ -149,13 +118,7 @@ const HomePage = () => {
           trigger: q(".head"),
           start:()=> "top top",
           end:()=> "bottom top+=10%",
-          // markers:true,
           id:"pintl",
-          // pin:true,
-          // pinReparent:true,
-          // anticipatePin:1,
-          // onLeave:()=> leftvideo(),
-          // onEnterBack: ()=> entvideo(),
 
           scrub: 0.5,
         },
@@ -163,9 +126,7 @@ const HomePage = () => {
       .to(cam,{
         num: 0,
         zednum: 22,
-        size: 6,
         duration:25,
-        // scrub: true,
         onUpdate: () => {
           camera.position.set(0, cam.num, cam.zednum)
         }
@@ -210,8 +171,7 @@ const HomePage = () => {
 
            texts.forEach((txt) => {
       
-            function updateBodyColor(color) {
-              var bg = txt.dataset.bg;
+            function updateBodyColor() {
               var cur = txt.dataset.cur;
               changeScPointer({ curchange:true, cur: cur, })
               gsap.to(el.current, {
@@ -267,8 +227,6 @@ const HomePage = () => {
            const imageArrayfull = q(".show-image");
            const imagewrap = q(".show-img-contain");
            const endTr = q(".show-text-contain");
-           const imgset0= [imageArrayfull[0],imageArrayfull[1]];
-           const imgset1= [imageArrayfull[2],imageArrayfull[3],imageArrayfull[4]]
           
            imagewrap.forEach((it,j)=>{
           
@@ -276,7 +234,6 @@ const HomePage = () => {
               zIndex: (i, target, targets) => targets.length - i,
             });
             const name = ".show-images."+ "r" +j + " .show-image:not(.end)";
-            console.log(name)
                     const images = q(name);
               
                     images.forEach((image, i) => {
@@ -290,10 +247,6 @@ const HomePage = () => {
                           endTrigger: endTr[j],
                           end: () => "+=" + window.innerHeight,
                           scrub: true,
-                          // invalidateOnRefresh: true,
-                          // markers:true,
-                          // anticipatePin: 1,
-                          // onEnter: () => console.log(images),
                         },
                       })
               
@@ -336,15 +289,6 @@ const HomePage = () => {
                         0
                       );
                     });
-
-                    // ScrollTrigger.create({
-                    //   scroller:"#viewport",
-                    //   trigger: imagewrap[j],
-                    //   start: ()=> "center center",
-                    //   endTrigger: endTr[j],
-                    //   end: ()=> "bottom bottom",
-                    //   id: "pinSc",
-                    //  });
             })
             
             return()=>{
@@ -379,18 +323,19 @@ const HomePage = () => {
             if(imageTimeline.current){
               imageTimeline.current.kill()
             }
-            // camera.position.set(0, -12, 50)
-            // if(ScrollTrigger.getById("pinSc")){
-            //   ScrollTrigger.getById("pinSc").kill()
-            // }
-            // imageTimeline.current.kill()
            }
           }
           else if(isMobile){
+           console.log("runnig mobile")
+
             el.current.style.transform="none";
             gsap.set(q("section.head"),{
               clearProps: "transform"
             })
+            gsap.set(q(".process-grid, .prtrig"),{
+              clearProps: "transform"
+            })
+           
             options.setlightpink();
             if(pintl.current){
               pintl.current.progress(0)
@@ -452,7 +397,7 @@ const HomePage = () => {
 
       </div>
 
-      {/* <Suspense fallback={ <Loading/> }> */}
+      <Suspense fallback={ <Loading/> }>
         {
           isMobile ?
             <MServHead txt="Top projects" />
@@ -468,9 +413,8 @@ const HomePage = () => {
           isMobile?  <FooterMB />: <Footer /> 
         }
        
-        {/* <TestingCompo/> */}
 
-      {/* </Suspense> */}
+      </Suspense>
 
     </main>
   )
