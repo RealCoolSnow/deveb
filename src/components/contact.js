@@ -171,17 +171,17 @@ const Con = () => {
     const checkFieldsResult = checkFields(true)
 
     if (!checkFieldsResult) {
-      console.log('checkFields')
-      console.log(checkFieldsResult)
+      // console.log('checkFields')
+      // console.log(checkFieldsResult)
       return;
     }
 
-    try {
-      await recap.current.executeAsync();
-    } catch (err) {
-      console.log("Google recaptcha failed");
-      return;
-    }
+    // try {
+    //   await recap.current.executeAsync();
+    // } catch (err) {
+    //   console.log("Google recaptcha failed");
+    //   return;
+    // }
 
     setSendingForm(true);
     cursorLoading(true);
@@ -190,11 +190,12 @@ const Con = () => {
 
     ContactForm.name = form.name;
     ContactForm.email = form.email;
-    ContactForm.budg = budgets[activeBudg];
-
+    
     if (form.message) ContactForm.message = form.message;
-
+    
     const { needs, budgets } = contactData;
+
+    ContactForm.budg = budgets[activeBudg];
 
     if (activeNeeds) {
       const needsArr = needs.filter((val, idx) => activeNeeds.includes(idx));
@@ -408,11 +409,8 @@ const Con = () => {
         name: formErr.name,
         budget: "Please select a budget",
       });
-      console.log('budget set successfully')
     }
 
-    console.log('formErr')
-    console.log(formErr)
   };
 
   useEffect(() => {
