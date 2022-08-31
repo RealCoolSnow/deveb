@@ -13,7 +13,7 @@ import {
     // About,
     // Home,
     // Contact,
-    ErrorPage,
+    // ErrorPage,
     // Services,
     // ProjectPage,
     Privacy,
@@ -34,6 +34,8 @@ import {
   const Services = lazy(() => import('./pages/services.js'));
   const ProjectPage = lazy(() => import('./pages/projectPage.js'));
   const About = lazy(() => import('./pages/about.js'));
+  const ErrorPage = lazy(() => import('./pages/errorpage.js'));
+
 
   
 

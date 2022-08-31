@@ -3,7 +3,7 @@ import ProHead from '../components/projectshead.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Footer from '../components/footer.js'
 import FooterMB from '../components/footermb.jsx'
-
+import Helmet from 'react-helmet'
 import { prjData } from '../utils/projectsData.js'
 import { useParams } from 'react-router'
 import {gsap} from 'gsap';
@@ -245,6 +245,10 @@ const Test = () => {
 
   return( 
     <main id="viewport" ref={el} data-scroll-container className="projects-page" >
+       <Helmet>
+        <title>Deveb | Projects</title>
+        <meta name="description" content="We provide all the services you need to ship your digital product and reach to your target audience. From analysis to design, development and finally launching." />
+      </Helmet>
       <div className="fade" >
         {/* <div className="fade-layer1" style={darklay1}></div> */}
 
