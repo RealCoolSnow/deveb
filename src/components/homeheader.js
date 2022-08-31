@@ -1,12 +1,9 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
-import Scene from "./three/scene.js";
 import { Link } from "react-router-dom";
-import Three from "./Blob/Three.js"
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
-import { options } from './Blob/utils'
 
 
 import { gsap } from "gsap";
