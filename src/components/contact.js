@@ -171,17 +171,15 @@ const Con = () => {
     const checkFieldsResult = checkFields(true)
 
     if (!checkFieldsResult) {
-      // console.log('checkFields')
-      // console.log(checkFieldsResult)
       return;
     }
 
-    // try {
-    //   await recap.current.executeAsync();
-    // } catch (err) {
-    //   console.log("Google recaptcha failed");
-    //   return;
-    // }
+    try {
+      await recap.current.executeAsync();
+    } catch (err) {
+      console.log("Google recaptcha failed");
+      return;
+    }
 
     setSendingForm(true);
     cursorLoading(true);
