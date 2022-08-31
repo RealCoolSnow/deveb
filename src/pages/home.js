@@ -2,11 +2,10 @@ import React, { lazy, Suspense, useEffect, useRef } from 'react'
 import Head from'../components/homeheader.js'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from "gsap"
-import TestingCompo from '../components/testcompo.js';
 // import Con from'../components/contact.js'
 // import Showcase from '../components/showcase.js'
 import Loading from "./Loading.js"
-import { home, homeExt } from '../utils/constans.js'
+import { home } from '../utils/constans.js'
 import useLoco from '../utils/useLoco.js';
 import { useAppContext } from "../contexts/appcontext.js";
 import Bowser from "bowser";
@@ -27,10 +26,8 @@ import { options, camera } from '../components/Blob/utils'
 const MServHead = lazy( () => import('../components/MServiceHead/MobileServiceHead'))
 
 const HomePage = () => {
-  const h2wrap = useRef();
   const pintl = useRef();
   const el = useRef();
-  const tl = useRef();
   const proTL = useRef();
   const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer, changePT} = useAppContext();
   useLoco(!isMobile)
@@ -38,37 +35,29 @@ const HomePage = () => {
   const q = gsap.utils.selector(el);
   const fooT= useRef();
   const imageTimeline = useRef();
-  const style = {
-    background: "radial-gradient(50% 42.9% at 50% 42.91%, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.549) 100%)",
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    top: 0,
-    left: 0,
-    opacity: .5,
-  }
-  useEffect(() => {
-    changePT("Home");
-    setTimeout(() => {
-      setReset()
-    }, 500);
-    return ()=>{
-      }
-    }, [isMobile])
-    const ref = React.createRef();
-    const refviz = React.createRef();
-  
+ 
+  // useEffect(() => {
+  //   changePT("Home");
+  //   setTimeout(() => {
+  //     setReset()
+  //   }, 500);
+  //   return ()=>{
+  //     }
+  //   }, [isMobile])
+
   useEffect(()=>{
-  
    
-    const changeBg = (direction)=>{
+    changePT("Home");
+    const changeBg = (dir)=>{
+
       gsap.to(q(".backgr"), { 
-        autoAlpha: ()=> (direction === 1? 1: 0),
+        autoAlpha: ()=> (dir === 1? 1: 0),
         duration:1
       })
-      direction === 1? changePp("Contact"): changePp("other")
+      dir === 1? changePp("Contact"): changePp("other")
     }
-    if (!isMobile){
+    if (isMobile=== false){
+      console.log("runnig web")
        options.setlightpink();
       if(pintl.current){
         pintl.current.progress(0)
@@ -184,8 +173,7 @@ const HomePage = () => {
 
            texts.forEach((txt) => {
       
-            function updateBodyColor(color) {
-              var bg = txt.dataset.bg;
+            function updateBodyColor() {
               var cur = txt.dataset.cur;
               changeScPointer({ curchange:true, cur: cur, })
               gsap.to(el.current, {
@@ -340,6 +328,8 @@ const HomePage = () => {
            }
           }
           else if(isMobile){
+           console.log("runnig mobile")
+
             el.current.style.transform="none";
             gsap.set(q("section.head"),{
               clearProps: "transform"

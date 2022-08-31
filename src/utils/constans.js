@@ -3,11 +3,11 @@
 // import t3d from '../assets/covers/ren.jpg'
 // import ani from '../assets/covers/ani.jpg'
 // import vr from '../assets/covers/vr.jpg'
-import dopegood from '../assets/covers/dopegood.jpg'
-import amarc from '../assets/covers/am-arc.jpg'
-import vim from '../assets/covers/vim.jpg'
-import dopop from '../assets/covers/dopop2.jpg'
-import comfeey from '../assets/covers/comfeey.jpg'
+import dopegood from '../assets/covers/dopegood.webp'
+import amarc from '../assets/covers/am-arc.webp'
+import vim from '../assets/covers/vim.webp'
+import dopop from '../assets/covers/dopop2.webp'
+import comfeey from '../assets/covers/comfeey.webp'
 
 
 

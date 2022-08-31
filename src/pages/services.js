@@ -7,7 +7,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
 import {servData} from '../utils/constans.js'
-import TestingCompo from '../components/testcompo.js'
 import { useAppContext } from "../contexts/appcontext.js";
 import Serv from '../components/serv.js'
 import Helmet from 'react-helmet'

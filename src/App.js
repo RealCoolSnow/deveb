@@ -51,11 +51,11 @@ import {
     function checkForMobileBg() {
       const width = window.innerWidth;
   
-      if (width > 768 && isMobile) {
+      if (width > 768 ) {
         setMobileFalse();
-      } else if (width < 768 && !isMobile) setMobileTrue();
+      } else if (width < 768 ) setMobileTrue();
     }
-    checkForMobileBg();
+    // checkForMobileBg();
   
     useEffect(() => {
       checkForMobileBg();
@@ -63,7 +63,7 @@ import {
       window.addEventListener("resize", checkForMobileBg);
   
       return () => window.removeEventListener("resize", checkForMobileBg);
-    }, [isMobile, setMobileTrue, setMobileFalse]);
+    }, [isMobile]);
   
     const circleRefs = useRef([]);
     circleRefs.current = [];
@@ -112,9 +112,6 @@ import {
             <Test />
           </Route>
   
-          <Route path="/faq" exact>
-            <FaQ />
-          </Route>
           <Route path="/about" exact>
             <About />
           </Route>
