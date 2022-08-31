@@ -40,12 +40,11 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
               <div className="mid">
                 <span className="head">Social</span>
                 <MenuLink to="https://www.instagram.com/deveb.co/?hl=en" name="insta" txt="Instagram" moveLinks={moveLinks} linksOut={linksOut}/>
-                <MenuLink to="https://dribbble.com/Deveb_co/about"  name="Telegram" txt="Dribbble" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://dribbble.com/deveb-co"  name="Dribbble" txt="Dribbble" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://www.behance.net/deveb" name="behance" txt="Behance" moveLinks={moveLinks} linksOut={linksOut}/>
-                <MenuLink to="https://www.linkedin.com/company/deveb/" name="Linkedin" txt="Linkedin" moveLinks={moveLinks} linksOut={linksOut}/>
+                <MenuLink to="https://www.linkedin.com/company/deveb-co/" name="Linkedin" txt="Linkedin" moveLinks={moveLinks} linksOut={linksOut}/>
                 <MenuLink to="https://github.com/deveb-co" name="Github" txt="Github" moveLinks={moveLinks} linksOut={linksOut}/>
-                <MenuLink to="https://www.upwork.com/agencies/~015873da0933dd1dbd/" name="upwork" txt="Upwork" moveLinks={moveLinks} linksOut={linksOut}/>
-              
+                <MenuLink to="https://twitter.com/Deveb_co" name="Twitter" txt="Twitter" moveLinks={moveLinks} linksOut={linksOut}/>
               </div>
 
               {/* <div className="bott">
