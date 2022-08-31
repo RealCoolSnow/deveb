@@ -5,17 +5,17 @@ import {
     withRouter,
   } from "react-router-dom";
   import "./App.scss";
-  import React, { useEffect, useRef } from "react";
+  import React, { useEffect, useRef,Suspense, lazy } from "react";
   import Frame from "./components/frame";
   // import Scrollbar from "./components/scrollbar/scrollbar.js";
   
   import {
-    About,
-    Home,
-    Contact,
+    // About,
+    // Home,
+    // Contact,
     ErrorPage,
-    Services,
-    ProjectPage,
+    // Services,
+    // ProjectPage,
     Privacy,
     // Dope,
     // Comfeey,
@@ -29,6 +29,14 @@ import {
   
   import "./utils/loco.css";
   import Test from "./pages/test.jsx";
+  const Home = lazy(() => import('./pages/home.js'));
+  const Contact = lazy(() => import('./pages/contact.js'));
+  const Services = lazy(() => import('./pages/services.js'));
+  const ProjectPage = lazy(() => import('./pages/projectPage.js'));
+  const About = lazy(() => import('./pages/about.js'));
+
+  
+
   
   // import SmoothScrollbar from 'smooth-scrollbar';
   // import ScrollTriggerPlugin from './utils/ScrollTriggerPlugin';
@@ -82,6 +90,7 @@ import {
         {!isMobile ? <Circle size="sm" delay="0" /> : null}
   
         <Switch>
+        <Suspense fallback={<div>Loading...</div>}>
           <Route path="/" exact>
             <Home />
           </Route>
@@ -131,6 +140,7 @@ import {
           <Route path="*">
             <ErrorPage />
           </Route>
+          </Suspense>
         </Switch>
       </Router>
     );
