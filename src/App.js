@@ -13,7 +13,7 @@ import {
     // About,
     // Home,
     // Contact,
-    // ErrorPage,
+    ErrorPage,
     // Services,
     // ProjectPage,
     Privacy,
@@ -34,7 +34,7 @@ import {
   const Services = lazy(() => import('./pages/services.js'));
   const ProjectPage = lazy(() => import('./pages/projectPage.js'));
   const About = lazy(() => import('./pages/about.js'));
-  const ErrorPage = lazy(() => import('./pages/errorpage.js'));
+  // const ErrorPage = lazy(() => import('./pages/errorpage.js'));
 
 
   
@@ -139,10 +139,10 @@ import {
               <Test />
             </Route>  */}
   
+          </Suspense>
           <Route path="*">
             <ErrorPage />
           </Route>
-          </Suspense>
         </Switch>
       </Router>
     );
