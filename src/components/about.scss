@@ -25,12 +25,16 @@
     opacity: 0;
     z-index: 1;
     }
-    h2, h5{
+     h5{
         position: absolute;
         font-weight: 500;
         text-align: center;
         color: var(--black-font-main);
         // transform: translateY(44%);
+        font-size: 1.206rem;
+        z-index:1;
+        opacity: 0;
+        max-width: 22rem;
     }
     h1{display: none;}
     #headLines, h1{
@@ -52,13 +56,10 @@
             top:10px;
         }
     }
-    h5{
-        font-size: 1.206rem;
-        z-index:1;
-        opacity: 0;
-        max-width: 22rem;
-        // padding: 171px 47px 0px;
-    }
+    // h5{
+     
+    //     // padding: 171px 47px 0px;
+    // }
 }
 // .texts-wrap + .image-wrap{ margin-top: 81vh;}
 .image-wrap{

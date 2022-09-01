@@ -1,22 +1,26 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React from "react";
 import "./about.scss";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import img1 from "../assets/covers/ab2.jpg";
-import img2 from "../assets/covers/ab1.jpg";
+// import gsap from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
+import img1 from "../assets/covers/ab2.webp";
+import img1mb from "../assets/covers/abm2.webp";
+
+import img2 from "../assets/covers/ab1.webp";
+import img2mb from "../assets/covers/abm1.webp";
+
 import winkle from "../assets/about.png";
 
 // import imgMB from "../assets/aboutmb.jpg";
 
 import { useAppContext } from "../contexts/appcontext";
 const About = () => {
-  const el = useRef();
+  // const el = useRef();
   // const myTl = useRef();
   // const imgTl = useRef();
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 const {isMobile} = useAppContext();
-  const q = gsap.utils.selector(el);
+  // const q = gsap.utils.selector(el);
 
 
   return (
@@ -52,7 +56,7 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap fc">
-        <img src={img2} />
+        <img src={isMobile?img2mb:img2} />
       </div>
       <div className="members-wrap">
         <div className="mem-row">
@@ -86,7 +90,7 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap so">
-        <img src={img1} />
+        <img src={isMobile?img1mb:img1} />
       </div>
       
       <div className="ab" >
