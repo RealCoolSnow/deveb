@@ -1,7 +1,7 @@
 import React, { useEffect, lazy, Suspense, useRef, useLayoutEffect } from 'react'
 import gsap from "gsap"
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import '../about.scss'
+// import '../about.scss'
 // import AbHead from '../components/abouthead.js'
 // import { FeaturedProducts, Hero, Services, Contact } from '../components'
 import { useAppContext } from "../contexts/appcontext.js";

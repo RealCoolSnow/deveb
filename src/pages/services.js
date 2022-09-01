@@ -13,7 +13,7 @@ import Helmet from 'react-helmet'
 
 // const Serv = lazy( () => import('../components/serv.js'))
 const ShowcaseServ = lazy( () => import('../components/serShc.js'))
-const Con = lazy( () => import('../components/contact.js'))
+// const Con = lazy( () => import('../components/contact.js'))
 const Footer = lazy( () => import('../components/footer.js'))
 const FooterMB = lazy( () => import('../components/footermb.jsx'))
 

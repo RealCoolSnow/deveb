@@ -35,14 +35,14 @@ const HomePage = () => {
   const fooT= useRef();
   const imageTimeline = useRef();
  
-  // useEffect(() => {
-  //   changePT("Home");
-  //   setTimeout(() => {
-  //     setReset()
-  //   }, 500);
-  //   return ()=>{
-  //     }
-  //   }, [isMobile])
+  useEffect(() => {
+    changePT("Home");
+    setTimeout(() => {
+      setReset()
+    }, 500);
+    return ()=>{
+      }
+    }, [isMobile])
 
   useEffect(()=>{
    
