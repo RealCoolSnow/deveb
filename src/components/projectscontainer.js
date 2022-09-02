@@ -9,10 +9,10 @@ import Youto from "./yt.js";
 gsap.registerPlugin(ScrollTrigger);
 // let player;
 const PrjContain = ({ projects, Cat }) => {
-  const { isMobile, resetLoco, changePointer, aniClick } = useAppContext();
+  const { isMobile, changePointer } = useAppContext();
 
   const el = useRef();
-  const q = gsap.utils.selector(el);
+  // const q = gsap.utils.selector(el);
 
   const zoomPic = (e) => {
     gsap.fromTo(

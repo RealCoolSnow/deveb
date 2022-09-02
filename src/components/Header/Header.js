@@ -3,7 +3,7 @@ import { Link, withRouter, useHistory } from "react-router-dom";
 import { useAppContext } from "../../contexts/appcontext.js";
 import ToggleMenu from "./ToggleMenu";
 import { links } from "../../utils/constans";
-import ThemeSwitch from "./../ThemeSwitch/ThemeSwitch";
+// import ThemeSwitch from "./../ThemeSwitch/ThemeSwitch";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -17,9 +17,6 @@ function Header({ history }) {
     ScrollYValue,
     contact,
   } = useAppContext();
-
-  const [atTheTop, setAtTheTop] = useState(true);
-  const [mbBlur, setMbBlur] = useState(false);
 
   const [activePath, setActivePath] = useState("home");
   const [movebtn, setMoveBtn] = useState(false);
@@ -46,10 +43,7 @@ function Header({ history }) {
   const el = useRef();
   const tempSvg = useRef();
   const mainSvg = useRef();
-  // useLayoutEffect(() => {
-  //   const q = gsap.utils.selector(el);
-  //   pageTitle === "sp" && gsap.set(q(".fadelinks"), {autoAlpha:0})
-  // }, [])
+
   useLayoutEffect(()=>{
     const q = gsap.utils.selector(el);
     gsap.set(q(".estimateBtn p")[1],{yPercent:-150, xPercent:0})
@@ -98,29 +92,7 @@ function Header({ history }) {
       duration: 0.25,
       ease: "Power3.In",
     });
-    // }
-    // else if (ScrollYValue  === 0){
-
-    // }
   }, [ScrollYValue]);
-
-  // const mbScroll = (e) => {
-  //   const scrollY = e.path[1].scrollY;
-  //   if (scrollY > 200 && !mbBlur) setMbBlur(true);
-  //   else if (scrollY < 200 && mbBlur) setMbBlur(false);
-  // };
-
-  // useEffect(() => {
-  //   if (isMobile) {
-  //     window.addEventListener("scroll", mbScroll);
-  //   } else {
-  //     window.removeEventListener("scroll", mbScroll);
-  //   }
-
-  //   return () => {
-  //     window.removeEventListener("scroll", mbScroll);
-  //   };
-  // }, [isMobile, mbBlur]);
 
   // Change at the top and navFade and Logo chagne animation
   useEffect(() => {
@@ -129,48 +101,11 @@ function Header({ history }) {
     }
 
     const q = gsap.utils.selector(el);
-    const navlinks = q(".navlinks-contain li.fadelinks");
+    // const navlinks = q(".navlinks-contain li.fadelinks");
 
-    // const navFade = (direction, navlinks) => {
-
-    //   direction=== 1 ? setAtTheTop(false) : setAtTheTop(true)
-
-    //   return (
-    //     gsap.to(navlinks, {
-    //       y: () => (direction === 1 ? -20 : 0),
-    //       duration: 0.5,
-    //     }),
-    //     gsap.to(navlinks, {
-    //       autoAlpha: () => (direction === 1 ? 0 : 1),
-    //       duration: 0.4,
-    //     }),
-    //     gsap.to(tempSvg.current, {
-    //       autoAlpha: () => (direction === 1 ? 0 : 1),
-    //       y: () => (direction === 1 ? -20 : 0),
-    //       duration: 0.25,
-    //       ease: 'Power3.In'
-    //     }),
-    //     gsap.to(mainSvg.current, {
-    //       autoAlpha: () => (direction === 1 ? 1 : 0),
-    //       y: () => (direction === 1 ? 0 : 27),
-    //       duration: 0.25,
-    //       ease: 'Power3.In'
-    //     })
-    //   );
-    // };
-
-    // ScrollTrigger.create({
-    //   id: "navFade",
-    //   start: "top top-=10vh",
-    //   onEnter: ({direction})=> navFade(direction, navlinks),
-    //   onLeaveBack: ({direction})=> navFade(direction, navlinks),
-    // })
     return () => {
-      // console.log(ScrollTrigger.getById("navFade"))
-      // ScrollTrigger.getById("navFade").kill();
-      // console.log("navfade killed")
     };
-  }, [activePath, atTheTop]);
+  }, [activePath]);
 
   // Lock Scroll if menu is open
   useEffect(() => {
@@ -269,8 +204,6 @@ function Header({ history }) {
   }, [contact]);
   useEffect(()=>{
     const q = gsap.utils.selector(el);
-    // gsap.set(q(".estimateBtn p")[1],{yPercent:-100, xPercent:0})
-    // gsap.set(q(".estimateBtn p")[0],{xPercent:100})
 
     gsap.to(q(".estimateBtn p")[1],{
       xPercent: -100,

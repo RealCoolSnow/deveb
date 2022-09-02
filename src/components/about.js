@@ -40,10 +40,10 @@ const {isMobile} = useAppContext();
         
          {/* <h2 id="headLines" style={{paddingTop:"150px"}}> */}
         <div id="headLines" >
-          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}}src={winkle}/>
+          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}}src={winkle} alt="pointer emoji"/>
         </div> 
         <h1 >
-          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}} src={winkle}/>
+          We launch digital products in the best way possible <img style={isMobile?{display:"none"}:{}} src={winkle} alt="pointer emoji"/>
         </h1> 
 
            {/* </h2> */}
@@ -56,7 +56,7 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap fc">
-        <img src={isMobile?img2mb:img2} />
+        <img src={isMobile?img2mb:img2} alt="team working" />
       </div>
       <div className="members-wrap">
         <div className="mem-row">
@@ -90,7 +90,7 @@ const {isMobile} = useAppContext();
         </h5>
       </div>
       <div className="image-wrap so">
-        <img src={isMobile?img1mb:img1} />
+        <img src={isMobile?img1mb:img1} alt="team working"/>
       </div>
       
       <div className="ab" >

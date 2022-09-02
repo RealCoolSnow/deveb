@@ -12,10 +12,10 @@ import { gsap } from "gsap";
 
 const Head = () => {
   const { isMobile, resetLoco } = useAppContext();
- const [url, seturl] = useState("")
+//  const [url, seturl] = useState("")
   const el = useRef();
   const q = gsap.utils.selector(el);
-  const vidRef = useRef();
+  // const vidRef = useRef();
   useLayoutEffect(()=>{
    
     

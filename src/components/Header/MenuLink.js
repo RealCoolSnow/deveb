@@ -2,8 +2,8 @@ import React, {useState, useRef} from 'react'
 import { useAppContext } from '../../contexts/appcontext';
 export default function MenuLink({ name, to, txt, linksOut, moveLinks }) {
   const copycl = useRef()
-  const {changePp, changePointer} = useAppContext();
-  const [emailHover, setEmHover] = useState(false);
+  const {changePointer} = useAppContext();
+  // const [emailHover, setEmHover] = useState(false);
   function copyToClipboard() {
     var from = copycl.current;
     var range = document.createRange();

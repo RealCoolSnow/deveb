@@ -6,25 +6,25 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { useAppContext } from "../contexts/appcontext.js";
 
-const ProHead = ({ Cat, catFunction, width }) => {
-  const { isMobile, setReset, resetLoco} = useAppContext();
+const ProHead = ({  width }) => {
+  const { isMobile,} = useAppContext();
 
   const [activeTag, setActiveTag] = useState("");
 
-  const [btnhover, setbtnHover] = useState(false);
+  // const [btnhover, setbtnHover] = useState(false);
   const el = useRef();
   const prjTl = useRef();
   const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);
-  const darklay2 = {
-    position: "absolute",
-    top: 0,
-    width: "100%",
-    height: "100%",
-    background: "black",
-    zIndex: 100,
-    opacity:0,
-  }
+  // const darklay2 = {
+  //   position: "absolute",
+  //   top: 0,
+  //   width: "100%",
+  //   height: "100%",
+  //   background: "black",
+  //   zIndex: 100,
+  //   opacity:0,
+  // }
   useLayoutEffect(() => {
     const heading = q("#stickbb h1 div");
     // const lines = q(".fil-contain .lines");
@@ -38,7 +38,7 @@ const ProHead = ({ Cat, catFunction, width }) => {
   }, [isMobile])
   useEffect(()=>{
     const heading = q("h1 div");
-    const lines = q(".fil-contain .lines");
+    // const lines = q(".fil-contain .lines");
     prjTl.current = gsap.timeline();
     prjTl.current.to([heading], {
       yPercent: 0,
@@ -71,8 +71,8 @@ useEffect(()=>{
  
 },[isMobile])
 
-  const tags = ['Projects','Interior','Exterior','Animation','3D Rendering', 'Concept', 'Virtual tour', '3D Model']
-  const mTags = ['Projects','Interior','Exterior', 'Concept', 'Animation','Rendering', 'Virtual tour', '3D Model']
+  // const tags = ['Projects','Interior','Exterior','Animation','3D Rendering', 'Concept', 'Virtual tour', '3D Model']
+  // const mTags = ['Projects','Interior','Exterior', 'Concept', 'Animation','Rendering', 'Virtual tour', '3D Model']
 
   const mapButtons = (txt) => (
  
@@ -102,21 +102,6 @@ useEffect(()=>{
 
       }
         
-
-        <div className="fil-contain">
-
-
-          {/* <div className="lines">
-            line1
-            <div className="extra-space"></div>
-          </div>
-          <div className="lines">
-           line2
-            <div className="extra-space"></div>
-          </div> */}
-
-
-        </div>
       </main>
     </section>
   );

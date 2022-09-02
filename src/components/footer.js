@@ -19,15 +19,15 @@ gsap.registerPlugin(ScrollTrigger);
 const Footer = ({prj}) => {
   const el = useRef(null);
   const q = gsap.utils.selector(el);
-  const myTl = useRef();
+  // const myTl = useRef();
   const copycl = useRef();
-  const {changePp, changePointer} = useAppContext();
+  const { changePointer} = useAppContext();
   const [emailHover, setEmHover] = useState(false);
   const [hover,sethover]=useState();
 
   const btnmove = (e) => {
     const q = gsap.utils.selector(el);
-    const btnArea = q(".cobtn-contain");
+    // const btnArea = q(".cobtn-contain");
     const {target}= e;
     const ofTop = target.getBoundingClientRect().top;
       const ofLeft = target.getBoundingClientRect().left;
@@ -43,16 +43,16 @@ const Footer = ({prj}) => {
     });
 
   };
-  const btnL = (e)=>{
-    const btnArea = q(".cobtn-contain");
+  // const btnL = (e)=>{
+  //   // const btnArea = q(".cobtn-contain");
 
-    gsap.to(e.target, {
-      x: 0,
-      y:0,
-      ease: "Power3.inOut",
-      duration: .5,
-    });
-  }
+  //   gsap.to(e.target, {
+  //     x: 0,
+  //     y:0,
+  //     ease: "Power3.inOut",
+  //     duration: .5,
+  //   });
+  // }
 
   // useEffect(()=>{
   //   // if(hover){
@@ -221,8 +221,10 @@ const handleclick =() => histori.push('/contact');
               <a href="https://www.instagram.com/deveb.co/?hl=en" target="_blank" 
               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
               onMouseLeave={()=> changePointer({isHover: false})}
-             ><img className="insta" src={insta} /></a>
-              <a href="https://dribbble.com/Deveb_co/about" target="_blank"
+             >
+               <img className="insta" src={insta} />
+              </a>
+              <a href="https://dribbble.com/deveb-co" target="_blank"
               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
               onMouseLeave={()=> changePointer({isHover: false})}
               >
@@ -236,7 +238,7 @@ const handleclick =() => histori.push('/contact');
                onMouseLeave={()=> changePointer({isHover: false})}
               ><img className="git" src={git} /></a>
               {/* <a href="https://api.whatsapp.com/send?phone=380970006043" target="_blank"> <img className="whats" src={whats} /></a> */}
-              <a href="https://www.linkedin.com/in/deveb-co/" target="_blank"
+              <a href="https://www.linkedin.com/company/deveb-co/" target="_blank"
                onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                onMouseLeave={()=> changePointer({isHover: false})}
               > <img className="linkedin" src={linkedin} /></a>

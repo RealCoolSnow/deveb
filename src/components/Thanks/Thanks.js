@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { enableScroll, disableScroll } from '../../utils/EnableDisableScroll'
+import React from 'react'
+// import { enableScroll, disableScroll } from '../../utils/EnableDisableScroll'
 import { Link } from 'react-router-dom'
 export default function Thanks({ showToggle, isMobile }) {
 

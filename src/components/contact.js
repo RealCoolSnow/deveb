@@ -10,7 +10,7 @@ import drib from "../assets/dribbble.svg";
 import linkedin from "../assets/linkedin.svg";
 
 import { lgScreens, smScreens } from "../utils/contactData";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -27,10 +27,10 @@ let TL;
 const Con = () => {
   const { setReset } = useAppContext();
   const { isMobile, changePointer } = useAppContext();
-  const location = useLocation();
-  const fromcontact = location.state?.contact;
+  // const location = useLocation();
+  // const fromcontact = location.state?.contact;
   const copycl = useRef();
-  const [emailHover, setEmHover] = useState(false);
+  // const [emailHover] = useState(false);
   const labelRef = useRef(null);
   const MainWrapper = useRef();
   const q = gsap.utils.selector(MainWrapper);
@@ -98,7 +98,7 @@ const Con = () => {
   });
 
   const [sendText, setSendTxt] = useState("Send request");
-  const [sendSm, setSendSm] = useState("Send");
+  // const [sendSm, setSendSm] = useState("Send");
 
   const inputHandler = (e) => {
     if (e.target.name === "name") {
@@ -283,7 +283,7 @@ const Con = () => {
     }
 
     setSendTxt(newTxt);
-    setSendSm(smTxt);
+    // setSendSm(smTxt);
   };
 
   const cursorLoading = (animate) => {
@@ -670,7 +670,7 @@ const Con = () => {
                   <a
                     href="https://policies.google.com/privacy"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     {" "}
                     Privacy Policy{" "}
@@ -679,7 +679,7 @@ const Con = () => {
                   <a
                     href="https://policies.google.com/terms"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     {" "}
                     Terms of Service{" "}
@@ -720,7 +720,7 @@ const Con = () => {
                       })
                     }
                     onMouseLeave={() => changePointer(false)}
-                    className={emailHover ? "active" : ""}
+                    // className={emailHover ? "active" : ""}
                     ref={copycl}
                   >
                     info@deveb.com
@@ -734,32 +734,37 @@ const Con = () => {
                     <a
                       href="https://www.instagram.com/deveb.co/?hl=en"
                       target="_blank"
+                    rel="noopener noreferrer"
                       onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                       onMouseLeave={()=> changePointer({isHover: false})}
                     >
-                      <img className="insta" src={insta} />
+                      <img className="insta" src={insta} alt="Instagram Icon"/>
                     </a>
                     <a
-                      href="https://www.instagram.com/am__arc/?hl=en"
+                      href="https://dribbble.com/deveb-co"
                       target="_blank"
+                    rel="noopener noreferrer"
                       onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                       onMouseLeave={()=> changePointer({isHover: false})}
                     >
-                      <img className="drib" src={drib} />
+                      <img className="drib" src={drib} alt="Dribbble Icon"/>
                     </a>
 
                     <a
-                      href="https://www.behance.net/amirmohseni"
+                      href="https://www.behance.net/deveb"
                       target="_blank"
+                    rel="noopener noreferrer"
                       onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                       onMouseLeave={()=> changePointer({isHover: false})}
                     >
-                      <img className="be" src={be} />
+                      <img className="be" src={be} alt="Behance Icon"/>
                     </a>
-                    <a href="https://t.me/am_arc_com" target="_blank"
+                    <a href="https://github.com/deveb-co" target="_blank"
+                    rel="noopener noreferrer"
                       onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                       onMouseLeave={()=> changePointer({isHover: false})}>
-                      <img className="git" src={git} />
+                        
+                      <img className="git" src={git} alt="Github Icon"/>
                     </a>
                     {/* <a
                       href="https://api.whatsapp.com/send?phone=380970006043"
@@ -769,13 +774,13 @@ const Con = () => {
                       <img className="whats" src={whats} />
                     </a> */}
                       <a
-                      href="https://api.whatsapp.com/send?phone=380970006043"
+                      href="https://www.linkedin.com/company/deveb-co/"
                       target="_blank"
+                    rel="noopener noreferrer"
                       onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
                       onMouseLeave={()=> changePointer({isHover: false})}
                     >
-                      {" "}
-                      <img className="linkedin" src={linkedin} />
+                      <img className="linkedin" src={linkedin} alt="Linkedin Icon"/>
                     </a>
                   </div>
                   <Link to="/privacyandpolicy" className="pp">
@@ -796,15 +801,15 @@ const Con = () => {
                 <div className="footer-secs l">
                   <h5
                     onClick={() => copyToClipboard()}
-                    onMouseEnter={() =>
-                      changePointer({
-                        isHover: true,
-                        color: { bg: "#000", txt: "#fff" },
-                        text: "Click to copy",
-                      })
-                    }
+                    // onMouseEnter={() =>
+                    //   changePointer({
+                    //     isHover: true,
+                    //     color: { bg: "#000", txt: "#fff" },
+                    //     text: "Click to copy",
+                    //   })
+                    // }
                     onMouseLeave={() => changePointer(false)}
-                    className={emailHover ? "active" : ""}
+                    // className={emailHover ? "active" : ""}
                     ref={copycl}
                   >
                     Info@deveb.co
@@ -819,29 +824,40 @@ const Con = () => {
                     <a
                       href="https://www.instagram.com/deveb.co/?hl=en"
                       target="_blank"
+                    rel="noopener noreferrer"
+
                     >
-                      <img className="insta" src={insta} />
+                      <img className="insta" src={insta} alt="Instagram Icon"/>
                     </a>
                     <a
-                      href="https://www.upwork.com/fl/am1amirmohseni"
+                      href="https://dribbble.com/deveb-co"
                       target="_blank"
+                    rel="noopener noreferrer"
+
                     >
-                      <img className="drib" src={drib} />
+                      <img className="drib" src={drib} alt="Dribbble Icon"/>
                     </a>
                     <a
-                      href="https://www.behance.net/amirmohseni"
+                      href="https://www.behance.net/deveb"
                       target="_blank"
+                    rel="noopener noreferrer"
+
                     >
-                      <img className="be" src={be} />
+                      <img className="be" src={be} alt="Behance Icon"/>
                     </a>
-                    <a href="https://t.me/am_arc_com" target="_blank">
-                      <img className="git" src={git} />
+                    <a href="https://github.com/deveb-co" target="_blank" 
+                    rel="noopener noreferrer"
+                    
+                    >
+                      <img className="git" src={git} alt="Github Icon" />
                     </a>
                     <a
-                      href="https://www.instagram.com/deveb.co/?hl=en"
+                      href="https://www.linkedin.com/company/deveb-co/"
                       target="_blank"
+                    rel="noopener noreferrer"
+
                     >
-                      <img className="linkedin" src={linkedin} />
+                      <img className="linkedin" src={linkedin} alt="Linkedin Icon" />
                     </a>
                     {/* <a
                       href="https://api.whatsapp.com/send?phone=380970006043"

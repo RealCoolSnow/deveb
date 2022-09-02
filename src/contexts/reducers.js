@@ -36,9 +36,6 @@ export const menuReducer = (state, action)=>{
     if(action.type === "SET_ANI"){
       return {...state, aniClick: !state.aniClick}
     }
-    if(action.type === "CHANGEFAQ"){
-      return {...state, faqp: action.payload}
-    }
     if(action.type === "CHANGEPOINTER"){
       return {...state, pointer: {...state.pointer, ...action.payload}}
     }

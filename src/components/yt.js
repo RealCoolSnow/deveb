@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useAppContext } from "../contexts/appcontext.js";
 let YTPlayer;
 
-const Youto = ({ id, vidId, imgUrl, cat, name, desc }) => {
+const Youto = ({ id, vidId, imgUrl, name, desc }) => {
   const [player, setPlayer] = useState(null);
   // let player;
   const coverel = useRef();

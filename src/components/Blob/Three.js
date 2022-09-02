@@ -8,7 +8,7 @@ import { vertexShader, fragmentShader } from './webGL'
 export default function Three() {
 
   const container = useRef(null)
-  const q = gsap.utils.selector(container);
+  // const q = gsap.utils.selector(container);
   const {isMobile} = useAppContext()
  useLayoutEffect(()=>{
  gsap.set(container.current,{

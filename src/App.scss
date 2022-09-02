@@ -32,7 +32,7 @@
 @import "./components/Header/toggle-menu.scss";
 @import "./components/SecondaryBtn/secBtn.scss";
 @import "./components/Thanks/thanks.scss";
-@import "./components/ThemeSwitch/theme-switch.scss";
+// @import "./components/ThemeSwitch/theme-switch.scss";
 @import "./components/MServiceHead/m-service-head.scss";
 
 * {
@@ -824,6 +824,16 @@ section {
 
       div.options-btns.budgets {
         margin-bottom: 39px;
+        position: relative;
+        padding-bottom: 11px;
+        .input-err{
+          position: absolute;
+          bottom: 0px;
+          left: 5px;
+          font-size: 0.4rem;
+          font-weight: 400;
+          color: #FF6666;
+        }
 
         a.sec-btn {
           margin-right: 0.4rem;

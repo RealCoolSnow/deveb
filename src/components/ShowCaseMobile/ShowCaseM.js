@@ -18,7 +18,7 @@ export default function ShowCaseM({ showcasedata }) {
     keepShowcaseSquare()
     window.addEventListener('resize', keepShowcaseSquare)
 
-    const q = gsap.utils.selector(el);
+    // const q = gsap.utils.selector(el);
 
     // const Boxes = q(".mobile-showcase-box");
     

@@ -17,7 +17,6 @@ const initState ={
     text: "",
   },
   resetLoco:false,
-  faqp:{},
 }
 
 const AppContext = React.createContext();
@@ -63,9 +62,6 @@ export const AppProvider=({children})=>{
   const changePp = (pay)=>{
     dispatch({type: 'CHANGECONBTN', payload: pay})
   }
-  const setfaqp = (pay)=>{
-    dispatch({type: 'CHANGEFAQ', payload: pay})
-  }
   const setReset =()=>{
     dispatch({type:'RESET_LOCO', })
   }
@@ -75,7 +71,7 @@ export const AppProvider=({children})=>{
 
   return(
     <AppContext.Provider value={{ ...state, openMenu, closeMenu, setMobileTrue,
-      setMobileFalse, scrollY, updateNeeded, changePT, changePointer,changeScPointer, changePp, setReset, setaniClick, setfaqp}}
+      setMobileFalse, scrollY, updateNeeded, changePT, changePointer,changeScPointer, changePp, setReset, setaniClick}}
     >
       {children}
     </AppContext.Provider>

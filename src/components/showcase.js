@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../showcase.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,13 +8,13 @@ import {Link} from "react-router-dom"
 import { useAppContext } from "../contexts/appcontext.js";
 
 const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
-  const { isMobile,changeScPointer, pointer} = useAppContext();
+  const { isMobile,changeScPointer} = useAppContext();
 
   const el = useRef();
-  const q = gsap.utils.selector(el);
+  // const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);
 
-  const [set, setset] = useState(false);
+  // const [set, setset] = useState(false);
 
   useEffect(() => {
     // if (!isMobile) {
@@ -254,7 +254,7 @@ const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
                 const {
                   cover,
                   klass,
-                  colors: { right, left, bg,pointer },
+                  colors: { pointer },
                 } = img;
                 return (
                   <Link key={id} to={item.a.url}>

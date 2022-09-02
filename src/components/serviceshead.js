@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import design from "../assets/design1.jpg"
 import viz from "../assets/viz.jpg"
 // import vid from "../assets/img/Visualization.mp4"
-import { useAppContext } from "../contexts/appcontext.js";
+// import { useAppContext } from "../contexts/appcontext.js";
 
 
 

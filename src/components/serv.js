@@ -11,7 +11,7 @@ const Serv = () => {
   const { isMobile } = useAppContext();
 
   const MainWrapper = useRef(null);
-  const mobileLinksScroller = useRef(null);
+  // const mobileLinksScroller = useRef(null);
   const q = gsap.utils.selector(MainWrapper);
   gsap.registerPlugin(ScrollTrigger)
 
@@ -69,27 +69,27 @@ const Serv = () => {
 
   },[isMobile])
 
-  const scrollToService = (idx) => {
+  // const scrollToService = (idx) => {
 
-    if( isMobile ) {
-      const findServ = document.querySelector(`.mobile-showcase-box.box-${idx}`)
-      const top = findServ.offsetTop
+  //   if( isMobile ) {
+  //     const findServ = document.querySelector(`.mobile-showcase-box.box-${idx}`)
+  //     const top = findServ.offsetTop
 
-      window.scrollTo({
-        top: top - 120,
-        left: 0,
-        behavior: 'smooth'
-      })
-    } else {
+  //     window.scrollTo({
+  //       top: top - 120,
+  //       left: 0,
+  //       behavior: 'smooth'
+  //     })
+  //   } else {
 
-      // Services ScrollTo In Web
-      // const findServ = document.querySelector(`.serv-showcase-box.box-${idx}`)
-      // const top = findServ.offsetTop
+  //     // Services ScrollTo In Web
+  //     // const findServ = document.querySelector(`.serv-showcase-box.box-${idx}`)
+  //     // const top = findServ.offsetTop
 
-      // scrollY(top)
-    }
+  //     // scrollY(top)
+  //   }
     
-  }
+  // }
 
   return (
     <main ref={MainWrapper}>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, { useRef} from "react";
 import gsap from "gsap"
 import {Link, useHistory} from "react-router-dom"
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -8,9 +8,9 @@ const Process = () => {
   const el = useRef();
   gsap.registerPlugin(ScrollTrigger);
     const q = gsap.utils.selector(el);
-    const prTl = useRef();
+    // const prTl = useRef();
     const myref=useRef();
-    const {changePointer, isMobile}=useAppContext();
+    const {isMobile}=useAppContext();
     const setreverse = ()=>{
       gsap.to(q(".process-col:first-child"),{
         scale:1.02,
@@ -79,7 +79,7 @@ const Process = () => {
 
       <div className="process-grid">
         <div ref={myref}className="process-col" onMouseMove={movecol} onMouseEnter={setreverse} onMouseLeave={setnormal} onClick={handleclick}>
-        <img src={hand}/>
+        <img src={hand} alt="hand emoji"/>
         <div className="ripple"></div>
           <Link to="/contact"
           // onMouseOver={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}

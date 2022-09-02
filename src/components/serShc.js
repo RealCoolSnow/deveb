@@ -10,7 +10,7 @@ import { useAppContext } from "../contexts/appcontext.js";
 const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
   const { isMobile, changePointer } = useAppContext();
 
-  const imageTimeline = useRef();
+  // const imageTimeline = useRef();
   const el = useRef();
   const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);

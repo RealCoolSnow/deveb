@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../contexts/appcontext";
 import MenuLink from "./MenuLink";
-import ThemeSwitch from "./../ThemeSwitch/ThemeSwitch";
+// import ThemeSwitch from "./../ThemeSwitch/ThemeSwitch";
 
 export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLinks, linksOut}) {
   const {changePointer, isMobile} = useAppContext()
@@ -121,7 +121,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
               <div className="header-socials">
 
                 {/* Upwork */}
-                <a href='https://www.linkedin.com/company/deveb/' target="_blank" rel="noopener noreferrer">
+                <a href='https://www.linkedin.com/company/deveb-co/' target="_blank" rel="noopener noreferrer">
                    <svg xmlns="http://www.w3.org/2000/svg" className="linkedin" fill="#000000" viewBox="0 0 50 50" width="50px" height="50px">    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"/></svg>
                    </a>
                 <a href='https://github.com/Deveb-co' target="_blank" rel="noopener noreferrer">
@@ -140,7 +140,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
                 {/* Whats App */}
                 
                 {/* Email */}
-                <a href='https://dribbble.com/Deveb_co/about' target="_blank" rel="noopener noreferrer">
+                <a href='https://dribbble.com/deveb-co' target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.759 15.759">
                   <path id="dribbble" d="M18.694,18.147c-.183-.471-.378-.939-.594-1.4A20.594,20.594,0,0,1,10,17.917a7.851,7.851,0,0,0,2.27,5.494A11.536,11.536,0,0,1,18.694,18.147Zm.037-3.042A19.481,19.481,0,0,0,23.4,12.264a7.85,7.85,0,0,0-8.024-1.852,23.213,23.213,0,0,1,3.352,4.694Zm.59,1.169c.234.5.442,1.011.639,1.525a11.509,11.509,0,0,1,5.789.279c0-.066.01-.132.01-.2a7.835,7.835,0,0,0-1.5-4.617A20.746,20.746,0,0,1,19.321,16.274ZM20.4,19.05a23.279,23.279,0,0,1,1.048,5.85,7.884,7.884,0,0,0,4.163-5.488A10.161,10.161,0,0,0,20.4,19.05Zm-2.9-3.473a21.97,21.97,0,0,0-3.4-4.613A7.879,7.879,0,0,0,10.11,16.61,19.312,19.312,0,0,0,17.5,15.577Zm1.635,3.808c-.246.081-.492.163-.734.263a10.16,10.16,0,0,0-5.111,4.626,7.846,7.846,0,0,0,6.863,1.149A21.944,21.944,0,0,0,19.132,19.385Z" transform="translate(-10 -10)" fill="#1a1a1a"/>
                 </svg>

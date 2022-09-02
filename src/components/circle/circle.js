@@ -26,7 +26,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
   const q = gsap.utils.selector(el);
 
   useEffect(()=>{
-    const circ = q(".circle")
+    // const circ = q(".circle")
     const moveCursor= (e)=>{
       gsap.to(el.current, {
         x: e.clientX,

@@ -44,7 +44,7 @@ import {
   // import ScrollTriggerPlugin from './utils/ScrollTriggerPlugin';
   // import SoftScrollPlugin from './utils/SoftScrollPlugin';
   
-  let tl;
+  // let tl;
   
   function App() {
     const { isMobile, setMobileTrue, setMobileFalse } = useAppContext();
