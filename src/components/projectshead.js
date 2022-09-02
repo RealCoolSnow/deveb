@@ -6,28 +6,15 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { useAppContext } from "../contexts/appcontext.js";
 
-const ProHead = ({  width }) => {
+const ProHead = () => {
   const { isMobile,} = useAppContext();
-
-  const [activeTag, setActiveTag] = useState("");
-
-  // const [btnhover, setbtnHover] = useState(false);
   const el = useRef();
   const prjTl = useRef();
   const q = gsap.utils.selector(el);
   gsap.registerPlugin(ScrollTrigger);
-  // const darklay2 = {
-  //   position: "absolute",
-  //   top: 0,
-  //   width: "100%",
-  //   height: "100%",
-  //   background: "black",
-  //   zIndex: 100,
-  //   opacity:0,
-  // }
+
   useLayoutEffect(() => {
     const heading = q("#stickbb h1 div");
-    // const lines = q(".fil-contain .lines");
 
     gsap.set([heading], {
       yPercent: 60,
@@ -36,9 +23,17 @@ const ProHead = ({  width }) => {
     return () => {
     };
   }, [isMobile])
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
   useEffect(()=>{
     const heading = q("h1 div");
-    // const lines = q(".fil-contain .lines");
     prjTl.current = gsap.timeline();
     prjTl.current.to([heading], {
       yPercent: 0,
@@ -59,46 +54,19 @@ const ProHead = ({  width }) => {
     }, .4);
   },[isMobile])
 
-useEffect(()=>{
-  // const myHash = document.location.hash.slice(1);
-  if(isMobile ){
-  
-   
-  }
-  else {
-  
-  }
- 
-},[isMobile])
-
-  // const tags = ['Projects','Interior','Exterior','Animation','3D Rendering', 'Concept', 'Virtual tour', '3D Model']
-  // const mTags = ['Projects','Interior','Exterior', 'Concept', 'Animation','Rendering', 'Virtual tour', '3D Model']
-
-  const mapButtons = (txt) => (
- 
-    <Button
-      key={txt}
-      txt={txt}
-      isActive={ activeTag === txt }
-      // trigger={ () => changeActiveTag(txt) }
-    />  
-  )
-
-   
     
 
   return (
     <section className="pro-sec"   id="stickbb" ref={el}>
     
       <main data-scroll data-scroll-sticky data-scroll-target="#stickbb">
-        {/* <div className="darklay2" style={darklay2}></div> */}
       <div className="darklayer"></div>
       {
-        isMobile? width> 500?   <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+        isMobile? width> 500? ( <h1><div>Take a look at</div> <div>some of our projects</div> </h1>)
         :
-        <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>
+       ( <h1><div>Take a look at</div> <div>some of our</div> <div>projects</div> </h1>)
         :
-        <h1><div>Take a look at</div> <div>some of our projects</div> </h1>
+       ( <h1><div>Take a look at</div> <div>some of our projects</div> </h1>)
 
       }
         

@@ -95,23 +95,8 @@ else if(!isMobile) {
  
  
 },[isMobile])
-const callcolor= (color)=>{
-  // if(color === "orange"){
-  //   options.setorange()
-  // }
-  //  else if(color === "blue"){
-  //   options.setblue()
-  // }
-  // else if(color === "purple"){
-  //   options.setpurple()
-  // } else
-  // if(color === "white"){
-  //   options.main()
-  // }
 
-}
   
-
   return (
     <>
       <section className="head" ref={el} data-scroll data-scroll-sticky data-scroll-target="#sti">
@@ -155,13 +140,13 @@ const callcolor= (color)=>{
         ) : (
           <div className="h1">
             <h1 style={{ position: "absolute" }}>
-              <span className="headSpan" onMouseOver={()=>callcolor("orange")} onMouseLeave={()=>callcolor("white")}>
+              <span className="headSpan" >
                 <span>Design.</span>
               </span>
-              <span className="headSpan" onMouseOver={()=>callcolor("purple")} onMouseLeave={()=>callcolor("white")} >
+              <span className="headSpan">
                 <span>Development.</span>
               </span>
-              <span className="headSpan" onMouseOver={()=>callcolor("blue")} onMouseLeave={()=>callcolor("white")}>
+              <span className="headSpan">
                 <span>Branding</span>
               </span>
             </h1>

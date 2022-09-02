@@ -4,11 +4,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 
 import { useAppContext } from "../contexts/appcontext.js";
-import Youto from "./yt.js";
 
 gsap.registerPlugin(ScrollTrigger);
 // let player;
-const PrjContain = ({ projects, Cat }) => {
+const PrjContain = ({ projects }) => {
   const { isMobile, changePointer } = useAppContext();
 
   const el = useRef();
@@ -85,8 +84,6 @@ const PrjContain = ({ projects, Cat }) => {
     const sl = ".pro-cont .outerPro div.project a.pro-item";
     const showCaseContainers = document.querySelectorAll(sl);
 
-    // console.log('showCaseContainers')
-    // console.log(showCaseContainers)
 
     if (showCaseContainers.length) {
       showCaseContainers.forEach((el) => {
@@ -116,54 +113,31 @@ const PrjContain = ({ projects, Cat }) => {
     <div className="pro-cont" ref={el}>
       <div className="outerPro">
         {projects.map((item, idx) => {
-          const { name, img, a, iframeSrc, desc, id, vidid } = item;
+          const { name, img, a, desc} = item;
 
           const urlLink = a ? `/projects/${a.url}` : "";
 
           return isMobile ? (
             <div
               key={idx}
-              className={`project${
-                item.family === "Animation" || item.family === "Concept"
-                  ? " anivi"
-                  : ""
-              }`}
+              className={`project`}
             >
-              {!iframeSrc ? (
                 <Link
                   className="pro-item"
                   style={{ backgroundImage: `url(${img.url})` }}
                   to={urlLink}
-                ></Link>
-              ) : item.family === "Animation" || item.family === "Concept" ? (
-                <>
-                  <Youto imgUrl={a.imgUrl} id={id} vidId={vidid} />
-                </>
-              ) : (
-                <iframe
-                  src={iframeSrc}
-                  frameBorder="0"
-                  allowFullScreen={true}
-                  scrolling="no"
-                  marginWidth="0"
-                  marginHeight="0"
-                  className="`pro-item vr-item`"
-                ></iframe>
-              )}
+                ></Link>  
 
               <h6>{name}</h6>
 
               <span>{desc}</span>
 
-              {!iframeSrc ? (
+            
                 <Link className="view" to={urlLink}>
                   View project
                 </Link>
-              ) : (
-                ""
-              )}
             </div>
-          ) : !iframeSrc ? (
+          ) :  (
             <Link
               to={`/projects/${a.url}`}
               key={idx}
@@ -179,43 +153,16 @@ const PrjContain = ({ projects, Cat }) => {
                 })
               }
               onMouseLeave={() => changePointer({ isHover: false })}
-
-              // data-scroll-speed={idx % 2 === 0? 1.5: 0 }
-              // data-scroll-offset="40%, 0%"
             >
               <div
                 className="pro-item"
                 style={{ backgroundImage: `url(${img.url})` }}
-                onMouseEnter={(e) => zoomPic(e)}
-                onMouseOver={(e) => zoomPic(e)}
-                onMouseLeave={(e) => zoomOut(e)}
+                onMouseEnter={zoomPic}
+                onMouseOver={zoomPic}
+                onMouseLeave={zoomOut}
               ></div>
             </Link>
-          ) : (
-            <div
-              key={id}
-              className={`project project-${idx + 2} vr-project ${item.family}`}
-              style={!isMobile && {marginBottom: "130px"}}
-            >
-              {item.family === "Animation" || item.family === "Concept" ? (
-                <>
-                  <Youto imgUrl={a.imgUrl} id={id} vidId={vidid} cat={Cat} name={name} desc={desc}/>
-                </>
-              ) : (
-                <iframe
-                  src={iframeSrc}
-                  key={id}
-                  // id={`video${idx}`}
-                  className="vr-item"
-                  // allowFullScreen={true}
-                  // // scrolling='no'
-                  // marginWidth="0"
-                  // marginHeight="0"
-                  // frameBorder="0"
-                ></iframe>
-              )}
-            </div>
-          );
+          ) 
         })}
       </div>
     </div>

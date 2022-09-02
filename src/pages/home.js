@@ -2,27 +2,23 @@ import React, { lazy, Suspense, useEffect, useRef } from 'react'
 import Head from'../components/homeheader.js'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from "gsap"
-// import Con from'../components/contact.js'
-// import Showcase from '../components/showcase.js'
-import Loading from "./Loading.js"
+// import Loading from "./Loading.js"
 import { home } from '../utils/constans.js'
 import useLoco from '../utils/useLoco.js';
 import { useAppContext } from "../contexts/appcontext.js";
-// import design from "../assets/design1.jpg"
-// import viz from "../assets/viz.jpg"
 import "../serv.scss";
-// import ServHead from '../components/serviceshead'
-// import MServHead from '../components/MServiceHead/MobileServiceHead'
 import Process from '../components/process.js'
 import Footer from'../components/footer.js'
-import FooterMB from '../components/footermb.jsx'
 import Showcase  from '../components/showcase.js'
 import Helmet from 'react-helmet';
 import Three from '../components/Blob/Three.js';
 import { options, camera } from '../components/Blob/utils'
 
-// const Loading = lazy( () => import('./Loading.js'))
 const MServHead = lazy( () => import('../components/MServiceHead/MobileServiceHead'))
+const FooterMB = lazy( () => import('../components/footermb.jsx'))
+const Loading = lazy( () => import('./Loading.js'))
+
+
 
 const HomePage = () => {
   const pintl = useRef();

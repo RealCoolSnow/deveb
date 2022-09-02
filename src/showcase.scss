@@ -118,7 +118,9 @@ section.showcase-pin {
 
     .mobile-showcase-box {
       width: 100%;
+      max-width: 500px;
       height: 100%;
+      margin:auto;
       margin-bottom: 169px;
       overflow: hidden;
 
@@ -128,7 +130,7 @@ section.showcase-pin {
         // min-height: 335px;
         // height: 500px;
         // min-height: 335px;
-        padding-bottom: 74%;
+        padding-bottom: 100%;
         border-radius: 30px;
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;

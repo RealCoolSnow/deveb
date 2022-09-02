@@ -11,62 +11,10 @@ export default function ShowCaseM({ showcasedata }) {
 
   const { isMobile } = useAppContext();
 
-  const el = useRef();
 
-  useEffect(() => {
+  
 
-    keepShowcaseSquare()
-    window.addEventListener('resize', keepShowcaseSquare)
-
-    // const q = gsap.utils.selector(el);
-
-    // const Boxes = q(".mobile-showcase-box");
-    
-    // Boxes.forEach( (box,idx) => {
-    
-    //   const bgImage = q(`.mobile-showcase-box.box-${idx} .showcase-full-img`);
-
-    //   gsap.set(bgImage, { scale: 1.08, y: "-2vh" });
-
-    //   gsap.to(bgImage, {
-    //     scrollTrigger: {
-    //       trigger: bgImage,
-    //       start:()=> "top bottom+=20%",
-    //       end: ()=>"bottom+=20% top-=30%",
-    //       // markers:true,
-    //       scrub: true,
-    //       invalidateOnRefresh: true,
-    //     },
-    //     y: "2vh",
-    //   });
-
-    // })
-
-    return () => {
-      window.removeEventListener('scroll', keepShowcaseSquare)
-    }
-
-  }, [])
-
-  const keepShowcaseSquare = () => {
-
-    const sl = 'div.showcase-mobile-container .mobile-showcase-box .showcase-container'
-    const showCaseContainers = document.querySelectorAll(sl)
-
-    // console.log('showCaseContainers')
-    // console.log(showCaseContainers)
-
-    if( showCaseContainers.length ) {
-
-      showCaseContainers.forEach( el => {
-        
-        el.style.height = el.offsetWidth + 'px'
-
-      })
-    }
-  }
-
-  return isMobile ? <div className="showcase-mobile-container" ref={el} >
+  return isMobile ? <div className="showcase-mobile-container" >
     {
       showcasedata.map( (item,idx) => {
 

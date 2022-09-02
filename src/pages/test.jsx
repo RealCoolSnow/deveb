@@ -19,7 +19,6 @@ const Test = () => {
   // const init= prjData.filter( (ei) => ei.tags.includes('Projects') )
   const [projects, setProjects] = useState(prjData);
   const my = useRef()
-  const mymb = useRef()
   const el = useRef();
   const q = gsap.utils.selector(el);
   const fooT= useRef();
@@ -34,37 +33,19 @@ const Test = () => {
     background: "black",
     zIndex: 1,
   }
-  const { tag } = useParams();
 //   useEffect(()=>{
 //     catFunction(cat)
 //   },[])
 
   useEffect(() => {
     changePointer({isHover: false})
-    // if(window.location.hash){
-    //   var hashcat= window.location.hash.split("#")[1];
-    //   if(hashcat === "3dr"){catFunction("3DRendering")}
-    //   if(hashcat === "VR"){catFunction("Virtual tour")}
-    //   if(hashcat === "3dm"){catFunction("3D Model")}
-    //   if(hashcat === "In"){catFunction("Interior")}
-    //   if(hashcat === "Ex"){catFunction("Exterior")}
-    //   if(hashcat === "Ani"){catFunction("Animation")}
-    //   if(hashcat === "Con"){catFunction("Concept")}
-
-
-    //   // else if(hashcat !== "3dr" && hashcat !== "VR" && hashcat !== "3dm") {catFunction(hashcat.charAt(0).toUpperCase() + hashcat.slice(1))}
-    // }
+  
     setTimeout(() => {
       setReset()
     }, 550);
 
     changePT("Deveb-Projects");
     document.title = "Deveb-Projects";
-    // if( tag ) {
-    //   const newTag = tag[0].toUpperCase() + tag.substr(1)
-
-    //   setCat(newTag)
-    // }
 
   }, [isMobile])
  
