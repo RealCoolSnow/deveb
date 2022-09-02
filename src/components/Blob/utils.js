@@ -1,7 +1,7 @@
 // Three JS
 
 import * as THREE from "three";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 import { Elastic, Quart, gsap } from "gsap";
 
 export function init(child) {
