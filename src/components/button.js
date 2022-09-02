@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 
 const Button = ({
-  ss,
+
   href,
   text,
   url,
