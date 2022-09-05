@@ -1,0 +1,39 @@
+.mobile-b {
+    margin-bottom: 0;
+    padding: 0;
+  
+    .btn-mouse-area {
+      padding: 0 !important;
+      margin: 0 !important;
+  
+      .btn-more {
+        span {
+          letter-spacing: 0.018rem !important;
+        }
+      }
+  
+      .btn-more.invalid {
+  
+        &:focus-within {
+          background-color: #FF6666 !important;
+          
+          .btn-more-title span {
+            color: #fff !important;
+          }
+        }
+        // background-color: transparent !important;
+  
+      }
+    }
+  
+  }
+  
+  .send-loading {
+  
+    button.btn-more {
+  
+      min-width: 120px;
+      justify-content: center;
+      align-items: center;
+    }
+  }

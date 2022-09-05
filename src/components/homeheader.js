@@ -11,7 +11,7 @@ import { gsap } from "gsap";
 // import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 const Head = () => {
-  const { isMobile, resetLoco } = useAppContext();
+  const { isMobile } = useAppContext();
 //  const [url, seturl] = useState("")
   const el = useRef();
   const q = gsap.utils.selector(el);

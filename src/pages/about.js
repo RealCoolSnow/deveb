@@ -28,17 +28,37 @@ const AboutPage = () => {
   const tl = useRef();
 
   const q = gsap.utils.selector(el);
- 
+  // const [width, setWidth] = React.useState(window.innerWidth);
+  // const breakpoint = 768;
+
+  // React.useEffect(() => {
+  //   const handleWindowResize = () => {
+  //    var img =q(".image-wrap")[0];
+  //    ScrollTrigger.update()
+  //     console.log(img.offsetTop - img.offsetHeight / 3, img.offsetTop, img.offsetHeight)
+  //   }
+  //   window.addEventListener("resize", handleWindowResize);
+
+  //   // Return a function from the effect that removes the event listener
+  //   return () => window.removeEventListener("resize", handleWindowResize);
+  // }, []);
 
   useLayoutEffect(() => {
     const texts = q(".texts-wrap h2 div,.texts-wrap h5");
     // const spans = q("h2 div");
 
     gsap.set(texts, { autoAlpha: 0 });
+    gsap.set(q(".mem-row .members"), {
+      backgroundPosition:"50% 20%"
+    })
+    gsap.set(q(".mem-row .members")[1], {
+      backgroundPosition:"50% 80%"
+    })
 
-    gsap.set(q(".mem-row"), {
-      xPercent: (index, target) => (index === 1 ? 5 : -5),
-    });
+
+    // gsap.set(q(".mem-row"), {
+    //   xPercent: (index, target) => (index === 1 ? 5 : -5),
+    // });
     !isMobile && gsap.set(q(".image-wrap"), {
       yPercent: 35,
       scale: 1.4,
@@ -60,7 +80,8 @@ const AboutPage = () => {
     window.history.scrollRestoration = 'manual'
     setTimeout(() => {
       setReset()
-    }, 300);
+      // ScrollTrigger.refresh()
+    }, 50);
 
   }, [isMobile])
   // document.fonts.ready.then(
@@ -91,6 +112,7 @@ const AboutPage = () => {
         onComplete: ()=>  {
           gsap.to(q("h1"),{
           display:"block",
+          autoAlpha:1,
           duration:0,
         })
         gsap.to(q("#headLines"),{
@@ -104,6 +126,20 @@ const AboutPage = () => {
         },
       },
       // 0.4
+    );
+    gsap.to(
+      q(".image-wrap"),
+      {
+        yPercent: 0,
+        autoAlpha: 1,
+        scale: 1.5,
+        duration: .8,
+        onComplete:()=> ScrollTrigger.refresh(),
+        // transformOrigin:"bottom center",
+        // stagger: 0.13,
+        ease: "power2.out",
+        delay:0.55,
+      },
     )
      }
     //  );
@@ -142,8 +178,9 @@ const AboutPage = () => {
           q(".darkLayer"),{autoAlpha:0})
          
         
-        loadingTL.current = gsap
-        .timeline({})
+        // loadingTL.current = gsap
+        // .timeline({
+        // })
         // .to(
         //   split.lines,
         //   {
@@ -177,101 +214,138 @@ const AboutPage = () => {
         //   },
         //   0.4
         // )
-        .to(
-          q(".image-wrap"),
-          {
-            yPercent: 0,
-            autoAlpha: 1,
-            scale: 1.5,
-            duration: .8,
-            // transformOrigin:"bottom center",
-            // stagger: 0.13,
-            ease: "power2.out",
-          },
-          0.35
-        )
+        // .to(
+        //   q(".image-wrap"),
+        //   {
+        //     yPercent: 0,
+        //     autoAlpha: 1,
+        //     scale: 1.5,
+        //     duration: .8,
+        //     // transformOrigin:"bottom center",
+        //     // stagger: 0.13,
+        //     ease: "power2.out",
+        //   },
+        //   0.35
+        // )
     
-      imgTl.current = gsap.timeline({
-        scrollTrigger: {
-          scroller: "[data-scroll-container]",
-          // trigger: imgWr,
-          start: () => "bottom center",
-          end: () => "bottom top",
-          //  markers:true,
-          // invalidateOnRefresh: true,
-          onEnter: ({ direction }) => fadeOut(direction),
-          onLeaveBack: ({ direction }) => fadeOut(direction),
-        },
-      });
+      // imgTl.current = gsap.timeline({
+      //   scrollTrigger: {
+      //     scroller: "[data-scroll-container]",
+      //     // trigger: imgWr,
+      //     start: () => "bottom center",
+      //     end: () => "bottom top",
+      //     //  markers:true,
+      //     // invalidateOnRefresh: true,
+      //     // onEnter: ({ direction }) => fadeOut(direction),
+      //     // onLeaveBack: ({ direction }) => fadeOut(direction),
+      //   },
+      // });
   
-      const fadeOut = (direction) => {
-        return (
-          gsap.to(h1select, {
-            autoAlpha: () => (direction === 1 ? 0 : 1),
-            duration: 0,
-          }),
-          gsap.to(h5selector, {
-            autoAlpha: () => (direction === 1 ? 1 : 0),
-            duration: 0,
-          }),
-          gsap.to(
-            q(".darkLayer"),
-            {
-              autoAlpha: () => (direction === 1 ? 1 : 0),
-              duration: 0,
-            },
-            "<"
-          )
-        );
-      };
+      // const fadeOut = (direction) => {
+      //   return (
+      //     gsap.to(h1select, {
+      //       autoAlpha: () => (direction === 1 ? 0 : 1),
+      //       duration: 0,
+      //     }),
+      //     gsap.to(h5selector, {
+      //       autoAlpha: () => (direction === 1 ? 1 : 0),
+      //       duration: 0,
+      //     }),
+      //     gsap.to(
+      //       q(".darkLayer"),
+      //       {
+      //         autoAlpha: () => (direction === 1 ? 1 : 0),
+      //         duration: 0,
+      //       },
+      //       "<"
+      //     )
+      //   );
+      // };
       const images = q(".image-wrap");
-      images.forEach((img, i) => {
-        // console.log(img.offsetTop - img.offsetHeight / 5, img.offsetTop, img);
+      // images.forEach((img, i) => {
+      //   console.log(img.offsetTop - img.offsetHeight / 3, img.offsetTop, img.offsetHeight);
          tl.current = gsap
           .timeline({
             scrollTrigger: {
               scroller: "#viewport",
-              start: () =>
-                "top+=" +
-                (img.offsetTop +
-                  (img.offsetHeight / 3) * (images.length - 1 - i)) +
-                " bottom",
-              end: () => "bottom+=" + img.offsetTop + " bottom",
+              trigger:images[0],
+              start: () => 
+                "top+=20% bottom" ,
+              end: () => "bottom-=10% top",
+
               scrub: true,
-              id: "imgs" + i,
+              id: "imgs" + 0,
               invalidateOnRefresh: true,
               // markers:true,
             },
           })
-          .to(img, { scale: 1 });
-      });
+          .to(images[0], { scale: 1, duration:14 },"0")
+          .to(h1select, {
+            autoAlpha: () => 0 ,
+            duration: 0,
+          }, ">")
+          .to(h5selector, {
+            autoAlpha: () =>  1 ,
+            duration: 0,
+          },"<")
+          .to(
+            q(".darkLayer"),
+            {
+              autoAlpha: () => 1 ,
+              duration: 0,
+            },
+            ">"
+          )
+           .to(
+          h5selector,
+          {
+            autoAlpha: 0,
+            duration: 7.3,
+            ease: "Power3.Out",
+          },">7"
+        );
+          
+        var tl2 = gsap
+        .timeline({
+          scrollTrigger: {
+            scroller: "#viewport",
+            trigger:images[1],
+            start: () => 
+              "top bottom" ,
+            end: () => "bottom-=10% top",
+
+            scrub: true,
+            id: "imgs" + 1,
+            invalidateOnRefresh: true,
+            // markers:true,
+          },
+        })
+        .to(images[1], { scale: 1, duration:10 })
+      // });
   
       const memtl = gsap
         .timeline({
           scrollTrigger: {
             scroller: "[data-scroll-container]",
             trigger: q(".members-wrap"),
-            start: () => "top-=5% bottom",
-            end: () => "bottom+=5% top",
+            start: () => "top-=10% top+=10%",
+            end: () => "bottom top",
             // markers: true,
             scrub: true,
             invalidateOnRefresh: true,
           },
         })
-        .to(q(".mem-row"), {
-          xPercent: (index, target) => (index === 1 ? -5 : 5),
-          duration: 20,
-          ease: "none",
+        .to(q(".mem-row .members"), {
+          yPercent: (index) => (index === 1 ? -70 : 70),
+          backgroundPosition: (index) => index=== 1? "50% 20%":"50% 80%",
+          // duration: 20,
+          // stagger:{
+          //   amount:3,
+          //   duration:20,
+          // },
+          ease: "power2.inOut",
         })
-        .to(
-          h5selector,
-          {
-            autoAlpha: 0,
-            duration: 3.3,
-            ease: "Power3.Out",
-          },
-          "<2.5"
-        );
+    
        philTl.current = gsap
         .timeline({
           duration: 10,
@@ -387,10 +461,10 @@ const AboutPage = () => {
           if(loadingTL.current){
             loadingTL.current.kill()
           }
-          imgTl.current.kill();
-          if(imgTl.current.ScrollTrigger){
-            imgTl.current.ScrollTrigger.kill();
-          }
+          // imgTl.current.kill();
+          // if(imgTl.current.ScrollTrigger){
+          //   imgTl.current.ScrollTrigger.kill();
+          // }
          if( memtl){memtl.kill()};
           if(memtl.ScrollTrigger){
             memtl.ScrollTrigger.kill();

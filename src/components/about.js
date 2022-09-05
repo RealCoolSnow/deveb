@@ -58,30 +58,45 @@ const {isMobile} = useAppContext();
       <div className="image-wrap fc">
         <img src={isMobile?img2mb:img2} alt="team working" />
       </div>
-      <div className="members-wrap">
-        <div className="mem-row">
-          <div className="back"></div>
+      <div className="members-wrap" id="membs">
+        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="desat"></div>
           <div className="members naz"></div>
-          <div className="members react">{isMobile?"Developer":"Full"}</div>
-          {!isMobile?<div className="members css">Stack</div> : null }
-          {!isMobile?<div className="members gsap">Dev</div> : null }
-          
+          <div className="back">
+          <p className="label">Sr. Full-Stack Developer</p>
+          <p className="name">Nazanin Esmaeilian</p>
+          </div>
         </div>
-        <div className="mem-row">
-        <div className="back"></div>
-          <div className="members js">{isMobile?"Designer":"UI/UX"}</div>
-          {!isMobile?<div className="members css">Design</div> : null }
 
-          {!isMobile?<div className="members css">Branding</div> : null }
-          <div className="members amir"></div>
+        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="back">
+        <p className="name">Amir <br/>Mohseni</p>
+          <p>Product Designer</p>
         </div>
-        <div className="mem-row">
-        <div className="back"></div>
-        <div className="members iliya"></div>
-          <div className="members js">{isMobile?"Developer":"Full"}</div>
-          {!isMobile?<div className="members css">Stack</div> : null }
-          {!isMobile?<div className="members css">Dev</div> : null }
+        <div className="desat"></div>
+         <div className="members amir"></div>
         </div>
+
+        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="back">
+        <p className="label">Sr. Full-Stack Developer</p>
+
+        <p className="name">Ilia <br/> Mohseni</p>
+        </div>
+        <div className="desat"></div>
+         <div className="members iliya"></div>
+        </div>
+        
+        {/* <div className="mem-row"> */}
+        {/* <div className="back">
+        <p className="name">Ilia Mohseni</p>
+        <p className="label">Senior Full Stack Developer</p>
+
+        </div> */}
+          {/* <div className="members js">{isMobile?"Developer":"Full"}</div> */}
+          {/* {!isMobile?<div className="members css">Stack</div> : null } */}
+          {/* {!isMobile?<div className="members css">Dev</div> : null } */}
+        {/* </div> */}
       </div>
       <div className="text-wrap2">
         <h5>
