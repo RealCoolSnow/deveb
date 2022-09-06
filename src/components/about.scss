@@ -88,17 +88,24 @@
 .members-wrap{
     width: 86%;
     height: 100%;
-    margin: 70vh auto;
+    margin: 50vh auto 70vh;
     // margin-top: 70vh;
     // margin-bottom: 70vh;
 
     display: flex;
     // margin-bottom: 70vh;
+    .mem-cont{
+        height: 100vh;
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
     .mem-row{
         display: flex;
         flex-direction: column;
         max-width: 100%;
         height: 21.5rem;
+        height: 44.4vw;
         position: relative;
         margin: auto;
         justify-content: flex-start;
@@ -119,7 +126,7 @@
          }
     }
     .back{
-        width: 12.7rem;
+        width: 26.2vw;
         position: absolute;
         height: 100%;
         display: flex;
@@ -155,8 +162,10 @@
    
 
     .members{
-        width: 12.7rem;
-        height: 12.7rem;
+        // width: 12.7rem;
+        // height: 12.7rem;
+        width: 26.2vw;
+        height: 26.2vw;
         border-radius: 20%;
         // background: gray;
         display: flex;

@@ -21,18 +21,18 @@ const Loading = lazy( () => import('./Loading.js'))
 
 
 const HomePage = () => {
-  const pintl = useRef();
-  const el = useRef();
-  const proTL = useRef();
   const { isMobile,resetLoco, setReset, changePp, changePointer, changeScPointer, changePT} = useAppContext();
   useLoco(!isMobile)
   gsap.registerPlugin(ScrollTrigger);
+  const pintl = useRef();
+  const el = useRef();
+  const proTL = useRef();
   const q = gsap.utils.selector(el);
   const fooT= useRef();
   const imageTimeline = useRef();
  
   useEffect(() => {
-    changePT("Home");
+    // changePT("Home");
     setTimeout(() => {
       setReset()
     }, 500);

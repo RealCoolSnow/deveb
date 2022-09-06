@@ -59,7 +59,8 @@ const {isMobile} = useAppContext();
         <img src={isMobile?img2mb:img2} alt="team working" />
       </div>
       <div className="members-wrap" id="membs">
-        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="mem-cont"  data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="0%,-80%">
+        <div className="mem-row" >
         <div className="desat"></div>
           <div className="members naz"></div>
           <div className="back">
@@ -68,7 +69,7 @@ const {isMobile} = useAppContext();
           </div>
         </div>
 
-        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="mem-row" >
         <div className="back">
         <p className="name">Amir <br/>Mohseni</p>
           <p>Product Designer</p>
@@ -76,8 +77,7 @@ const {isMobile} = useAppContext();
         <div className="desat"></div>
          <div className="members amir"></div>
         </div>
-
-        <div className="mem-row" data-scroll data-scroll-sticky data-scroll-target="#membs" data-scroll-offset="-10%,-70%">
+        <div className="mem-row" >
         <div className="back">
         <p className="label">Sr. Full-Stack Developer</p>
 
@@ -86,6 +86,10 @@ const {isMobile} = useAppContext();
         <div className="desat"></div>
          <div className="members iliya"></div>
         </div>
+
+        </div>
+
+
         
         {/* <div className="mem-row"> */}
         {/* <div className="back">

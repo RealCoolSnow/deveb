@@ -132,11 +132,9 @@ const AboutPage = () => {
       {
         yPercent: 0,
         autoAlpha: 1,
-        scale: 1.5,
+        scale: isMobile?1: 1.5,
         duration: .8,
         onComplete:()=> ScrollTrigger.refresh(),
-        // transformOrigin:"bottom center",
-        // stagger: 0.13,
         ease: "power2.out",
         delay:0.55,
       },
@@ -151,14 +149,18 @@ const AboutPage = () => {
   useEffect(()=>{
     const pis = q(".text-wrap2 p");
     const h5selector = q(".texts-wrap h5");
-      const texts = q(".texts-wrap .lineChildren,.texts-wrap h5,.texts-wrap p");
+      // const texts = q(".texts-wrap .lineChildren,.texts-wrap h5,.texts-wrap p");
       const imgTrig = q(".image-wrap img");
-      const imgWr = q(".image-wrap.fc");
+      // const imgWr = q(".image-wrap.fc");
 
-      const spans = q(".lineChildren");
+      // const spans = q(".lineChildren");
       const h1select = q("h1");
-
-   
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      if (isSafari){
+        gsap.set(q(".desat"),{
+          background:"rgba(255, 255, 255, 0)",
+        })
+      }
       if(!isMobile){
         changePp("other")
         if(loadingTL.current){
@@ -176,95 +178,9 @@ const AboutPage = () => {
         gsap.set( imgTrig[1],{ autoAlpha:1})
         gsap.set(
           q(".darkLayer"),{autoAlpha:0})
-         
-        
-        // loadingTL.current = gsap
-        // .timeline({
-        // })
-        // .to(
-        //   split.lines,
-        //   {
-        //     y: 0,
-        //     duration: 0.6,
-        //     stagger: {
-        //       amount: 0.1,
-        //       ease: "power2.Out",
-        //     },
-        //   },
-        //   0.4
-        // )
-        // .to(
-        //   split.lines,
-        //   {
-        //     autoAlpha: 1,
-        //     duration: 1.2,
-        //     stagger: {
-        //       amount: 0.1,
-        //       ease: "power2.Out",
-        //     },
-        //   },
-        //   0.4
-        // )
-        // .to(
-        //   q(".image-wrap"),
-        //   {
-        //     yPercent: 0,
-        //     duration: .8,
-        //     ease: "power2.out",
-        //   },
-        //   0.4
-        // )
-        // .to(
-        //   q(".image-wrap"),
-        //   {
-        //     yPercent: 0,
-        //     autoAlpha: 1,
-        //     scale: 1.5,
-        //     duration: .8,
-        //     // transformOrigin:"bottom center",
-        //     // stagger: 0.13,
-        //     ease: "power2.out",
-        //   },
-        //   0.35
-        // )
-    
-      // imgTl.current = gsap.timeline({
-      //   scrollTrigger: {
-      //     scroller: "[data-scroll-container]",
-      //     // trigger: imgWr,
-      //     start: () => "bottom center",
-      //     end: () => "bottom top",
-      //     //  markers:true,
-      //     // invalidateOnRefresh: true,
-      //     // onEnter: ({ direction }) => fadeOut(direction),
-      //     // onLeaveBack: ({ direction }) => fadeOut(direction),
-      //   },
-      // });
-  
-      // const fadeOut = (direction) => {
-      //   return (
-      //     gsap.to(h1select, {
-      //       autoAlpha: () => (direction === 1 ? 0 : 1),
-      //       duration: 0,
-      //     }),
-      //     gsap.to(h5selector, {
-      //       autoAlpha: () => (direction === 1 ? 1 : 0),
-      //       duration: 0,
-      //     }),
-      //     gsap.to(
-      //       q(".darkLayer"),
-      //       {
-      //         autoAlpha: () => (direction === 1 ? 1 : 0),
-      //         duration: 0,
-      //       },
-      //       "<"
-      //     )
-      //   );
-      // };
+   
       const images = q(".image-wrap");
-      // images.forEach((img, i) => {
-      //   console.log(img.offsetTop - img.offsetHeight / 3, img.offsetTop, img.offsetHeight);
-         tl.current = gsap
+          tl.current = gsap
           .timeline({
             scrollTrigger: {
               scroller: "#viewport",
@@ -279,8 +195,10 @@ const AboutPage = () => {
               // markers:true,
             },
           })
-          .to(images[0], { scale: 1, duration:14 },"0")
-          .to(h1select, {
+          .fromTo(images[0],{scale:1.5},{ scale: 1, duration:14 },"0")
+          .fromTo(h1select, {
+            autoAlpha:1,
+          },{
             autoAlpha: () => 0 ,
             duration: 0,
           }, ">")
@@ -472,6 +390,9 @@ const AboutPage = () => {
           if(tl.current){
             tl.current.kill();
           }
+          if(tl2.current){
+            tl2.current.kill();
+          }
           if(tl.current.ScrollTrigger){
             tl.current.ScrollTrigger.kill();
           }
@@ -584,16 +505,11 @@ const AboutPage = () => {
           scrollTrigger: {
             trigger: q(".members-wrap"),
             start: () => "top-=5% bottom",
-            end: () => "bottom+=5% top",
+            end: () => "top+=5% center",
             // markers: true,
             scrub: true,
             invalidateOnRefresh: true,
           },
-        })
-        .to(q(".mem-row"), {
-          xPercent: (index, target) => (index === 1 ? -5 : 5),
-          duration: 20,
-          ease: "none",
         })
         .to(
           q("h5")[0],
@@ -602,8 +518,26 @@ const AboutPage = () => {
             duration: 3.3,
             ease: "Power3.Out",
           },
-          "<5"
-        );
+          "<"
+        )
+        const mems = q(".members")
+        mems.forEach((mem, i)=>{
+         tl.current = gsap.timeline({
+           scrollTrigger:{
+             trigger: mem,
+             start: ()=> "center center-=10%",
+             end: ()=> "bottom center-=13%",
+            //  markers:true,
+             scrub: true,
+             ease:"power2.out"
+           }
+         })
+         .to(mem,{
+           yPercent:60,
+
+         })
+        } )
+      
        philTl.current = gsap
         .timeline({
           duration: 10,
