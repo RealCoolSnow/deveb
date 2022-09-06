@@ -525,15 +525,16 @@ const AboutPage = () => {
          tl.current = gsap.timeline({
            scrollTrigger:{
              trigger: mem,
-             start: ()=> "center center-=10%",
+             start: ()=> "center center",
              end: ()=> "bottom center-=13%",
             //  markers:true,
              scrub: true,
+             pin:true,
              ease:"power2.out"
            }
          })
          .to(mem,{
-           y:"10rem",
+          //  y:"10rem",
 
          })
         } )
