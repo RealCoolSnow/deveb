@@ -529,17 +529,17 @@ const AboutPage = () => {
              end: ()=> "bottom center-=5%",
             //  markers:true,
              scrub: true,
-             anticipatePin:.1,
+             anticipatePin:.01,
              pin:true,
              ease:"power2.out"
            }
          })
          .fromTo(mem,{
           //  y:"10rem",
-          backgroundPosition:"0 80%"
+          backgroundPosition:"0 70%"
 
          },{
-           backgroundPosition:"0 20%"
+           backgroundPosition:"0 30%"
          })
         } )
       
