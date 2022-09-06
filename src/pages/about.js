@@ -52,7 +52,7 @@ const AboutPage = () => {
       backgroundPosition:"50% 20%"
     })
     gsap.set(q(".mem-row .members")[1], {
-      backgroundPosition:"50% 80%"
+      backgroundPosition:()=> isMobile?"50% 50%" :"50% 80%"
     })
 
 
@@ -520,28 +520,28 @@ const AboutPage = () => {
           },
           "<"
         )
-        const mems = q(".members")
-        mems.forEach((mem, i)=>{
-         tl.current = gsap.timeline({
-           scrollTrigger:{
-             trigger: mem,
-             start: ()=> "center center",
-             end: ()=> "bottom center-=5%",
-            //  markers:true,
-             scrub: true,
-             anticipatePin:.01,
-             pin:true,
-             ease:"power2.out"
-           }
-         })
-         .fromTo(mem,{
-          //  y:"10rem",
-          backgroundPosition:"0 70%"
+        // const mems = q(".members")
+        // mems.forEach((mem, i)=>{
+        //  tl.current = gsap.timeline({
+        //    scrollTrigger:{
+        //      trigger: mem,
+        //      start: ()=> "center center",
+        //      end: ()=> "bottom center-=5%",
+        //     //  markers:true,
+        //      scrub: true,
+        //      anticipatePin:.01,
+        //      pin:true,
+        //      ease:"power2.out"
+        //    }
+        //  })
+        //  .fromTo(mem,{
+        //   //  y:"10rem",
+        //   backgroundPosition:"0 70%"
 
-         },{
-           backgroundPosition:"0 30%"
-         })
-        } )
+        //  },{
+        //    backgroundPosition:"0 30%"
+        //  })
+        // } )
       
        philTl.current = gsap
         .timeline({

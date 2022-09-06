@@ -17,7 +17,7 @@ export default function Thanks({ showToggle, isMobile }) {
         
       }
       <h2>Thanks!</h2>
-      <p>We will contact you shortly.</p>
+      <p>We will contact you shortly</p>
       {
         isMobile && 
         <Link className="backbtn" to="/">

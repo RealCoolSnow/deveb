@@ -323,6 +323,14 @@ const HomePage = () => {
           }
           else if(isMobile){
            console.log("runnig mobile")
+           var cbmb = (dir)=>{
+            gsap.to(el.current,
+               {
+                 backgroundColor:()=>dir=== 1?"#0000ff" : "ff0000", 
+                 duration:.4
+                }
+                )
+           }
 
             el.current.style.transform="none";
             gsap.set(q("section.head"),{
@@ -342,6 +350,21 @@ const HomePage = () => {
             gsap.set(q(".h2.home h3, .h2.home h6"),{
               autoAlpha:1,
               y:0,
+            })
+            var clbg = gsap.timeline({
+              scrollTrigger:{
+                trigger: q(".process"),
+                start:"top bottom",
+                end:"bottom center",
+                // markers:true,
+                scrub:true,
+                // onEnter:({direction})=>cbmb(direction),
+                // onEnter:({direction})=>cbmb(direction),
+              
+              }
+            })
+            .to(el.current,{
+              backgroundColor:"#f5f5f7"
             })
          
             fooT.current = gsap

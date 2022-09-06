@@ -3,6 +3,9 @@
     .logo svg.sm-logo{
       width: 1.7vw;
     }
+    div .logo svg:not(sm-logo){
+      width: 2.2vw!important;
+    }
     .navlinks-contain li
     {
       padding: 0 0 0 calc(5.8vw / 7 * 2);
@@ -36,6 +39,30 @@
       .process-col{
         padding: 1.8rem 1.55rem 1.7rem;
       }
+    }
+  }
+  #stick{
+   .texts-wrap{
+
+     h1{
+        font-size: 1.8rem;
+         max-width: 27rem;
+      }
+      h5{
+        font-size: 1.4rem;
+        max-width: 25rem;
+      }
+   } 
+   .text-wrap2{
+     h5{
+       font-size: 1.4rem;
+     }
+   }
+  }
+  div.pro-cont a.project{
+    margin: 0 0 2.5rem;
+    .pro-item{
+      border-radius: 12%;
     }
   }
 }
@@ -591,6 +618,17 @@ section.process {
         }
         .members{
           height: 16rem;
+          background-position: center;
+        }
+        .mbtxt{
+          display: block;
+          p{font-size: 1.5rem;
+          color: var(--black-font-main);
+          &:nth-child(2){
+            font-size: .85rem;
+            color: var(--black-font);
+          }
+          }
         }
       }
     }
@@ -848,20 +886,27 @@ section.process {
 
 #stick .members-wrap {
 margin-bottom: -9rem;
+width: 100%;
 .mem-cont{
-  height: 260vh;
+  height: 97rem;
 }
   .mem-row {
-    height: 60vh;
+    height: 100vh;
     align-items: center;
     .members {
-  // width: 160px;
-  // height: 160px;
+  width: 100vw;
+  height: 100vw;
   margin: 11px;
   font-size: 1.1rem;
  }
  &:nth-child(2) {
   justify-content: flex-start;}
+  .back{
+  display: none;
+}
+.mbtxt{
+  margin-top: 1rem;
+}
 }
 }
 

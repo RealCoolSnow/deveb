@@ -67,6 +67,10 @@ const {isMobile} = useAppContext();
           <p className="label">Sr. Full-Stack Developer</p>
           <p className="name">Nazanin Esmaeilian</p>
           </div>
+          <div className="mbtxt">
+            <p>Nazanin Esmaeilian</p>
+            <p>Sr. Full-Stack Developer</p>
+          </div>
         </div>
 
         <div className="mem-row" >
@@ -76,6 +80,10 @@ const {isMobile} = useAppContext();
         </div>
         <div className="desat"></div>
          <div className="members amir"></div>
+         <div className="mbtxt">
+            <p>Amir Mohseni</p>
+            <p>Product Designer</p>
+          </div>
         </div>
         <div className="mem-row" >
         <div className="back">
@@ -85,6 +93,10 @@ const {isMobile} = useAppContext();
         </div>
         <div className="desat"></div>
          <div className="members iliya"></div>
+         <div className="mbtxt">
+            <p>Ilia Mohseni</p>
+            <p>Sr. Full-Stack Developer</p>
+          </div>
         </div>
 
         </div>
