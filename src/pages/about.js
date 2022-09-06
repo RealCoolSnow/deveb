@@ -533,7 +533,7 @@ const AboutPage = () => {
            }
          })
          .to(mem,{
-           yPercent:60,
+           y:"10rem",
 
          })
         } )
