@@ -504,8 +504,8 @@ const AboutPage = () => {
         .timeline({
           scrollTrigger: {
             trigger: q(".members-wrap"),
-            start: () => "top-=5% bottom",
-            end: () => "top+=5% center",
+            start: () => "top-=5% center",
+            end: () => "top center-=10%",
             // markers: true,
             scrub: true,
             invalidateOnRefresh: true,
@@ -520,28 +520,28 @@ const AboutPage = () => {
           },
           "<"
         )
-        // const mems = q(".members")
-        // mems.forEach((mem, i)=>{
-        //  tl.current = gsap.timeline({
-        //    scrollTrigger:{
-        //      trigger: mem,
-        //      start: ()=> "center center",
-        //      end: ()=> "bottom center-=5%",
-        //     //  markers:true,
-        //      scrub: true,
-        //      anticipatePin:.01,
-        //      pin:true,
-        //      ease:"power2.out"
-        //    }
-        //  })
-        //  .fromTo(mem,{
-        //   //  y:"10rem",
-        //   backgroundPosition:"0 70%"
+        const mems = q(".members")
+        mems.forEach((mem, i)=>{
+         tl.current = gsap.timeline({
+           scrollTrigger:{
+             trigger: mem,
+             start: ()=> "top bottom",
+             end: ()=> "bottom top",
+            //  markers:true,
+             scrub: true,
+            //  anticipatePin:.01,
+            //  pin:true,
+             ease:"power2.out"
+           }
+         })
+         .fromTo(mem,{
+          //  y:"10rem",
+          backgroundPosition:"0 25%"
 
-        //  },{
-        //    backgroundPosition:"0 30%"
-        //  })
-        // } )
+         },{
+           backgroundPosition:"0 65%"
+         })
+        } )
       
        philTl.current = gsap
         .timeline({
