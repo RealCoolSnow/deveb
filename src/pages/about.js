@@ -526,16 +526,20 @@ const AboutPage = () => {
            scrollTrigger:{
              trigger: mem,
              start: ()=> "center center",
-             end: ()=> "bottom center-=13%",
+             end: ()=> "bottom center-=5%",
             //  markers:true,
              scrub: true,
+             anticipatePin:.1,
              pin:true,
              ease:"power2.out"
            }
          })
-         .to(mem,{
+         .fromTo(mem,{
           //  y:"10rem",
+          backgroundPosition:"0 80%"
 
+         },{
+           backgroundPosition:"0 20%"
          })
         } )
       
