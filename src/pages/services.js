@@ -137,42 +137,27 @@ if(!isMobile){
       .fromTo(
         image,
         {
-          height: () => {
-            return "100%";
-          },
-          y: () => {
-            return 0;
-          },
+          clipPath:()=> "inset(0px 0px 0px 0px)",
+          backgroundPosition: () => "0 40%",
+                       
         },
         {
-          height: () => {
-            return "0%";
-          },
-          y: () => {
-            return -15;
-          },
+          clipPath: ()=>"inset(0px 0px 100% 0px)",
+          backgroundPosition: () => "0 60%",
           ease: "none",
           // onComplete:()=>console.log(images[i+1])
         },
         0
       )
-      .fromTo(fulimages[i+1], { y: () => { return 15 } }, { y: () => { return 0 }, ease: "none" }, 0)
+      .fromTo(fulimages[i+1], {
+        backgroundPosition: () => "0 20%",
 
-      .fromTo(
-        image,
-        {
-          height: () => {
-            return "100%";
-          },
-        },
-        {
-          height: () => {
-            return "0%";
-          },
-          ease: "none",
-        },
-        0
-      );
+         }, 
+         { 
+          backgroundPosition: () => "0 40%",
+          ease: "none" 
+         }, 0
+        )
     });
 
     ScrollTrigger.create({

@@ -3,12 +3,15 @@
 // import t3d from '../assets/covers/ren.jpg'
 // import ani from '../assets/covers/ani.jpg'
 // import vr from '../assets/covers/vr.jpg'
-import dopegood from '../assets/covers/dopegood.webp'
-import amarc from '../assets/covers/am-arc.webp'
-import vim from '../assets/covers/vim.webp'
-import dopop from '../assets/covers/dopop2.webp'
-import comfeey from '../assets/covers/comfeey.webp'
-
+import dopegood from '../assets/covers/dopegood.jpg'
+import amarc from '../assets/covers/am-arc.jpg'
+import vim from '../assets/covers/vim.jpg'
+import dopop from '../assets/covers/dopop2.jpg'
+import comfeey from '../assets/covers/comfeey.jpg'
+import sdopegood from '../assets/covers/sdope.jpg'
+import samarc from '../assets/covers/sam-arc.jpg'
+import svim from '../assets/covers/svim.jpg'
+import sdopop from '../assets/covers/sdopop.jpg'
 
 
 
@@ -46,6 +49,18 @@ export const links = [
 
 export const home = [
   {
+    num: "Vimcosmo",
+    id: "hp103",
+    h4: "Online store, cosmetic brand",
+    p: "",
+    a: { text: "Learn more",  url:"/projects" },
+    img: {
+      cover: vim,
+      colors: { cur: "#FF99CE", pointer: "#CC669Bbf", bg:"#FAE1EE", tx:"#E67FB4", br:"#FEA5D3"},
+      klass: "first",
+    },
+  },
+  {
     num: "Dopop",
     id: "hp104",
     h4: "NFT digital marketplace",
@@ -54,19 +69,7 @@ export const home = [
     img: {
       cover: dopop,
       colors: { cur: "#808CFF", pointer: "#808cffbf", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
-      klass: "first",
-    },
-  },
-  {
-    num: "Dope Good",
-    id: "hp101",
-    h4: "Online store, Furniture brand",
-    p: "",
-    a: { text: "Learn more",  url:"/projects" },
-    img: {
-      cover: dopegood,
-      colors: { cur: "#FFB18C", pointer: "#FFA073bf", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
-      klass: "threeD",
+      klass: "",
     },
   },
   {
@@ -82,17 +85,18 @@ export const home = [
     },
   },
   {
-    num: "Vimcosmo",
-    id: "hp103",
-    h4: "Online store, Cosmetic brand",
+    num: "Dope Good",
+    id: "hp101",
+    h4: "Online store, Furniture brand",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
-      cover: vim,
-      colors: { cur: "#FF99CE", pointer: "#CC669Bbf", bg:"#FAE1EE", tx:"#E67FB4", br:"#FEA5D3"},
+      cover: dopegood,
+      colors: { cur: "#FFB18C", pointer: "#FFA073bf", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},
       klass: "threeD",
     },
   },
+  
   {
     num: "Comfeey",
     id: "hp105",
@@ -113,47 +117,50 @@ export const servData = [
     num: "",
     id: "h21ex1",
     h4: "Design",
-    p: "Design makes its mark through first impressions. Using eye-catching design and meaningful user experiences, we establish long-lasting relationships with your customers.",
+    p: "The design makes its mark through first impressions. We establish long-lasting relationships with our customers using eye-catching design and meaningful user experiences.",
     a: { text: "View more", url: "/projects" },
     img: {
-      cover: dopegood,
-      colors: { bg: "#FFEAE0", br: "#FFC3A6" },
+      cover: svim,
+      colors: { bg: "#FAE1EE", br: "#FEA5AB" },
       klass: "first",
     },
+    
   },
   {
     num: "",
     id: "h21ex2",
     h4: "Development",
-    p: "Your website is the face of your business. Together, our developers and designers build an efficient, interactive and responsive platform that will appeal to your target audience.",
+    p: "Your website is the face of your business. Together, our developers and designers build an efficient, interactive, responsive platform that will appeal to your target audience.",
     a: { text: "Learn more", url: "/projects" },
     img: {
-      cover: vim,
-      colors: { bg: "#FEE0E2", br: "#FEA5AB" },
+      cover: sdopop,
+      colors: { bg: "#D3D6F0", br: "#9CA5F0" },
       klass: "",
     },
+   
   },
   {
     num: "",
     id: "h21ex3",
     h4: "Branding",
-    p: "We give your business a face and identify your brand by creating the most suitable logo, along with mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
+    p: "We give your business/brand a face and identity by creating the most suitable logo and mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
     a: { text: "Learn more", url: "/projects" },
     img: {
-      cover: dopop,
-      colors: { bg: "#D3D6F0", br: "#9CA5F0" },
+      cover: samarc,
+      colors: { bg: "#FFEDE0", br: "#F2AB79" },
       klass: "",
     },
+   
   },
   {
     num: "",
     id: "h21ex4",
     h4: "Concept design",
-    p: "The architectural movie provides a highly immersive experience for presentation and property marketing. It shows surroundings, interior and exterior design, and walks the viewer through the property as if it were already built.",
+    p: "Using our creative design skills, we can help you make your product even better by creating a site or application that appeals to your audience.",
     a: { text: "Learn more", url: "/projects" },
     img: {
-      cover: comfeey,
-      colors: { bg: "#E0F0FF", br: "#A6D4FF" },
+      cover: sdopegood,
+      colors: { bg: "#FFEAE0", br: "#FFC3A6" },
       klass: "end",
     },
   }

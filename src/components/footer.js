@@ -121,8 +121,8 @@ const shrinkfil = ()=>{
 }
 const backfill= ()=>{
   gsap.to(q(".foot-svg"),{
-    xPercent:0,
-    yPercent:0,
+    xPercent:()=>0,
+    yPercent:()=>0,
 
     ease: "Power3.Out",
     duration: .55,
@@ -157,7 +157,10 @@ const handleclick =() => histori.push('/contact');
     // if(prj){
     //   gsap.set(q(".f-filler"),{background:"#ffffff"})
     // }
-
+    // gsap.set(q(".foot-svg"), {
+    //   xPercent:0,
+    //   yPercent:0,
+    // })
       gsap.set(q(".backgr"), {
         autoAlpha:0,
       });

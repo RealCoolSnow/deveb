@@ -17,7 +17,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
       gsap.to(el.current, {
         x: e.clientX,
         y: e.clientY,
-        duration:.4,
+        duration:.3,
         ease:"Power3.Out",
         // delay: .1,
     });

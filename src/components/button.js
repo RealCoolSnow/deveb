@@ -67,7 +67,7 @@ const Button = ({
 
       if (btnhover === true) {
 
-        gsap.set(ripple, { backgroundColor: '#FF7070' })
+        gsap.set(ripple, { backgroundColor: '#FF5983' })
         gsap.to(teXt, 0.4, {
           color: "#fff",
         });

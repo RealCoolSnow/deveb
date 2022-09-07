@@ -249,20 +249,12 @@ const HomePage = () => {
                       .fromTo(
                         image,
                         {
-                          height: () => {
-                            return "100%";
-                          },
-                          y: () => {
-                            return 0;
-                          },
+                          clipPath:()=> "inset(0px 0px 0px 0px)",
+                          backgroundPosition: () => "0 40%",
                         },
                         {
-                          height: () => {
-                            return "0%";
-                          },
-                          y: () => {
-                            return -20;
-                          },
+                          clipPath:()=> "inset(0px 0px 100% 0px)",
+                          backgroundPosition: () => "0 60%",
                           ease: "none",
                         },
                         0
@@ -270,16 +262,13 @@ const HomePage = () => {
                   
               
                       .fromTo(
-                        image,
+                        imageArrayfull[i+1],
                         {
-                          height: () => {
-                            return "100%";
-                          },
+                          backgroundPosition: () => "0 20%",
+
                         },
                         {
-                          height: () => {
-                            return "0%";
-                          },
+                          backgroundPosition: () => "0 40%",
                           ease: "none",
                         },
                         0

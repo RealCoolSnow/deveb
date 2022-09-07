@@ -247,7 +247,7 @@ const Showcase = ({ showcasedata, dataHeight, ell, sci}) => {
           </div>
 
           <div className={dataHeight=== "200vh"? "show-images r0" : "show-images r1"}>
-            <div className="show-img-contain" data-scroll data-scroll-sticky data-scroll-target={`#${sci}`} data-scroll-offset="0%,%45">
+            <div className="show-img-contain" data-scroll data-scroll-sticky data-scroll-target={`#${sci}`} data-scroll-offset="0%,%43">
               {showcasedata.map((item, idx) => {
                 const { img, id } = item;
 

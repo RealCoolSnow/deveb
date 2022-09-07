@@ -1,3 +1,8 @@
+@media (min-width: 2400px) {
+  section.footer-sec .footer-main svg{
+    width: 572px;
+  }
+}
 @media ( min-width: 1630px ) {
   .frame-wrapper .frame.f-top {
     .logo svg.sm-logo{
@@ -169,20 +174,27 @@
   #stick {
     .texts-wrap{
       width: 60vw;
-      h5{ font-size:33.5px;}
+      h5{ font-size:1.1rem;}
       #headLines, h1 {
-        font-size: 39px;
+        // font-size: 39px;
+        font-size: 1.391rem;
         img{width: 47px; height: 47px;  display: inline-block;}
       }
    }
    .text-wrap2:not(.pi){
-      width:61%;
-      h5{font-size: 33.5px;}
+      
+    width: 25rem;
+
+      h5{font-size: 1.1rem;}
    }
    .image-wrap img{
      min-width: 60vw;
     max-width: 67vw;
     height: auto;
+   }
+   .mem-row .back p{
+    width: 8rem;
+    font-size: 1rem;
    }
   }
   section.process {
@@ -206,12 +218,12 @@
   #stick .texts-wrap h2 {
     font-size: 39px;
  }
- #stick .texts-wrap h5 {
-  font-size: 28.5px;
- }
- #stick .text-wrap2:not(.pi) h5 {
-  font-size: 28.5px;
-}
+//  #stick .texts-wrap h5 {
+//   // font-size: 28.5px;
+//  }
+//  #stick .text-wrap2:not(.pi) h5 {
+//   // font-size: 28.5px;
+// }
 // #stick .members-wrap .mem-row .members {
 //   width: 180px;
 //   height: 180px;
@@ -609,20 +621,25 @@ section.process {
       }
     }
     .mem-cont{
-      height: 300vh;
+      height: 97rem;
       flex-direction: column;
       .mem-row{
-        height: 80vh;
+        height: 70vh;
         // height: 64vh;
-        .members,.back{
-          width: 16rem;
+        &:nth-child(2){
+          justify-content: flex-start;
+        }
+        .back{
+          display: none;
         }
         .members{
           height: 16rem;
+          width:16rem;
           background-position: center;
         }
         .mbtxt{
           display: block;
+          margin-top:1rem;
           p{font-size: 1.5rem;
           color: var(--black-font-main);
           &:nth-child(2){
@@ -635,6 +652,8 @@ section.process {
     }
     .members-wrap{
       margin-top: 52vh;
+      margin-bottom: -9rem;
+      width: 100%;
     }
     .text-wrap2{
       width: 100vw!important;

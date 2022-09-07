@@ -1,12 +1,12 @@
 import dopegood from '../assets/covers/dopegood.webp'
-import amarc from '../assets/covers/am-arc.webp'
+import amarc from '../assets/covers/am-arc.jpg'
 import vim from '../assets/covers/vim.webp'
 import dopop from '../assets/covers/dopop.jpg'
 import comfeey from '../assets/covers/comfeey.webp'
-import {vim1, vim2, vim3, vim4, vim5, vim6} from "../assets/covers/vim"
-import {a1, a2, a3, a4, a5, a6} from "../assets/covers/am"
-import {do1, do2, do3, do4, do5, do6, do7} from "../assets/covers/dopop"
-import {d1, d2, d3, d4, d5, d6, d7, d8} from "../assets/covers/dopegood"
+import {vim1, vim2, vim3, vim4, vim5, vim6,vim7,vim8,vim9} from "../assets/covers/vim"
+import {a1, a2, a3, a4, a5, a6, a7} from "../assets/covers/am"
+import {do1, do2, do3, do4, do5, do6, do7,do8,do9,do10} from "../assets/covers/dopop"
+import {d1, d2, d3, d4, d5, d6, d7, d8, d9} from "../assets/covers/dopegood"
 
 
 export const prjData = [
@@ -14,7 +14,7 @@ export const prjData = [
   {
     id:"p15i11",
     name: 'VimCosmo',
-    desc: "Online marketplace for NFT's",
+    desc: "Online shop",
     tags:['Interior',],
     family:"vimcosmo",
     elements:[
@@ -23,7 +23,7 @@ export const prjData = [
         type:"textbox",
         h3:"Vimcosmo",
         mt:true,
-        h1:"Beauty brand, Online shop",
+        h1:"Beauty brand, online shop",
         width:"short",
         alignment:"alignment",
       },
@@ -40,31 +40,13 @@ export const prjData = [
         id:"vt21",
         type:"textbox",
         h3:"Expectaion",
-        pi:"our designer’s main objective was to catch user’s attention to the products and encourage them to purchase, so he designed a layout in which the products could be found on every page.  In addition we wanted to make sure that Everything, from images to color schemes meet the client’s needs and be consistent with their branding.",
+        pi:"Our designer’s main objective was to catch users’ attention to the products and encourage them to purchase. Therefore, every page of the website features a product layout. In addition, we wanted to ensure that everything, from images to color schemes, meets the client’s needs and is consistent with their branding.",
         width:"long",
         butt:"https://vimcosmo.com/",
-      
       },
-      // {
-      //   id:"vc21",
-      //   type:"cover",
-      //   double:false,
-      //   src:vim2,
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
-      // {
-      //   id:"vb11",
-      //   type:"button",
-      //   // double:false,
-      //   url:"https://vimcosmo.com/",
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
       {
         id:"vb11",
         type:"butsec",
-        // double:false,
         url:"https://vimcosmo.com/",
         width:"full-w",
         height:"full-H",
@@ -88,7 +70,7 @@ export const prjData = [
       {
         id:"vt31",
         type:"textbox",
-        pi:"We developed a content management system for the client, so they can add, delete or change content as they see fit",
+        pi:"To make it easier for our client to add, delete, or update content, we developed a content management system.",
         width:"long",
         alignment:"vw3",
       },
@@ -114,18 +96,47 @@ export const prjData = [
         double:true,
         h2width:"short",
         h2:"Fast And Responsive Design",
-        pi:"Our websites are all mobile-friendly and designed to adapt to different devices, so Vimcosmo is no exception. Since the site’s contents are very limited, we used multiple interesting animations to keep users entertained. The website is very light and fast, with a file size of only 5MB.",
+        pi:"Our mobile-friendly websites are designed to adapt to different devices, so Vimcosmo is no exception. Since the site’s contents are minimal, we used multiple engaging animations to keep users entertained. The website is very light and fast, with a file size of only 5MB.",
       },  
       {
         id:"vc51",
         type:"cover",
         src:vim6,
         double:false,
+        pb:"pd",
+        width:"full-w",
+        height:"full-H",
+        // end:true,
+      },
+      {
+        id:"vc61",
+        type:"cover",
+        src:vim7,
+        pb:"pd",
+        double:false,
+        width:"full-w",
+        height:"full-H",
+        // end:true,
+      },
+      {
+        id:"vc71",
+        type:"cover",
+        src:vim8,
+        pb:"pd",
+        double:false,
+        width:"full-w",
+        height:"full-H",
+        // end:true,
+      },
+      {
+        id:"vc81",
+        type:"cover",
+        src:vim9,
+        pb:"pd",
+        double:false,
         width:"full-w",
         height:"full-H",
         end:true,
-        // double:true,
-        // align:"normal",
       },
     ],
     a:{text:"View more", url:"vimcosmo"},
@@ -147,7 +158,7 @@ export const prjData = [
         type:"textbox",
         h3:"Dopop",
         mt:true,
-        h1:"Online marketplace for create, buy and sell NFT's",
+        h1:"Online marketplace to create, buy and sell NFT's",
         width:"short",
         alignment:"alignment",
       },
@@ -164,7 +175,7 @@ export const prjData = [
         id:"vt23",
         type:"textbox",
         h3:"Expectaion",
-        pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
+        pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful, and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
         butt:"https://dopop.net",
         width:"long",
       
@@ -207,7 +218,7 @@ export const prjData = [
       {
         id:"vt33",
         type:"textbox",
-        pi:"Featuring the most popular trendy design styles, Dopop has a dark and light theme. Since the design shared many similar components, we have made reuseable components in the front-end to use across the website and easily share data between them.",
+        pi:"Featuring the most popular trendy design styles, Dopop has a dark and light theme. Since the design shared many similar components, we have made reusable components in the front-end to use across the website and easily share data between them.",
         width:"long"
       },
       {
@@ -228,7 +239,7 @@ export const prjData = [
         type:"textbox",
         double:true,
         h2:"Technologies",
-        pi:"React was the perfect fit for achieving this and managing data efficiently. Furthermore, we used Gsap and Lottie to create smooth aimations.",
+        pi:"React was the perfect fit for achieving this and managing data efficiently. Furthermore, we used GSAP and Lottie to create smooth animations.",
       },  
       {
         id:"vc43",
@@ -237,6 +248,37 @@ export const prjData = [
         src:do7,
         width:"full-w",
         height:"full-H",
+        pb:"pd",
+        // end:true,
+      },
+      {
+        id:"vc63",
+        type:"cover",
+        double:false,
+        src:do8,
+        width:"full-w",
+        height:"full-H",
+        pb:"pd",
+        // end:true,
+      },
+      {
+        id:"vc73",
+        type:"cover",
+        double:false,
+        src:do9,
+        width:"full-w",
+        height:"full-H",
+        pb:"pd",
+        // end:true,
+      },
+      {
+        id:"vc83",
+        type:"cover",
+        double:false,
+        src:do10,
+        width:"full-w",
+        height:"full-H",
+        pb:"pd",
         end:true,
       },
     ],
@@ -276,7 +318,7 @@ export const prjData = [
         id:"vt24",
         type:"textbox",
         h3:"Expectaion",
-        pi:"Creating the brand identity, logo design, website design, and web development for a modern furniture brand was requested. The overall design had to match the gorgeous modern furniture and the online e-commerce website had to be fully customizable.",
+        pi:"Creating the brand identity, logo design, website design, and web development for a modern furniture brand was requested. The overall design matched the gorgeous modern furniture, and the online e-commerce website had to be fully customizable.",
         width:"long",
         butt:"https://dopegood.com",
       
@@ -318,7 +360,7 @@ export const prjData = [
       {
         id:"vt34",
         type:"textbox",
-        pi:"Our web application was created by integrating Redux with React to centralized data management in the front-end technology. With React as the front-end technology, we were able to create an interactive storefront and to modernize the website to the maximum performance.",
+        pi:"Our web application was created by integrating Redux with React to centralized data management in the front-end technology. With React as the front-end technology, we were able to create an interactive storefront and modernize the website to maximize performance.",
         width:"long"
       },
       {
@@ -335,7 +377,7 @@ export const prjData = [
         double:true,
         h2width:"short",
         h2:"How we approached designing the API",
-        pi:"We decided to go with Nodejs and TypeScript for the API. Due to the fact that NodeJs offers a wide range of tools and is a very common technology for backends that is easy to integrate into any system design. Using TypeScript also enables us to gain type control and facilitate future debugging. In order to maximize scalability and speed, MongoDB was used.",
+        pi:"We decided to go with Nodejs and TypeScript for the API. Since NodeJs offers a wide range of tools and is a prevalent backend technology that is easy to integrate into any system design. Using TypeScript also enables us to gain type control and facilitate future debugging. Also, we used MongoDB to maximize the speed.",
       },  
       {
         id:"vc54",
@@ -362,6 +404,17 @@ export const prjData = [
         type:"cover",
         double:false,
         src:d8,
+        pb:"pd",
+        // align:"normal",
+        end:true,
+        width:"full-w",
+        height:"full-H",
+      },
+      {
+        id:"vc74",
+        type:"cover",
+        double:false,
+        src:d9,
         pb:"pd",
         // align:"normal",
         end:true,
@@ -405,27 +458,11 @@ export const prjData = [
         id:"vt25",
         type:"textbox",
         h3:"Expectaion",
-        pi:"Designing and developing a modern and minimal website, with multiple features, such as architectural virtual reality tours and animations, for a studio with high design expectations, was a tremendously enjoyable experience for us.",
+        pi:"Designing and developing a modern and minimal website, with multiple features, such as architectural virtual reality tours and animations, for a studio with high design expectations was a tremendously enjoyable experience for us.",
         width:"long",
         butt:"https://am-arc.com"
       
       },
-      // {
-      //   id:"vc25",
-      //   type:"cover",
-      //   double:false,
-      //   src:a2,
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
-      // {
-      //   id:"vb15",
-      //   type:"button",
-      //   // double:false,
-      //   url:"https://am-arc.com",
-      //   width:"medium-w",
-      //   height:"medium-h",
-      // },
       {
         id:"vb11",
         type:"butsec",
@@ -447,7 +484,7 @@ export const prjData = [
       {
         id:"vt35",
         type:"textbox",
-        pi:"We have decided to use smooth scrolling to create a more appealing user experience as well as add some additional animation to the overall design. This feature was quite a perfect match for the rest of the website since their studio is also providing animation services.",
+        pi:"We have decided to use smooth scrolling to create a more appealing user experience and add some additional animation to the overall design. This feature was a perfect match for the rest of the website since their studio also provides animation services.",
         width:"long"
       },
       {
@@ -463,9 +500,20 @@ export const prjData = [
         type:"textbox",
         double:true,
         h2width:"mid",
-        h2:"Challenges and tchnologies",
-        pi:"Maintaining performance while creating complex animations is quite challenging using React, smooth scroll and Gsap together. Several custom animation codes were implemented in order to avoid memory leaks and achieve the best performance possible.",
-      },  
+        h2:"Challenges and technologies",
+        pi:"Maintaining performance while creating complex animations is challenging using React, smooth scroll, and Gsap together. Several custom animation codes were implemented to avoid memory leaks and achieve the best performance possible.",
+      }, 
+      {
+        id:"vc65",
+        type:"cover",
+        src:a7,
+        double:false,
+        width:"full-w",
+        height:"full-H",
+        end:true,
+        pb:"pd",
+        // align:"normal",
+      }, 
       {
         id:"vc55",
         type:"cover",

@@ -12,6 +12,10 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
     changePointer({isHover: false,})
 
   }
+  const entlink = ()=>{
+    if (isMobile === false ){
+      changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+  }
   return (
     <div className="menu-box" 
       // style={{ backgroundImage: 'url(./Sc.png)', backgroundPosition: 'top center',
@@ -64,7 +68,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             onClick={() => linkClicked("services")}
             onMouseMove={moveLinks}
             onMouseLeave={!isMobile? (e)=>leavem(e) : null}
-      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
+            onMouseEnter={entlink}
 
           >
             Services
@@ -77,8 +81,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             onClick={() => linkClicked("projects")}
             onMouseMove={moveLinks}
             onMouseLeave={!isMobile? (e)=>leavem(e) : null}
-      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
-
+            onMouseEnter={entlink}
           >
             Projects
           </Link>
@@ -88,8 +91,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             onClick={() => linkClicked("about")}
             onMouseMove={moveLinks}
             onMouseLeave={!isMobile? (e)=>leavem(e) : null}
-      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
-
+            onMouseEnter={entlink}
           >
             About
           </Link>
@@ -99,8 +101,7 @@ export default function Menu({ activeRoute, linkClicked, leftPart = true, moveLi
             onClick={() => linkClicked("contact")}
             onMouseMove={moveLinks}
             onMouseLeave={!isMobile? (e)=>leavem(e) : null}
-      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#ffffff", txt: "#000000"}, text: "", blend:true,})}
-
+            onMouseEnter={entlink}
           >
             Contacts
           </Link>

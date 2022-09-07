@@ -105,7 +105,7 @@ const Process = () => {
         <div className="process-col">
           <h5>Get results</h5>
           <p>
-          Receive the perfect quality of your services on-time & leave us a review if you like.
+          Receive the perfect quality of your services on time & leave us a review if you like.
           </p>
         </div>
       </div>

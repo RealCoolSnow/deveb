@@ -145,7 +145,7 @@ const AboutPage = () => {
       document.fonts.ready.then(()=>{
         functionnn()
       })    
-    },[])
+    },[isMobile])
   useEffect(()=>{
     const pis = q(".text-wrap2 p");
     const h5selector = q(".texts-wrap h5");
@@ -415,7 +415,7 @@ const AboutPage = () => {
       }
       else if (isMobile){
         // functionnn()
-
+        
         el.current.style.transform="none";
         gsap.set(q(".texts-wrap"), {
           transform:"none"
