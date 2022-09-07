@@ -4,6 +4,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 // import Con from'../components/contact.js'
 // import Serv from'../components/serv.js'
 // import Showcase from '../components/showcase.js'
+import Footer from '../components/footer.js'
+import FooterMB from '../components/footermb.jsx'
+import ShowcaseServ from "../components/serShc.js"
 import Loading from "./Loading.js"
 import useLoco from '../utils/useLoco.js'
 import {servData} from '../utils/constans.js'
@@ -12,10 +15,10 @@ import Serv from '../components/serv.js'
 import Helmet from 'react-helmet'
 
 // const Serv = lazy( () => import('../components/serv.js'))
-const ShowcaseServ = lazy( () => import('../components/serShc.js'))
+// const ShowcaseServ = lazy( () => import('../components/serShc.js'))
 // const Con = lazy( () => import('../components/contact.js'))
-const Footer = lazy( () => import('../components/footer.js'))
-const FooterMB = lazy( () => import('../components/footermb.jsx'))
+// const Footer = lazy( () => import('../components/footer.js'))
+// const FooterMB = lazy( () => import('../components/footermb.jsx'))
 
 // const Loading = lazy( () => import('./Loading.js'))
 
@@ -297,14 +300,14 @@ if(!isMobile){
       </Helmet>
 
         <Serv/>
-      <Suspense fallback={ <Loading/> }>
+      {/* <Suspense fallback={ <Loading/> }> */}
         <ShowcaseServ showcasedata={servData} dataHeight='100vh'/>
         {/* <Con conn={true}/> */}
         {
         !isMobile ? <Footer /> : <FooterMB/>
         }
         {/* <TestingCompo/> */}
-      </Suspense>
+      {/* </Suspense> */}
     </main>
   )
 }

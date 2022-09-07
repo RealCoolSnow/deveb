@@ -599,6 +599,8 @@ section {
           margin-bottom: 0;
           position: relative;
           overflow: hidden;
+          height: 1.45rem;
+
           padding-bottom: 21px;
 
           input,
@@ -627,6 +629,7 @@ section {
           textarea {
             padding-bottom: 4px;
             height: 23px;
+            height: 0.78rem;
             overflow: hidden;
             &::placeholder {
               color: var(--black-font);
@@ -647,6 +650,7 @@ section {
             left: 0;
             right: 0;
             bottom: 15px;
+            bottom: 0.53rem;
             height: 59px;
             -webkit-transform: translateX(-66.66%);
             -moz-transform: translateX(-66.66%);
