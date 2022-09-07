@@ -10,12 +10,6 @@ import dopop from '../assets/covers/dopop2.webp'
 import comfeey from '../assets/covers/comfeey.webp'
 
 
-
-
-
-
-
-
 export const links = [
   {
     id: "na1Li1",
@@ -60,7 +54,7 @@ export const home = [
   {
     num: "Dope Good",
     id: "hp101",
-    h4: "Online store, Furniture brand",
+    h4: "Online store, furniture brand",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -72,7 +66,7 @@ export const home = [
   {
     num: "AM-ARC",
     id: "hp102",
-    h4: "Architectural Design Studio",
+    h4: "Architectural design studio",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -84,7 +78,7 @@ export const home = [
   {
     num: "Vimcosmo",
     id: "hp103",
-    h4: "Online store, Cosmetic brand",
+    h4: "Online store, cosmetic brand",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -96,7 +90,7 @@ export const home = [
   {
     num: "Comfeey",
     id: "hp105",
-    h4: "Online store, Furniture brand",
+    h4: "Online store, furniture brand",
     p: "",
     a: { text: "Learn more", url:"/projects" },
     img: {
