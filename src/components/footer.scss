@@ -61,7 +61,8 @@ section.footer-sec, div.con-foot {
 
   
     svg{
-      width: 475px;
+      // width: 475px;
+      width:16.1rem;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -143,6 +144,7 @@ section.footer-sec, div.con-foot {
         position: relative;
         h5 {
           font-size: 13.88px;
+          font-size: .47rem;
           font-weight: 400;
           position: relative;
           cursor: none;
@@ -176,6 +178,7 @@ section.footer-sec, div.con-foot {
         text-align: right;
         div {
           width: 174px;
+          width: 5.9rem;
           display: inline-flex;
           justify-content: space-between;
           align-items: center;
@@ -186,21 +189,27 @@ section.footer-sec, div.con-foot {
           }
           .be {
             height: 11px;
+            height: .37rem;
             right: 3px;
+            right: .1rem;
             // top: 1px;
           
           }
           .git {
             // top: 3px;
             height: 13px;
+            height: .44rem;
             right: 3px;
+            right: .1rem;
           }
           .insta {
             height: 12px;
+            height: .41rem;
             // top: 2px;
           }
           .drib {
             height: 12px;
+            height: .41rem;
             // top: 2px;
           }
           .whats {
@@ -210,13 +219,17 @@ section.footer-sec, div.con-foot {
           }
           .linkedin {
             height: 15px;
+            height: .51rem;
             // top: 3px;
             right: 5px;
+            right: .16rem;
           }
         }
         a{
           cursor: none;
           padding: 0px 13px 0px;
+          padding: 0px .44rem 0px;
+
           &:first-child{margin-left:-10px;}
           &.pp{padding: 0px; cursor: none;}
 
@@ -226,6 +239,7 @@ section.footer-sec, div.con-foot {
       p {
         letter-spacing: 0.2px;
         font-size: 9.1px;
+        font-size: .31rem;
         padding-top: 13px;
         display: block;
         color: var(--black-font);

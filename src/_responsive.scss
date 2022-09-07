@@ -44,9 +44,9 @@
   #stick{
    .texts-wrap{
 
-     h1{
-        font-size: 1.8rem;
-         max-width: 27rem;
+     h1, #headLines{
+        font-size: 1.6rem;
+         width: 30rem;
       }
       h5{
         font-size: 1.4rem;
@@ -66,6 +66,7 @@
     }
   }
 }
+
 @media ( max-width: 1630px ) {
   section.sec-form {
     max-width: 40%;

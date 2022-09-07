@@ -783,7 +783,11 @@ const Con = () => {
                       <img className="linkedin" src={linkedin} alt="Linkedin Icon"/>
                     </a>
                   </div>
-                  <Link to="/privacyandpolicy" className="pp">
+                  <Link to="/privacyandpolicy" className="pp"
+                  onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                  onMouseLeave={()=> changePointer({isHover: false})}
+              
+                  >
                     <p>Privacy Policy</p>
                   </Link>
                 </div>

@@ -79,7 +79,7 @@ section.sec-form {
   opacity: 0;
 }
 
-.google-captcha {
+section.sec-form form div.google-captcha {
   display: block !important;
   width: 100%;
   text-align: left;
@@ -91,22 +91,25 @@ section.sec-form {
 
   span {
     line-height: 0.3rem;
-  }
-
-  a {
-    color: var(--gray-dark);
-    font-size: 0.8rem;
-    margin-left: 20px;
-    display: inline-block;
-    font-weight: 500;
-    &:visited {
+  
+    a {
       color: var(--gray-dark);
-    }
-    &:hover{
-      color: var(--black-font);
-    }
+      // font-size: 0.8rem;
+      // margin-left: 20px;
+  font-size: 0.43rem;
 
+      display: inline-block;
+      font-weight: 500;
+      &:visited {
+        color: var(--gray-dark);
+      }
+      &:hover{
+        color: var(--black-font);
+      }
+  
+    }
   }
+
 }
 
 .contact-page .con-foot .footer-foot {

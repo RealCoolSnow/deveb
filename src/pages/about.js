@@ -187,7 +187,7 @@ const AboutPage = () => {
               trigger:images[0],
               start: () => 
                 "top+=20% bottom" ,
-              end: () => "bottom-=10% top",
+              end: () => "bottom-=20% top",
 
               scrub: true,
               id: "imgs" + 0,
@@ -195,13 +195,13 @@ const AboutPage = () => {
               // markers:true,
             },
           })
-          .fromTo(images[0],{scale:1.5},{ scale: 1, duration:14 },"0")
+          .fromTo(images[0],{scale:1.5},{ scale: 1, duration:8 },"0")
           .fromTo(h1select, {
             autoAlpha:1,
           },{
             autoAlpha: () => 0 ,
             duration: 0,
-          }, ">")
+          }, ">-3")
           .to(h5selector, {
             autoAlpha: () =>  1 ,
             duration: 0,
@@ -218,9 +218,9 @@ const AboutPage = () => {
           h5selector,
           {
             autoAlpha: 0,
-            duration: 7.3,
+            duration: 3.3,
             ease: "Power3.Out",
-          },">7"
+          },">5"
         );
           
         var tl2 = gsap
