@@ -40,7 +40,7 @@ export const prjData = [
         id:"vt21",
         type:"textbox",
         h3:"Expectaion",
-        pi:"our designer’s main objective was to catch user’s attention to the products and encourage them to purchase, so he designed a layout in which the products could be found on every page.  In addition we wanted to make sure that Everything, from images to color schemes meet the client’s needs and be consistent with their branding.",
+        pi:"our designer’s main objective was to catch user’s attention to the products and encourage them to purchase, so he designed a layout in which the products could be found on every page. In addition, we wanted to make sure that Everything, from images to color schemes meets the client’s needs and is consistent with their branding.",
         width:"long",
         butt:"https://vimcosmo.com/",
       
@@ -164,7 +164,7 @@ export const prjData = [
         id:"vt23",
         type:"textbox",
         h3:"Expectaion",
-        pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
+        pi:"We aimed to design, develop and build a secure NFT marketplace with a modern, colorful, and user-friendly interface that would appeal to any crypto enthusiast, whether they were new or experienced.",
         butt:"https://dopop.net",
         width:"long",
       
@@ -464,7 +464,7 @@ export const prjData = [
         double:true,
         h2width:"mid",
         h2:"Challenges and tchnologies",
-        pi:"Maintaining performance while creating complex animations is quite challenging using React, smooth scroll and Gsap together. Several custom animation codes were implemented in order to avoid memory leaks and achieve the best performance possible.",
+        pi:"Maintaining performance while creating complex animations is quite challenging using React, smooth scroll, and Gsap together. Several custom animation codes were implemented in order to avoid memory leaks and achieve the best performance possible.",
       },  
       {
         id:"vc55",

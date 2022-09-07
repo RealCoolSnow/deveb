@@ -72,7 +72,7 @@ export const home = [
   {
     num: "AM-ARC",
     id: "hp102",
-    h4: "Architectural design Studio",
+    h4: "Architectural Design Studio",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -149,7 +149,7 @@ export const servData = [
     num: "",
     id: "h21ex4",
     h4: "Concept design",
-    p: "The architectural movie provides a highly immersive experience for presentation and property marketing. It shows surroundings, interior and exterior design, and walks the viewer through the property as if it were already built.",
+    p: "The architectural movie provides a highly immersive experience for presentation and property marketing. It shows surroundings, interior, and exterior design, and walks the viewer through the property as if it were already built.",
     a: { text: "Learn more", url: "/projects" },
     img: {
       cover: comfeey,
