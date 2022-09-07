@@ -13,12 +13,6 @@ import samarc from '../assets/covers/sam-arc.jpg'
 import svim from '../assets/covers/svim.jpg'
 import sdopop from '../assets/covers/sdopop.jpg'
 
-
-
-
-
-
-
 export const links = [
   {
     id: "na1Li1",
@@ -75,7 +69,7 @@ export const home = [
   {
     num: "AM-ARC",
     id: "hp102",
-    h4: "Architectural design Studio",
+    h4: "Architectural design studio",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -100,7 +94,7 @@ export const home = [
   {
     num: "Comfeey",
     id: "hp105",
-    h4: "Online store, Furniture brand",
+    h4: "Online store, furniture brand",
     p: "",
     a: { text: "Learn more", url:"/projects" },
     img: {
