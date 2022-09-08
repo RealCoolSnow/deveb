@@ -1,7 +1,7 @@
-import dopegood from '../assets/covers/dopegood.webp'
+import dopegood from '../assets/covers/dopegood.jpg'
 import amarc from '../assets/covers/am-arc.jpg'
-import vim from '../assets/covers/vim.webp'
-import dopop from '../assets/covers/dopop.jpg'
+import vim from '../assets/covers/vim.jpg'
+import dopop from '../assets/covers/dopop2.jpg'
 // import comfeey from '../assets/covers/comfeey.webp'
 import {vim1, vim2, vim3, vim4, vim5, vim6,vim7,vim8,vim9} from "../assets/covers/vim"
 import {a1, a2, a3, a4, a5, a6, a7} from "../assets/covers/am"
