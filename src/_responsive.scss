@@ -2,6 +2,9 @@
   section.footer-sec .footer-main svg{
     width: 572px;
   }
+  section.sec-form form a{
+    margin: 0.04rem 0 0.43rem 0;
+  }
 }
 @media ( min-width: 1630px ) {
   .frame-wrapper .frame.f-top {
@@ -74,7 +77,8 @@
 
 @media ( max-width: 1630px ) {
   section.sec-form {
-    max-width: 40%;
+    // max-width: 40%;
+    max-width: 18.2rem;
   }
 }
 
@@ -91,7 +95,6 @@
       }
     }
   }
-
 }
 
 @media (max-width: 1440px) {
@@ -124,7 +127,8 @@
   }
 
   section.sec-form {
-    max-width: 550px;
+    // max-width: 550px;
+    max-width: 19.2rem;
     form div.options-btns {
       justify-content: space-around;;
       a.sec-btn{
@@ -217,6 +221,9 @@
 @media (max-width: 850px) {
   #stick .texts-wrap h2 {
     font-size: 39px;
+ }
+ section.sec-form{
+  max-width: 20.2rem;
  }
 //  #stick .texts-wrap h5 {
 //   // font-size: 28.5px;
@@ -1073,7 +1080,7 @@ width: 100%;
             white-space: nowrap;
             
             span {
-              font-size: 0.67rem;
+              font-size: 0.77rem;
               letter-spacing: 0.025rem;
               font-weight: 500;
             }
@@ -1096,7 +1103,7 @@ width: 100%;
 
           .am-input {
             // padding-bottom: 14px;
-
+            height: 2rem;
             .input-moving-line {
               // bottom: 3px;
             }

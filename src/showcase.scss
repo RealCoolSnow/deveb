@@ -3,12 +3,13 @@
 
 section.showcase-pin {
   position: static;
-  height: attr(dataHeight);
+  height: 500vh;
   display: flex;
 
   .show-text {
-    position: static;
+    position: relative;
     overflow: hidden;
+    // background:blueviolet ;
     width: 50%;
     height: 100%;
     .show-text-contain {

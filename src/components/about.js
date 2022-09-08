@@ -124,8 +124,8 @@ const {isMobile} = useAppContext();
         <img src={isMobile?img1mb:img1} alt="team working"/>
       </div>
       
-      <div className="ab" >
-      <div className="text-wrap2 pi" id="im">
+      {/* <div className="ab" > */}
+      {/* <div className="text-wrap2 pi" id="im">
         <p data-scroll data-scroll-sticky data-scroll-target="#im" data-scroll-offset="-70%, 50%">
           <span>Philosophy</span> Less is more
         </p>
@@ -134,6 +134,20 @@ const {isMobile} = useAppContext();
         }
       
       </div>
+      </div> */}
+      <div className="phil-con">
+        <div className="phil">
+          <p >
+           <span>Philosophy</span> Less is more
+         </p>
+        </div>
+
+        <div className="phil">
+         <p >
+            Worldwide, we work with
+          </p>
+        </div>
+
       </div>
     </div>
   );

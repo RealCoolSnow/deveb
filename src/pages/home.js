@@ -111,11 +111,12 @@ const HomePage = () => {
       .timeline({
         scrollTrigger: {
           scroller:"#viewport",
-          trigger: q(".head"),
+          trigger: q("#sti"),
           start:()=> "top top",
-          end:()=> "bottom top+=10%",
+          end:()=> "bottom bottom",
           id:"pintl",
-
+          invalidateOnRefresh:true,
+          // markers:true,
           scrub: 0.5,
         },
       })
@@ -243,6 +244,7 @@ const HomePage = () => {
                           endTrigger: endTr[j],
                           end: () => "+=" + window.innerHeight,
                           scrub: true,
+                          // markers:true,
                         },
                       })
               
@@ -274,6 +276,7 @@ const HomePage = () => {
                         0
                       );
                     });
+                    
             })
             
             return()=>{

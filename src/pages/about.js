@@ -28,24 +28,10 @@ const AboutPage = () => {
   const tl = useRef();
 
   const q = gsap.utils.selector(el);
-  // const [width, setWidth] = React.useState(window.innerWidth);
-  // const breakpoint = 768;
-
-  // React.useEffect(() => {
-  //   const handleWindowResize = () => {
-  //    var img =q(".image-wrap")[0];
-  //    ScrollTrigger.update()
-  //     console.log(img.offsetTop - img.offsetHeight / 3, img.offsetTop, img.offsetHeight)
-  //   }
-  //   window.addEventListener("resize", handleWindowResize);
-
-  //   // Return a function from the effect that removes the event listener
-  //   return () => window.removeEventListener("resize", handleWindowResize);
-  // }, []);
+ 
 
   useLayoutEffect(() => {
     const texts = q(".texts-wrap h2 div,.texts-wrap h5");
-    // const spans = q("h2 div");
 
     gsap.set(texts, { autoAlpha: 0 });
     gsap.set(q(".mem-row .members"), {
@@ -55,24 +41,17 @@ const AboutPage = () => {
       backgroundPosition:()=> isMobile?"50% 50%" :"50% 80%"
     })
 
-
-    // gsap.set(q(".mem-row"), {
-    //   xPercent: (index, target) => (index === 1 ? 5 : -5),
-    // });
     !isMobile && gsap.set(q(".image-wrap"), {
       yPercent: 35,
       scale: 1.4,
       autoAlpha: 0,
       transformOrigin: "top center",
     });
-    // gsap.set(spans, {
-    //   y: 20,
-    // });
     isMobile && gsap.set(q(".mb p"),{
       autoAlpha:0,
       y:20,
     })
-    // gsap.set(q(".texts-wrap h5"),{ autoAlpha:0})
+
     return () => {};
   }, [resetLoco]);
   useEffect(() => {
@@ -80,11 +59,9 @@ const AboutPage = () => {
     window.history.scrollRestoration = 'manual'
     setTimeout(() => {
       setReset()
-      // ScrollTrigger.refresh()
     }, 50);
 
   }, [isMobile])
-  // document.fonts.ready.then(
     var functionnn= ()=> {
     const split = new SplitText("#headLines", {
       type: "lines",
@@ -230,15 +207,16 @@ const AboutPage = () => {
             trigger:images[1],
             start: () => 
               "top bottom" ,
-            end: () => "bottom-=10% top",
-
+            end: () => "center-=20% top",
             scrub: true,
             id: "imgs" + 1,
             invalidateOnRefresh: true,
             // markers:true,
           },
         })
-        .to(images[1], { scale: 1, duration:10 })
+        .to(images[1], { scale: 1, duration:6 })
+        .to(images[1], { autoAlpha: 0, duration:2 })
+
       // });
   
       const memtl = gsap
@@ -263,81 +241,106 @@ const AboutPage = () => {
           // },
           ease: "power2.inOut",
         })
-    
-       philTl.current = gsap
+        const phils = q(".phil");
+        phils.forEach((p,i)=>{
+         philTl.current = gsap
         .timeline({
           duration: 10,
           scrollTrigger: {
             scroller: "#viewport",
-            trigger:imgTrig[1],
-            start: () => "bottom bottom-=5%",
-            end: () => "bottom+=10% top",
+            trigger:p,
+            start: () => "center bottom",
+            end: () => "center top",
             // markers: true,
             scrub: true,
-            // pin:true,
-            // pinReparent:true,
-            // invalidateOnRefresh: true,
           },
         })
-        .to(
-          imgTrig[1],
-          {
-            autoAlpha: 0,
-            duration:5.1,
-          },
-          0
-        )
-        .to(
-          pis[0],
-          {
-            autoAlpha: 1,
-            duration: 1,
-          },
-          "<.94"
-        )
+        .to(p,{
+          autoAlpha:1,
+          duration:3,
+          ease:"power2.in"
+        },0)
+        .to(p,{
+          autoAlpha:0,
+          duration:3,
+          ease:"power2.out"
+
+        },7)
+        })
+      //  philTl.current = gsap
+      //   .timeline({
+      //     duration: 10,
+      //     scrollTrigger: {
+      //       scroller: "#viewport",
+      //       trigger:imgTrig[1],
+      //       start: () => "bottom bottom-=5%",
+      //       end: () => "bottom+=10% top",
+      //       // markers: true,
+      //       scrub: true,
+      //       // pin:true,
+      //       // pinReparent:true,
+      //       // invalidateOnRefresh: true,
+      //     },
+      //   })
+      //   .to(
+      //     imgTrig[1],
+      //     {
+      //       autoAlpha: 0,
+      //       duration:5.1,
+      //     },
+      //     0
+      //   )
+      //   .to(
+      //     pis[0],
+      //     {
+      //       autoAlpha: 1,
+      //       duration: 1,
+      //     },
+      //     "<.94"
+      //   )
       
-        .to(
-          pis[0],
-          {
-            y: "-20vh",
-            // height:100,
-            duration: 28,
-          },
-          "<-2.5"
-        )
-        .to(
-          pis[0],
-          {
-           autoAlpha:0,
-            duration:5,
-          },
-          "<75%"
-        )
-        .to(
-          pis[1],
-          {
-           autoAlpha:1,
-            duration: 2,
-          },
-          "<80%"
-        )
+      //   .to(
+      //     pis[0],
+      //     {
+      //       y: "-20vh",
+      //       // height:100,
+      //       duration: 28,
+      //     },
+      //     "<-2.5"
+      //   )
+      //   .to(
+      //     pis[0],
+      //     {
+      //      autoAlpha:0,
+      //       duration:5,
+      //     },
+      //     "<75%"
+      //   )
+      //   .to(
+      //     pis[1],
+      //     {
+      //      autoAlpha:1,
+      //       duration: 2,
+      //     },
+      //     "<80%"
+      //   )
        
-        .to(
-          pis[1],
-          {
-            y: "3vh",
-            duration: 28,
-          },
-          ">-7"
-        )
-        .to(
-          pis[1],
-          {
-           autoAlpha:0,
-            duration: 5,
-          },
-          "<65%"
-        );
+      //   .to(
+      //     pis[1],
+      //     {
+      //       y: "3vh",
+      //       duration: 28,
+      //     },
+      //     ">-7"
+      //   )
+      //   .to(
+      //     pis[1],
+      //     {
+      //      autoAlpha:0,
+      //       duration: 5,
+      //     },
+      //     "<65%"
+      //   );
         const changeBg = (direction)=>{
           gsap.to(q(".backgr"), { 
             autoAlpha: ()=> (direction === 1? 1: 0),
@@ -399,10 +402,10 @@ const AboutPage = () => {
           if(ScrollTrigger.getById("imgs0")){
             ScrollTrigger.getById("imgs0").kill()
           }
-          philTl.current.kill();
-          if(philTl.current.ScrollTrigger){
-            philTl.current.ScrollTrigger.kill();
-          }
+          // philTl.current.kill();
+          // if(philTl.current.ScrollTrigger){
+          //   philTl.current.ScrollTrigger.kill();
+          // }
           if( ScrollTrigger.getById("imgs1")){
             ScrollTrigger.getById("imgs1").kill();
           }
@@ -543,79 +546,79 @@ const AboutPage = () => {
          })
         } )
       
-       philTl.current = gsap
-        .timeline({
-          duration: 10,
-          scrollTrigger: {
-            trigger:q(".text-wrap2.pi"),
-            start: () => "top center-=5%",
-            end: () => "bottom+=10% top",
-            // markers: true,
-            scrub: true,
-            // pin:true,
-            // pinReparent:true,
-            // invalidateOnRefresh: true,
-          },
-        })
-        .to(
-          imgTrig[1],
-          {
-            autoAlpha: 0,
-            duration:1.5,
-          },
-          ".8"
-        )
-        .to(
-          pis[0],
-          {
-            autoAlpha: 1,
-            duration: 0.8,
-          },
-          "<.7"
-        )
+      //  philTl.current = gsap
+      //   .timeline({
+      //     duration: 10,
+      //     scrollTrigger: {
+      //       trigger:q(".text-wrap2.pi"),
+      //       start: () => "top center-=5%",
+      //       end: () => "bottom+=10% top",
+      //       // markers: true,
+      //       scrub: true,
+      //       // pin:true,
+      //       // pinReparent:true,
+      //       // invalidateOnRefresh: true,
+      //     },
+      //   })
+      //   .to(
+      //     imgTrig[1],
+      //     {
+      //       autoAlpha: 0,
+      //       duration:1.5,
+      //     },
+      //     ".8"
+      //   )
+      //   .to(
+      //     pis[0],
+      //     {
+      //       autoAlpha: 1,
+      //       duration: 0.8,
+      //     },
+      //     "<.7"
+      //   )
       
-        .to(
-          pis[0],
-          {
-            y: "0vh",
-            // height:100,
-            duration: 5,
-          },
-          "<.2"
-        )
-        .to(
-          pis[0],
-          {
-           autoAlpha:0,
-            duration: 1,
-          },
-          "<75%"
-        )
-        .to(
-          pis[1],
-          {
-           autoAlpha:1,
-            duration: .8,
-          },
-          "<10%"
-        )
+      //   .to(
+      //     pis[0],
+      //     {
+      //       y: "0vh",
+      //       // height:100,
+      //       duration: 5,
+      //     },
+      //     "<.2"
+      //   )
+      //   .to(
+      //     pis[0],
+      //     {
+      //      autoAlpha:0,
+      //       duration: 1,
+      //     },
+      //     "<75%"
+      //   )
+      //   .to(
+      //     pis[1],
+      //     {
+      //      autoAlpha:1,
+      //       duration: .8,
+      //     },
+      //     "<10%"
+      //   )
        
-        .to(
-          pis[1],
-          {
-            y: "-1vh",
-            duration: 8,
-          },
-          "<.2"
-        )
-        .to(
-          pis[1],
-          {
-           autoAlpha:0,
-            duration: 1,
-          },
-          "<38%"
-        );
+      //   .to(
+      //     pis[1],
+      //     {
+      //       y: "-1vh",
+      //       duration: 8,
+      //     },
+      //     "<.2"
+      //   )
+      //   .to(
+      //     pis[1],
+      //     {
+      //      autoAlpha:0,
+      //       duration: 1,
+      //     },
+      //     "<38%"
+      //   );
         const changeBg = (direction)=>{
           gsap.to(q(".backgr"), { 
             autoAlpha: ()=> (direction === 1? 1: 0),

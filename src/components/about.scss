@@ -1,5 +1,30 @@
 #viewport.aboutpage{
     background: white;
+    .phil-con{
+        position: relative;
+        height: 160vh;
+        // margin-top: -50vh;
+        .phil{
+            height: 50%;
+             color: black;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             opacity: 0;
+             span{
+                 font-size: 16px;
+                 font-weight: 400;
+                 display: block;
+                 padding-bottom: .3rem;
+             }
+             p{
+                 color:black;
+                 line-height: 1.3;
+                 letter-spacing: .4px;
+                 font-size: 1.73rem;
+             }
+        }
+    }
 }
 .texts-wrap{
     position: relative;
@@ -148,7 +173,7 @@
             display: block;
             width: 10rem;
             /* height: 13rem; */
-            font-size: 1.4rem;
+            font-size: 1.206rem;
             line-height: 1.23;
             // top: 50%;
             // transform: translateY(-50%);

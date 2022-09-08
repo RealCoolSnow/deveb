@@ -140,7 +140,7 @@ section.sec-form form div.google-captcha {
         .options-btns{
           justify-content: flex-start;
           a{
-            margin-right: 1rem;
+            margin-right: .6rem;
           }
         } 
       }
@@ -191,8 +191,17 @@ section.sec-form form div.google-captcha {
       }
     }
   }
-  .contact-page section.sec-form form div.options-btns a.sec-btn {
-    margin-right: 0.81rem;
+  .contact-page section.sec-form.mb form div.options-btns {
+    justify-content: space-between;
+    a.sec-btn {
+    margin-right: 0rem;
     margin-bottom: 0.81rem;
+    // padding: 0.59rem 0.89rem 0.57rem;
+    padding: 0.69rem 1.1rem 0.67rem;
   }
+  &.budgets{
+    justify-content: flex-start;
+
+  }
+}
 }

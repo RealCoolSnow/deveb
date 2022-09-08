@@ -536,6 +536,7 @@ section {
 
   &.sec-form {
     max-width: 34%;
+    max-width: 18.4rem;
     margin: auto;
   
     &.sending-form-effect {
@@ -564,7 +565,8 @@ section {
       div {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        // justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         align-content: center;
 
@@ -704,10 +706,10 @@ section {
       }
 
       div.options-btns {
-        justify-content: flex-start;
+        // justify-content: flex-start;
 
         a.sec-btn {
-          margin-right: 1rem;
+          // margin-right: 1rem;
 
           span {
             font-weight: 400;
@@ -723,13 +725,15 @@ section {
 
       a {
         display: inline-block;
-        margin: 1.3px 0 9.5px 0;
+        // margin: 1.3px 0 9.5px 0;
+        margin: 0.04rem 0 0.33rem 0;
         letter-spacing: 0.15px;
         font-size: 12.3px;
         font-weight: 400;
         
         &.btn {
-          padding: 14.5px 20.5px 13.7px;
+          // padding: 14.5px 20.5px 13.7px;
+          padding: 0.49rem 0.69rem 0.47rem;
           border-radius: 32px;
           border: 1.2px solid var(--contact-button-border);
         }
