@@ -68,33 +68,44 @@ const Button = ({
       if (btnhover === true) {
 
         gsap.set(ripple, { backgroundColor: '#FF5983' })
-        gsap.to(teXt, 0.4, {
+        gsap.to(teXt, {
           color: "#fff",
+          duration: 0.4,
         });
-        gsap.to(ripple, 0, { yPercent: -100, borderRadius: 50, autoAlpha: 1 });
-        gsap.to(ripple, 0.5, {
+        gsap.to(ripple,  {
+           yPercent: -101,
+           borderRadius: 50,
+           autoAlpha: 1,
+           duration: 0,
+          });
+        gsap.to(ripple, {
           yPercent: 0,
           borderRadius: 0,
+          duration:0.5,
         });
-        gsap.to(teXt, 0.5, {
+        gsap.to(teXt,{
           transformOrigin: "left top",
           yPercent: -145,
           skewY: -3,
+          duration: 0.5, 
         });
 
       } else {
-        gsap.to(ripple, 0.5, {
+        gsap.to(ripple, {
           yPercent: 100,
           borderRadius: 50,
+          duration: 0.5,
         });
-        gsap.to(teXt, 0.5, {
+        gsap.to(teXt, {
           transformOrigin: "left top",
           yPercent: 0,
           skewY: 0,
+          duration:0.5,
         });
-        gsap.to(btnArea, 0.5, {
+        gsap.to(btnArea, {
           x: 0,
           y: 0,
+          duration:0.5,
         });
       }
       
@@ -102,40 +113,47 @@ const Button = ({
 
       if (btnhover === true) {
         gsap.set(ripple, { backgroundColor: '#1a1a1a' })
-        gsap.to(ripple, 0, { yPercent: ()=> act? 0: -100, borderRadius: 50, autoAlpha: 1 });
-        gsap.to(ripple, 0.5, {
+        gsap.to(ripple, { yPercent: ()=> act? 0: -101, borderRadius: 50, autoAlpha: 1, duration:0,});
+        gsap.to(ripple, {
           yPercent: 0,
           borderRadius: 0,
+          duration: 0.5,
         });
         
-        gsap.to(teXt, 0.4, {
+        gsap.to(teXt,  {
           color: "#fff",
+          duration:0.4,
         });
-        gsap.to(teXt, 0.5, {
+        gsap.to(teXt,  {
           transformOrigin: "left top",
           yPercent: -130,
           skewY: -3,
+          duration:0.5,
         });
         br && gsap.to(q(".btn-more"),{
           borderColor: "#000",
           duration: .5,
         })
       } else if (btnhover === false) {
-        gsap.to(ripple, 0.5, {
+        gsap.to(ripple, {
           yPercent: ()=> act? 0: 100,
           borderRadius: ()=> act? 0 :50,
+          duration: 0.5,
         });
-        gsap.to(teXt, 0.4, {
+        gsap.to(teXt, {
           color: ()=> act? "#fff": "#000",
+          duration:0.4,
         });
-        gsap.to(teXt, 0.5, {
+        gsap.to(teXt, {
           transformOrigin: "left top",
           yPercent: 0,
+          duration:0.5, 
           skewY: 0,
         });
-        gsap.to(btnArea, 0.5, {
+        gsap.to(btnArea,  {
           x: 0,
           y: 0,
+          duration:0.5,
         });
         br && gsap.to(q(".btn-more"),{
           borderColor: br,
