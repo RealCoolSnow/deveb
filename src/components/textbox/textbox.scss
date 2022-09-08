@@ -468,6 +468,12 @@
     //   .fade{
     //     padding-bottom: 165%;
     //   }
+    .btn-container a.btn-more{
+        padding:  16px 31px 15px;
+        .btn-more-title span{ 
+               font-size: 0.78rem;
+        }
+    }
       .tb-contain{
           text-align: left;
         margin:calc(100vw/5 * 1.65) auto;
@@ -478,8 +484,9 @@
             font-size: 24.75px;
             padding-top: 20px;
             padding-bottom: 0;
-            line-height: 1.43;
+            line-height: 1.53;
             letter-spacing: -0.2px;
+            color: var(--black-font-main);
         }
         h3{
             font-size: 18.14px;
@@ -533,6 +540,7 @@
           }
 
       } 
+     
     }
     .cover-contain.pd {
         padding-bottom: 17vw;

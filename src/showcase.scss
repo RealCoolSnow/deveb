@@ -367,12 +367,13 @@ section.showcase-pin {
         .btn-container {
           margin-top: 31px;
           a.btn-more{
-            padding: 17px 29px 15px;
+            // padding: 17px 29px 15px;
+            padding: 16px 31px 15px;
           }
 
-          // .btn-more-title span {
-          //   letter-spacing: 0.018rem !important;
-          // }
+          .btn-more-title span {
+            font-size: 0.76rem;
+          }
         }
 
       }
