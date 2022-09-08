@@ -577,6 +577,7 @@ section {
         &.btn-container {
           margin-bottom: 0;
           padding-bottom: 0;
+          justify-content: center;
         }
       }
 
@@ -590,7 +591,7 @@ section {
       }
 
       div.form-inputs {
-        margin: 3.25rem 6px 1.1rem;
+        margin: 2.8rem 6px 1.1rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 33px;

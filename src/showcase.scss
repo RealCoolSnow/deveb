@@ -5,6 +5,7 @@ section.showcase-pin {
   position: static;
   height: 500vh;
   display: flex;
+  &.serv{height: auto;}
 
   .show-text {
     position: relative;
