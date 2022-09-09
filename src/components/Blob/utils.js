@@ -1,7 +1,7 @@
 // Three JS
 
 import * as THREE from "three";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 import { Elastic, Quart, gsap } from "gsap";
 
 export function init(child) {
@@ -393,46 +393,46 @@ export const options = {
 
 };
 // options.setblue();
-function createGUI() {
-  var gui = new dat.GUI();
+// function createGUI() {
+//   var gui = new dat.GUI();
 
-  var perlinGUI = gui.addFolder("Shape Setup");
-  perlinGUI.add(options, "perlinRandom").name("• Random Shape");
-  perlinGUI.add(options.perlin, "speed", 0.1, 1.0).name("Speed").listen();
-  perlinGUI.add(options.perlin, "size", 0.0, 3.0).name("Size").listen();
-  perlinGUI.add(options.perlin, 'decay', 0.0, 1.0).name('Decay').listen();
-  perlinGUI.add(options.perlin, "waves", 0.0, 20.0).name("Waves").listen();
-  perlinGUI.add(options.perlin, "complex", 0.1, 1.0).name("Complex").listen();
-  perlinGUI
-    .add(options.perlin, "displace", 0.1, 2.5)
-    .name("Displacement")
-    .listen();
-  //perlinGUI.open();
+//   var perlinGUI = gui.addFolder("Shape Setup");
+//   perlinGUI.add(options, "perlinRandom").name("• Random Shape");
+//   perlinGUI.add(options.perlin, "speed", 0.1, 1.0).name("Speed").listen();
+//   perlinGUI.add(options.perlin, "size", 0.0, 3.0).name("Size").listen();
+//   perlinGUI.add(options.perlin, 'decay', 0.0, 1.0).name('Decay').listen();
+//   perlinGUI.add(options.perlin, "waves", 0.0, 20.0).name("Waves").listen();
+//   perlinGUI.add(options.perlin, "complex", 0.1, 1.0).name("Complex").listen();
+//   perlinGUI
+//     .add(options.perlin, "displace", 0.1, 2.5)
+//     .name("Displacement")
+//     .listen();
+//   //perlinGUI.open();
 
-  var colorGUI = gui.addFolder("Color");
-  colorGUI.add(options, "random").name("• Random colors");
-  colorGUI.add(options, "normal").name("• Normal colors");
-  colorGUI.add(options, "darker").name("• Dark colors");
-  colorGUI.add(options.perlin, "eqcolor", 0.0, 30.0).name("Hue").listen();
-  colorGUI.add(options.perlin, "rcolor", 0.0, 2.5).name("R").listen();
-  colorGUI.add(options.perlin, "gcolor", 0.0, 2.5).name("G").listen();
-  colorGUI.add(options.perlin, "bcolor", 0.0, 2.5).name("B").listen();
-  colorGUI.add(options.perlin, "redhell", true).name("Electroflow");
+//   var colorGUI = gui.addFolder("Color");
+//   colorGUI.add(options, "random").name("• Random colors");
+//   colorGUI.add(options, "normal").name("• Normal colors");
+//   colorGUI.add(options, "darker").name("• Dark colors");
+//   colorGUI.add(options.perlin, "eqcolor", 0.0, 30.0).name("Hue").listen();
+//   colorGUI.add(options.perlin, "rcolor", 0.0, 2.5).name("R").listen();
+//   colorGUI.add(options.perlin, "gcolor", 0.0, 2.5).name("G").listen();
+//   colorGUI.add(options.perlin, "bcolor", 0.0, 2.5).name("B").listen();
+//   colorGUI.add(options.perlin, "redhell", true).name("Electroflow");
 
-  colorGUI.open();
+//   colorGUI.open();
 
-  gui.add(options, "volcano").name("• Volcano");
-  gui.add(options, "tornasol").name("• Tornasol");
-  gui.add(options, "cloud").name("• Cotton Candy");
-  gui.add(options, "setbluerd").name("• bluerd");
-  gui.add(options, "setorange").name("• orange");
-  gui.add(options, "setlightpink").name("• pink");
-  gui.add(options, "sethovercolor").name("• hover");
+//   gui.add(options, "volcano").name("• Volcano");
+//   gui.add(options, "tornasol").name("• Tornasol");
+//   gui.add(options, "cloud").name("• Cotton Candy");
+//   gui.add(options, "setbluerd").name("• bluerd");
+//   gui.add(options, "setorange").name("• orange");
+//   gui.add(options, "setlightpink").name("• pink");
+//   gui.add(options, "sethovercolor").name("• hover");
 
 
 
-  gui.add(options.perlin, "points", true).name("Points");
-}
+//   gui.add(options.perlin, "points", true).name("Points");
+// }
 //--------------------------------------------------------------------
 function animation() {
   if( !renderer ) return
