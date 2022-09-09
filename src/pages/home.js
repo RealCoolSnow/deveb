@@ -397,7 +397,7 @@ const HomePage = () => {
   const setBlob= (cl, hov)=>{
     !isSafari && setHoverCl(cl)
    if (hov){
-     changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true,sesize:"2"})
+     changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true,sesize:"3.5"})
    } else if (hov===false) {
     changePointer({isHover: false})
    }
