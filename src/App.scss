@@ -334,7 +334,7 @@ section {
       display: inline-block;
       font-size: 54px;
       letter-spacing: 1px;
-      font-weight: 600;
+      font-weight: 500;
       color: black;
     }
 
@@ -348,6 +348,7 @@ section {
         span.headSpan {
           display: inline-block;
           overflow: hidden;
+          padding: 0.4rem 0px;
           span {
             display: inline-block;
           }
