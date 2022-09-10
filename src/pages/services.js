@@ -143,14 +143,14 @@ if(!isMobile){
         },
         {
           clipPath: ()=>"inset(0px 0px 100% 0px)",
-          backgroundPosition: () => "0 60%",
+          backgroundPosition: () => "0 80%",
           ease: "none",
           // onComplete:()=>console.log(images[i+1])
         },
         0
       )
       .fromTo(fulimages[i+1], {
-        backgroundPosition: () => "0 20%",
+        backgroundPosition: () => "0 0%",
 
          }, 
          { 
