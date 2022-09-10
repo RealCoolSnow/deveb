@@ -408,7 +408,10 @@ const HomePage = () => {
       return
     } else{
       if(hoverCl && hoverCl !== "sec2"){
-        gsap.to(q(".hue-can"),{
+        gsap.fromTo(q(".hue-can"),{
+          backgroundColor:"#ffffff",
+
+        },{
           backgroundColor:hoverCl,
           duration:.6,
           ease:"power2.out"

@@ -37,7 +37,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
       if(blend){
         gsap.to(el.current,{
           background: color.bg,
-          duration: .2,
+          duration: 0,
         ease: "Power3.InOut",
         });
         el.current.style.mixBlendMode="difference";
@@ -52,7 +52,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
         })
         gsap.to(el.current,{
           background: color.bg,
-          duration: .2,
+          duration: 0,
         ease: "Power3.InOut",
         })
       }
@@ -70,7 +70,7 @@ import { useAppContext } from "../../contexts/appcontext.js";
   useEffect(()=>{
     if(!isHover){
       gsap.to(el.current,{
-        duration: .2,
+        duration: 0,
         ease: "Power3.InOut",
         // background:()=> color? color.bg :"#000000"
         background:()=> "#000000"
@@ -81,14 +81,14 @@ import { useAppContext } from "../../contexts/appcontext.js";
     if(curchange){
       isHover && (
         gsap.to(el.current,{
-          duration: .2,
+          duration: 0,
           ease: "Power3.InOut",
           background:()=> color? color.bg: cur ,
         })
       )
       !isHover && (
         gsap.to(el.current,{
-          duration: .2,
+          duration: 0,
           ease: "Power3.InOut",
           background:()=> cur? cur:color.bg ,
         })

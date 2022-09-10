@@ -129,8 +129,7 @@ if (!isMobile){
         </li>
         <li>
           <span>•</span> Company (referred to as either "the Company", "We",
-          "Us" or "Our" in this Agreement) refers to Deveb, Mechnykova St, 2,
-          Kyiv, 02000.
+          "Us" or "Our" in this Agreement) refers to Deveb, Rotterdam, Netherlands.
         </li>
         <li>
           <span>•</span> Cookies are small files that are placed on Your

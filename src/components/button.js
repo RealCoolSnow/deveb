@@ -92,7 +92,7 @@ const Button = ({
 
       } else {
         gsap.to(ripple, {
-          yPercent: 100,
+          yPercent: 101,
           borderRadius: 50,
           duration: 0.5,
         });
@@ -136,7 +136,7 @@ const Button = ({
         })
       } else if (btnhover === false) {
         gsap.to(ripple, {
-          yPercent: ()=> act? 0: 100,
+          yPercent: ()=> act? 0: 101,
           borderRadius: ()=> act? 0 :50,
           duration: 0.5,
         });

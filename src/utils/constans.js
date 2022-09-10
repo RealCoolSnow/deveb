@@ -115,7 +115,7 @@ export const servData = [
     a: { text: "View more", url: "/projects" },
     img: {
       cover: svim,
-      colors: { bg: "#FAE1EE", br: "#FEA5AB" },
+      colors: { bg: "#FAE1EE", br: "#FEA5AB", pointer: "#CC669Bbf" },
       klass: "first",
     },
     
@@ -128,7 +128,7 @@ export const servData = [
     a: { text: "Learn more", url: "/projects" },
     img: {
       cover: sdopop,
-      colors: { bg: "#D3D6F0", br: "#9CA5F0" },
+      colors: { bg: "#D3D6F0", br: "#9CA5F0", pointer: "#808cffbf"},
       klass: "",
     },
    
@@ -141,7 +141,7 @@ export const servData = [
     a: { text: "Learn more", url: "/projects" },
     img: {
       cover: samarc,
-      colors: { bg: "#FFEDE0", br: "#F2AB79" },
+      colors: { bg: "#FFEDE0", br: "#F2AB79", pointer: "#F2AB79bf", },
       klass: "",
     },
    
@@ -154,7 +154,7 @@ export const servData = [
     a: { text: "Learn more", url: "/projects" },
     img: {
       cover: sdopegood,
-      colors: { bg: "#FFEAE0", br: "#FFC3A6" },
+      colors: { bg: "#FFEAE0", br: "#FFC3A6", pointer: "#FFA073bf" },
       klass: "end",
     },
   }

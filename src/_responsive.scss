@@ -57,13 +57,15 @@
          width: 30rem;
       }
       h5{
-        font-size: 1.4rem;
-        max-width: 25rem;
+        font-size: 1.2rem;
+        max-width: 23rem;
       }
    } 
    .text-wrap2{
+    width: 32rem;
+
      h5{
-       font-size: 1.4rem;
+       font-size: 1.2rem;
      }
    }
   }
@@ -1076,6 +1078,7 @@ width: 100%;
             font-size: 1.08rem;
             margin-bottom: 0.9rem;
           }
+        
 
           a.sec-btn {
             margin-right: .81rem;
@@ -1095,6 +1098,13 @@ width: 100%;
             &:nth-child(6 ) {
               margin-right: 0 ;
             }
+          }
+        }
+        div.google-captcha{
+          font-size: .66rem;
+          margin-bottom: 5rem;
+          span a{
+          font-size: .66rem;
           }
         }
 
@@ -1175,7 +1185,7 @@ width: 100%;
           }
 
           a.sec-btn {
-            margin-right: 1rem !important;
+            margin-right: .8rem !important;
           }
         }
 
@@ -1231,10 +1241,7 @@ width: 100%;
           }
         }
       }
-      .google-captcha{
-        font-size: .66rem;
-        margin-bottom: 5rem;
-      }
+      
     }
 
     &.services.head {
@@ -1440,6 +1447,9 @@ width: 100%;
         width: 100%!important;
         p{ font-size: 35px; width: 100%;}
       }
+    }
+    .phil-con .phil p{
+      width: 12rem;
     }
    
   }
