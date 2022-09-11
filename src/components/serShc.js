@@ -17,8 +17,8 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
 
   useLayoutEffect(()=>{
     if(isMobile){
-      gsap.set(q(".showcase-full-img.first"),{
-        autoAlpha:0, yPercent:10,
+      gsap.set(q(".showcase-container"),{
+        autoAlpha:0, yPercent:15,
       })
     }
   },[isMobile])

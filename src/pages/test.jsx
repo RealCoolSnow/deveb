@@ -175,7 +175,7 @@ const Test = () => {
               var imgtl = gsap.timeline({
                 scrollTrigger:{
                   trigger: img,
-                  start:()=> "bottom bottom",
+                  start:()=> "top bottom",
                   end: ()=> "bottom top",
                   // markers:true,
                   scrub:true,

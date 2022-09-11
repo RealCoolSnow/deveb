@@ -175,7 +175,6 @@
   }
 }
 
-
 @media (max-width: 930px) {
   #stick {
     .texts-wrap{
@@ -660,7 +659,7 @@ section.process {
       }
     }
     .members-wrap{
-      margin-top: 52vh;
+      margin-top: 58vh;
       margin-bottom: -9rem;
       width: 100%;
     }
@@ -949,14 +948,16 @@ width: 100%;
   html {
     font-size: calc(.02rem + 4.6vw);
   }
-  section.sec-form form div.form-inputs .am-input{ 
+  section.sec-form form {
+    div.options-btns.budgets .input-err{ font-size: .8rem;}
+    div.form-inputs .am-input{ 
     height: 3rem;
     .input-moving-line{ bottom:1rem;}
     span.input-err{
     font-size: 0.8rem;
 
    }
-  }
+  }}
  
   .frame-wrapper {
     .frame {
@@ -1451,15 +1452,15 @@ width: 100%;
     .text-wrap2{
       width: 100vw!important;
       padding: 24px;
-      height: 71vh;
+      height: 77vh;
       &.pi{
         width: 100%!important;
         p{ font-size: 35px; width: 100%;}
       }
     }
 }
-#viewport.aboutpage .phil-con {
-  height: 141vh;
+#viewport.aboutpage div.phil-con {
+  height: 120vh;
   .phil p{
   width: 12rem;
 }

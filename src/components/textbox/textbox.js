@@ -14,7 +14,7 @@ const Textbox = ({h1,h2,h3,pi, width, alignment,double, mt, mb, h2width, butt, m
             }
             
                { h1 && !double && (
-                    <div className={`${h3 === "DopeGood" || h3 === "Vimcosmo" ? "w500" : ""} `} style={mob? {fontSize: "1.8rem"}:{fontSize: "1.69rem"}} id="headLines">{h1}</div>
+                    <div className={`${h3 === "Dopegood" || h3 === "Vimcosmo" ? "w500" : ""} `} style={mob? {fontSize: "1.8rem"}:{fontSize: "1.69rem"}} id="headLines">{h1}</div>
                 )}
            
                { h2 && !double && (

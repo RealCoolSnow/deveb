@@ -36,7 +36,7 @@ const ServicesPage = () => {
     changePT("Services");
     setTimeout(() => {
       setReset()
-    }, 500);
+    }, 300);
 
     // if(isMobile){
     //       sl.current.style.transform="none";
@@ -242,9 +242,10 @@ if(!isMobile){
         gsap.set(sl.current,{
           clearProps: "transform"
         })
+        
 
-        gsap.to(q(".showcase-full-img.first"),{
-          autoAlpha:1, yPercent:0, duration:.4, delay:.05,
+        gsap.to(q(".showcase-container"),{
+          autoAlpha:1, yPercent:0, duration:.6, delay:.7,
         })
         
         fooT.current = gsap

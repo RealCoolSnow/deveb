@@ -158,7 +158,7 @@ export const prjData = [
         type:"textbox",
         h3:"Dopop",
         mt:true,
-        h1:"Online marketplace to create, buy and sell NFT's",
+        h1:"Online marketplace to create, buy and sell NFTs",
         width:"short",
         alignment:"alignment",
       },
