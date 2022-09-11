@@ -949,6 +949,14 @@ width: 100%;
   html {
     font-size: calc(.02rem + 4.6vw);
   }
+  section.sec-form form div.form-inputs .am-input{ 
+    height: 3rem;
+    .input-moving-line{ bottom:1rem;}
+    span.input-err{
+    font-size: 0.8rem;
+
+   }
+  }
  
   .frame-wrapper {
     .frame {
@@ -1111,25 +1119,25 @@ width: 100%;
         div.form-inputs {
           margin-top: 4rem !important;
           padding: 0 1.5%;
-          grid-row-gap: 34px;
+          grid-row-gap: 24px;
           margin-bottom: 64px !important;
 
-          .am-input {
+          // .am-input {
             // padding-bottom: 14px;
-            height: 2rem;
-            .input-moving-line {
-              // bottom: 3px;
-            }
-          }
+            // height: 2rem;
+            // .input-moving-line {
+            //   // bottom: 3px;
+            // }
+          // }
         }
 
         div.form-inputs .am-input input,
         div.form-inputs .am-input textarea {
-          font-size: .75rem;
+          font-size: 1rem;
         }
         div.form-inputs .am-input {padding-bottom: 25px;}
         div.form-inputs .am-input input::placeholder, div.form-inputs .am-input textarea::placeholder {
-          font-size: 0.75rem;
+          font-size: 1rem;
         }
 
         div.form-inputs .am-input textarea {
@@ -1352,6 +1360,7 @@ width: 100%;
     padding-top: 23px !important;
     margin-bottom: 25px !important;
     margin-top: -165%;
+    padding-bottom: 0;
 
     .outerPro { 
       width: 100% !important;
@@ -1448,11 +1457,14 @@ width: 100%;
         p{ font-size: 35px; width: 100%;}
       }
     }
-    .phil-con .phil p{
-      width: 12rem;
-    }
-   
-  }
+}
+#viewport.aboutpage .phil-con {
+  height: 141vh;
+  .phil p{
+  width: 12rem;
+}
+
+}
 }
 @media (max-width: 416px){
   section.process {

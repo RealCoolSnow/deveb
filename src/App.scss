@@ -52,6 +52,7 @@ body {
   position: relative;
   overflow-x: hidden;
   height: 100vh;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 .lock-scroll {

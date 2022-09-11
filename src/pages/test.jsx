@@ -170,6 +170,24 @@ const Test = () => {
             })
             .to(q(".darklay2"), {autoAlpha:1 })
             .to(q(".fade-layer1"), {autoAlpha:0 });
+            const images =q(".pro-item");
+            images.forEach((img, i)=>{
+              var imgtl = gsap.timeline({
+                scrollTrigger:{
+                  trigger: img,
+                  start:()=> "bottom bottom",
+                  end: ()=> "bottom top",
+                  // markers:true,
+                  scrub:true,
+                }
+              })
+              .fromTo(img,{
+                backgroundPosition: "0 65%"
+              }, {
+                backgroundPosition: "0 35%"
+              })
+
+            })
 
             const changeBg = (direction)=>{
               gsap.to(q(".backgr"), { 
