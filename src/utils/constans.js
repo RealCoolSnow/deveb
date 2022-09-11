@@ -109,6 +109,18 @@ export const home = [
 export const servData = [
   {
     num: "",
+    id: "h21ex3",
+    h4: "Branding",
+    p: "We give your business/brand a face and identity by creating the most suitable logo and mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
+    a: { text: "Learn more", url: "/projects" },
+    img: {
+      cover: samarc,
+      colors: { bg: "#FFEDE0", br: "#F2AB79", pointer: "#F2AB79bf", },
+      klass: "first",
+    },
+  },
+  {
+    num: "",
     id: "h21ex1",
     h4: "Design",
     p: "The design makes its mark through first impressions. We establish long-lasting relationships with our customers using eye-catching design and meaningful user experiences.",
@@ -116,7 +128,7 @@ export const servData = [
     img: {
       cover: svim,
       colors: { bg: "#FAE1EE", br: "#FEA5AB", pointer: "#CC669Bbf" },
-      klass: "first",
+      klass: "",
     },
     
   },
@@ -131,20 +143,6 @@ export const servData = [
       colors: { bg: "#D3D6F0", br: "#9CA5F0", pointer: "#808cffbf"},
       klass: "",
     },
-   
-  },
-  {
-    num: "",
-    id: "h21ex3",
-    h4: "Branding",
-    p: "We give your business/brand a face and identity by creating the most suitable logo and mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
-    a: { text: "Learn more", url: "/projects" },
-    img: {
-      cover: samarc,
-      colors: { bg: "#FFEDE0", br: "#F2AB79", pointer: "#F2AB79bf", },
-      klass: "",
-    },
-   
   },
   {
     num: "",

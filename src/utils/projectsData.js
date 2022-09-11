@@ -14,7 +14,7 @@ export const prjData = [
   {
     id:"p15i11",
     name: 'VimCosmo',
-    desc: "Beauty brand, ecommerce",
+    desc: "Beauty brand, e-commerce",
     tags:['Interior',],
     family:"vimcosmo",
     elements:[
@@ -292,7 +292,7 @@ export const prjData = [
   {
     id:"p15i44",
     name: 'Dopegood',
-    desc: 'Furniture brand, ecommerce',
+    desc: 'Furniture brand, e-commerce',
     tags:['3D Model'],
     family:"dopegood",
     elements:[
