@@ -67,6 +67,7 @@ const AboutPage = () => {
       type: "lines",
       linesClass: "lineChildren",
     }); 
+    gsap.set(q("#headLines"),{opacity:1})
     gsap.to(
       split.lines,
       {
