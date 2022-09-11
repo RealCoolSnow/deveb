@@ -531,7 +531,7 @@ const Con = () => {
                 )}
               </div>
 
-              <div className="am-input full-w" style={{height: "auto", minHeight: "3rem"}}>
+              <div className="am-input full-w" style={{height: "auto"}}>
                 <textarea
                   className="full-w"
                   type="text"

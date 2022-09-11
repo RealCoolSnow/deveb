@@ -951,6 +951,9 @@ width: 100%;
   section.sec-form form {
     div.options-btns.budgets .input-err{ font-size: .8rem;}
     div.form-inputs .am-input{ 
+      .full-w{
+        min-height: 1.8rem;
+      }
     height: 3rem;
     .input-moving-line{ bottom:1rem;}
     span.input-err{
