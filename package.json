@@ -6,7 +6,6 @@
   "dependencies": {
     "@react-three/drei": "^8.20.2",
     "@react-three/fiber": "^7.0.9",
-    "axios": "^0.27.2",
     "gsap": "^3.9.1",
     "locomotive-scroll": "^4.1.4",
     "react": "^17.0.2",

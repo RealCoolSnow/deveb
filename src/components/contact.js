@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
-import axios from 'axios'
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import SecondaryBtn from "./SecondaryBtn/SecondaryBtn";
@@ -249,18 +248,16 @@ const Con = () => {
     }
 
     try {
-      const sendForm = await axios.post({
-        url: 'https://deveb-api.fly.dev/api/send',
+
+      let sendForm = await window.fetch('https://deveb-api.fly.dev/api/send',{
         method: 'post',
         data: attachs || {},
-        headers: ContactForm
+        headers: ContactForm,
       });
-      // sendForm = await sendForm.json();
 
-      console.log(sendForm)
-      console.log(sendForm.data)
+      sendForm = await sendForm.json();
       
-      // if (sendForm.success) {
+      if (sendForm.success) {
         setSendingForm(false);
         cursorLoading(false);
         setShowThanks(true);
@@ -276,12 +273,12 @@ const Con = () => {
         setActiveNeeds([]);
         setActiveBudg(-1);
         setAttachments([]);
-        // setReset();
-      // } else {
-      //   console.log('error in sending form')
-      //   setSendingForm(false);
-      //   cursorLoading(false);
-      // }
+        
+      } else {
+        console.log('error in sending form')
+        setSendingForm(false);
+        cursorLoading(false);
+      }
 
     } catch (err) {
       console.log(err)
@@ -477,8 +474,8 @@ const Con = () => {
   }, [form,activeBudg]);
 
   useEffect(() => {
-    try{
-      fetch(`https://deveb-api.fly.dev`); // Awake if server is sleep
+    try {
+      window.fetch(`https://deveb-api.fly.dev`); // Awake if server is sleep
     } catch(err) {}
   }, [])
   
