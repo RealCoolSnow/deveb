@@ -7,8 +7,8 @@ import { useAppContext } from "../contexts/appcontext.js";
 
 gsap.registerPlugin(ScrollTrigger);
 export var scrolltop= "";
-const useLoco = (start) => {
-  var { scrollY, resetLoco,updateloco  } = useAppContext();
+const useLoco = (start, instance=false) => {
+  var { scrollY, resetLoco  } = useAppContext();
 
   
   useEffect(() => {
@@ -32,7 +32,7 @@ const useLoco = (start) => {
       lerp:0.095,
     });
     
-    window.dvbScroll = locoScroll;
+    if(instance){ window.dvbScroll = locoScroll;}
 
     ScrollTrigger.scrollerProxy(scEl, {
       scrollTop(value) {

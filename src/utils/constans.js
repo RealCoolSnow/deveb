@@ -45,7 +45,7 @@ export const home = [
   {
     num: "Vimcosmo",
     id: "hp103",
-    h4: "Online store, cosmetic brand",
+    h4: "Beauty brand, e-commerce",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {
@@ -81,7 +81,7 @@ export const home = [
   {
     num: "Dope Good",
     id: "hp101",
-    h4: "Online store, Furniture brand",
+    h4: "Furniture brand, e-commerce",
     p: "",
     a: { text: "Learn more",  url:"/projects" },
     img: {

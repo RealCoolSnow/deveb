@@ -23,7 +23,7 @@ export const prjData = [
         type:"textbox",
         h3:"Vimcosmo",
         mt:true,
-        h1:"Beauty brand, online shop",
+        h1:"Beauty brand, e-commerce",
         width:"short",
         alignment:"alignment",
       },
