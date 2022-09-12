@@ -249,11 +249,11 @@ const Con = () => {
     }
 
     try {
-      const sendForm = await axios.post('', {
+      const sendForm = await axios.post({
         url: 'https://deveb-api.fly.dev/api/send',
         method: 'post',
         data: attachs || {},
-        headers: ContactForm,
+        headers: ContactForm
       });
       // sendForm = await sendForm.json();
 
