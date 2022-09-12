@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from "react";
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import { useAppContext } from "../contexts/appcontext.js";
 import "./homeheader.scss";
 
@@ -16,6 +16,8 @@ const Head = ({setBlob}) => {
   const el = useRef();
   const q = gsap.utils.selector(el);
   // const vidRef = useRef();
+const histori = useHistory();
+const handleclick =() => histori.push('/services');
   useLayoutEffect(()=>{
    
     
@@ -97,7 +99,6 @@ else if(!isMobile) {
 },[isMobile])
 
 
-  
   return (
     <>
       <section className="head" ref={el} data-scroll data-scroll-sticky data-scroll-target="#sti">
@@ -140,7 +141,7 @@ else if(!isMobile) {
           </div>
         ) : (
           <div className="h1">
-            <h1 style={{ position: "absolute" }} onMouseLeave={()=>setBlob(false, false)}>
+            <h1 style={{ position: "absolute" }} onMouseLeave={()=>setBlob(false, false)} onClick={handleclick}>
               <span className="headSpan" >
                 <span onMouseOver={()=>setBlob("#f9fdff", true)}>Design.</span>
               </span>

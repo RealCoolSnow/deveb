@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger)
 const ContactPage = () => {
   const ref= useRef();
   const { isMobile, pageTitle, setReset, changePT, resetLoco} = useAppContext();
-  useLoco(!isMobile);
+  useLoco(!isMobile, true);
 
   useEffect(()=>{
 
