@@ -213,12 +213,12 @@ const Con = () => {
       return;
     }
 
-    // try {
-    //   await recap.current.executeAsync();
-    // } catch (err) {
-    //   console.log("Google recaptcha failed");
-    //   return;
-    // }
+    try {
+      await recap.current.executeAsync();
+    } catch (err) {
+      console.log("Google recaptcha failed");
+      return;
+    }
 
     setSendingForm(true);
     cursorLoading(true);
@@ -233,6 +233,7 @@ const Con = () => {
       // remove \n from message
       const correctedMessage = form.message.replace(/(?:\r\n|\r|\n)/g, '<br>');
       ContactForm.message = correctedMessage;
+      
     }
     
     const { needs, budgets } = contactData;
