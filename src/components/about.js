@@ -52,7 +52,7 @@ const {isMobile} = useAppContext();
         
         
         <h5 style={!isMobile?{paddingTop:"1rem" }: null}>
-        A digital agency with solid web design and development expertise.
+        A digital agency with solid design and web development expertise.
         </h5>
       </div>
       <div className="image-wrap fc">
@@ -76,13 +76,13 @@ const {isMobile} = useAppContext();
         <div className="mem-row" >
         <div className="back">
         <p className="name">Amir <br/>Mohseni</p>
-          <p>Product Designer</p>
+          <p>Creative Director</p>
         </div>
         <div className="desat"></div>
          <div className="members amir"></div>
          <div className="mbtxt">
             <p>Amir Mohseni</p>
-            <p>Product Designer</p>
+            <p>Creative Director</p>
           </div>
         </div>
         <div className="mem-row" >
@@ -116,8 +116,7 @@ const {isMobile} = useAppContext();
       </div>
       <div className="text-wrap2">
         <h5>
-          For each of our clients, we create spaces that are truly unique to
-          them by listening, solving problems, and being creative.
+          Designing and building digital products is what we love to do, and we are awesome at it. We bet on success in every project we accept.
         </h5>
       </div>
       <div className="image-wrap so">

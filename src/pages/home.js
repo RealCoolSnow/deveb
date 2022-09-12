@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useRef } from 'react'
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import Head from'../components/homeheader.js'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from "gsap"
@@ -30,6 +30,12 @@ const HomePage = () => {
   const q = gsap.utils.selector(el);
   const fooT= useRef();
   const imageTimeline = useRef();
+  const [hoverCl,setHoverCl]= useState("");
+  const [leaveh2,setLeaveh2]= useState(false);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+
+
  
   useEffect(() => {
     // changePT("Home");
@@ -136,9 +142,11 @@ const HomePage = () => {
       .to(
         spans,
         {
+        onStart:()=> setLeaveh2(true), 
+        onReverseComplete:()=> setLeaveh2(false),
           duration: 4,
           autoAlpha: 0,
-          y: -20,   
+          y: -20,
         },
         "<5.5"
       )
@@ -386,6 +394,63 @@ const HomePage = () => {
                }
            }
   }, [resetLoco, isMobile])
+  const setBlob= (cl, hov)=>{
+    !isSafari && setHoverCl(cl)
+   if (hov){
+     changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true,sesize:"3.5"})
+   } else if (hov===false) {
+    changePointer({isHover: false})
+   }
+
+  }
+  useEffect(()=>{
+    if(isSafari){ 
+      return
+    } else{
+      if(hoverCl && hoverCl !== "sec2"){
+        gsap.fromTo(q(".hue-can"),{
+          backgroundColor:"#ffffff",
+
+        },{
+          backgroundColor:hoverCl,
+          duration:.6,
+          ease:"power2.out"
+  
+        })
+        gsap.to(q(".hue-can"),{
+          autoAlpha:1,
+          duration:.7,
+        })
+        options.sethovercolor();
+      } else if(hoverCl === false){
+
+        if(leaveh2 === false){
+          options.setlightpink();
+          gsap.to(q(".hue-can"),{
+            backgroundColor:"#ffffff",
+            autoAlpha:0,
+            duration:.7,
+            ease:"power2.out"
+          })
+          gsap.set(q(".h1"),{
+            zIndex:800,
+          })
+        } else {
+          options.setlight2();
+          gsap.set(q(".h1"),{
+            zIndex:500,
+          })
+          gsap.to(q(".hue-can"),{
+            backgroundColor:"#ffffff",
+            autoAlpha:0,
+            duration:.7,
+            ease:"power2.in"
+          })
+        }
+      } 
+    }
+   
+  },[hoverCl, leaveh2])
 
   return( 
    
@@ -397,14 +462,14 @@ const HomePage = () => {
       </Helmet>
       <div data-scroll style={{height: "100vh", position:"absolute"}} id="mycan">
         <div data-scroll data-scroll-sticky data-scroll-target="#sti">
-        <div className="hue-can" style={{position: "relative",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue", opacity:"0"}}></div>
+        <div className="hue-can" style={{position: "relative",  width: "100vw",  height: "100vh", background: "#f5f5f7",mixBlendMode: "hue", opacity:"0", zIndex:1}}></div>
        <Three/>
         </div>
       </div>
    
       
       <div id="sti" style={!isMobile ? {height: "190vh"}: {}}>
-      <Head />
+      <Head setBlob={setBlob} />
 
       </div>
 

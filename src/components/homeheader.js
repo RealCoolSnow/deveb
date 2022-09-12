@@ -10,9 +10,9 @@ import { gsap } from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import ScrollToPlugin from "gsap/ScrollToPlugin";
 
-const Head = () => {
+const Head = ({setBlob}) => {
   const { isMobile } = useAppContext();
-//  const [url, seturl] = useState("")
+//  const [hoverCl, setHoverCl] = useState("")
   const el = useRef();
   const q = gsap.utils.selector(el);
   // const vidRef = useRef();
@@ -34,6 +34,7 @@ const Head = () => {
     }
 
   },[isMobile])
+
 useEffect(()=>{
   const headSpans = q(".headSpan");
 if(isMobile){
@@ -92,9 +93,9 @@ else if(!isMobile) {
     }
   );
 }
- 
- 
+
 },[isMobile])
+
 
   
   return (
@@ -139,15 +140,15 @@ else if(!isMobile) {
           </div>
         ) : (
           <div className="h1">
-            <h1 style={{ position: "absolute" }}>
+            <h1 style={{ position: "absolute" }} onMouseLeave={()=>setBlob(false, false)}>
               <span className="headSpan" >
-                <span>Design.</span>
+                <span onMouseOver={()=>setBlob("#f9fdff", true)}>Design.</span>
               </span>
               <span className="headSpan">
-                <span>Development.</span>
+                <span onMouseOver={()=>setBlob("#faf9ff", true)}>Development.</span>
               </span>
               <span className="headSpan">
-                <span>Branding</span>
+                <span onMouseOver={()=>setBlob("#fffdf9", true)}> Branding</span>
               </span>
             </h1>
           </div>
@@ -161,9 +162,9 @@ else if(!isMobile) {
             
               {/* {isMobile ? "AMarc " : "am-arc "} */}
               { isMobile? (
-                <h3>A digital agency with solid web design and development expertise.</h3>
+                <h3>A digital agency with solid design and web development expertise.</h3>
               ) : (
-                <h3> <div>A digital agency with solid web</div> <span>design and development expertise.</span></h3>
+                <h3> <div>A digital agency solid design</div> <span> and web development expertise.</span></h3>
               )}
               
             

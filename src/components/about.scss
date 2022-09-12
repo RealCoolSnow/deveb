@@ -63,6 +63,7 @@
     }
     h1{display: none;}
     #headLines, h1{
+        opacity: 0;
         // max-width: 700px;
         // min-width: 600px;
         max-width: 25rem;
@@ -118,7 +119,7 @@
 .members-wrap{
     width: 86%;
     height: 100%;
-    margin: 50vh auto 70vh;
+    margin: 60vh auto 77vh;
     // margin-top: 70vh;
     // margin-bottom: 70vh;
 
@@ -224,7 +225,8 @@
     height: 75vh;
     display: flex;
     flex-direction: column;
-    width: 48%;
+    // width: 48%;
+    width: 28rem;
     align-items: center;
     margin: auto;
     justify-content: center;

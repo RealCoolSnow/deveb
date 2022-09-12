@@ -31,7 +31,7 @@ export const smScreens = {
     'HTML/CSS coding',
     'Site from scratch',
     'Back-end',
-    'front-end',
+    'Front-end',
     'Other',
   ],
   budgets: [

@@ -67,6 +67,7 @@ const AboutPage = () => {
       type: "lines",
       linesClass: "lineChildren",
     }); 
+    gsap.set(q("#headLines"),{opacity:1})
     gsap.to(
       split.lines,
       {
@@ -545,6 +546,32 @@ const AboutPage = () => {
            backgroundPosition:"0 65%"
          })
         } )
+        const phils = q(".phil");
+        phils.forEach((p,i)=>{
+         philTl.current = gsap
+        .timeline({
+          duration: 10,
+          scrollTrigger: {
+            // scroller: "#viewport",
+            trigger:p,
+            start: () => "center bottom",
+            end: () => "center top",
+            // markers: true,
+            scrub: true,
+          },
+        })
+        .to(p,{
+          autoAlpha:1,
+          duration:3,
+          ease:"power2.in"
+        },0)
+        .to(p,{
+          autoAlpha:0,
+          duration:3,
+          ease:"power2.out"
+
+        },7)
+        })
       
       //  philTl.current = gsap
       //   .timeline({
@@ -654,10 +681,10 @@ const AboutPage = () => {
           if(memtl.ScrollTrigger){
             memtl.ScrollTrigger.kill();
           }
-          philTl.current.kill();
-          if(philTl.current.ScrollTrigger){
-            philTl.current.ScrollTrigger.kill();
-          }
+          // philTl.current.kill();
+          // if(philTl.current.ScrollTrigger){
+          //   philTl.current.ScrollTrigger.kill();
+          // }
           if( ScrollTrigger.getById("imgs")){
             ScrollTrigger.getById("imgs").kill();
           }

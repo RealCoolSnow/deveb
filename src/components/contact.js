@@ -25,7 +25,7 @@ const MLine = `url(${movingLine})`;
 let TL;
 
 const Con = () => {
-  const { setReset } = useAppContext();
+  const { setReset, resetLoco } = useAppContext();
   const { isMobile, changePointer } = useAppContext();
   // const location = useLocation();
   // const fromcontact = location.state?.contact;
@@ -73,9 +73,44 @@ const Con = () => {
       delay: 0.6,
     });
   }, []);
-
+ const scrollTop = useRef();
   const [showThanks, setShowThanks] = useState(false);
+ const [textEHC, setTEHC]= useState("");
+//  useEffect(()=>{
+//    console.log(window.dvbScroll)
+//   window.dvbScroll.on("scroll", (args) => {
+//     // ScrollTrigger.update()loc_array.length - 1
+//     // console.log(window.dvbScroll);
+//   console.log('scrolling')
+//     scrollTop.current= args.delta.y;
+// })
+//  },[])
+ useEffect(()=>{
+   
+  //  console.log("running reset", )
+// console.log( window.dvbScroll)
 
+     setTimeout(() => {
+      window.dvbScroll.update()
+    }, 200);   
+   
+ },[textEHC])
+//  useEffect(()=>{
+//   setTimeout(() => {
+//     window.dvbScroll.scrollTo(scrollTop.current ,{
+//       duration:0 ,disableLerp:true,
+//       callback: ()=>console.log("jumped",scrollTop.current )
+//      });
+//   }, 201); 
+//  },[resetLoco])
+
+//  const getOffsetTop = () => {
+//    const viewPort = document.querySelector('#viewport')
+//   const style = window.getComputedStyle(viewPort);
+//   const matrix = style.transform.split(',');
+//   console.log(Number(matrix[matrix.length - 1].replace(')','').replace('-', ' ')));
+//   scrollTop.current=Number(matrix[matrix.length - 1].replace(')','').replace('-', ' '));
+//  }
   // Form Data
   const [sendingForm, setSendingForm] = useState(false);
   const [formValid, setFormValid] = useState(false);
@@ -126,8 +161,12 @@ const Con = () => {
 
     const textarea = e.target;
 
-    textarea.style.height = "";
-    textarea.style.height = Math.max(textarea.scrollHeight, 23) + "px";
+    const newHeight = Math.max(textarea.scrollHeight, 24);
+    const oldHeight = Number(textarea.style.height.split('px')[0])
+    setTEHC(newHeight)
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + "px";
+  
   };
 
   const removeAttach = (idx) => {
@@ -205,6 +244,7 @@ const Con = () => {
     if (attachments) {
       attachments.forEach((attach) => {
         attachs.append("attachs", attach);
+        // setReset()
       });
     }
 
@@ -545,12 +585,13 @@ const Con = () => {
                 )}
               </div>
 
-              <div className="am-input full-w">
+              <div className="am-input full-w" style={{height: "auto"}}>
                 <textarea
                   className="full-w"
                   type="text"
                   placeholder="About your project"
                   name="message"
+                  rows="1"
                   value={form.message}
                   onChange={textAreaChange}
                 ></textarea>
@@ -660,7 +701,7 @@ const Con = () => {
 
             <>
               <div className="options-btns budgets" onBlur={() => FocusedOut("budget")}>
-                <p>Budget (USD)</p>
+                <p onClick={()=>setReset()}>Budget (USD)</p>
 
                 {contactData.budgets.map((val, idx) => (
                   <SecondaryBtn

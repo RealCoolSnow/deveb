@@ -52,6 +52,7 @@ body {
   position: relative;
   overflow-x: hidden;
   height: 100vh;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 .lock-scroll {
@@ -334,7 +335,7 @@ section {
       display: inline-block;
       font-size: 54px;
       letter-spacing: 1px;
-      font-weight: 600;
+      font-weight: 500;
       color: black;
     }
 
@@ -349,6 +350,7 @@ section {
           display: inline-block;
           overflow: hidden;
           span {
+            // padding: 0.4rem 0px;
             display: inline-block;
           }
         }
@@ -577,6 +579,7 @@ section {
         &.btn-container {
           margin-bottom: 0;
           padding-bottom: 0;
+          justify-content: center;
         }
       }
 
@@ -590,7 +593,7 @@ section {
       }
 
       div.form-inputs {
-        margin: 3.25rem 6px 1.1rem;
+        margin: 2.8rem 6px 1.1rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 33px;
@@ -820,7 +823,8 @@ section {
             }
 
             span {
-              margin-left: 15px;
+              margin-left: 5px;
+              font-size: 0.45rem;
             }
 
             &:hover {
@@ -843,9 +847,9 @@ section {
           color: #FF6666;
         }
 
-        a.sec-btn {
-          margin-right: 0.4rem;
-        }
+        // a.sec-btn {
+        //   margin-right: 0.4rem;
+        // }
 
       }
     }

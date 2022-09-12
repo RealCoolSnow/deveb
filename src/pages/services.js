@@ -36,7 +36,7 @@ const ServicesPage = () => {
     changePT("Services");
     setTimeout(() => {
       setReset()
-    }, 500);
+    }, 300);
 
     // if(isMobile){
     //       sl.current.style.transform="none";
@@ -143,14 +143,14 @@ if(!isMobile){
         },
         {
           clipPath: ()=>"inset(0px 0px 100% 0px)",
-          backgroundPosition: () => "0 60%",
+          backgroundPosition: () => "0 80%",
           ease: "none",
           // onComplete:()=>console.log(images[i+1])
         },
         0
       )
       .fromTo(fulimages[i+1], {
-        backgroundPosition: () => "0 20%",
+        backgroundPosition: () => "0 0%",
 
          }, 
          { 
@@ -242,9 +242,10 @@ if(!isMobile){
         gsap.set(sl.current,{
           clearProps: "transform"
         })
+        
 
-        gsap.to(q(".showcase-full-img.first"),{
-          autoAlpha:1, yPercent:0, duration:.4, delay:.05,
+        gsap.to(q(".showcase-container"),{
+          autoAlpha:1, yPercent:0, duration:.6, delay:.7,
         })
         
         fooT.current = gsap

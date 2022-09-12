@@ -151,7 +151,8 @@ section.pro-sec {
   }
   
   div.pro-cont {
-    padding-bottom: 0px;
+    // padding-bottom: 0px;
+    padding-bottom: 300px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -187,7 +188,7 @@ section.pro-sec {
         height: 120vw;
       }
       &:last-child{
-        margin-bottom: 300px;
+        // margin-bottom: 300px;
       }
       &.vr-project {
         width: 95%;

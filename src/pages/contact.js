@@ -17,6 +17,8 @@ const ContactPage = () => {
   useLoco(!isMobile);
 
   useEffect(()=>{
+
+    
        setTimeout(() => {
          setReset()
        }, 500);
@@ -33,7 +35,7 @@ const ContactPage = () => {
     if(isMobile){
       ref.current.style.transform="none";
     }
-  },[ isMobile])
+  },[ isMobile, resetLoco])
   return (
   <div ref={ref} id="viewport" data-scroll-container >
 

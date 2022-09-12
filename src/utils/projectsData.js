@@ -1,7 +1,7 @@
-import dopegood from '../assets/covers/dopegood.webp'
+import dopegood from '../assets/covers/dopegood.jpg'
 import amarc from '../assets/covers/am-arc.jpg'
-import vim from '../assets/covers/vim.webp'
-import dopop from '../assets/covers/dopop.jpg'
+import vim from '../assets/covers/vim.jpg'
+import dopop from '../assets/covers/dopop2.jpg'
 // import comfeey from '../assets/covers/comfeey.webp'
 import {vim1, vim2, vim3, vim4, vim5, vim6,vim7,vim8,vim9} from "../assets/covers/vim"
 import {a1, a2, a3, a4, a5, a6, a7} from "../assets/covers/am"
@@ -14,7 +14,7 @@ export const prjData = [
   {
     id:"p15i11",
     name: 'VimCosmo',
-    desc: "Online shop",
+    desc: "Beauty brand, e-commerce",
     tags:['Interior',],
     family:"vimcosmo",
     elements:[
@@ -148,8 +148,8 @@ export const prjData = [
   },
   {
     id:"p15i33",
-    name: 'DoPop',
-    desc: "Online marketplace, web3",
+    name: 'Dopop',
+    desc: "NFT Marketplace",
     tags:['Interior', '3D Rendering','3DRendering',],
     family:"dopop",
     elements:[
@@ -158,7 +158,7 @@ export const prjData = [
         type:"textbox",
         h3:"Dopop",
         mt:true,
-        h1:"Online marketplace to create, buy and sell NFT's",
+        h1:"Online marketplace to create, buy and sell NFTs",
         width:"short",
         alignment:"alignment",
       },
@@ -291,15 +291,15 @@ export const prjData = [
   },
   {
     id:"p15i44",
-    name: 'Dope good',
-    desc: 'Modern home furniture store',
+    name: 'Dopegood',
+    desc: 'Furniture brand, e-commerce',
     tags:['3D Model'],
     family:"dopegood",
     elements:[
       {
         id:"vt14",
         type:"textbox",
-        h3:"DopeGood",
+        h3:"Dopegood",
         mt:true,
         h1:"Modern home furniture store",
         width:"short",
@@ -432,7 +432,7 @@ export const prjData = [
   {
     id:"p15i55",
     name: 'AM-Arc',
-    desc: 'Architectural design & visualization studio',
+    desc: 'Architectural design studio',
     tags:['Interior', '3D Rendering','3DRendering',],
     family:"amarc",
     elements:[

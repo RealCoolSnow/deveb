@@ -9,8 +9,11 @@ section.head {
     // left: 50%;
     position: relative;
     // transform: translateX(-50%);
-    z-index: 500;
-    cursor: pointer;
+    z-index: 800;
+    // cursor: pointer;
+    .headSpan span{
+      cursor: pointer;
+    }
   }
   .h2-wrapper{
     position: absolute;

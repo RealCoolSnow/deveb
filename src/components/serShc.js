@@ -17,8 +17,8 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
 
   useLayoutEffect(()=>{
     if(isMobile){
-      gsap.set(q(".showcase-full-img.first"),{
-        autoAlpha:0, yPercent:10,
+      gsap.set(q(".showcase-container"),{
+        autoAlpha:0, yPercent:15,
       })
     }
   },[isMobile])
@@ -183,7 +183,7 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
                       >
                         {num}
                       </span>
-                      <h4 style={num === "" ? { marginTop: "110px" } : {}}>
+                      <h4>
                         {h4}
                       </h4>
                       {p === "" ? null : <p>{p}</p>}
@@ -208,14 +208,14 @@ const ShowcaseServ = ({ showcasedata, dataHeight, ell }) => {
                 const {
                   cover,
                   klass,
-                  colors: { right, left },
+                  colors: { right, pointer },
                 } = img;
                 return (
                   <Link to={item.a.url}>
                   <div key={idx} 
                     className={klass+ " show-image fixed"} 
                     style={{backgroundImage:" url(" +cover+")"}}
-                    onMouseOver={()=> changePointer({isHover: true, color:{bg:"#000000", txt: "#ffffff"}, text: "Click"})}
+                    onMouseOver={()=> changePointer({isHover: true, color:{bg:pointer, txt: "#ffffff"}, text: "Click"})}
                     onMouseLeave={()=> changePointer({isHover: false})}
                   ></div>
                   </Link>
