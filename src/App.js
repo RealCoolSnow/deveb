@@ -88,7 +88,7 @@ import {
         
         <Frame />
   
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         {!isMobile ? <Circle size="sm" delay="0" /> : null}
   
         <Switch>

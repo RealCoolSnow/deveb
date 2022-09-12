@@ -76,13 +76,13 @@ const {isMobile} = useAppContext();
         <div className="mem-row" >
         <div className="back">
         <p className="name">Amir <br/>Mohseni</p>
-          <p>Product Designer</p>
+          <p>Creative Director</p>
         </div>
         <div className="desat"></div>
          <div className="members amir"></div>
          <div className="mbtxt">
             <p>Amir Mohseni</p>
-            <p>Product Designer</p>
+            <p>Creative Director</p>
           </div>
         </div>
         <div className="mem-row" >

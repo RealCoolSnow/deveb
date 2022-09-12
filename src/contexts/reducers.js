@@ -31,7 +31,7 @@ export const menuReducer = (state, action)=>{
     }
     if(action.type === "RESET_LOCO"){
       // console.log(state.resetLoco, "loco")
-      return {...state, resetLoco: !state.resetLoco}
+      return {...state, resetLoco: !state.resetLoco, updateloco: state.updateloco + 1}
     }
     if(action.type === "SET_ANI"){
       return {...state, aniClick: !state.aniClick}

@@ -17,6 +17,7 @@ const initState ={
     text: "",
   },
   resetLoco:false,
+  updateloco:0,
 }
 
 const AppContext = React.createContext();

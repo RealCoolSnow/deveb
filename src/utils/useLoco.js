@@ -8,14 +8,18 @@ import { useAppContext } from "../contexts/appcontext.js";
 gsap.registerPlugin(ScrollTrigger);
 export var scrolltop= "";
 const useLoco = (start) => {
-  var { scrollY, resetLoco  } = useAppContext();
+  var { scrollY, resetLoco,updateloco  } = useAppContext();
 
   
   useEffect(() => {
     if (!start) return;
-    // console.log("run loco reset")
-    const scEl = document.querySelector("#viewport");
+    // if(updateloco !== 0){
+    //   locoScroll.update();
+    //   return;
+    // }
     let locoScroll = null;
+    console.log("runing loco")
+    const scEl = document.querySelector("#viewport");
      locoScroll = new LocomotiveScroll({
       el: scEl,
       smooth: true,
@@ -26,8 +30,9 @@ const useLoco = (start) => {
       class: "revealed",
       // lerp:0.2,
       lerp:0.095,
-
     });
+    
+    window.dvbScroll = locoScroll;
 
     ScrollTrigger.scrollerProxy(scEl, {
       scrollTop(value) {
@@ -62,7 +67,7 @@ const useLoco = (start) => {
 
     locoScroll.on("scroll", (args) => {
       ScrollTrigger.update()
-      // console.log(locoScroll);
+      // console.log(window.dvbScroll);
       const sY = args.delta.y;
       scrolltop= sY;
       if( sY > 10) {
@@ -74,27 +79,9 @@ const useLoco = (start) => {
       // console.log(locoScroll)
   })
 
-    //   // if (callonce && btnobj){
-    //     var locodata="";
-    //     if (args.currentElements[btnobj] === "undefiend" ){
-    //       locodata= ""} 
-    //       else if (args.currentElements[btnobj]){locodata = args.currentElements[btnobj].top;}
-    //       var pay ={ btnname : btnobj , value: locodata};
-    //       updateNeeded(pay)
-    //       setCallonce(false)
-    //       console.log(pay)
-    // // }
-    // });
-    
-    // locoScroll.on("call", (obj, status)=>{
-      // if (status === "enter"){
-      // oncallfunc(obj);
-      // setCallonce(true);
-      // console.log(obj, status)
-    // }
-    // })
     const timer = setTimeout(function(){
       locoScroll.update()
+      // locoScroll.scrollTo(300, {duration:0, disableLerp:true,})
       // console.log("updating")
       }, 100);
    
