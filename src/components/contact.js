@@ -208,36 +208,44 @@ const Con = () => {
       });
     }
 
-    await fetch(`https://deveb-api.fly.dev/`); // Awake if server is sleep
+    try {
 
-    let sendForm = await fetch(`https://deveb-api.fly.dev/api/send`, {
-      method: "post",
-      body: attachs || {},
-      headers: ContactForm,
-    });
-    sendForm = await sendForm.json();
-
-    if (sendForm.success) {
-      setSendingForm(false);
-      cursorLoading(false);
-      setShowThanks(true);
-      changePointer({
-        isHover: true,
-        color: { bg: "#fff", txt: "#000" },
-        text: "✕",
-        blend: true,
-        fsize: "20px",
+      let sendForm = await fetch(`https://deveb-api.fly.dev/api/send`, {
+        method: "post",
+        body: attachs || {},
+        headers: ContactForm,
       });
+      sendForm = await sendForm.json();
 
-      setForm({ name: "", email: "", message: "" });
-      setActiveNeeds([]);
-      setActiveBudg(-1);
-      setAttachments([]);
-      // setReset();
-    } else {
+      if (sendForm.success) {
+        setSendingForm(false);
+        cursorLoading(false);
+        setShowThanks(true);
+        changePointer({
+          isHover: true,
+          color: { bg: "#fff", txt: "#000" },
+          text: "✕",
+          blend: true,
+          fsize: "20px",
+        });
+  
+        setForm({ name: "", email: "", message: "" });
+        setActiveNeeds([]);
+        setActiveBudg(-1);
+        setAttachments([]);
+        // setReset();
+      } else {
+        console.log('error in sending form')
+        setSendingForm(false);
+        cursorLoading(false);
+      }
+
+    } catch (err) {
+      console.log(err)
       setSendingForm(false);
       cursorLoading(false);
     }
+
   };
 
   const requestSendingLoading = () => {
@@ -425,6 +433,12 @@ const Con = () => {
     else if (!isFormValid && formValid) setFormValid(false);
   }, [form,activeBudg]);
 
+  useEffect(() => {
+    try{
+      fetch(`https://deveb-api.fly.dev`); // Awake if server is sleep
+    } catch(err) {}
+  }, [])
+  
   return (
     <>
       {showThanks ? (
