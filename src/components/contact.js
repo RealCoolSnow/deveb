@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
+import axios from 'axios'
 import Button from "./button.js";
 import MButton from "./MobileButton/MButton";
 import SecondaryBtn from "./SecondaryBtn/SecondaryBtn";
@@ -162,7 +163,7 @@ const Con = () => {
     const textarea = e.target;
 
     const newHeight = Math.max(textarea.scrollHeight, 24);
-    const oldHeight = Number(textarea.style.height.split('px')[0])
+    
     setTEHC(newHeight)
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + "px";
@@ -248,14 +249,18 @@ const Con = () => {
     }
 
     try {
-      let sendForm = await fetch('https://deveb-api.fly.dev/api/send', {
-        method: "post",
-        body: attachs || {},
-        headers: JSON.stringify(ContactForm),
+      const sendForm = await axios.post('', {
+        url: 'https://deveb-api.fly.dev/api/send',
+        method: 'post',
+        data: attachs || {},
+        headers: ContactForm,
       });
-      sendForm = await sendForm.json();
+      // sendForm = await sendForm.json();
 
-      if (sendForm.success) {
+      console.log(sendForm)
+      console.log(sendForm.data)
+      
+      // if (sendForm.success) {
         setSendingForm(false);
         cursorLoading(false);
         setShowThanks(true);
@@ -272,11 +277,11 @@ const Con = () => {
         setActiveBudg(-1);
         setAttachments([]);
         // setReset();
-      } else {
-        console.log('error in sending form')
-        setSendingForm(false);
-        cursorLoading(false);
-      }
+      // } else {
+      //   console.log('error in sending form')
+      //   setSendingForm(false);
+      //   cursorLoading(false);
+      // }
 
     } catch (err) {
       console.log(err)
