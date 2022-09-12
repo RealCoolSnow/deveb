@@ -56,6 +56,7 @@ const HomePage = () => {
       })
       dir === 1? changePp("Contact"): changePp("other")
     }
+    gsap.set(q(".h2-con"),{opacity:1})
     if (isMobile=== false){
       console.log("runnig web")
        options.setlightpink();
