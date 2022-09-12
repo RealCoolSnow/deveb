@@ -244,16 +244,14 @@ const Con = () => {
     if (attachments) {
       attachments.forEach((attach) => {
         attachs.append("attachs", attach);
-        // setReset()
       });
     }
 
     try {
-
-      let sendForm = await fetch(`https://deveb-api.fly.dev/api/send`, {
+      let sendForm = await fetch('https://deveb-api.fly.dev/api/send', {
         method: "post",
         body: attachs || {},
-        headers: ContactForm,
+        headers: JSON.stringify(ContactForm),
       });
       sendForm = await sendForm.json();
 
