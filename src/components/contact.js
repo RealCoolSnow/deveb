@@ -162,7 +162,7 @@ const Con = () => {
     const textarea = e.target;
 
     const newHeight = Math.max(textarea.scrollHeight, 24);
-    const oldHeight = Number(textarea.style.height.split('px')[0])
+    
     setTEHC(newHeight)
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + "px";
@@ -228,7 +228,13 @@ const Con = () => {
     ContactForm.name = form.name;
     ContactForm.email = form.email;
     
-    if (form.message) ContactForm.message = form.message;
+    if (form.message) {
+
+      // remove \n from message
+      const correctedMessage = form.message.replace(/(?:\r\n|\r|\n)/g, '<br>');
+      ContactForm.message = correctedMessage;
+      
+    }
     
     const { needs, budgets } = contactData;
 
@@ -248,13 +254,15 @@ const Con = () => {
     }
 
     try {
-      let sendForm = await fetch('https://deveb-api.fly.dev/api/send', {
-        method: "post",
-        body: attachs || {},
-        headers: JSON.stringify(ContactForm),
-      });
-      sendForm = await sendForm.json();
 
+      let sendForm = await window.fetch('https://deveb-api.fly.dev/api/send',{
+        method: 'post',
+        data: attachs || {},
+        headers: ContactForm,
+      });
+
+      sendForm = await sendForm.json();
+      
       if (sendForm.success) {
         setSendingForm(false);
         cursorLoading(false);
@@ -271,7 +279,7 @@ const Con = () => {
         setActiveNeeds([]);
         setActiveBudg(-1);
         setAttachments([]);
-        // setReset();
+        
       } else {
         console.log('error in sending form')
         setSendingForm(false);
@@ -472,8 +480,8 @@ const Con = () => {
   }, [form,activeBudg]);
 
   useEffect(() => {
-    try{
-      fetch(`https://deveb-api.fly.dev`); // Awake if server is sleep
+    try {
+      window.fetch(`https://deveb-api.fly.dev`); // Awake if server is sleep
     } catch(err) {}
   }, [])
   
