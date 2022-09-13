@@ -5,8 +5,8 @@ import "./about.scss";
 import img1 from "../assets/covers/ab2.webp";
 import img1mb from "../assets/covers/abm2.webp";
 
-import img2 from "../assets/covers/ab1.webp";
-import img2mb from "../assets/covers/abm1.webp";
+import img2 from "../assets/covers/ab1.jpg";
+import img2mb from "../assets/covers/abm1.jpg";
 
 import winkle from "../assets/about.png";
 

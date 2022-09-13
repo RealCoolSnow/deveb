@@ -482,6 +482,26 @@ const AboutPage = () => {
           onLeaveBack: ({ direction }) => fadeOut(direction),
         },
       });
+      const images =q(".image-wrap img");
+      // images.forEach((img, i)=>{
+        var imgtl = gsap.timeline({
+          scrollTrigger:{
+            trigger: images[0],
+            start:()=> "top bottom-=30%",
+            end: ()=> "bottom top",
+            // markers:true,
+            scrub:true,
+          }
+        })
+        .fromTo(images[0],{
+          objectPosition: "0 100%"
+        }, {
+          objectPosition: "0 0%",
+          ease:"none",
+        })
+
+      // })
+
   
       const fadeOut = (direction) => {
         return (

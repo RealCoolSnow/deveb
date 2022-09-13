@@ -367,6 +367,25 @@ const HomePage = () => {
             .to(el.current,{
               backgroundColor:"#f5f5f7"
             })
+            const images =q(".showcase-full-img");
+            images.forEach((img, i)=>{
+              var imgtl = gsap.timeline({
+                scrollTrigger:{
+                  trigger: img,
+                  start:()=> "top bottom",
+                  end: ()=> "bottom top",
+                  // markers:true,
+                  scrub:true,
+                }
+              })
+              .fromTo(img,{
+                backgroundPosition: "0 75%"
+              }, {
+                backgroundPosition: "0 25%",
+                ease:"none",
+              })
+
+            })
          
             fooT.current = gsap
             .timeline({
