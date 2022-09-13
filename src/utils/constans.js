@@ -47,7 +47,7 @@ export const home = [
     id: "hp103",
     h4: "Beauty brand, e-commerce",
     p: "",
-    a: { text: "Learn more",  url:"/projects" },
+    a: { text: "Learn more",  url:"/projects/vimcosmo" },
     img: {
       cover: vim,
       colors: { cur: "#FF99CE", pointer: "#CC669Bbf", bg:"#FAE1EE", tx:"#E67FB4", br:"#FEA5D3"},
@@ -59,7 +59,7 @@ export const home = [
     id: "hp104",
     h4: "NFT digital marketplace",
     p: "",
-    a: { text: "Learn more",  url:"/projects" },
+    a: { text: "Learn more",  url:"/projects/dopop" },
     img: {
       cover: dopop,
       colors: { cur: "#808CFF", pointer: "#808cffbf", bg:"#D3D6F0", tx:"#7781D9", br:"#A6AFFF"},
@@ -71,7 +71,7 @@ export const home = [
     id: "hp102",
     h4: "Architectural design studio",
     p: "",
-    a: { text: "Learn more",  url:"/projects" },
+    a: { text: "Learn more",  url:"/projects/dopegood" },
     img: {
       cover: amarc,
       colors: { cur: "#F2AB79", pointer: "#F2AB79bf", bg:"#FFEDE0", tx:"#F2AB79", br:"#F2AB79"},
@@ -111,7 +111,7 @@ export const servData = [
     num: "",
     id: "h21ex3",
     h4: "Branding",
-    p: "We give your business/brand a face and identity by creating the most suitable logo and mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
+    p: "We give your business/brand a face and Identity by creating the most suitable logo and mockups of your projects and services. We then assist you with finding your target markets and getting your brand's voice heard.",
     a: { text: "Learn more", url: "/projects" },
     img: {
       cover: samarc,
@@ -147,7 +147,7 @@ export const servData = [
   {
     num: "",
     id: "h21ex4",
-    h4: "Concept design",
+    h4: "Design concept",
     p: "Using our creative design skills, we can help you make your product even better by creating a site or application that appeals to your audience.",
     a: { text: "Learn more", url: "/projects" },
     img: {

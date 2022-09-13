@@ -224,7 +224,15 @@ section.showcase-pin {
   
 }
 
-@media ( max-width: 2560px ) {
+@media ( max-width: 1600px ) and (min-width: 1460px) {
+  section.showcase-pin {
+    .show-text {
+      .show-text-contain h4 {
+        font-size: 1.34rem;
+        padding-right: .9rem;
+      }
+    }
+  }
   
 }
 

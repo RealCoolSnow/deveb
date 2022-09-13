@@ -81,7 +81,7 @@ const shrinkRipple=()=>{
         
             
             <div  className={`cover-contain ${width} ${pb? pb : ""}`} style={mt?{marginTop:"-38px"}:{}}>
-               <div className={`cover ${height}`} style={img?{background: `url(${img})`, backgroundSize: "cover"}:{}}>
+               <div className={`cover ${height}`} style={isMobile?{background: `url(${img[1]})`, backgroundSize: "cover"}:{background: `url(${img[0]})`, backgroundSize: "cover"}}>
                </div>
             </div>
             {/* <div  className="bn-contain" ref={el} >

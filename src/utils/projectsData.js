@@ -50,7 +50,7 @@ export const prjData = [
         url:"https://vimcosmo.com/",
         width:"full-w",
         height:"full-H",
-        src:vim2,
+        src:[vim2, vim],
       },
       {
         id:"vc31",
@@ -203,7 +203,7 @@ export const prjData = [
         url:"https://dopop.net",
         width:"full-w",
         height:"full-H",
-        src:do2,
+        src:[do2,dopop],
       },
       {
         id:"vc33",
@@ -346,7 +346,7 @@ export const prjData = [
         url:"https://dopegood.com",
         width:"full-w",
         height:"full-H",
-        src:d2,
+        src:[d2,dopegood],
       },
       {
         id:"vc34",
@@ -470,7 +470,7 @@ export const prjData = [
         url:"https://am-arc.com",
         width:"full-w",
         height:"full-H",
-        src:a2,
+        src:[a2, amarc],
       },
       {
         id:"vc35",

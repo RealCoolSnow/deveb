@@ -300,6 +300,9 @@ section.footer-sec.fot{
         text-align: center;
         a{
           cursor: pointer;
+          &:first-child{
+            margin-left: 0;
+          }
         }
       }
       h5{

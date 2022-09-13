@@ -52,7 +52,7 @@ const {isMobile} = useAppContext();
         
         
         <h5 style={!isMobile?{paddingTop:"1rem" }: null}>
-        A digital agency with solid design and web development expertise.
+        A creative agency with solid design & web development expertise.
         </h5>
       </div>
       <div className="image-wrap fc">

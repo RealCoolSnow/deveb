@@ -260,9 +260,9 @@ if(!isMobile){
             }
           })
           .fromTo(img,{
-            backgroundPosition: "0 100%"
+            backgroundPosition: "0 70%"
           }, {
-            backgroundPosition: "0 0%",
+            backgroundPosition: "0 30%",
             ease:"none",
           })
 

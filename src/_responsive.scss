@@ -789,8 +789,8 @@ section.process {
             a.estimate-btn {
               padding: 18.5px 35px;
               &:hover{
-                background-color: var(--button-bg-color);
-                color:#19191A;
+                background-color: #0084FF;
+                // color:#19191A;
               }
             }
           }
@@ -1012,7 +1012,7 @@ width: 100%;
 
             a.estimate-btn {
               padding: 17px 34px;
-              background: var(--blue-span);
+              background: #339CFF;
               color: var(--bg-l);
             }
 

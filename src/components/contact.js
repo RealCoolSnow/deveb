@@ -487,372 +487,372 @@ const Con = () => {
       {showThanks ? (
         <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
       ) : (
-        <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
+        // <Thanks showToggle={() => setShowThanks(false)} isMobile={isMobile}  />
           
-        // <section
-        //   data-scroll-container
-        //   ref={MainWrapper}
-        //   className={`sec-form mb ${
-        //     sendingForm ? "sending-form-effect" : ""
-        //   } only-contact`}
-        // >
-        //   <header>
-        //     <h6>
-        //       We are always happy to help{" "}
-        //       <img src="/assets/emojie/angel.png" alt="angel-emojie" />
-        //     </h6>
+        <section
+          data-scroll-container
+          ref={MainWrapper}
+          className={`sec-form mb ${
+            sendingForm ? "sending-form-effect" : ""
+          } only-contact`}
+        >
+          <header>
+            <h6>
+              We are always happy to help{" "}
+              <img src="/assets/emojie/angel.png" alt="angel-emojie" />
+            </h6>
 
-        //     <h1>Get in touch</h1>
-        //   </header>
+            <h1>Get in touch</h1>
+          </header>
 
-        //   <form onSubmit={(e) => e.preventDefault()}>
-        //     <div className="options-btns needs">
-        //       <p>I need</p>
-        //       {contactData.needs.map((val, idx) => (
-        //         <SecondaryBtn
-        //           txt={val}
-        //           isActive={activeNeeds.includes(idx)}
-        //           trigger={() => toggleNeedBudg("need", idx)}
-        //           key={idx}
-        //         />
-        //       ))}
-        //     </div>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className="options-btns needs">
+              <p>I need</p>
+              {contactData.needs.map((val, idx) => (
+                <SecondaryBtn
+                  txt={val}
+                  isActive={activeNeeds.includes(idx)}
+                  trigger={() => toggleNeedBudg("need", idx)}
+                  key={idx}
+                />
+              ))}
+            </div>
 
-        //     <div className="form-inputs">
-        //       <div className="am-input">
-        //         <input
-        //           type="text"
-        //           placeholder="Your name"
-        //           name="name"
-        //           value={form.name}
-        //           onChange={inputHandler}
-        //           className={formErr.name ? "err" : ""}
-        //           onBlur={() => FocusedOut("name")}
-        //         />
-        //         <div
-        //           className="input-moving-line"
-        //           // style={{ backgroundImage: getMovingLine('name') }}
-        //         >
-        //           <svg
-        //             xmlns="http://www.w3.org/2000/svg"
-        //             width="100%"
-        //             height="100%"
-        //             viewBox="0 0 1200 60"
-        //             preserveAspectRatio="none"
-        //           >
-        //             <path
-        //               fill="none"
-        //               stroke={formErr["name"].length ? "#FF6666" : "#6E6E73"}
-        //               d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-        //             />
-        //           </svg>
-        //         </div>
+            <div className="form-inputs">
+              <div className="am-input">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  name="name"
+                  value={form.name}
+                  onChange={inputHandler}
+                  className={formErr.name ? "err" : ""}
+                  onBlur={() => FocusedOut("name")}
+                />
+                <div
+                  className="input-moving-line"
+                  // style={{ backgroundImage: getMovingLine('name') }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 1200 60"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      fill="none"
+                      stroke={formErr["name"].length ? "#FF6666" : "#6E6E73"}
+                      d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                    />
+                  </svg>
+                </div>
 
-        //         {formErr.name && (
-        //           <span className="input-err">{formErr.name}</span>
-        //         )}
-        //       </div>
+                {formErr.name && (
+                  <span className="input-err">{formErr.name}</span>
+                )}
+              </div>
 
-        //       <div className="am-input">
-        //         <input
-        //           type="text"
-        //           placeholder="Your email"
-        //           name="email"
-        //           value={form.email}
-        //           onChange={inputHandler}
-        //           className={formErr.email ? "err" : ""}
-        //           autoComplete="off"
-        //           onBlur={() => FocusedOut("email")}
-        //         />
-        //         <div
-        //           className="input-moving-line"
-        //           // style={{ backgroundImage: getMovingLine('email') }}
-        //         >
-        //           <svg
-        //             xmlns="http://www.w3.org/2000/svg"
-        //             width="100%"
-        //             height="100%"
-        //             viewBox="0 0 1200 60"
-        //             preserveAspectRatio="none"
-        //           >
-        //             <path
-        //               fill="none"
-        //               stroke={formErr["email"].length ? "#FF6666" : "#6E6E73"}
-        //               d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-        //             />
-        //           </svg>
-        //         </div>
+              <div className="am-input">
+                <input
+                  type="text"
+                  placeholder="Your email"
+                  name="email"
+                  value={form.email}
+                  onChange={inputHandler}
+                  className={formErr.email ? "err" : ""}
+                  autoComplete="off"
+                  onBlur={() => FocusedOut("email")}
+                />
+                <div
+                  className="input-moving-line"
+                  // style={{ backgroundImage: getMovingLine('email') }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 1200 60"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      fill="none"
+                      stroke={formErr["email"].length ? "#FF6666" : "#6E6E73"}
+                      d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                    />
+                  </svg>
+                </div>
 
-        //         {formErr.email && (
-        //           <span className="input-err">{formErr.email}</span>
-        //         )}
-        //       </div>
+                {formErr.email && (
+                  <span className="input-err">{formErr.email}</span>
+                )}
+              </div>
 
-        //       <div className="am-input full-w" style={{height: "auto"}}>
-        //         <textarea
-        //           className="full-w"
-        //           type="text"
-        //           placeholder="About your project"
-        //           name="message"
-        //           rows="1"
-        //           value={form.message}
-        //           onChange={textAreaChange}
-        //         ></textarea>
-        //         <div
-        //           className="input-moving-line"
-        //           style={{ backgroundImage: MLine }}
-        //         >
-        //           <svg
-        //             xmlns="http://www.w3.org/2000/svg"
-        //             width="100%"
-        //             height="100%"
-        //             viewBox="0 0 1200 60"
-        //             preserveAspectRatio="none"
-        //           >
-        //             <path
-        //               fill="none"
-        //               stroke="#6E6E73"
-        //               d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-        //             />
-        //           </svg>
-        //         </div>
-        //       </div>
-        //     </div>
+              <div className="am-input full-w" style={{height: "auto"}}>
+                <textarea
+                  className="full-w"
+                  type="text"
+                  placeholder="About your project"
+                  name="message"
+                  rows="1"
+                  value={form.message}
+                  onChange={textAreaChange}
+                ></textarea>
+                <div
+                  className="input-moving-line"
+                  style={{ backgroundImage: MLine }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 1200 60"
+                    preserveAspectRatio="none"
+                  >
+                    <path
+                      fill="none"
+                      stroke="#6E6E73"
+                      d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
 
-        //     <div className="att-btn">
-        //       <label htmlFor="filename" ref={labelRef}></label>
+            <div className="att-btn">
+              <label htmlFor="filename" ref={labelRef}></label>
 
-        //       <SecondaryBtn
-        //         isActive={false}
-        //         trigger={() => {}}
-        //         refrence={labelRef}
-        //         primary={true}
-        //       >
-        //         {" "}
-        //         <span>
-        //           <svg
-        //             xmlns="http://www.w3.org/2000/svg"
-        //             viewBox="0 0 17.009 17"
-        //           >
-        //             <g
-        //               id="attach-interface-clip-symbol"
-        //               transform="translate(12.524 -0.146)"
-        //             >
-        //               <g
-        //                 id="Group_335"
-        //                 data-name="Group 335"
-        //                 transform="translate(-12.524 0.146)"
-        //               >
-        //                 <path
-        //                   id="Path_273"
-        //                   data-name="Path 273"
-        //                   d="M11.08,7.579a1.076,1.076,0,0,0,.047-1.6,1.149,1.149,0,0,0-1.647,0L8.056,7.4a3.476,3.476,0,0,0-.177,5.024,3.532,3.532,0,0,0,5.074-.127l2.4-2.4a5.664,5.664,0,0,0,0-8l-.1-.1a5.663,5.663,0,0,0-8,0l-5.6,5.6a5.664,5.664,0,0,0,0,8l.1.1a5.621,5.621,0,0,0,6.48,1.06c.585-.286,1.221-.829.8-1.59A1.175,1.175,0,0,0,7.4,14.529,3.952,3.952,0,0,1,3.351,13.9l-.1-.1a3.4,3.4,0,0,1,0-4.8l5.6-5.6a3.4,3.4,0,0,1,4.8,0l.1.1a3.4,3.4,0,0,1,0,4.8l-2.4,2.4a1.274,1.274,0,0,1-1.873.127A1.223,1.223,0,0,1,9.657,9Z"
-        //                   transform="translate(0 -0.146)"
-        //                 />
-        //               </g>
-        //             </g>
-        //           </svg>
-        //           Add attachment
-        //         </span>
-        //       </SecondaryBtn>
+              <SecondaryBtn
+                isActive={false}
+                trigger={() => {}}
+                refrence={labelRef}
+                primary={true}
+              >
+                {" "}
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 17.009 17"
+                  >
+                    <g
+                      id="attach-interface-clip-symbol"
+                      transform="translate(12.524 -0.146)"
+                    >
+                      <g
+                        id="Group_335"
+                        data-name="Group 335"
+                        transform="translate(-12.524 0.146)"
+                      >
+                        <path
+                          id="Path_273"
+                          data-name="Path 273"
+                          d="M11.08,7.579a1.076,1.076,0,0,0,.047-1.6,1.149,1.149,0,0,0-1.647,0L8.056,7.4a3.476,3.476,0,0,0-.177,5.024,3.532,3.532,0,0,0,5.074-.127l2.4-2.4a5.664,5.664,0,0,0,0-8l-.1-.1a5.663,5.663,0,0,0-8,0l-5.6,5.6a5.664,5.664,0,0,0,0,8l.1.1a5.621,5.621,0,0,0,6.48,1.06c.585-.286,1.221-.829.8-1.59A1.175,1.175,0,0,0,7.4,14.529,3.952,3.952,0,0,1,3.351,13.9l-.1-.1a3.4,3.4,0,0,1,0-4.8l5.6-5.6a3.4,3.4,0,0,1,4.8,0l.1.1a3.4,3.4,0,0,1,0,4.8l-2.4,2.4a1.274,1.274,0,0,1-1.873.127A1.223,1.223,0,0,1,9.657,9Z"
+                          transform="translate(0 -0.146)"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                  Add attachment
+                </span>
+              </SecondaryBtn>
 
-        //       <input
-        //         className="hd"
-        //         type="file"
-        //         id="filename"
-        //         name="filename"
-        //         onChange={addAttachment}
-        //         multiple="multiple"
-        //       />
+              <input
+                className="hd"
+                type="file"
+                id="filename"
+                name="filename"
+                onChange={addAttachment}
+                multiple="multiple"
+              />
 
-        //       {attachments ? (
-        //         <div className="attachs">
-        //           {attachments.map(({ name }, idx) => (
-        //             <div
-        //               className="attach"
-        //               key={idx}
-        //               onClick={() => removeAttach(idx)}
-        //             >
-        //               <svg
-        //                 xmlns="http://www.w3.org/2000/svg"
-        //                 className="h-6 w-6"
-        //                 fill="none"
-        //                 viewBox="0 0 24 24"
-        //                 stroke="currentColor"
-        //               >
-        //                 <path
-        //                   strokeLinecap="round"
-        //                   strokeLinejoin="round"
-        //                   strokeWidth={2}
-        //                   d="M6 18L18 6M6 6l12 12"
-        //                 />
-        //               </svg>
-        //               <span>{name}</span>
-        //             </div>
-        //           ))}
-        //         </div>
-        //       ) : (
-        //         ""
-        //       )}
+              {attachments ? (
+                <div className="attachs">
+                  {attachments.map(({ name }, idx) => (
+                    <div
+                      className="attach"
+                      key={idx}
+                      onClick={() => removeAttach(idx)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                      <span>{name}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                ""
+              )}
 
-        //       <ReCAPTCHA
-        //         sitekey="6LeSE7sgAAAAAILTSp7XGAmPzuiWEAq-j4NSvJpf"
-        //         size="invisible"
-        //         ref={recap}
-        //       />
-        //     </div>
+              <ReCAPTCHA
+                sitekey="6LeSE7sgAAAAAILTSp7XGAmPzuiWEAq-j4NSvJpf"
+                size="invisible"
+                ref={recap}
+              />
+            </div>
 
-        //     <>
-        //       <div className="options-btns budgets" onBlur={() => FocusedOut("budget")}>
-        //         <p onClick={()=>setReset()}>Budget (USD)</p>
+            <>
+              <div className="options-btns budgets" onBlur={() => FocusedOut("budget")}>
+                <p onClick={()=>setReset()}>Budget (USD)</p>
 
-        //         {contactData.budgets.map((val, idx) => (
-        //           <SecondaryBtn
-        //             txt={val}
-        //             isActive={activeBudg === idx}
-        //             trigger={() => toggleNeedBudg("budg", idx)}
-        //             key={idx}
-        //           />
-        //         ))}
+                {contactData.budgets.map((val, idx) => (
+                  <SecondaryBtn
+                    txt={val}
+                    isActive={activeBudg === idx}
+                    trigger={() => toggleNeedBudg("budg", idx)}
+                    key={idx}
+                  />
+                ))}
 
-        //         {
-        //           formErr.budget && (
-        //             <span className="input-err">{formErr.budget}</span>
-        //           )
-        //         }
-        //       </div>
+                {
+                  formErr.budget && (
+                    <span className="input-err">{formErr.budget}</span>
+                  )
+                }
+              </div>
 
-        //       <div className="google-captcha">
-        //         <span>
-        //           This site is protected by reCAPTCHA and the Google{" "}
-        //           <a
-        //             href="https://policies.google.com/privacy"
-        //             target="_blank"
-        //             rel="noopener noreferrer"
-        //           >
-        //             {" "}
-        //             Privacy Policy{" "}
-        //           </a>{" "}
-        //           and{" "}
-        //           <a
-        //             href="https://policies.google.com/terms"
-        //             target="_blank"
-        //             rel="noopener noreferrer"
-        //           >
-        //             {" "}
-        //             Terms of Service{" "}
-        //           </a>{" "}
-        //           apply.
-        //         </span>
-        //       </div>
+              <div className="google-captcha">
+                <span>
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    Privacy Policy{" "}
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    Terms of Service{" "}
+                  </a>{" "}
+                  apply.
+                </span>
+              </div>
 
-        //       {isMobile ? (
-        //         <MButton
-        //           text={sendText}
-        //           trigger={sendContactForm}
-        //           exClass="con-lg-send"
-        //           active={formValid}
-        //         />
-        //       ) : (
-        //         <Button
-        //           text={sendText}
-        //           trigger={sendContactForm}
-        //           active={formValid}
-        //           movable={false}
-        //         />
-        //       )}
-        //     </>
-        //   </form>
+              {isMobile ? (
+                <MButton
+                  text={sendText}
+                  trigger={sendContactForm}
+                  exClass="con-lg-send"
+                  active={formValid}
+                />
+              ) : (
+                <Button
+                  text={sendText}
+                  trigger={sendContactForm}
+                  active={formValid}
+                  movable={false}
+                />
+              )}
+            </>
+          </form>
 
-        //   {isMobile ? null : (
-        //     <div className="con-foot">
-        //       <div className="footer-foot con-fot">
-        //         <div className="footer-secs l">
-        //           <h5
-        //             onClick={() => copyToClipboard()}
-        //             onMouseEnter={() =>
-        //               changePointer({
-        //                 isHover: true,
-        //                 color: { bg: "#000000", txt: "#FFFFFF" },
-        //                 text: "Click to copy",
-        //               })
-        //             }
-        //             onMouseLeave={() => changePointer(false)}
-        //             // className={emailHover ? "active" : ""}
-        //             ref={copycl}
-        //           >
-        //             info@deveb.com
-        //           </h5>
-        //           {/* <p>Mechnykova St, 2, Kyiv, 02000</p> */}
-        //     <p>Rotterdam, The Netherlands</p>
+          {isMobile ? null : (
+            <div className="con-foot">
+              <div className="footer-foot con-fot">
+                <div className="footer-secs l">
+                  <h5
+                    onClick={() => copyToClipboard()}
+                    onMouseEnter={() =>
+                      changePointer({
+                        isHover: true,
+                        color: { bg: "#000000", txt: "#FFFFFF" },
+                        text: "Click to copy",
+                      })
+                    }
+                    onMouseLeave={() => changePointer(false)}
+                    // className={emailHover ? "active" : ""}
+                    ref={copycl}
+                  >
+                    info@deveb.com
+                  </h5>
+                  {/* <p>Mechnykova St, 2, Kyiv, 02000</p> */}
+            <p>Rotterdam, The Netherlands</p>
 
-        //         </div>
-        //         <div className="footer-secs r">
-        //           <div>
-        //             <a
-        //               href="https://www.instagram.com/deveb.co/?hl=en"
-        //               target="_blank"
-        //             rel="noopener noreferrer"
-        //               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //               onMouseLeave={()=> changePointer({isHover: false})}
-        //             >
-        //               <img className="insta" src={insta} alt="Instagram Icon"/>
-        //             </a>
-        //             <a
-        //               href="https://dribbble.com/deveb-co"
-        //               target="_blank"
-        //             rel="noopener noreferrer"
-        //               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //               onMouseLeave={()=> changePointer({isHover: false})}
-        //             >
-        //               <img className="drib" src={drib} alt="Dribbble Icon"/>
-        //             </a>
+                </div>
+                <div className="footer-secs r">
+                  <div>
+                    <a
+                      href="https://www.instagram.com/deveb.co/?hl=en"
+                      target="_blank"
+                    rel="noopener noreferrer"
+                      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                      onMouseLeave={()=> changePointer({isHover: false})}
+                    >
+                      <img className="insta" src={insta} alt="Instagram Icon"/>
+                    </a>
+                    <a
+                      href="https://dribbble.com/deveb-co"
+                      target="_blank"
+                    rel="noopener noreferrer"
+                      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                      onMouseLeave={()=> changePointer({isHover: false})}
+                    >
+                      <img className="drib" src={drib} alt="Dribbble Icon"/>
+                    </a>
 
-        //             <a
-        //               href="https://www.behance.net/deveb"
-        //               target="_blank"
-        //             rel="noopener noreferrer"
-        //               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //               onMouseLeave={()=> changePointer({isHover: false})}
-        //             >
-        //               <img className="be" src={be} alt="Behance Icon"/>
-        //             </a>
-        //             <a href="https://github.com/deveb-co" target="_blank"
-        //             rel="noopener noreferrer"
-        //               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //               onMouseLeave={()=> changePointer({isHover: false})}>
+                    <a
+                      href="https://www.behance.net/deveb"
+                      target="_blank"
+                    rel="noopener noreferrer"
+                      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                      onMouseLeave={()=> changePointer({isHover: false})}
+                    >
+                      <img className="be" src={be} alt="Behance Icon"/>
+                    </a>
+                    <a href="https://github.com/deveb-co" target="_blank"
+                    rel="noopener noreferrer"
+                      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                      onMouseLeave={()=> changePointer({isHover: false})}>
                         
-        //               <img className="git" src={git} alt="Github Icon"/>
-        //             </a>
-        //             {/* <a
-        //               href="https://api.whatsapp.com/send?phone=380970006043"
-        //               target="_blank"
-        //             >
-        //               {" "}
-        //               <img className="whats" src={whats} />
-        //             </a> */}
-        //               <a
-        //               href="https://www.linkedin.com/company/deveb-co/"
-        //               target="_blank"
-        //             rel="noopener noreferrer"
-        //               onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //               onMouseLeave={()=> changePointer({isHover: false})}
-        //             >
-        //               <img className="linkedin" src={linkedin} alt="Linkedin Icon"/>
-        //             </a>
-        //           </div>
-        //           <Link to="/privacyandpolicy" className="pp"
-        //           onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
-        //           onMouseLeave={()=> changePointer({isHover: false})}
+                      <img className="git" src={git} alt="Github Icon"/>
+                    </a>
+                    {/* <a
+                      href="https://api.whatsapp.com/send?phone=380970006043"
+                      target="_blank"
+                    >
+                      {" "}
+                      <img className="whats" src={whats} />
+                    </a> */}
+                      <a
+                      href="https://www.linkedin.com/company/deveb-co/"
+                      target="_blank"
+                    rel="noopener noreferrer"
+                      onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                      onMouseLeave={()=> changePointer({isHover: false})}
+                    >
+                      <img className="linkedin" src={linkedin} alt="Linkedin Icon"/>
+                    </a>
+                  </div>
+                  <Link to="/privacyandpolicy" className="pp"
+                  onMouseEnter={()=> changePointer({isHover: true, color:{bg:"#fff",}, text: "", blend:true, sesize:"1.25",})} 
+                  onMouseLeave={()=> changePointer({isHover: false})}
               
-        //           >
-        //             <p>Privacy Policy</p>
-        //           </Link>
-        //         </div>
-        //       </div>
-        //     </div>
-        //   )}
-        // </section>
+                  >
+                    <p>Privacy Policy</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
       )}
 
       {isMobile ? (
