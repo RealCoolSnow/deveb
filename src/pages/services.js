@@ -248,6 +248,25 @@ if(!isMobile){
           autoAlpha:1, yPercent:0, duration:.6, delay:.7,
         })
         
+        const images =q(".showcase-full-img");
+        images.forEach((img, i)=>{
+          var imgtl = gsap.timeline({
+            scrollTrigger:{
+              trigger: img,
+              start:()=> "top bottom",
+              end: ()=> "bottom top",
+              // markers:true,
+              scrub:true,
+            }
+          })
+          .fromTo(img,{
+            backgroundPosition: "0 100%"
+          }, {
+            backgroundPosition: "0 0%",
+            ease:"none",
+          })
+
+        })
         fooT.current = gsap
         .timeline({
           scrollTrigger: {
