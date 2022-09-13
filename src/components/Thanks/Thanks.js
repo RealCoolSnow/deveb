@@ -21,7 +21,7 @@ export default function Thanks({ showToggle, isMobile }) {
       {
         isMobile && 
         <Link className="backbtn" to="/">
-          Get a quote
+          Back
         </Link>
       }
     </div>

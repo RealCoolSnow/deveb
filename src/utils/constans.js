@@ -71,7 +71,7 @@ export const home = [
     id: "hp102",
     h4: "Architectural design studio",
     p: "",
-    a: { text: "Learn more",  url:"/projects/dopegood" },
+    a: { text: "Learn more",  url:"/projects/amarc" },
     img: {
       cover: amarc,
       colors: { cur: "#F2AB79", pointer: "#F2AB79bf", bg:"#FFEDE0", tx:"#F2AB79", br:"#F2AB79"},
@@ -83,7 +83,7 @@ export const home = [
     id: "hp101",
     h4: "Furniture brand, e-commerce",
     p: "",
-    a: { text: "Learn more",  url:"/projects" },
+    a: { text: "Learn more",  url:"/projects/dopegood" },
     img: {
       cover: dopegood,
       colors: { cur: "#FFB18C", pointer: "#FFA073bf", bg:"#FFEAE0", tx:"#FFB18C", br:"#FFB18C"},

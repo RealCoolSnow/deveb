@@ -163,9 +163,9 @@ else if(!isMobile) {
             
               {/* {isMobile ? "AMarc " : "am-arc "} */}
               { isMobile? (
-                <h3>A digital agency with solid design and web development expertise.</h3>
+                <h3>A creative agency with solid design & web development expertise.</h3>
               ) : (
-                <h3> <div>A digital agency with solid design</div> <span> and web development expertise.</span></h3>
+                <h3> <div>A creative agency with solid design</div> <span> & web development expertise.</span></h3>
               )}
               
             
