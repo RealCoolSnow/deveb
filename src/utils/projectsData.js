@@ -218,7 +218,7 @@ export const prjData = [
       {
         id:"vt33",
         type:"textbox",
-        pi:"Featuring the most popular trendy design styles, Dopop has a dark and light theme. Since the design shared many similar components, we have made reusable components in the front-end to use across the website and easily share data between them.",
+        pi:"Dopop has a dark and light theme featuring the most popular trendy design styles. Since the design shared many similar components, we have made reusable components in the front end to use across the website and quickly transfer data between them.",
         width:"long"
       },
       {
