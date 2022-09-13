@@ -98,19 +98,19 @@ const Serv = () => {
           <h6>Services</h6>
           {isMobile? width > 500?(
              <h3>
-             <div>Branding, concept design &</div>
+             <div>Branding, design concept &</div>
              <div>web development, we've got</div>
              <div>everything covered.</div>
              </h3>
           ):(
             <h3>
-            <div>Branding, concept</div><div>design & 
+            <div>Branding, design</div><div>concept & 
             web</div><div> development, we've </div><div>got
             everything covered.</div>
             </h3>
           ):(
             <h3>
-            <div>Branding, concept design &  </div>
+            <div>Branding, design concept &  </div>
             <div>web developments, we've got</div>
             <div>everything covered.</div>
             </h3>
