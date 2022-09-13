@@ -73,7 +73,7 @@ const Con = () => {
       delay: 0.6,
     });
   }, []);
- const scrollTop = useRef();
+//  const scrollTop = useRef();
   const [showThanks, setShowThanks] = useState(false);
  const [textEHC, setTEHC]= useState("");
 //  useEffect(()=>{
@@ -86,13 +86,10 @@ const Con = () => {
 // })
 //  },[])
  useEffect(()=>{
-   
-  //  console.log("running reset", )
-// console.log( window.dvbScroll)
 
-     setTimeout(() => {
-      window.dvbScroll.update()
-    }, 200);   
+    setTimeout(() => {
+      if( window && window.dvbScroll ) window.dvbScroll.update()
+    }, 200);
    
  },[textEHC])
 //  useEffect(()=>{
