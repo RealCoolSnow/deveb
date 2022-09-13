@@ -78,7 +78,7 @@ const Frame = () => {
       createTimeLine(overlayPath);
     }
 
-    if( !isMobile && !isMenuOpen ) {
+    if( !isMenuOpen ) {
 
       if( !lastLocation ) {
         setLastLocation(location.pathname)
