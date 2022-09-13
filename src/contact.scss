@@ -165,6 +165,11 @@ section.sec-form form div.google-captcha {
         }
       }
     }
+
+    .btn-container a.btn-more .btn-more-ripple span:not(.active, .invalid),
+     .btn-container button.btn-more .btn-more-ripple span:not(.active, .invalid) {
+      background-color: #1a1a1a;
+    }
   }
 }
 
