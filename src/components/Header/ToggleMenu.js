@@ -232,7 +232,7 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
     var o = e.clientY - ofTop;
     
 
-    console.log( s,e.clientY , ofTop )
+    // console.log( s,e.clientY , ofTop )
       gsap.to(target, {
         duration: .5,
         x: ((s - target.offsetWidth / 2) / target.offsetWidth) * 30,

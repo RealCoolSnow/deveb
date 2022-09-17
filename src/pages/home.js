@@ -58,7 +58,7 @@ const HomePage = () => {
     }
     gsap.set(q(".h2-con"),{opacity:1})
     if (isMobile=== false){
-      console.log("runnig web")
+      // console.log("runnig web")
        options.setlightpink();
       if(pintl.current){
         pintl.current.progress(0)
@@ -323,7 +323,7 @@ const HomePage = () => {
            }
           }
           else if(isMobile){
-           console.log("runnig mobile")
+          //  console.log("runnig mobile")
            var cbmb = (dir)=>{
             gsap.to(el.current,
                {

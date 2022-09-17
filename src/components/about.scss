@@ -308,8 +308,13 @@
         }
     }
 }
-@media (min-width:1500px){
-    #headLines, h1{
-// max-width: 26rem;
+// @media (min-width:1500px){
+//     #headLines, h1{
+// // max-width: 26rem;
+//     }
+// }
+@media (max-width:500px){
+    .members-wrap .mem-row .desat{
+        opacity: 0;
     }
 }

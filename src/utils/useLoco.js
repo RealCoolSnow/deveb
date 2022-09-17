@@ -18,7 +18,7 @@ const useLoco = (start, instance=false) => {
     //   return;
     // }
     let locoScroll = null;
-    console.log("runing loco")
+    // console.log("runing loco")
     const scEl = document.querySelector("#viewport");
      locoScroll = new LocomotiveScroll({
       el: scEl,

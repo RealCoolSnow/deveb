@@ -87,7 +87,7 @@ const Test = () => {
           end: ()=>"bottom+=10% bottom",
           scrub: true,
           ease:"none",
-          onEnter: ()=> console.log("run paralax"),
+          // onEnter: ()=> console.log("run paralax"),
           // markers: true,
         },
       });
@@ -232,7 +232,7 @@ const Test = () => {
     setCat(input);
     const newProjects = prjData.filter( (ei) => ei.tags.includes(input) )
     setProjects(newProjects);
-    console.log("running catFunc")
+    // console.log("running catFunc")
     setReset();
   }
 
