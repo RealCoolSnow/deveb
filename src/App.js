@@ -5,7 +5,7 @@ import {
     withRouter,
   } from "react-router-dom";
   import "./App.scss";
-  import React, { useEffect, useRef,Suspense, lazy } from "react";
+  import React, { useEffect, useRef,Suspense, lazy, useLayoutEffect, useState } from "react";
   import Frame from "./components/frame";
   // import Scrollbar from "./components/scrollbar/scrollbar.js";
   
@@ -34,6 +34,8 @@ import {
   const Services = lazy(() => import('./pages/services.js'));
   const ProjectPage = lazy(() => import('./pages/projectPage.js'));
   const About = lazy(() => import('./pages/about.js'));
+  const Links = lazy(() => import('./pages/allLinks.js'));
+
   // const ErrorPage = lazy(() => import('./pages/errorpage.js'));
 
 
@@ -48,7 +50,7 @@ import {
   
   function App() {
     const { isMobile, setMobileTrue, setMobileFalse } = useAppContext();
-  
+    const [url,setUrl]= useState()
     // let location = useLocation();
     // const history = useHistory();
     // const overlayPath = useRef(null)
@@ -71,6 +73,10 @@ import {
   
       return () => window.removeEventListener("resize", checkForMobileBg);
     }, [isMobile]);
+    useLayoutEffect(()=>{
+    setUrl(window.location.pathname)
+      
+    },[])
   
     const circleRefs = useRef([]);
     circleRefs.current = [];
@@ -86,7 +92,10 @@ import {
     return (
       <Router>
         
-        <Frame />
+       {
+       url==="/links"? null : <Frame />
+
+       }
   
         {/* <ScrollToTop /> */}
         {!isMobile ? <Circle size="sm" delay="0" /> : null}
@@ -133,6 +142,9 @@ import {
           </Route>
           <Route path="/privacyandpolicy" exact>
             <Privacy />
+          </Route>
+          <Route path="/links" exact>
+            <Links />
           </Route>
   
           {/* <Route path="/test" exact>

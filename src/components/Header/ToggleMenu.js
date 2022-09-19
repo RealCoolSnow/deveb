@@ -15,9 +15,6 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
   const q = gsap.utils.selector(menuWrapper);
 
   useEffect(() => {
-    // const menuBg = q(".menu-bg-box");
-    // const menuBox = q(".menu-box");
-    // gsap.set(menuBg, {yPersent: -25})
     const menuParts = q(".menu-box >div:not(.menu-tilt)");
     const bg_overlay = q(".bg-overlay");
    const menu_Bottom = q(".menu-box .bottom-part");
@@ -26,7 +23,6 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
 
     if (isMobile) {
      
-
       gsap.set(bg_overlay,{
         display: "none",
       })
@@ -41,12 +37,18 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
           duration: .5,
           ease:Power2.easeOut,
         })
-        gsap.to(menu_Bottom, {
+        gsap.fromTo(menu_Bottom,{
+          autoAlpha:0,
+
+        },{
           autoAlpha:1,
           delay: .3,
           duration:.1,
         })
-        gsap.to(menu_RightItems, {
+        gsap.fromTo(menu_RightItems, {
+          autoAlpha: 0,
+
+        },{
           autoAlpha: 1,
           stagger: .05,
           duration:.45,
@@ -59,23 +61,7 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
         gsap.set(bg_overlay,{
           display: "none",
         })
-        // gsap.to(q(".menu-box .bottom-part"), {
-        //   autoAlpha:0,
-        //   duration:.2,
-        // })
-        // gsap.to(q(".menu-right-part a"), {
-        //   autoAlpha: 0,
-        //   stagger: "-0.05",
-        //   duration:.3,
-        // })
-     
-        // gsap.to(menuWrapper.current, {
-        //     width: 0,
-        //     height:0,
-        //     paddingBottom:0,
-        //     duration: 0.5,
-        //     ease:Power2.easeIn,
-        //   });
+      
       }
     } 
     else {
@@ -109,31 +95,9 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
           delay: .15,
         })
       }
-    //   if (!isOpen){ 
-    //     // const menuParts = q(".menu-box >div:not(.menu-tilt)")
-    //     // gsap.fromTo(menuWrapper.current, {
-    //     //   css:{borderRadius: "0 0 0 100%"},
-    //     // }, {
-    //     //   width:0,
-    //     //   height:0,
-    //     //   duration: .5,
-    //     // });
-    //     // gsap.to(menuParts, {
-    //     //   autoAlpha:0,
-    //     //   duration:.2,
-    //     //   stagger:.1,
-    //     // })
-    // }
-
+   
     }
-    // const getWidth= ()=>{
-    //   var vwpx = document.documentElement.clientWidth;
-    //   return vwpx + (vwpx/10) + "px";
-    // }
-    // const getHeight= ()=>{
-    //   var vwpx = document.documentElement.clientHeight;
-    //   return (vwpx*2) + (vwpx/2)+"px";
-    // }
+    
   }, [isOpen, isMobile]);
 
   const closeMenuTrigger = () => {
@@ -149,9 +113,6 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
     // const menuBox = q(".menu-box");
 
     if (isMobile) {
-      // gsap.set(q(".bg-overlay"),{
-      //   display: "none",
-      // })
       gsap.to(q(".menu-box .bottom-part"), {
         autoAlpha:0,
         duration:.2,
@@ -200,28 +161,7 @@ function ToggleMenu({ closer, isOpen, activeRoute, menuBgRef }) {
   };
 
 
-  // const bg_box = q(".menu-bg-box");
-  //   const movemenu = (e) => {
-
-  //     const { target} = e;
-  //     const { clientWidth, clientHeight } = target;
-
-  //     // const xPos = -(e.clientX  / clientWidth - 0.5);
-  //     // const yPos = -(e.clientY / clientHeight - 0.5);
-  //     // const rightIt = q(".menu-left-part a, .menu-left-part .head, .menu-right-part a");
   
-  // //  const grMaker = ()=>{
-  // //   const angle= (Math.atan2((document.documentElement.clientHeight/2) - (e.clientY), (document.documentElement.clientWidth/2) - (e.clientX))*180 / Math.PI) - 90;
-  // //   // const opa = (Math.abs(xPos) + Math.abs(yPos)) + .4
-  // //   console.log(clientWidth, clientHeight )
-  // //   const gr = "linear-gradient( " +angle+ "deg, rgba(51, 48, 41, 0) 37%, rgba(60,60,60, .9) 96%)";
-  // //   return gr;
-  // //  }
-  //     gsap.to(q(".bg-overlay"), {
-  //       backgroundImage: ()=>grMaker(),
-  //       // background: "#ff00ff"
-  //     })
-  //   }
   const moveLinks = (e) => {
     const { target} = e;
     // const { clientWidth, clientHeight } = target;

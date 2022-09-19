@@ -5,6 +5,8 @@ import ErrorPage from './errorpage'
 import Services from './services'
 import ProjectPage from './projectPage'
 import Privacy from './privacy.js'
+import Links from './allLinks.js'
+
 
 export{
   About,
@@ -14,4 +16,5 @@ export{
   Services,
   ProjectPage,
   Privacy,
+  Links
 }

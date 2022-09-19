@@ -1,0 +1,107 @@
+
+// .frame-wrapper{
+//     display: none;
+// }
+#viewport{
+    // background: #000000;
+    .links-container{
+        color: #f5f5f8;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+   
+        .links{
+            display: flex;
+            width: 25rem;
+            margin: auto;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            p{
+                display: block;
+                width: 100%;
+                text-align: left;
+                color: #ffffff;
+                font-weight: 500;
+                font-size: .45rem;
+                margin-bottom: 2rem;
+                svg{
+                    width: 1.7rem;
+                    height: auto;
+                    padding-right: 0.3rem;
+                }
+            }
+            .logolabel{
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .col{
+                text-align: left;
+                width: min-content; 
+                &:last-child{
+                    width:7.9rem ;
+                }
+            }
+            a{
+                   color: #FFFFFF;
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 1.33rem;
+                    border-bottom: 2px solid #6e6e73;
+                    text-align: left;
+                    width: fit-content;
+                    margin-bottom: 1.7rem;
+                    &.web{
+                        border-color: #ffffff;
+                    }
+                    &.quote{
+                        border-color: #0084FF;
+                    }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    #viewport .links-container {
+        .links{
+            flex-direction: column;
+            align-items: center;
+          width: 100%;
+          margin-top: 4.3rem;
+          a{
+            color: #FFFFFF;
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            font-size: 1.33rem;
+            text-align: center;
+            padding: 0.85rem;
+            border: none;
+            margin-bottom: 0.7rem;
+            border-radius: 2rem;
+            background: #3c3c3c;
+            &.web{
+                background: #f5f5f7;
+                color: #000;
+            }
+            &.quote{
+                background: #0084FF;
+            }
+          }
+          p{ 
+          position: absolute;
+          display: block;
+          width: 100%;
+          top: 2%;
+          left: 5%;
+          font-size: .7rem;
+          svg{
+              width: 2.3rem;
+          }
+      }
+        }
+}
+}
