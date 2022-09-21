@@ -36,10 +36,10 @@ export const smScreens = {
     'Other',
   ],
   budgets: [
-    'Under 10K',
     '10-20K',
-    '20-50K',
-    '50-100K',
+    '30-40K',
+    '40-70K',
+    '70-100K',
     '+100K'
   ]
 }
