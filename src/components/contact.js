@@ -254,7 +254,7 @@ const Con = () => {
 
       let sendForm = await window.fetch('https://deveb-api.fly.dev/api/send',{
         method: 'post',
-        data: attachs || {},
+        body: attachs || {},
         headers: ContactForm,
       });
 
