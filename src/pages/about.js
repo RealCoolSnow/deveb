@@ -21,7 +21,7 @@ const AboutPage = () => {
   const { isMobile, changePT, resetLoco,setReset, changePp } = useAppContext();
   useLoco(!isMobile);
   const el = useRef();
-  const imgTl = useRef();
+  const imgTl = useRef(); 
   const loadingTL = useRef();
   const philTl = useRef()
   const fooT = useRef()
@@ -268,80 +268,8 @@ const AboutPage = () => {
 
         },7)
         })
-      //  philTl.current = gsap
-      //   .timeline({
-      //     duration: 10,
-      //     scrollTrigger: {
-      //       scroller: "#viewport",
-      //       trigger:imgTrig[1],
-      //       start: () => "bottom bottom-=5%",
-      //       end: () => "bottom+=10% top",
-      //       // markers: true,
-      //       scrub: true,
-      //       // pin:true,
-      //       // pinReparent:true,
-      //       // invalidateOnRefresh: true,
-      //     },
-      //   })
-      //   .to(
-      //     imgTrig[1],
-      //     {
-      //       autoAlpha: 0,
-      //       duration:5.1,
-      //     },
-      //     0
-      //   )
-      //   .to(
-      //     pis[0],
-      //     {
-      //       autoAlpha: 1,
-      //       duration: 1,
-      //     },
-      //     "<.94"
-      //   )
-      
-      //   .to(
-      //     pis[0],
-      //     {
-      //       y: "-20vh",
-      //       // height:100,
-      //       duration: 28,
-      //     },
-      //     "<-2.5"
-      //   )
-      //   .to(
-      //     pis[0],
-      //     {
-      //      autoAlpha:0,
-      //       duration:5,
-      //     },
-      //     "<75%"
-      //   )
-      //   .to(
-      //     pis[1],
-      //     {
-      //      autoAlpha:1,
-      //       duration: 2,
-      //     },
-      //     "<80%"
-      //   )
-       
-      //   .to(
-      //     pis[1],
-      //     {
-      //       y: "3vh",
-      //       duration: 28,
-      //     },
-      //     ">-7"
-      //   )
-      //   .to(
-      //     pis[1],
-      //     {
-      //      autoAlpha:0,
-      //       duration: 5,
-      //     },
-      //     "<65%"
-      //   );
+     
+     
         const changeBg = (direction)=>{
           gsap.to(q(".backgr"), { 
             autoAlpha: ()=> (direction === 1? 1: 0),
